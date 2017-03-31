@@ -1,0 +1,37 @@
+
+// Grid Nav
+#navGrid {
+  margin-bottom: 50px;
+  text-align: center;
+
+  li{
+    display: inline-block;
+    margin-right: 40px;
+    border-bottom: 1px dotted;
+    font-family: 'Open Sans', helvetica, arial, sans-serif;
+    a:hover {text-decoration: none}
+  }
+}
+
+.course-name {padding: 5px 0 5px 0}
+
+// Grid Projects MixItUp
+#Grid .mix{display: none;}
+
+ul#Grid {padding: 0}
+
+li.filter {cursor: pointer;}
+
+/*LIGHTER*/
+.lighter img {
+  -webkit-filter: grayscale(.6) ;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.lighter img:hover {
+  -webkit-filter: grayscale(0) ;
+}

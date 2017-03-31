@@ -1,0 +1,18 @@
+%ul
+  - @images.each do |image|
+    %li
+      .row
+        .col-lg-3
+          = image_tag image.url.url(:thumb)
+        .col-lg-9
+          %h3= image.title
+          = image.description
+          %p
+            = link_to 'APAGAR', course_image_path(@imageable, image), :method => :delete, :data => { :confirm => 'Are you sure?' }
+            |
+            = link_to 'ADICIONAR INFO', edit_course_image_path(@imageable, image)
+            |
+            = link_to 'VER TAMANHO ORIGINAL', image.url.url
+
+%p= link_to 'ADICIONAR IMAGENS', new_course_image_path, :class => 'btn btn-primary'
+%p= link_to 'pular esta etapa', edit_course_path(@imageable)

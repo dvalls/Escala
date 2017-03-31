@@ -1,0 +1,11 @@
+= simple_form_for(@course) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :description
+    = f.association :categories, as: :check_boxes
+    = f.input :year, as: :date,  discard_day: true
+
+  .form-actions
+    = f.button :submit, 'CRIAR PROJETO', :class => 'btn btn-primary'

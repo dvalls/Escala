@@ -1,0 +1,126 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ * require_tree .
+*/
+
+// Grid
+//$grid-columns:              12;
+//$grid-gutter-width:         30px;
+//$grid-float-breakpoint:     768px;
+
+
+// Typography
+$font-family-base: 'Ubuntu Mono', helvetica, arial, sans-serif;
+$font-size-base: 14px;
+$line-height-base: 1.2;
+
+$headings-font-family: 'Open Sans';
+//$font-size-h1: $font-size-base * 5;
+//$font-size-h2: $font-size-base * 4;
+//$font-size-h3: $font-size-base * 3;
+//$font-size-h4: $font-size-base * 2;
+//$font-size-h5: $font-size-base * 1;
+
+
+// Color
+$link-color: black;
+$color-theme: black;
+
+.container {-webkit-font-smoothing: antialiased; }
+
+#i18n {
+  float: right; color: lightgray;
+  a {color: lightgray}
+}
+
+header {
+  margin-top: 50px;
+  margin-bottom: 75px;
+}
+
+
+// Nav
+nav {
+    float: right;
+    margin-top: 25px;
+
+    ul.nav {
+      background-color: $color-theme;
+      //border-radius: 7px;
+
+      li {
+        margin: 0 10px 0 10px;
+        a, a:hover {
+          padding: 3px 20px 3px 20px;
+          color: white;
+          background-color: $color-theme;
+          text-decoration: none;
+          font-family: 'Open Sans',  helvetica, arial, sans-serif;}
+      }
+    }
+}
+
+.navbar-collapse {padding: 0 !important;}
+
+// Footer items
+footer {
+  margin-bottom: 25px;
+  p {margin-top: 20px}
+  #description {margin: 100px 0 25px 0;}
+
+  ul.social {
+    float: right;
+    li {display: inline; padding: 0 7px 0 7px;}
+    a {text-decoration: none; height: 15px}
+  }
+}
+
+.icon-margin i {margin-left: 5px;}
+
+// Main items
+ul.feeds {
+  margin: 30px 0 30px;
+  li {padding-bottom: 10px}
+}
+
+.markdown {
+  p {margin-bottom: 30px}
+}
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//// TODO aprimorar
+//.form-horizontal .form-group {
+//  margin-left: 0;
+//  margin-right: 0px;
+//}
+
+.alert {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.navbar-toggle {
+  border-color: $color-theme;
+  span {background-color: $color-theme;}
+}
+
+
+
+

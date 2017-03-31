@@ -1,0 +1,15 @@
+%ul.list-unstyled
+  = render :partial => 'images/image', :collection => @images, :as => :image
+
+= link_to 'ADICIONAR IMAGENS', new_contact_image_path, :class => 'btn btn-default'
+
+= simple_form_for(@contact,:url => {:action => :update},  html: {class: 'form-horizontal', method: "patch"}) do |f|
+  = f.error_notification
+
+  = f.input :body, as: :text,  input_html: {'data-provide' => 'markdown',  :rows => '30'}
+
+  .form-actions
+  = f.submit 'Save', :class => 'btn btn-primary'
+
+= javascript_include_tag "bootstrap-markdown", "markdown"
+= stylesheet_link_tag "bootstrap-markdown.min"

@@ -1,0 +1,24 @@
+%table.table
+  %tr
+    %th Ordem Exibição
+    %th Projeto
+    %th Título
+    %th Descrição
+    %th Imagem
+    %th
+
+  - @carousels.each do |carousel|
+    %tr
+      %td= carousel.order
+      %td= carousel.course.title
+      %td= carousel.title
+      %td= carousel.description
+      %td= image_tag carousel.image_url.url(:thumb)
+      %td
+        = link_to 'EDITAR', edit_carousel_path(carousel)
+        |
+        = link_to 'APAGAR', carousel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'NOVA IMAGEM', new_carousel_path, :class => 'btn btn-primary'

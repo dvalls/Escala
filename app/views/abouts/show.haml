@@ -1,0 +1,3 @@
+= link_to 'EDITAR', edit_about_path, :class => 'btn btn-primary pull-right' if signed_in?
+
+.markdown= markdown @about.body unless @about.body.blank?

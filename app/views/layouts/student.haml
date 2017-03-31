@@ -1,0 +1,55 @@
+!!! 5
+%html
+  %head
+    = render :partial => 'layouts/head'
+
+  %body
+
+    .container
+
+      -##i18n
+      -#  = link_to 'PT-BR', :locale=>'pt-BR'
+      -#  |
+      -#  = link_to 'ENG', :locale=>'en'
+
+      / Header
+      %header
+
+        .pull-left= link_to image_tag(ENV['LOGO_URL']), root_path
+
+        / Mobile menu
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#menu", "data-toggle" => "collapse", type: "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+        #menu.collapse.navbar-collapse
+          %nav
+            %ul.nav.navbar-nav
+              %li
+              %li
+              %li
+                - case session[:user_id]
+                  - when nil
+                    = link_to 'Login', access_login_path
+                  - else
+                    = link_to 'Perfil', student_path(session[:user])
+                    %li
+                      = link_to 'Curso(s)', students_path
+                    %li
+                      = link_to 'Logout', access_logout_path
+
+        = render :partial => 'layouts/flash_message'
+
+
+      / Main content
+      %main
+
+        / Main
+        = yield
+
+      / Footer
+      = render :partial => 'layouts/footer'
+
+

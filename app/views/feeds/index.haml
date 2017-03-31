@@ -1,0 +1,20 @@
+%ul.feeds.list-unstyled
+  - @feeds.each do |feed|
+    %li
+      %h5
+        %b= feed.title
+        |
+        =l feed.updated_at.to_date, format: :default
+      = image_tag feed.image.url(:thumb) unless feed.image.blank?
+      %p= markdown(feed.body)
+
+      - if signed_in?
+        %p
+          = link_to 'VER', feed
+          |
+          = link_to 'EDITAR', edit_feed_path(feed)
+          |
+          = link_to 'APAGAR', feed, :method => :delete, :data => { :confirm => t('views.are_you_sure') }
+
+
+= link_to 'NOVA NOTÍCIA', new_feed_path, :class => 'btn btn-primary' if signed_in?

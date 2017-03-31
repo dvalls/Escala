@@ -1,0 +1,35 @@
+// Carousel
+#carousel {background-color: light-gray}
+#carousel .item > img {width: 100%;}
+
+
+.carousel-caption {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 0;
+  text-align: left;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.carousel-caption a{
+  color: white;
+  text-decoration: none;
+}
+
+.carousel-indicators {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  height: 20px;
+  margin-left: 10px;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.carousel-indicators li { opacity: .5;}
+
+

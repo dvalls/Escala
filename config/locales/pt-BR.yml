@@ -1,0 +1,60 @@
+pt-BR:
+
+  meta:
+    description: |
+      Somos um escritório de projeto com base em Porto Alegre, sul do Brasil.
+      Desenvolvemos projetos em diferentes escalas e usos, com uma linha de abordagem transversal que abrange as áreas de arquitetura, engenharia e software.
+    keywords: Arquitetura Porto Alegre, ...
+
+  nav:
+    courses: cursos
+    about: escritório
+    feeds: notícias
+    contact: contato
+    all_projects: todos
+
+
+  phone: +51 3379-7679
+  email: contato@valls.cc
+  address: |
+    Rua Santo Antônio, 366. Sala 04
+    Bairro Independência
+    Porto Alegre - RS
+    CEP 90220-010
+
+  copyright: 'todos direitos reservados - '
+
+  date:
+    formats:
+          default: ! '%d/%m/%Y'
+
+
+  # System messages
+  views:
+    all_news: + notícias
+    share: Compartilhar
+    close: Fechar
+    like_us: Curta nossa página
+
+
+    updated_ok: Informações atualizadas com sucesso.
+    are_you_sure: Você tem certeza?
+
+
+    image:
+      create: Imagem(ns) criada(s) com sucesso.
+      destroy: Imagem excluída com sucesso.
+
+    course:
+      create: Curso criado com sucesso.
+      destroy: Curso excluído com sucesso.
+
+    category:
+      create: Categoria criada com sucesso.
+      destroy: Categoria excluída com sucesso.
+      updated: Categoria atualizada com sucesso.
+
+    feed:
+      create: Notícia criada com sucesso.
+      destroy: Notícia excluída com sucesso.
+      updated: Notícia atualizada com sucesso.

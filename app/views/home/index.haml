@@ -1,0 +1,40 @@
+/ Carousel
+#carousel.carousel.slide
+  %ol.carousel-indicators
+    - @carousels.each_with_index do |carousel, index|
+      %li{:class => (index == 0 ? 'active' : ''), "data-target" => "#carousel", "data-slide-to" => "#{index}"}
+
+  / Carousel slides
+  .carousel-inner
+    - @carousels.each_with_index do |carousel, index|
+      .item{:class => (index == 0 ? 'active' : '')}
+        =image_tag carousel.image_url
+
+        - unless carousel.title.empty?
+          = link_to carousel.course do
+            .carousel-caption
+              = carousel.title + carousel.description
+
+= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary' if signed_in?
+/ End Carousel
+
+/ Feeds
+%ul.feeds.list-unstyled
+  - @feeds.each do |feed|
+    %li
+      %h5
+        %b= feed.title
+        |
+        =l feed.updated_at.to_date, format: :default
+      = image_tag feed.image.url(:thumb) unless feed.image.blank?
+      %p= markdown(feed.body)
+/ End Feeds
+
+
+= render partial: 'courses/index', locals: { :courses => @courses}
+
+=link_to t('views.all_news'), feeds_path
+
+= stylesheet_link_tag "home"
+= javascript_include_tag "home"
+

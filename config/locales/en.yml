@@ -1,0 +1,56 @@
+en:
+  meta:
+    description: |
+        LAM é um escritório de projeto com base em Porto Alegre, sul do Brasil.
+        Desenvolvemos projetos em diferentes escalas e usos, com uma linha de abordagem transversal que abrange as áreas de arquitetura, engenharia e software.
+
+    keywords: Architecture, ...
+
+  nav:
+    projects: PROJECTS
+    about: ABOUT
+    contact: CONTACT
+    all_projects: ALL
+
+  phone: +55 (51) 8138-8758
+  email: CONTATO@LAM-STUDIO.COM.BR
+  address: |
+    SANTO ANTÔNIO ST, 366.
+    INDEPENDÊNCIA
+    PORTO ALEGRE - BRASIL
+    CEP 90220-010
+
+
+  copyright: ' - ALL RIGHTS RESERVED'
+
+
+  # System messages
+  views:
+    all_news: ALL NEWS
+    share: SHARE
+    close: CLOSE
+    like_us: LIKE US ON OUR FAN PAGE
+
+
+    updated_ok: Informações atualizadas com sucesso.
+    are_you_sure: Você tem certeza?
+
+    image:
+      create: Imagem(ns) criada(s) com sucesso.
+      destroy: Imagem excluída com sucesso.
+
+    project:
+      create: Projeto criado com sucesso.
+      destroy: Projeto excluído com sucesso.
+
+    category:
+      create: Categoria criada com sucesso.
+      destroy: Categoria excluída com sucesso.
+      updated: Categoria atualizada com sucesso.
+
+    feed:
+      create: Notícia criada com sucesso.
+      destroy: Notícia excluída com sucesso.
+      updated: Notícia atualizada com sucesso.
+
+

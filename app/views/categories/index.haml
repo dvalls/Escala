@@ -1,0 +1,19 @@
+%table.table
+  %tr
+    %th NOME
+    %th ABREVIATURA
+    %th
+
+
+  - @categories.each do |category|
+    %tr
+      %td= category.name
+      %td= category.shortname
+      %td
+        = link_to 'EDITAR', edit_category_path(category)
+        |
+        = link_to 'APAGAR', category, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
+
+%br
+
+= link_to 'NOVA CATEGORIA', new_category_path, :class => 'btn btn-primary'

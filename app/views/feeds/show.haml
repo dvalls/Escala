@@ -1,0 +1,13 @@
+%p
+  %b Title:
+  = @feed.title
+%p
+  %b Body:
+  = markdown(@feed.body)
+%p
+  %b Image:
+  = image_tag  @feed.image
+
+= link_to 'EDITAR', edit_feed_path(@feed), :class => 'btn btn-primary'  if signed_in?
+%br
+= link_to 'VOLTAR', feeds_path

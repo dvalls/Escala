@@ -2,8 +2,8 @@
 
   .row
     #description.col-lg-6.col-sm-12
-      %p= image_tag 'valls.gif'
-      //%p=t 'meta.description'
+      %p= image_tag ENV['LOGO_URL_NAME']
+
 
   = t('copyright') + Time.now.year.to_s
 

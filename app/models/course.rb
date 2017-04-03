@@ -1,12 +1,12 @@
 class Course < ActiveRecord::Base
 
-  validates :title, :description, :year, :slug, presence: true
+  validates :title, :description, :year, :slug, :body,  presence: true
 
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  # i18n
-  translates :title, :description, :body
+  # # i18n
+  # translates :title, :description, :body
 
   # Cover image
   mount_uploader :cover_image, CoverImageUploader

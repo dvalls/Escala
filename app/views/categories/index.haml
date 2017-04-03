@@ -2,6 +2,8 @@
   %tr
     %th NOME
     %th ABREVIATURA
+    %th Sub
+    %th Parent
     %th
 
 
@@ -9,6 +11,11 @@
     %tr
       %td= category.name
       %td= category.shortname
+      %td
+        - category.subcategories.each do |sub|
+          = sub.name
+
+      %td= category.parent_category
       %td
         = link_to 'EDITAR', edit_category_path(category)
         |

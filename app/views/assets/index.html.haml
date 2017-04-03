@@ -1,0 +1,44 @@
+%h3 Assets#index
+
+.row
+  .col-lg-3
+    - @categories.each do |category|
+      %p
+        = category.name
+        - category.subcategories.each do |subcategory|
+          %li
+            = link_to subcategory.name, assets_path(:subcategory => subcategory)
+      %br/
+  .col-lg-9
+    = render partial: 'index' , locals: {:subcategory => params[:subcategory]}
+
+
+= link_to 'Novo material', new_asset_path, class: 'btn btn-primary'
+
+
+
+-#- @categories.each do |category|
+-#  .dropdown
+-#    %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+-#      = category.name
+-#      %span.caret
+-#    %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+-#      - category.subcategories.each do |subcategory|
+-#        %li
+-#          = link_to subcategory.name, '#'
+-#      %li
+-#        %a{:href => "#"} Action
+-#      %li
+-#        %a{:href => "#"} Another action
+-#      %li
+-#        %a{:href => "#"} Something else here
+-#      %li.divider{:role => "separator"}
+-#      %li
+-#        %a{:href => "#"} Separated link
+-#  %li.dropdown
+-#    %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+-#      = category.name
+-#    %ul.dropdown-menu
+-#      - category.subcategories.each do |subcategory|
+-#        %li
+-#          = link_to subcategory.name, '#'

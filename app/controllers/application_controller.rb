@@ -12,19 +12,18 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
-
   protected
 
-  def authorize
-    authenticate_or_request_with_http_basic do |username, password|
-      username == ENV['USER_ID'] && password == ENV['PASSWORD']
-    end
-
-  end
-
-  def signed_in?
-    not request.authorization.nil?
-  end
+  # def authorize
+  #   authenticate_or_request_with_http_basic do |username, password|
+  #     username == ENV['USER_ID'] && password == ENV['PASSWORD']
+  #   end
+  #
+  # end
+  #
+  # def signed_in?
+  #   not request.authorization.nil?
+  # end
 
   helper_method :student_logged?
   def student_logged?
@@ -39,6 +38,4 @@ class ApplicationController < ActionController::Base
   def has_course?
     get_student.courses.find_by_title(@course.title)
   end
-
-
 end

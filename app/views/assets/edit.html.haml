@@ -1,0 +1,8 @@
+%h1 Asset#edit
+%p Find me in app/views/Asset/edit.html.haml
+
+
+= render partial: 'form', locals: {:asset => @asset, :subcategories => @subcategories}
+
+
+= link_to 'Cursos', courses_path

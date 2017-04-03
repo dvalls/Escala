@@ -1,4 +1,4 @@
 class MyCourse < ActiveRecord::Base
 
-  has_many :material_files
+  has_many :assets
 end

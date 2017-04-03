@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331201136) do
+ActiveRecord::Schema.define(version: 20170403200814) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
     t.string   "locale",     null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "body"
   end
 
@@ -29,11 +29,24 @@ ActiveRecord::Schema.define(version: 20170331201136) do
     t.datetime "updated_at"
   end
 
+  create_table "assets", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "format"
+    t.string   "description"
+    t.string   "thumbnail"
+    t.string   "url"
+  end
+
+  add_index "assets", ["category_id"], name: "index_assets_on_category_id"
+
   create_table "carousel_translations", force: :cascade do |t|
     t.integer  "carousel_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "title"
     t.string   "description"
   end
@@ -59,33 +72,17 @@ ActiveRecord::Schema.define(version: 20170331201136) do
     t.integer  "parent_id"
   end
 
-  create_table "categories_material_files", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "course_id"
-  end
-
   create_table "category_translations", force: :cascade do |t|
     t.integer  "category_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
     t.string   "shortname"
   end
 
   add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id"
   add_index "category_translations", ["locale"], name: "index_category_translations_on_locale"
-
-  create_table "contact_translations", force: :cascade do |t|
-    t.integer  "contact_id", null: false
-    t.string   "locale",     null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "body"
-  end
-
-  add_index "contact_translations", ["contact_id"], name: "index_contact_translations_on_contact_id"
-  add_index "contact_translations", ["locale"], name: "index_contact_translations_on_locale"
 
   create_table "contacts", force: :cascade do |t|
     t.text     "body"
@@ -96,8 +93,8 @@ ActiveRecord::Schema.define(version: 20170331201136) do
   create_table "course_translations", force: :cascade do |t|
     t.integer  "course_id",   null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
     t.text     "body"
@@ -127,18 +124,6 @@ ActiveRecord::Schema.define(version: 20170331201136) do
 
   add_index "courses_students", ["course_id"], name: "index_courses_students_on_course_id"
   add_index "courses_students", ["student_id"], name: "index_courses_students_on_student_id"
-
-  create_table "feed_translations", force: :cascade do |t|
-    t.integer  "feed_id",    null: false
-    t.string   "locale",     null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "title"
-    t.text     "body"
-  end
-
-  add_index "feed_translations", ["feed_id"], name: "index_feed_translations_on_feed_id"
-  add_index "feed_translations", ["locale"], name: "index_feed_translations_on_locale"
 
   create_table "feeds", force: :cascade do |t|
     t.text     "title"
@@ -170,17 +155,6 @@ ActiveRecord::Schema.define(version: 20170331201136) do
     t.string  "width"
     t.string  "height"
   end
-
-  create_table "material_files", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.integer  "my_course_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "material_files", ["category_id"], name: "index_material_files_on_category_id"
-  add_index "material_files", ["my_course_id"], name: "index_material_files_on_my_course_id"
 
   create_table "my_courses", force: :cascade do |t|
     t.datetime "created_at", null: false

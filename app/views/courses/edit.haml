@@ -6,7 +6,7 @@
   = f.input :description, input_html: {:rows => '10'}
   = image_tag @course.cover_image.url
   = f.input :cover_image, as: :file
-  = f.association :categories, as: :check_boxes
+  -#= f.association :categories, as: :check_boxes
   -#= f.input :year, as: :date, discard_day: true
 
   %hr

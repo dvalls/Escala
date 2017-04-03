@@ -33,7 +33,13 @@
 
 = render partial: 'courses/index', locals: { :courses => @courses}
 
-=link_to t('views.all_news'), feeds_path
+-#=link_to t('views.all_news'), feeds_path
+
+%br/
+
+= link_to 'ASSETS', assets_path, CLASS: 'btn btn-primary'
+= link_to 'CATEGORIAS', categories_path, class: 'btn btn-primary'
+
 
 = stylesheet_link_tag "home"
 = javascript_include_tag "home"

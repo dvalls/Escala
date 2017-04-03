@@ -5,5 +5,9 @@
     = f.input :name
     = f.input :shortname
 
+    = f.label 'parent'
+    -#- categories = Category.all.map{|x| [x.name] + [x.id]}
+    = f.select(:parent_id, options_for_select(@categories), { :include_blank => 'None'}, class: 'form-control')
+
   .form-actions
     = f.button :submit, 'SAVLAR', :class => 'btn btn-primary'

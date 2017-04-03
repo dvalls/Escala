@@ -72,13 +72,14 @@
 = javascript_include_tag "jquery.lazyload.min", "course"
 
 -# Para Students logados, apenas
-- if has_course?
-  = render partial: 'courses/course_material', locals: {:course => @course} if student_logged?
+- if student_logged?
+  - if has_course?
+    = render partial: 'courses/course_material', locals: {:course => @course} if student_logged?
 
-- if signed_in?
+-#- if signed_in?
   %p.clearfix
-    = link_to 'EDITAR', edit_course_path(@course), :class => 'btn btn-primary'
-    = link_to 'APAGAR', @course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary'
+= link_to 'EDITAR', edit_course_path(@course), :class => 'btn btn-primary'
+= link_to 'APAGAR', @course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary'
 
 
 

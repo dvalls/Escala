@@ -1,7 +1,7 @@
 %ul#Grid.row
   - @student.courses.each do |course|
     %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
-      = link_to my_course_path(:id => course.id) do
+      = link_to my_courses_path() do
         .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
         .course-name
           = '- ' + course.title

@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
 
-  has_secure_password
+  # has_secure_password
 
   validates :username, :password, :name, :last_name, :email, presence: true
 

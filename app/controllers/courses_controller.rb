@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
 
 
   def show
-    render layout: 'project'
+    # render layout: 'project'
   end
 
 
@@ -71,7 +71,7 @@ class CoursesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def course_params
-      params.require(:course).permit(:title, :description, :body, :year, :slug, :cover_image, :publish, :category_ids => [])
+      params.require(:course).permit(:title, :description, :body, :year, :slug, :cover_image, :publish)
     end
 
 

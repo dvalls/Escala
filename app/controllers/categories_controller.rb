@@ -17,9 +17,10 @@ class CategoriesController < ApplicationController
   end
 
 
-  def newnew
+  def new
     @category = Category.new
-    @category.parent = Category.find(params[:id]) unless params[:id].nil?
+    @categories = Category.all.map{|x| [x.name] + [x.id]}
+    # @category.parent = Category.find(params[:id]) unless params[:id].nil?
   end
 
    def edit
@@ -56,6 +57,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def category_params
-      params.require(:category).permit(:name, :shortname)
+      params.require(:category).permit(:name, :shortname, :parent_id)
     end
 end

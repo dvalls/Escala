@@ -1,16 +1,10 @@
 Valls::Application.routes.draw do
 
-  get 'material_files/index'
-
-  get 'material_files/new'
-
-  get 'material_files/edit'
+  root 'home#index'
 
   get 'my_courses/index'
 
   get 'access/login'
-
-  root 'home#index'
 
   get 'admin' => 'admin/home#index'
 
@@ -19,7 +13,6 @@ Valls::Application.routes.draw do
   get 'access/logout'
 
   get 'my_course' => 'students#my_course'
-  # get 'material' => 'courses#material'
 
   resources :courses
   resources :feeds
@@ -29,7 +22,7 @@ Valls::Application.routes.draw do
   resources :students
 
   resources :categories
-  resources :material_files
+  resources :assets
   resources :my_courses
 
   resource :about
@@ -42,7 +35,6 @@ Valls::Application.routes.draw do
   resource :about, :contact do
     resources :images
   end
-
 
   namespace :admin do
     resources :tags

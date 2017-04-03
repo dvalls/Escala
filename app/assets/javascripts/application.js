@@ -18,4 +18,5 @@
 // require_tree .
 
 
+$(".dropdown-button").dropdown({hover: true});
 

@@ -1,6 +1,6 @@
 class About < ActiveRecord::Base
 
-  translates :body
+  # translates :body
 
   has_many :images, :as => :imageable, :dependent => :destroy
 

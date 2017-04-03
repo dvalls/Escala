@@ -27,11 +27,10 @@
         #menu.collapse.navbar-collapse
           %nav
             %ul.nav.navbar-nav
-              %li=link_to 'home', root_path
               -#%li=link_to(t('nav.about'), about_path)
               %li=link_to(t('nav.courses'), courses_path)
               -#%li=link_to(t('nav.feeds'), feeds_path)
-              -#%li=link_to(t('nav.contact'), contact_path)
+              %li=link_to(t('nav.contact'), contact_path)
               %li
               %li
               %li

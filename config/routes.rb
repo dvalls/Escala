@@ -1,4 +1,4 @@
-Valls::Application.routes.draw do
+Rails.application.routes.draw do
 
   root 'home#index'
 
@@ -82,7 +82,7 @@ Valls::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
@@ -97,3 +97,4 @@ Valls::Application.routes.draw do
   #     resources :products
   #   end
 end
+

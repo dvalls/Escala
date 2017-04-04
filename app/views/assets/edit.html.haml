@@ -2,7 +2,30 @@
 %p Find me in app/views/Asset/edit.html.haml
 
 
-= render partial: 'form', locals: {:asset => @asset, :subcategories => @subcategories}
+-#= render partial: 'form', locals: {:asset => @asset, :subcategories => @subcategories}
+
+= simple_form_for(@asset,:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    - puts '============================ FORM ===================================='
+
+    = f.input :name
+    = f.input :description
+    = f.input :category_id, label: 'Categoria', :collection => @subcategories, value_method: :id,
+              label_method: :name, as: :radio_buttons
+
+
+    -#%hr
+    -#  %ul.list-unstyled
+    -#    = render :partial => 'images/image', :collection => @images, :as => :image
+
+    = link_to 'ADICIONAR Arquivo', new_asset_image_path(asset), :class => 'btn btn-default'
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+
+
 
 
 = link_to 'Cursos', courses_path

@@ -1,7 +1,23 @@
 %h1 Assets#new
 %p Find me in app/views/Assets/new.html.haml
 
-= render partial: 'form_new', locals: {:asset => @asset, :subcategories => @subcategories}
+-#= render partial: 'form_new', locals: {:asset => @asset, :subcategories => @subcategories}
+
+= simple_form_for(@asset,:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    - puts '============================ FORM ===================================='
+
+    = f.input :name
+    = f.input :description
+    = f.input :category_id, label: 'Categoria', :collection => @subcategories, value_method: :id,
+              label_method: :name, as: :radio_buttons
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+
+
 
 
 = link_to 'Cursos', courses_path

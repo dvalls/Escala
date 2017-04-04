@@ -21,6 +21,8 @@ class ImagesController < ApplicationController
     # Loop throw images
     puts '============================ CREATE ===================================='
     params[:image][:url].each do |url|
+      puts "===================   #{url}   ============================  "
+
       @image = @imageable.images.new(image_params)
       @image.url = url
       @image.title = url.original_filename[0..-5]
@@ -60,6 +62,7 @@ class ImagesController < ApplicationController
     params.each do |name, value|
 
       # With ID
+      puts "===================   #{name}  and #{name} ============================  "
       if name =~ /(.+)_id$/
         if $1 == 'course'
           @imageable =  $1.classify.constantize.friendly.find(value) # Exclusive loading 'cause FriendlyId...

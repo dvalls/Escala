@@ -32,7 +32,7 @@ class AssetsController < ApplicationController
 
       @asset = Asset.new(assets_params)
       @asset.url = url
-      @asset.format = url.extension
+      # @asset.format = url.extension
       @asset.name = url.original_filename[0..-5]
 
       @asset.save

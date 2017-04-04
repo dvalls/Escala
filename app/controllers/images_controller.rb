@@ -25,11 +25,10 @@ class ImagesController < ApplicationController
       @image.url = url
       @image.title = url.original_filename[0..-5]
 
-      if not @image.save
-        puts "=================   #{@image.errors.full_messages} ================================================="
-      end
+      @image.save
+      puts "=================   #{@image.errors.full_messages} ================================================="
     end
-    redirect_to polymorphic_path([@image.imageable]), notice: t('views.image.create')
+    redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
   end
 
   def destroy

@@ -61,9 +61,9 @@ en:
       create: Imagem(ns) criada(s) com sucesso.
       destroy: Imagem excluída com sucesso.
 
-    project:
-      create: Projeto criado com sucesso.
-      destroy: Projeto excluído com sucesso.
+    course:
+      create: Curso criado com sucesso.
+      destroy: Curso excluído com sucesso.
 
     category:
       create: Categoria criada com sucesso.

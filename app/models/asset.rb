@@ -1,6 +1,6 @@
 class Asset < ActiveRecord::Base
 
-  validates :name, :description, :format, :url, :thumbnail, :category_id , presence: true
+  validates :name, :description, :format, :url, :category_id , presence: true
 
   mount_uploader :url , AssetUploader
 

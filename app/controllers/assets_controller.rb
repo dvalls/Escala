@@ -23,7 +23,7 @@ class AssetsController < ApplicationController
     # @asset = Asset.new(assets_params)
     # Loop throw images
     puts '============================ CREATE ===================================='
-    params[:image][:url].each do |url|
+    params[:file][:url].each do |url|
       puts "============= PARAMS CREATE ======   #{url}   ============================  "
 
       @asset = Asset.new(assets_params)

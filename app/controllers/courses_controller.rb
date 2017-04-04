@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      redirect_to course_images_path(@course), notice: t('views.course.create')
+      redirect_to courses_path,  notice: t('views.course.create')
     else
       render action: 'new'
     end

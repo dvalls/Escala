@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
 
-  validates :title, :description, :year, :slug, :body,  presence: true
+  validates :title, :description, :year, presence: true
 
   extend FriendlyId
   friendly_id :title, use: :slugged

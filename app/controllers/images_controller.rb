@@ -22,7 +22,9 @@ class ImagesController < ApplicationController
       @image.url = url
       @image.title = url.original_filename[0..-5]
 
-      @image.save
+      if not @image.save
+        puts "=================   #{@image.errors.full_messages} ================================================="
+      end
     end
     redirect_to polymorphic_path([@image.imageable]), notice: t('views.image.create')
   end

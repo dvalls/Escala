@@ -24,7 +24,7 @@ class ImagesController < ApplicationController
 
       @image.save
     end
-    redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
+    redirect_to polymorphic_path([@image.imageable]), notice: t('views.image.create')
   end
 
   def destroy

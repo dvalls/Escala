@@ -21,14 +21,14 @@ class ImagesController < ApplicationController
     # Loop throw images
     puts '============================ CREATE ===================================='
     params[:image][:url].each do |url|
-      puts "===================   #{url}   ============================  "
+      puts "============= PARAMS CREATE ======   #{url}   ============================  "
 
       @image = @imageable.images.new(image_params)
       @image.url = url
       @image.title = url.original_filename[0..-5]
 
       @image.save
-      puts "=================   #{@image.errors.full_messages} ================================================="
+      puts "=========== ERRORS ======   #{@image.errors.full_messages} ================================================="
     end
     redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
   end
@@ -62,7 +62,7 @@ class ImagesController < ApplicationController
     params.each do |name, value|
 
       # With ID
-      puts "===================   #{name}  and #{name} ============================  "
+      puts "============= SET IMEGEABLE ======   #{name}  and #{name} ============================  "
       if name =~ /(.+)_id$/
         if $1 == 'course'
           @imageable =  $1.classify.constantize.friendly.find(value) # Exclusive loading 'cause FriendlyId...

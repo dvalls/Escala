@@ -20,12 +20,28 @@ class AssetsController < ApplicationController
   end
 
   def create
-    @asset = Asset.new(assets_params)
-    if @asset.save
-      redirect_to assets_path notice: 'Material criado com sucesso'
-    else
-      render action: 'new'
+    # @asset = Asset.new(assets_params)
+    # Loop throw images
+    puts '============================ CREATE ===================================='
+    params[:image][:url].each do |url|
+      puts "============= PARAMS CREATE ======   #{url}   ============================  "
+
+      @asset = Asset.new(assets_params)
+      @asset.url = url
+      @asset.name = url.original_filename[0..-5]
+
+      @asset.save
+      puts "=========== ERRORS ======   #{@asset.errors.full_messages} ================================================="
     end
+
+    redirect_to assets_path([@asset.imageable]), notice: 'Material criado com sucesso'
+
+    # @asset = Asset.new(assets_params)
+    # if @asset.save
+    #   redirect_to assets_path notice: 'Material criado com sucesso'
+    # else
+    #   render action: 'new'
+    # end
   end
 
   def edit

@@ -1,13 +1,13 @@
-= simple_form_for(asset) do |f|
+= simple_form_for(asset,:html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :name
     = f.input :description
     = f.input :format
-    = f.input :url
-    = f.input :thumbnail
-    = f.input :category_id, label: 'Categoria', :collection => subcategories, value_method: :id, label_method: :name, as: :radio_buttons
+    = f.input :category_id, label: 'Categoria', :collection => subcategories, value_method: :id,
+              label_method: :name, as: :radio_buttons
+    = f.input :url, as: :file, :input_html => { :multiple => true }
 
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'

@@ -32,6 +32,10 @@ Rails.application.routes.draw do
     resources :images
   end
 
+  resources :assets do
+    resources :images
+  end
+
   resource :about, :contact do
     resources :images
   end

@@ -2,6 +2,8 @@ class AssetsController < ApplicationController
   before_action :set_asset, only: [:edit, :update, :show, :destroy]
   before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
 
+  before_action :remove_file, only: [:destroy]
+
   def index
     puts '============================ INDEX ===================================='
 
@@ -24,39 +26,23 @@ class AssetsController < ApplicationController
   end
 
   def create
-    # @asset = Asset.new(assets_params)
-    # Loop throw images
-    puts '============================ CREATE ===================================='
-    params[:file][:url].each do |url|
-      puts "============= PARAMS CREATE ======   #{url}   ============================  "
-
-      @asset = Asset.new(assets_params)
-      @asset.url = url
-      # @asset.format = url.extension
-      @asset.name = url.original_filename[0..-5]
-
-      @asset.save
-      puts "=========== ERRORS ======   #{@asset.errors.full_messages} ================================================="
+    @asset = Asset.new(assets_params)
+    if @asset.save
+      redirect_to assets_path notice: 'Material criado com sucesso'
+    else
+      render action: 'new'
     end
-
-    redirect_to assets_path, notice: 'Material criado com sucesso'
-
-    # @asset = Asset.new(assets_params)
-    # if @asset.save
-    #   redirect_to assets_path notice: 'Material criado com sucesso'
-    # else
-    #   render action: 'new'
-    # end
   end
 
   def edit
+    @images = @asset.images
   end
 
   def update
     if @asset.update(assets_params)
-      redirect_to assets_path, notice: 'Material criado com sucesso.'
+      redirect_to assets_url, notice: 'Material criado com sucesso.'
     else
-      render action: 'new'
+      render action: 'edit'
     end
   end
 
@@ -64,6 +50,7 @@ class AssetsController < ApplicationController
     puts '============================ DESTROY! ===================================='
 
     @asset.destroy
+
     redirect_to assets_url, notice: 'Material excluído com sucesso.'
   end
 
@@ -79,6 +66,10 @@ class AssetsController < ApplicationController
 
   def set_asset
     @asset = Asset.find(params[:id])
+  end
+
+  def remove_file
+    @asset.update_attributes(:remove_file => true)
   end
 
 end

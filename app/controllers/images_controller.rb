@@ -16,20 +16,15 @@ class ImagesController < ApplicationController
   end
 
   def create
-
     # Loop throw images
     params[:image][:url].each do |url|
-
       @image = @imageable.images.new(image_params)
       @image.url = url
       @image.title = url.original_filename[0..-5]
 
       @image.save
-
     end
-
     redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
-
   end
 
   def destroy
@@ -62,7 +57,7 @@ class ImagesController < ApplicationController
 
       # With ID
       if name =~ /(.+)_id$/
-        if $1 == '@course'
+        if $1 == 'course'
           @imageable =  $1.classify.constantize.friendly.find(value) # Exclusive loading 'cause FriendlyId...
         else
           @imageable =  $1.classify.constantize.find(value)
@@ -76,5 +71,4 @@ class ImagesController < ApplicationController
     end
     nil
   end
-
 end

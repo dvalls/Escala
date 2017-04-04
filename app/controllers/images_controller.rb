@@ -9,6 +9,8 @@ class ImagesController < ApplicationController
   end
 
   def new
+    puts '============================ NEW ===================================='
+
     @image = Image.new
   end
 
@@ -17,6 +19,7 @@ class ImagesController < ApplicationController
 
   def create
     # Loop throw images
+    puts '============================ CREATE ===================================='
     params[:image][:url].each do |url|
       @image = @imageable.images.new(image_params)
       @image.url = url

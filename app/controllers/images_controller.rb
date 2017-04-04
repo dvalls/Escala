@@ -34,7 +34,7 @@ class ImagesController < ApplicationController
 
   def update
     if @image.update(image_params)
-      redirect_to edit_polymorphic_path([@image.imageable]), :action => :edit, notice: t('views.updated_ok')
+      redirect_to polymorphic_path([@image.imageable]), :action => :edit, notice: t('views.updated_ok')
     else
       render action: 'edit'
     end

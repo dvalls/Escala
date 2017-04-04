@@ -65,8 +65,9 @@ class CoursesController < ApplicationController
     def set_course
       @course = Course.friendly.find(params[:id])
 
-      @course_previous = Course.where("year <= ? and publish = ? and id != ?", @course.year, true, @course.id).order(year: :desc).first
-      @course_next = Course.where("year > ? and publish = ? and id != ?", @course.year, true, @course.id).order(:year).first
+      #where("year <= ? and publish = ? and id != ?", @course.year, true, @course.id)
+      @course_previous = Course.where("year <= ? and id != ?", @course.year,  @course.id).order(year: :desc).first
+      @course_next = Course.where("year > ? and id != ?", @course.year,  @course.id).order(:year).first
     end
 
     # Only allow a trusted parameter "white list" through.

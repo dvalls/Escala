@@ -3,6 +3,9 @@ class AssetsController < ApplicationController
   before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
 
   def index
+    puts '============================ INDEX ===================================='
+
+
     @assets = Asset.all
     @categories = Category.all.includes(:subcategories).where('parent_id' => nil)
     case params[:subcategory]
@@ -16,6 +19,7 @@ class AssetsController < ApplicationController
   end
 
   def new
+    puts '============================ NEW ===================================='
     @asset = Asset.new()
   end
 
@@ -28,13 +32,14 @@ class AssetsController < ApplicationController
 
       @asset = Asset.new(assets_params)
       @asset.url = url
+      @asset.format = url.extension
       @asset.name = url.original_filename[0..-5]
 
       @asset.save
       puts "=========== ERRORS ======   #{@asset.errors.full_messages} ================================================="
     end
 
-    redirect_to assets_path([@asset.imageable]), notice: 'Material criado com sucesso'
+    redirect_to assets_path, notice: 'Material criado com sucesso'
 
     # @asset = Asset.new(assets_params)
     # if @asset.save
@@ -49,15 +54,17 @@ class AssetsController < ApplicationController
 
   def update
     if @asset.update(assets_params)
-      redirect_to assets_path notice: 'Material criado com sucesso.'
+      redirect_to assets_path, notice: 'Material criado com sucesso.'
     else
       render action: 'new'
     end
   end
 
   def destroy
+    puts '============================ DESTROY! ===================================='
+
     @asset.destroy
-    redirect_to assets_path, notice: 'Material excluído com sucesso.'
+    redirect_to assets_url, notice: 'Material excluído com sucesso.'
   end
 
   private

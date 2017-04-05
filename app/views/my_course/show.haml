@@ -1,0 +1,32 @@
+- content_for :head do
+  / Facebook meta-tags
+  %meta{content: "#{@course.cover_image}", property: "og:image"}
+  %meta{content: "#{@course.title}", property: "og:title"}
+  %meta{content: "#{ENV['OFFICE_NAME']}", property: "og:site_name"}
+
+= render partial: 'layouts/my_course_navbar'
+
+%header
+
+  %h1
+    = @course.slug
+    %span#course-title= @course.title
+
+
+  .close-course= link_to 'X', my_course_index_path
+
+.row
+  .col-lg-3
+    %ul
+      %li
+        = link_to 'Arquivos', my_course_archives_path
+      %li
+        = link_to 'Videos', '#'
+
+  .col-lg-9.materials
+
+    = yield :materials
+
+
+= stylesheet_link_tag "course"
+= javascript_include_tag "jquery.lazyload.min", "course"

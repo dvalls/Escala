@@ -1,5 +1,6 @@
 
 CarrierWave.configure do |config|
+  # config.cache_dir  = File.join(Rails.root, 'tmp', 'uploads', Rails.env)
   config.storage    = :aws
   config.aws_bucket = ENV['AMAZON_BUCKET_NAME']
   config.aws_acl    = :public_read

@@ -10,11 +10,8 @@
           = '- ' + course.title
           = ' (NÃO PUBLICADO)' if not course.publish?
 
-
-= link_to 'CATEGORIAS', categories_path, class: 'btn btn-primary'
-
 -#= /javascript_include_tag "jquery.mixitup.min", "mixitup"
 = stylesheet_link_tag "courses"
 
 
-= link_to('NOVO CURSO', new_course_path, :class => 'btn btn-primary')# if signed_in?
+= link_to('NOVO CURSO', new_course_path, :class => 'btn btn-primary') if signed_in?

@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'video/index'
+
+  get 'video/show'
+
+  get 'video/new'
+
+  get 'video/create'
+
+  get 'video/destroy'
+
   root 'home#index'
 
-  get 'my_courses/index'
 
   get 'access/login'
 
@@ -11,8 +20,6 @@ Rails.application.routes.draw do
   get 'login' => 'access/login'
   post 'access/attempt_login'
   get 'access/logout'
-
-  get 'my_course' => 'students#my_course'
 
   resources :courses
   resources :feeds
@@ -23,7 +30,6 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :archives
-  resources :my_courses
 
   resource :about
   resource :contact
@@ -33,17 +39,29 @@ Rails.application.routes.draw do
   end
 
   resources :archives do
-    resources :images
+    resources :archives_images
   end
 
   resource :about, :contact do
     resources :images
   end
 
+  get 'my_course_index', to: 'my_course#index'
+  get '/my_course_show/:id', to: 'my_course#show', as: 'my_course_show'
+
+  # get 'my_course', to: 'my_course#index'
+
+  namespace :my_course do
+    resources :students, :archives, :archives_images
+    resources :video
+
+    get '/content/:id', to: 'students#content', as: 'content'
+
+  end
+
   namespace :admin do
     resources :tags
   end
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

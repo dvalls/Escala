@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405132658) do
+ActiveRecord::Schema.define(version: 20170405202833) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -32,11 +32,18 @@ ActiveRecord::Schema.define(version: 20170405132658) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "format"
     t.string   "description"
-    t.string   "thumbnail"
-    t.string   "url"
     t.index ["category_id"], name: "index_archives_on_category_id"
+  end
+
+  create_table "archives_images", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "url"
+    t.integer  "archive_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["archive_id"], name: "index_archives_images_on_archive_id"
   end
 
   create_table "carousel_translations", force: :cascade do |t|
@@ -162,6 +169,14 @@ ActiveRecord::Schema.define(version: 20170405132658) do
     t.string "email"
     t.string "address"
     t.string "address_number"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

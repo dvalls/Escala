@@ -7,7 +7,6 @@ class Image < ActiveRecord::Base
 
   mount_uploader :url, ImageUploader
 
-  scope :newest, lambda { order('created_at DESC')}
 
   # Store Height & Width on DB
   def update_image_attributes

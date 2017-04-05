@@ -1,8 +1,9 @@
-class ArchivesController < ApplicationController
+class MyCourse::ArchivesController < MyCourse::MyCourseAreaController #ApplicationController
   before_action :set_archive, only: [:edit, :update, :show, :destroy]
   before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
 
   # before_action :remove_file, only: [:destroy]
+
 
   def index
     puts '============================ INDEX ===================================='
@@ -28,7 +29,7 @@ class ArchivesController < ApplicationController
   def create
     @archive = Archive.new(assets_params)
     if @archive.save
-      redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso'
+      redirect_to my_course_archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso'
     else
       render action: 'new'
     end
@@ -40,12 +41,8 @@ class ArchivesController < ApplicationController
 
   def update
     puts '============================ UPDATE! ===================================='
-    archive_uploaded = @archive.images.first
-    puts "============================ ARCHIVE UPLOADED! TITLE  #{archive_uploaded}===================================="
-    @archive.url = archive_uploaded.url
-    puts "============================ ARCHIVE UPLOADED! URL  #{archive_uploaded.url}===================================="
     if @archive.update(assets_params)
-      redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso.'
+      redirect_to my_course_archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso.'
     else
       render action: 'edit'
     end
@@ -54,15 +51,16 @@ class ArchivesController < ApplicationController
   def destroy
     puts '============================ DESTROY! ===================================='
 
+    # @archive.update_attributes(:remove_file => true)
     @archive.destroy
 
-    redirect_to archives_url, notice: 'Material excluído com sucesso.'
+    redirect_to my_course_archives_url, notice: 'Material excluído com sucesso.'
   end
 
   private
 
   def assets_params
-    params.require(:archive).permit(:name, :category_id, :format, :description, :url, :thumbnail)
+    params.require(:archive).permit(:name, :category_id,  :description)
   end
 
   def set_subcategories

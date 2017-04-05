@@ -5,7 +5,7 @@ class Archive < ActiveRecord::Base
   mount_uploader :url , ArchiveUploader
 
   belongs_to :category
-  has_many :images, :as => :imageable, :dependent => :destroy
+  has_many :archives_images, :dependent => :destroy
 
   def get_category_name
     category = Category.find(category_id)

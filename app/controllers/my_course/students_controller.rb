@@ -1,18 +1,22 @@
-class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :get_my_courses, only: [:my_course]
+class MyCourse::StudentsController < MyCourse::MyCourseAreaController #ApplicationController
+  before_action :student_logged?
 
-  layout 'student'
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  # before_action :get_my_courses, only: [:my_course]
+
+
   def index
     @student = get_student
   end
 
 
   def show
+    @course = Course.friendly.find(params[:id])
+
   end
 
-  def my_course
-    @course = Course.find(params[:id])
+  def content
+    @course = Course.friendly.find(params[:id])
   end
 
 

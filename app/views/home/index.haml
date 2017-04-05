@@ -15,7 +15,8 @@
             .carousel-caption
               = carousel.title + carousel.description
 
-= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary' # if signed_in?
+= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary' if signed_in?
+= link_to 'CRIAR ALUNO', new_my_course_student_path, :class => 'btn btn-primary' if signed_in?
 / End Carousel
 
 / Feeds
@@ -31,14 +32,10 @@
 / End Feeds
 
 
-= render partial: 'courses/index', locals: { :courses => @courses}
 
 -#=link_to t('views.all_news'), feeds_path
 
 %br/
-
-= link_to 'ASSETS', archives_path, class: 'btn btn-primary'
-= link_to 'CATEGORIAS', categories_path, class: 'btn btn-primary'
 
 
 = stylesheet_link_tag "home"

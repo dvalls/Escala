@@ -1,3 +1,5 @@
 class MyCourse::MyCourseAreaController < ApplicationController
-  # layout 'admin'
+
+  # layout 'views/layouts/application'
+
 end

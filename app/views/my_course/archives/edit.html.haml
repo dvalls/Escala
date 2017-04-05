@@ -1,8 +1,4 @@
 %h1 Archive#edit
-%p Find me in app/views/Archive/edit.html.haml
-
-
--#= render partial: 'form', locals: {:@archive => @@archive, :subcategories => @subcategories}
 
 = simple_form_for(@archive,:html => {:multipart => true}) do |f|
   = f.error_notification
@@ -15,12 +11,15 @@
     = f.input :category_id, label: 'Categoria', :collection => @subcategories, value_method: :id,
               label_method: :name, as: :radio_buttons
 
+    = f.input :url, as: :file
+
+
 
     -#%hr
     -#  %ul.list-unstyled
     -#    = render :partial => 'images/image', :collection => @images, :as => :image
 
-    = link_to 'ADICIONAR Arquivo', new_archive_image_path(@archive), :class => 'btn btn-default'
+    = link_to 'ADICIONAR Arquivo', new_archive_archives_image_path(@archive), :class => 'btn btn-default'
     %br/
 
 

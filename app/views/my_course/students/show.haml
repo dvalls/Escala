@@ -1,0 +1,36 @@
+
+= render partial: 'layouts/my_course_navbar'
+
+
+%p
+  %strong= 'Nome de Usuário'
+  = @student.username
+
+%p
+  %strong= 'Nome'
+  = @student.name
+%p
+  %strong= 'Last Name'
+  = @student.last_name
+
+%p
+  %strong= 'Gender'
+  = @student.gender
+
+%p
+  %strong= 'Aniversário'
+  = (@student.birthday)
+
+%p
+  %strong= 'Email'
+  = @student.email
+%p
+  %strong= 'Endereço'
+  = @student.address
+  |
+  = @student.address_number
+
+%p
+  %strong= 'Curso/Formação'
+  = @student.degree
+

@@ -7,13 +7,13 @@
         = category.name
         - category.subcategories.each do |subcategory|
           %li
-            = link_to subcategory.name, assets_path(:subcategory => subcategory)
+            = link_to subcategory.name, archives_path(:subcategory => subcategory)
       %br/
   .col-lg-9
     = render partial: 'index' , locals: {:subcategory => params[:subcategory]}
 
 
-= link_to 'Novo material', new_asset_path, class: 'btn btn-primary'
+= link_to 'Novo material', new_archive_path, class: 'btn btn-primary'
 
 
 

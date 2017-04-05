@@ -9,6 +9,6 @@ class RemoveTranslations < ActiveRecord::Migration
     # # drop_table :schema_translations
     # drop_table :categories_material_files
 
-    rename_table :material_files, :assets
+    rename_table :material_files, :archives
   end
 end

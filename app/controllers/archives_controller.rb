@@ -1,4 +1,4 @@
-class AssetsController < ApplicationController
+class ArchivesController < ApplicationController
   before_action :set_asset, only: [:edit, :update, :show, :destroy]
   before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
 
@@ -8,7 +8,7 @@ class AssetsController < ApplicationController
     puts '============================ INDEX ===================================='
 
 
-    @assets = Asset.all
+    @archives = Archive.all
     @categories = Category.all.includes(:subcategories).where('parent_id' => nil)
     case params[:subcategory]
       when nil
@@ -22,24 +22,24 @@ class AssetsController < ApplicationController
 
   def new
     puts '============================ NEW ===================================='
-    @asset = Asset.new()
+    @archive = Archive.new()
   end
 
   def create
-    @asset = Asset.new(assets_params)
-    if @asset.save
-      redirect_to assets_path notice: 'Material criado com sucesso'
+    @archive = Archive.new(assets_params)
+    if @archive.save
+      redirect_to assets_path, notice: 'Material criado com sucesso'
     else
       render action: 'new'
     end
   end
 
   def edit
-    @images = @asset.images
+    @images = @archive.images
   end
 
   def update
-    if @asset.update(assets_params)
+    if @archive.update(assets_params)
       redirect_to assets_url, notice: 'Material criado com sucesso.'
     else
       render action: 'edit'
@@ -49,7 +49,7 @@ class AssetsController < ApplicationController
   def destroy
     puts '============================ DESTROY! ===================================='
 
-    @asset.destroy
+    @archive.destroy
 
     redirect_to assets_url, notice: 'Material excluído com sucesso.'
   end
@@ -57,7 +57,7 @@ class AssetsController < ApplicationController
   private
 
   def assets_params
-    params.require(:asset).permit(:name, :category_id, :format, :description, :url, :thumbnail)
+    params.require(:archive).permit(:name, :category_id, :format, :description, :url, :thumbnail)
   end
 
   def set_subcategories
@@ -65,11 +65,11 @@ class AssetsController < ApplicationController
   end
 
   def set_asset
-    @asset = Asset.find(params[:id])
+    @archive = Archive.find(params[:id])
   end
 
   def remove_file
-    @asset.update_attributes(:remove_file => true)
+    @archive.update_attributes(:remove_file => true)
   end
 
 end

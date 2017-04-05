@@ -1,9 +1,9 @@
 %h1 Assets#new
 %p Find me in app/views/Assets/new.html.haml
 
--#= render partial: 'form_new', locals: {:asset => @asset, :subcategories => @subcategories}
+-#= render partial: 'form_new', locals: {:@archive => @@archive, :subcategories => @subcategories}
 
-= simple_form_for(@asset,:html => {:multipart => true}) do |f|
+= simple_form_for(@archive,:html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs

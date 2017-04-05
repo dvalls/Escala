@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403200814) do
+ActiveRecord::Schema.define(version: 20170405132658) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -19,17 +18,16 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "body"
+    t.index ["about_id"], name: "index_about_translations_on_about_id"
+    t.index ["locale"], name: "index_about_translations_on_locale"
   end
-
-  add_index "about_translations", ["about_id"], name: "index_about_translations_on_about_id"
-  add_index "about_translations", ["locale"], name: "index_about_translations_on_locale"
 
   create_table "abouts", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "assets", force: :cascade do |t|
+  create_table "archives", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_id"
     t.datetime "created_at"
@@ -38,9 +36,8 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.string   "description"
     t.string   "thumbnail"
     t.string   "url"
+    t.index ["category_id"], name: "index_archives_on_category_id"
   end
-
-  add_index "assets", ["category_id"], name: "index_assets_on_category_id"
 
   create_table "carousel_translations", force: :cascade do |t|
     t.integer  "carousel_id", null: false
@@ -49,10 +46,9 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.string   "description"
+    t.index ["carousel_id"], name: "index_carousel_translations_on_carousel_id"
+    t.index ["locale"], name: "index_carousel_translations_on_locale"
   end
-
-  add_index "carousel_translations", ["carousel_id"], name: "index_carousel_translations_on_carousel_id"
-  add_index "carousel_translations", ["locale"], name: "index_carousel_translations_on_locale"
 
   create_table "carousels", force: :cascade do |t|
     t.integer "course_id"
@@ -60,9 +56,8 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.string  "description"
     t.string  "image_url"
     t.integer "order"
+    t.index ["course_id"], name: "index_carousels_on_course_id"
   end
-
-  add_index "carousels", ["course_id"], name: "index_carousels_on_course_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -79,10 +74,9 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.datetime "updated_at",  null: false
     t.string   "name"
     t.string   "shortname"
+    t.index ["category_id"], name: "index_category_translations_on_category_id"
+    t.index ["locale"], name: "index_category_translations_on_locale"
   end
-
-  add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id"
-  add_index "category_translations", ["locale"], name: "index_category_translations_on_locale"
 
   create_table "contacts", force: :cascade do |t|
     t.text     "body"
@@ -98,10 +92,9 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.string   "title"
     t.text     "description"
     t.text     "body"
+    t.index ["course_id"], name: "index_course_translations_on_course_id"
+    t.index ["locale"], name: "index_course_translations_on_locale"
   end
-
-  add_index "course_translations", ["course_id"], name: "index_course_translations_on_course_id"
-  add_index "course_translations", ["locale"], name: "index_course_translations_on_locale"
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -113,17 +106,15 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.string   "slug"
     t.string   "cover_image"
     t.boolean  "publish"
+    t.index ["slug"], name: "index_courses_on_slug", unique: true
   end
-
-  add_index "courses", ["slug"], name: "index_courses_on_slug", unique: true
 
   create_table "courses_students", force: :cascade do |t|
     t.integer "course_id"
     t.integer "student_id"
+    t.index ["course_id"], name: "index_courses_students_on_course_id"
+    t.index ["student_id"], name: "index_courses_students_on_student_id"
   end
-
-  add_index "courses_students", ["course_id"], name: "index_courses_students_on_course_id"
-  add_index "courses_students", ["student_id"], name: "index_courses_students_on_student_id"
 
   create_table "feeds", force: :cascade do |t|
     t.text     "title"
@@ -139,12 +130,11 @@ ActiveRecord::Schema.define(version: 20170403200814) do
     t.string   "sluggable_type", limit: 50
     t.string   "scope"
     t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
-
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "images", force: :cascade do |t|
     t.integer "imageable_id"

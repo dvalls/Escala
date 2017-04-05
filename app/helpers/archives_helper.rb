@@ -1,4 +1,4 @@
-module AssetsHelper
+module ArchivesHelper
 
   # Function for output categories for isotope filtering
   def categories_helper(asset)
@@ -6,7 +6,7 @@ module AssetsHelper
     @output = ''
 
     @output << asset.category.name
-      # asset.categories.each do |category|
+      # @archive.categories.each do |category|
       #   @output << category.name.concat(' ')
         # @output << category.name.concat(' ')
     # end

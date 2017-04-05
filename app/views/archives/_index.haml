@@ -25,6 +25,6 @@
 
           -#%td= material.parent_category
           %td
-            = link_to 'EDITAR', edit_asset_path(asset)
+            = link_to 'EDITAR', edit_archive_path(asset)
             |
             = link_to 'APAGAR', asset, :method => :delete, :data => { :confirm => t('views.are_you_sure')}

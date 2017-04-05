@@ -1,10 +1,10 @@
 class ModifyAssets < ActiveRecord::Migration
   def change
-    remove_column :assets, :my_course_id
+    remove_column :archives, :my_course_id
 
-    add_column :assets, :format, :string
-    add_column :assets, :description, :string
-    add_column :assets, :thumbnail, :string
-    add_column :assets, :url, :string
+    add_column :archives, :format, :string
+    add_column :archives, :description, :string
+    add_column :archives, :thumbnail, :string
+    add_column :archives, :url, :string
   end
 end

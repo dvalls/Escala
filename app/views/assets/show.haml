@@ -1,9 +1,0 @@
-= @asset.name
-= @asset.description
-= @asset.thumbnail
-= @asset.url
-= @asset.get_category_name
-
-= link_to 'EDITAR', edit_asset_path(@asset)
-|
-= link_to 'APAGAR', @asset, :method => :delete, :data => { :confirm => t('views.are_you_sure')}

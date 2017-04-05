@@ -1,4 +1,4 @@
-class AssetUploader < CarrierWave::Uploader::Base
+class ArchiveUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

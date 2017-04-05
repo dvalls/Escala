@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :students
 
   resources :categories
-  resources :assets
+  resources :archives
   resources :my_courses
 
   resource :about
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :images
   end
 
-  resources :assets do
+  resources :archives do
     resources :images
   end
 

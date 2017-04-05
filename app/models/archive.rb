@@ -1,10 +1,10 @@
-class Asset < ActiveRecord::Base
+class Archive < ActiveRecord::Base
 
   validates :name, :description, :category_id , presence: true
 
-  mount_uploader :url , AssetUploader
+  mount_uploader :url , ArchiveUploader
 
-  belongs_to :categories
+  belongs_to :category
   has_many :images, :as => :imageable, :dependent => :destroy
 
   def get_category_name

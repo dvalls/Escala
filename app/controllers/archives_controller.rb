@@ -1,5 +1,5 @@
 class ArchivesController < ApplicationController
-  before_action :set_asset, only: [:edit, :update, :show, :destroy]
+  before_action :set_archive, only: [:edit, :update, :show, :destroy]
   before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
 
   # before_action :remove_file, only: [:destroy]
@@ -39,6 +39,11 @@ class ArchivesController < ApplicationController
   end
 
   def update
+    puts '============================ UPDATE! ===================================='
+    archive_uploaded = @archive.images.newest
+    puts "============================ ARCHIVE UPLOADED! TITLE  #{archive_uploaded.titel}===================================="
+    @archive.url = archive_uploaded.url
+    puts "============================ ARCHIVE UPLOADED! URL  #{archive_uploaded.url}===================================="
     if @archive.update(assets_params)
       redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso.'
     else
@@ -64,7 +69,7 @@ class ArchivesController < ApplicationController
     @subcategories = Category.all.includes(:subcategories).where.not('parent_id' => nil)
   end
 
-  def set_asset
+  def set_archive
     @archive = Archive.find(params[:id])
   end
 

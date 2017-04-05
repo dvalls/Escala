@@ -20,7 +20,9 @@
     -#  %ul.list-unstyled
     -#    = render :partial => 'images/image', :collection => @images, :as => :image
 
-    = link_to 'ADICIONAR Arquivo', new_archive_image_path(asset), :class => 'btn btn-default'
+    = link_to 'ADICIONAR Arquivo', new_archive_image_path(@archive), :class => 'btn btn-default'
+    %br/
+
 
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'

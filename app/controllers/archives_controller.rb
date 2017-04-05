@@ -2,7 +2,7 @@ class ArchivesController < ApplicationController
   before_action :set_asset, only: [:edit, :update, :show, :destroy]
   before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
 
-  before_action :remove_file, only: [:destroy]
+  # before_action :remove_file, only: [:destroy]
 
   def index
     puts '============================ INDEX ===================================='
@@ -28,7 +28,7 @@ class ArchivesController < ApplicationController
   def create
     @archive = Archive.new(assets_params)
     if @archive.save
-      redirect_to assets_path, notice: 'Material criado com sucesso'
+      redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso'
     else
       render action: 'new'
     end
@@ -40,7 +40,7 @@ class ArchivesController < ApplicationController
 
   def update
     if @archive.update(assets_params)
-      redirect_to assets_url, notice: 'Material criado com sucesso.'
+      redirect_to archives_path, notice: 'Material criado com sucesso.'
     else
       render action: 'edit'
     end
@@ -51,7 +51,7 @@ class ArchivesController < ApplicationController
 
     @archive.destroy
 
-    redirect_to assets_url, notice: 'Material excluído com sucesso.'
+    redirect_to archives_url, notice: 'Material excluído com sucesso.'
   end
 
   private

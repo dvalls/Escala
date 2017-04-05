@@ -12,7 +12,7 @@
         %th Descrição
         %th Thumbnail
         %th Url
-        %th Formato
+        %th Image/Arquivo
         %th
 
       - @subcategory.archives.each do |asset|
@@ -21,7 +21,7 @@
           %td= asset.description
           %td= asset.thumbnail
           %td= asset.url
-          %td= asset.format
+          %td= asset.images
 
           -#%td= material.parent_category
           %td

@@ -40,7 +40,7 @@ class ArchivesController < ApplicationController
 
   def update
     if @archive.update(assets_params)
-      redirect_to archives_path, notice: 'Material criado com sucesso.'
+      redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso.'
     else
       render action: 'edit'
     end

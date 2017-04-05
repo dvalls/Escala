@@ -75,6 +75,4 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:title, :description, :body, :year, :slug, :cover_image, :publish)
     end
 
-
-
 end

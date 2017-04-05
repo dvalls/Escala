@@ -40,8 +40,8 @@ class ArchivesController < ApplicationController
 
   def update
     puts '============================ UPDATE! ===================================='
-    archive_uploaded = @archive.images.newest
-    puts "============================ ARCHIVE UPLOADED! TITLE  #{archive_uploaded.titel}===================================="
+    archive_uploaded = @archive.images.first
+    puts "============================ ARCHIVE UPLOADED! TITLE  #{archive_uploaded}===================================="
     @archive.url = archive_uploaded.url
     puts "============================ ARCHIVE UPLOADED! URL  #{archive_uploaded.url}===================================="
     if @archive.update(assets_params)

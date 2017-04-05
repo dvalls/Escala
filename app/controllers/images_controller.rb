@@ -62,7 +62,7 @@ class ImagesController < ApplicationController
     params.each do |name, value|
 
       # With ID
-      puts "============= SET IMEGEABLE ======   #{name}  and #{name} ============================  "
+      # puts "============= SET IMEGEABLE ======   #{name}  and #{name} ============================  "
       if name =~ /(.+)_id$/
         if $1 == 'course'
           @imageable =  $1.classify.constantize.friendly.find(value) # Exclusive loading 'cause FriendlyId...

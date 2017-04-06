@@ -10,10 +10,12 @@ class AccessController < ApplicationController
       if found_user # se localizado um Admin
         # tenta realizar a autenticação do Admin
         authorized_user = found_user.authenticate(params[:password])
+        admin = false
       elsif
         found_user = User.where(:username => params[:username]).first
         if found_user
           authorized_user = found_user.authenticate(params[:password])
+          admin = found_user.admin
         end
       end
     end
@@ -23,9 +25,14 @@ class AccessController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       session[:user] = found_user
-      session[:admin] = found_user.admin
+      session[:admin] = admin
       flash[:success] = 'Login realizado'
-      redirect_to member_path
+      case session[:admin]
+        when false
+          redirect_to member_path
+        else
+          redirect_to root_path
+      end
     else # Caso não encontre um usuario autorizado
       flash[:warning] = 'Combinação de username/password inválida'
       render('login')

@@ -19,7 +19,7 @@
             - when nil
               = link_to 'Login', access_login_path
             - else
-              = link_to session[:user].name, member_student_path(session[:user_id])
+              = link_to session[:user].username, member_student_path(session[:user_id])
               %li
                 = link_to 'home', member_path
               %li

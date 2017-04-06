@@ -1,4 +1,4 @@
-class MyCourse::ArchivesController < MyCourse::MyCourseAreaController #ApplicationController
+class Member::ArchivesController < Member::MemberAreaController #ApplicationController
   before_action :set_archive, only: [:show, :destroy]
   before_action :set_subcategories, only: [ :index]
   before_action :student_logged?
@@ -10,7 +10,9 @@ class MyCourse::ArchivesController < MyCourse::MyCourseAreaController #Applicati
   def index
     puts '============================ INDEX ===================================='
 
-    @archives = Archive.all
+    # @archives = Archive.all
+    @archives = Archive.all.where( :course_id => params[:course_id])
+
     @categories = Category.all.includes(:subcategories).where('parent_id' => nil)
     case params[:subcategory]
       when nil

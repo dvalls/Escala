@@ -1,4 +1,4 @@
-class MyCourseController < ApplicationController
+class MemberController < ApplicationController
   # before_action :set_course, only: [:show]
 
   layout 'application'

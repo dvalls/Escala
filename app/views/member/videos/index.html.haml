@@ -1,0 +1,38 @@
+
+= render partial: 'layouts/my_course_navbar'
+= render 'layouts/my_course_head'
+
+- content_for :materials do
+  .row
+    .col-lg-2
+      = render 'member/sidebar'
+    .col-lg-10
+      - case @videos.count
+        - when 0
+          %h4 Sem videos
+        - when 1
+          %table.table
+            %tr
+              %th Video
+              %th Descrição
+              %th
+              %th
+            %tr
+              %td=@videos.first.title
+              %td=@videos.first.description
+        - else
+          %table.table
+            %tr
+              %th Video
+              %th Descrição
+              %th
+              %th
+            - @videos.each do |video|
+              %tr
+                %td
+                  = link_to video.title, member_video_path(video.id)
+                %td
+                  = video.description
+                %td
+
+= link_to 'meus cursos', member_path, class: 'btn btn-primary'

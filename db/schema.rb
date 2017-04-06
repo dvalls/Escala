@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406123255) do
+ActiveRecord::Schema.define(version: 20170406191112) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -154,7 +154,7 @@ ActiveRecord::Schema.define(version: 20170406123255) do
     t.string  "height"
   end
 
-  create_table "my_courses", force: :cascade do |t|
+  create_table "members", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

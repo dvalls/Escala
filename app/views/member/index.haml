@@ -1,22 +1,14 @@
 
-
 = render partial: 'layouts/my_course_navbar'
-
-
-
-%h4
-  Pagina pós login de estudante!
-
-%p my_courses index
 
 .row
   .col-lg-3
-    = render partial: 'my_course/students/show'
+    = render partial: 'member/students/show'
   .col-lg-9
     %ul#Grid.row
       - @student.courses.each do |course|
         %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
-          = link_to my_course_show_path(course) do
+          = link_to member_course_path(course) do
             .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
             .course-name
               = '- ' + course.title

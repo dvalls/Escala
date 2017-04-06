@@ -1,4 +1,4 @@
-class MyCourse::ArchivesImagesController < MyCourse::MyCourseAreaController #ApplicationController
+class Member::ArchivesImagesController < Member::MemberAreaController #ApplicationController
 
   def index
     @images = ArchivesImage.all

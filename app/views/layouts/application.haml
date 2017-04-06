@@ -4,6 +4,8 @@
     = render :partial => 'layouts/head'
 
   %body
+    %script{:src => "https://code.jquery.com/jquery-2.1.1.min.js", :type => "text/javascript"}
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"}
 
     .container
 
@@ -22,31 +24,8 @@
           = yield :navbar
         - else
           = render partial: 'layouts/navbar'
-        -#- content_for :navbar do
-        -#  / Mobile menu
-        -#  .navbar-header
-        -#    %button.navbar-toggle{"data-target" => "#menu", "data-toggle" => "collapse", type: "button"}
-        -#      %span.icon-bar
-        -#      %span.icon-bar
-        -#      %span.icon-bar
-        -#
-        -#  #menu.collapse.navbar-collapse
-        -#    %nav
-        -#      %ul.nav.navbar-nav
-        -#        %li
-        -#        %li
-        -#        %li
-        -#          - case session[:user_id]
-        -#            - when nil
-        -#              = link_to 'Login', access_login_path
-        -#            - else
-        -#              = link_to 'Perfil', my_course_student_path(session[:user])
-        -#              %li
-        -#                = link_to 'curso(s)', my_course_index_path
-        -#              %li
-        -#                = link_to 'Logout', access_logout_path
-        -#
-        -#= content_for?(:navbar) ? yield(:navbar) : yield
+          / Mobile menu
+          .navbar-heade
 
         = render :partial => 'layouts/flash_message'
 
@@ -56,10 +35,6 @@
 
         / Main
         - if content_for?(:materials)
-          -#.row
-          -#  .col-lg-2
-          -#    = render partial: 'my_course/sidebar'
-          -#  .col-lg-9.materials
           = yield :materials
         - else
           = yield

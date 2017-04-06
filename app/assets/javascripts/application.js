@@ -6,6 +6,7 @@
 // require bootstrap-sprockets
 
 // Bootstrap
+//= require bootstrap
 //= require bootstrap/transition
 //= require bootstrap/carousel
 //= require bootstrap/affix

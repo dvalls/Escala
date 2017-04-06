@@ -19,7 +19,7 @@ class AccessController < ApplicationController
       session[:user_id] = authorized_user.id
       session[:user] = found_user
       flash[:success] = 'Login realizado'
-      redirect_to my_course_index_path
+      redirect_to member_path
     else # Caso não encontre um usuario autorizado
       flash[:warning] = 'Combinação de username/password inválida'
       render('login')

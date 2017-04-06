@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   resource :about
   resource :contact
-  resources :videos
+  resource :videos
 
 
   resources :courses do
@@ -48,16 +48,19 @@ Rails.application.routes.draw do
     resources :images
   end
 
-  get 'my_course_index', to: 'my_course#index'
-  get '/my_course_show/:id', to: 'my_course#show', as: 'my_course_show'
+  get 'member', to: 'member#index'
+  get '/member_course/:id', to: 'member#show', as: 'member_course'
 
-  # get 'my_course', to: 'my_course#index'
 
-  namespace :my_course do
-    resources :students, :archives, :archives_images
+
+  namespace :member do
+    resources :students
     resources :videos
 
-    get '/content/:id', to: 'students#content', as: 'content'
+    resources :archives, only: [ :show]
+    resources :courses do
+      resources :videos
+    end
 
   end
 

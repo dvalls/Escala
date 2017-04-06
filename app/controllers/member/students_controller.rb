@@ -1,4 +1,4 @@
-class MyCourse::StudentsController < MyCourse::MyCourseAreaController #ApplicationController
+class Member::StudentsController < Member::MemberAreaController #ApplicationController
   before_action :student_logged?
 
   before_action :set_student, only: [:show, :edit, :update, :destroy]

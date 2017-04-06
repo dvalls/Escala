@@ -15,8 +15,10 @@
             .carousel-caption
               = carousel.title + carousel.description
 
-= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary' if signed_in?
-= link_to 'CRIAR ALUNO', new_my_course_student_path, :class => 'btn btn-primary' if signed_in?
+= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary'# if signed_in?
+= link_to 'Videos', videos_path, :class => 'btn btn-primary' #if signed_in?
+= link_to 'arquivos', archives_path, :class => 'btn btn-primary'# if signed_in?
+= link_to 'CRIAR ALUNO', new_my_course_student_path, :class => 'btn btn-primary'# if signed_in?
 / End Carousel
 
 / Feeds

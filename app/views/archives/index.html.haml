@@ -1,0 +1,83 @@
+%h3 Assets#index
+
+
+
+- content_for :archive_files do
+  - case @subcategory
+    - when []
+      %p Selecione uma categoria, plz
+    - else
+      %h3
+        %strong
+          CATEGORIA:
+          = @subcategory.name
+      %table.table
+        %tr
+          %th NOME
+          %th Descrição
+          %th Thumbnail
+          %th
+
+        - @subcategory.archives.each do |archive|
+          %tr
+            %td= archive.name
+            %td= archive.description
+            %td= archive
+            %td
+              - archive.archives_images.each do |archive_image|
+                = archive_image.title
+                |
+                = archive_image.url
+
+
+            -#%td= material.parent_category
+            %td
+              = link_to 'EDITAR', edit_archive_path(archive)
+              |
+              = link_to 'APAGAR', archive, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
+
+
+
+.row
+  .col-lg-3
+    - @categories.each do |category|
+      %p
+        = category.name
+        - category.subcategories.each do |subcategory|
+          %li
+            = link_to subcategory.name, archives_path(:subcategory => subcategory)
+      %br/
+  .col-lg-9
+    -#= render partial: 'index' , locals: {:subcategory => params[:subcategory]}
+    = yield :archive_files
+
+
+= link_to( 'Novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?
+
+
+
+-#- @categories.each do |category|
+-#  .dropdown
+-#    %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+-#      = category.name
+-#      %span.caret
+-#    %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+-#      - category.subcategories.each do |subcategory|
+-#        %li
+-#          = link_to subcategory.name, '#'
+-#      %li
+-#        %a{:href => "#"} Action
+-#      %li
+-#        %a{:href => "#"} Another action
+-#      %li
+-#        %a{:href => "#"} Something else here
+-#      %li.divider{:role => "separator"}
+-#      %li
+-#        %a{:href => "#"} Separated link
+-#  %li.dropdown
+-#    %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+-#      = category.name
+-#    %ul.dropdown-menu
+-#      - category.subcategories.each do |subcategory|
+-#        %li
+-#          = link_to subcategory.name, '#'

@@ -6,4 +6,9 @@ class Student < ActiveRecord::Base
 
   has_and_belongs_to_many :courses
 
+
+  def full_name
+    " #{name} #{last_name}"
+  end
+
 end

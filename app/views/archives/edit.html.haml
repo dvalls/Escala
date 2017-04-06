@@ -11,9 +11,6 @@
     = f.input :category_id, label: 'Categoria', :collection => @subcategories, value_method: :id,
               label_method: :name, as: :radio_buttons
 
-    = f.input :url, as: :file
-
-
 
     -#%hr
     -#  %ul.list-unstyled
@@ -29,4 +26,3 @@
 
 
 
-= link_to 'Cursos', courses_path

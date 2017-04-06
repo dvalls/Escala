@@ -11,16 +11,17 @@
   #menu.collapse.navbar-collapse
     %nav
       %ul.nav.navbar-nav
-        %li= link_to 'Videos', '#'
+        %li
+        %li
         %li
         %li
           - case session[:user_id]
             - when nil
               = link_to 'Login', access_login_path
             - else
-              = link_to 'Perfil', my_course_student_path(session[:user])
+              = link_to session[:user].name, my_course_student_path(session[:user_id])
               %li
-                = link_to 'curso(s)', my_course_index_path
+                = link_to 'home', my_course_index_path
               %li
-                = link_to 'Logout', access_logout_path
+                = link_to 'logout', root_url
 

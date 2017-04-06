@@ -17,15 +17,11 @@
 
 .row
   .col-lg-3
-    %ul
-      %li
-        = link_to 'Arquivos', my_course_archives_path
-      %li
-        = link_to 'Videos', '#'
+    = render partial: 'my_course/sidebar', locals: {:course_id => @course.id}
 
   .col-lg-9.materials
-
-    = yield :materials
+    %h4
+      Escolha o conteúdo que deseja visualizar.
 
 
 = stylesheet_link_tag "course"

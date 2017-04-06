@@ -14,6 +14,8 @@ class MyCourseController < ApplicationController
   end
 
   def show
+    @student = get_student
+
     @course = Course.friendly.find(params[:id])
   end
 

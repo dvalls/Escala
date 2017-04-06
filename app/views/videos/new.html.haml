@@ -1,0 +1,22 @@
+%h1 Video#new
+%p Find me in app/views/video/new.html.haml
+
+
+= simple_form_for(@video,:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    - puts '============================ FORM NEW ===================================='
+
+    = f.input :title, label: 'Titulo'
+    = f.input :description, label: 'Descrição'
+    = f.input :course_id, label: 'Curso', :collection => Course.all, value_method: :id,
+              label_method: :title, as: :radio_buttons
+
+    = f.input :url , label: 'Url'
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+
+
+

@@ -1,6 +1,6 @@
 class ArchivesImage < ApplicationRecord
 
-  validates :url, :description, :title
+  validates :url, presence: true
 
   belongs_to :archive
 end

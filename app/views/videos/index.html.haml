@@ -1,0 +1,16 @@
+%h1 Video#index
+%p Find me in app/views/video/index.html.haml
+- @videos.each do |video|
+  %ul
+    %li
+      = link_to  video.title, video.url
+      |
+      = video.description
+      |
+      = link_to 'EDITAR', edit_video_path(video)
+      = link_to 'APAGAR', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+
+= link_to 'novo video', new_video_path, class: 'btn btn-primary'
+

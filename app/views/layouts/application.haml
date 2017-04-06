@@ -55,7 +55,14 @@
       %main
 
         / Main
-        = yield
+        - if content_for?(:materials)
+          -#.row
+          -#  .col-lg-2
+          -#    = render partial: 'my_course/sidebar'
+          -#  .col-lg-9.materials
+          = yield :materials
+        - else
+          = yield
 
       / Footer
       = render :partial => 'layouts/footer'

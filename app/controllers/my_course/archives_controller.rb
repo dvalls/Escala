@@ -1,13 +1,12 @@
 class MyCourse::ArchivesController < MyCourse::MyCourseAreaController #ApplicationController
-  before_action :set_archive, only: [:edit, :update, :show, :destroy]
-  before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
+  before_action :set_archive, only: [:show, :destroy]
+  before_action :set_subcategories, only: [ :index]
 
   # before_action :remove_file, only: [:destroy]
 
 
   def index
     puts '============================ INDEX ===================================='
-
 
     @archives = Archive.all
     @categories = Category.all.includes(:subcategories).where('parent_id' => nil)
@@ -21,32 +20,7 @@ class MyCourse::ArchivesController < MyCourse::MyCourseAreaController #Applicati
   def show
   end
 
-  def new
-    puts '============================ NEW ===================================='
-    @archive = Archive.new()
-  end
 
-  def create
-    @archive = Archive.new(assets_params)
-    if @archive.save
-      redirect_to my_course_archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso'
-    else
-      render action: 'new'
-    end
-  end
-
-  def edit
-    @images = @archive.images
-  end
-
-  def update
-    puts '============================ UPDATE! ===================================='
-    if @archive.update(assets_params)
-      redirect_to my_course_archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso.'
-    else
-      render action: 'edit'
-    end
-  end
 
   def destroy
     puts '============================ DESTROY! ===================================='

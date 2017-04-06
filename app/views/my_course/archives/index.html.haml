@@ -2,55 +2,60 @@
 
 = render partial: 'layouts/my_course_navbar'
 
+- content_for :materials do
+  .row
+    .col-lg-2
+      = render partial: 'my_course/sidebar'
+      %h5 Categorias:
 
-- content_for :archive_files do
-  - case @subcategory
-    - when []
-      %p Selecione uma categoria, plz
-    - else
-      %h3
-        %strong
-          CATEGORIA:
-          = @subcategory.name
-      %table.table
-        %tr
-          %th NOME
-          %th Descrição
-          %th Thumbnail
-          %th
+      - @categories.each do |category|
+        %ul
+          - category.subcategories.each do |subcategory|
+            %li
+              = link_to subcategory.name, my_course_archives_path(:subcategory => subcategory)
 
-        - @subcategory.archives.each do |archive|
-          %tr
-            %td= archive.name
-            %td= archive.description
-            %td= archive
-            %td
-              - archive.archives_images.each do |archive_image|
-                = archive_image.title
-                |
-                = archive_image.url
+    .col-lg-10
+      - case @subcategory
+        - when []
+          %p Selecione uma categoria, plz
+        - else
+          %h3
+            %strong
+              CATEGORIA:
+              = @subcategory.name
+          %table.table
+            %tr
+              %th NOME
+              %th Descrição
+              %th Thumbnail
+              %th
 
-
-            -#%td= material.parent_category
-            %td
-              = link_to 'EDITAR', edit_my_course_archive_path(asset)
-              |
-              = link_to 'APAGAR', asset, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
-
+            - @subcategory.archives.each do |archive|
+              %tr
+                %td= archive.name
+                %td= archive.description
+                %td= archive
+                %td
+                  - archive.archives_images.each do |archive_image|
+                    = archive_image.title
+                    |
+                    = archive_image.url
 
 
-.row
-  .col-lg-3
-    - @categories.each do |category|
-      %p
-        = category.name
-        - category.subcategories.each do |subcategory|
-          %li
-            = link_to subcategory.name, my_course_archives_path(:subcategory => subcategory)
-      %br/
-  .col-lg-9
-    -#= render partial: 'index' , locals: {:subcategory => params[:subcategory]}
-    = yield :archive_files
+
+
+
+  -#.row
+  -#  .col-lg-2
+  -#    - @categories.each do |category|
+  -#      %p
+  -#        - category.subcategories.each do |subcategory|
+  -#          %li
+  -#            = link_to subcategory.name, my_course_archives_path(:subcategory => subcategory)
+  -#      %br/
+  -#  -#.col-lg-9
+    -#  -#= render partial: 'index' , locals: {:subcategory => params[:subcategory]}
+    -#  = yield :archive_files
 
 
 = link_to( 'Novo material', new_my_course_archive_path, class: 'btn btn-primary') if signed_in?

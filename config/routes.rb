@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   resource :about
   resource :contact
+  resources :videos
+
 
   resources :courses do
     resources :images
@@ -53,7 +55,7 @@ Rails.application.routes.draw do
 
   namespace :my_course do
     resources :students, :archives, :archives_images
-    resources :video
+    resources :videos
 
     get '/content/:id', to: 'students#content', as: 'content'
 

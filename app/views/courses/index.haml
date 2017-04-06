@@ -14,4 +14,4 @@
 = stylesheet_link_tag "courses"
 
 
-= link_to('NOVO CURSO', new_course_path, :class => 'btn btn-primary') if signed_in?
+= link_to('NOVO CURSO', new_course_path, :class => 'btn btn-primary') if admin_logged?

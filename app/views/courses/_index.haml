@@ -15,4 +15,4 @@
 = javascript_include_tag "jquery.mixitup.min", "mixitup"
 = stylesheet_link_tag "courses"
 
-= link_to('NOVO PROJETO', new_course_path, :class => 'btn btn-primary') if signed_in?
+= link_to('NOVO PROJETO', new_course_path, :class => 'btn btn-primary') if admin_logged?

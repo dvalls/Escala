@@ -47,10 +47,10 @@
 = stylesheet_link_tag "course"
 = javascript_include_tag "jquery.lazyload.min", "course"
 
--#- if signed_in?
-%p.clearfix
-  = link_to 'EDITAR', edit_course_path(course), :class => 'btn btn-primary'
-  = link_to 'APAGAR', course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary'
+- if admin_logged?
+  %p.clearfix
+    = link_to 'EDITAR', edit_course_path(course), :class => 'btn btn-primary'
+    = link_to 'APAGAR', course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary'
 
 
 

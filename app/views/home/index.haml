@@ -15,10 +15,10 @@
             .carousel-caption
               = carousel.title + carousel.description
 
-= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary'# if signed_in?
-= link_to 'Videos', videos_path, :class => 'btn btn-primary' #if signed_in?
-= link_to 'arquivos', archives_path, :class => 'btn btn-primary'# if signed_in?
-= link_to 'ALUNOS', students_path, :class => 'btn btn-primary'# if signed_in?
+= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary' if admin_logged?
+= link_to 'Videos', videos_path, :class => 'btn btn-primary' if admin_logged?
+= link_to 'arquivos', archives_path, :class => 'btn btn-primary' if admin_logged?
+= link_to 'ALUNOS', students_path, :class => 'btn btn-primary' if admin_logged?
 / End Carousel
 
 / Feeds

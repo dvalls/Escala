@@ -71,10 +71,6 @@
 = stylesheet_link_tag "course"
 = javascript_include_tag "jquery.lazyload.min", "course"
 
--# Para Students logados, apenas
-- if student_logged?
-  - if has_course?
-    = render partial: 'courses/course_material', locals: {:course => @course} if student_logged?
 
 -#- if signed_in?
   %p.clearfix

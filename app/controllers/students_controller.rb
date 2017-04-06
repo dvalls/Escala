@@ -1,18 +1,15 @@
-class MyCourse::StudentsController < MyCourse::MyCourseAreaController #ApplicationController
-  before_action :student_logged?
+class StudentsController < ApplicationController
 
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  # before_action :get_my_courses, only: [:my_course]
-
 
   def index
-    @student = get_student
+    @students = Student.all
   end
 
 
   def show
-    # @course = Course.friendly.find(params[:id])
-    @student = get_student
+    @course = Course.friendly.find(params[:id])
+
   end
 
   def content
@@ -31,10 +28,12 @@ class MyCourse::StudentsController < MyCourse::MyCourseAreaController #Applicati
 
   def create
     @student = Student.new(student_params)
+    # @course = Course.find(params[:course][:course_id])
 
     if @student.save
-      redirect_to course_images_path(@course), notice: t('views.course.create')
+      redirect_to students_path, notice: t('views.course.create')
     else
+      puts "=================================== #{@student.errors.full_messages}=================================="
       render action: 'new'
     end
   end
@@ -42,8 +41,9 @@ class MyCourse::StudentsController < MyCourse::MyCourseAreaController #Applicati
 
   def update
     if @student.update(student_params)
-      redirect_to @student, notice: t('views.updated_ok')
+      redirect_to students_path, notice: t('views.updated_ok')
     else
+      puts "=================================== #{@student.errors.full_messages}=================================="
       render action: 'edit'
     end
   end
@@ -51,7 +51,7 @@ class MyCourse::StudentsController < MyCourse::MyCourseAreaController #Applicati
 
   def destroy
     @student.destroy
-    redirect_to courses_url, notice: t('views.course.destroy')
+    redirect_to students_path, notice: t('views.course.destroy')
   end
 
   private
@@ -63,7 +63,7 @@ class MyCourse::StudentsController < MyCourse::MyCourseAreaController #Applicati
   # Only allow a trusted parameter "white list" through.
   def student_params
     params.require(:student).permit(:name, :last_name, :password, :username, :email, :gender, :degree,
-                                    :address, :address_number, :birthday)
+                                    :address, :address_number, :birthday, :course_ids => [])
   end
 
   def get_my_courses

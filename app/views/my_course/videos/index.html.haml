@@ -4,11 +4,21 @@
 - content_for :materials do
   .row
     .col-lg-2
-      = render partial: 'my_course/sidebar'
+      = render partial: 'my_course/sidebar', locals: {:course_id => params[:course_id]}
     .col-lg-10
-      - @videos.each do |video|
-        %ul
-          %li
-            = link_to  video.title, video.url
-            |
-            = video.description
+      - case @videos.count
+        - when 0
+          %h4 Sem videos
+        - when 1
+          %ul
+            %li
+              = link_to  @videos.first.title, @videos.first.url
+              |
+              = @videos.first.description
+        - else
+          - @videos.each do |video|
+            %ul
+              %li
+                = link_to  video.title, video.url
+                |
+                = video.description

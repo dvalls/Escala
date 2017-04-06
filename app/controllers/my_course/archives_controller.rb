@@ -1,6 +1,8 @@
 class MyCourse::ArchivesController < MyCourse::MyCourseAreaController #ApplicationController
   before_action :set_archive, only: [:show, :destroy]
   before_action :set_subcategories, only: [ :index]
+  before_action :student_logged?
+
 
   # before_action :remove_file, only: [:destroy]
 

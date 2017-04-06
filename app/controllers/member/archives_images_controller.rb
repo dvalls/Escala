@@ -1,4 +1,5 @@
 class Member::ArchivesImagesController < Member::MemberAreaController #ApplicationController
+  before_filter :student_logged?
 
   def index
     @images = ArchivesImage.all

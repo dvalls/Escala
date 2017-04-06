@@ -1,4 +1,6 @@
 class FeedsController < ApplicationController
+  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
   # before_filter :authorize, :except => [:index]
 

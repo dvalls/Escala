@@ -1,4 +1,6 @@
 class ArchivesImagesController < ApplicationController
+  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+
 
   def index
     @images = ArchivesImage.all

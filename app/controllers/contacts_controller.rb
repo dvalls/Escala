@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+
 
   before_action :set_contact_and_load_images, only: [:show, :edit, :update]
   # before_filter :authorize, :except => [:show]

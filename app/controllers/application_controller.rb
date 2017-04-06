@@ -25,6 +25,11 @@ class ApplicationController < ActionController::Base
   #   not request.authorization.nil?
   # end
 
+  helper_method :admin_logged?
+  def admin_logged?
+    session[:admin]
+  end
+
   helper_method :student_logged?
   def student_logged?
     session[:user_id]

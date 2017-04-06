@@ -1,5 +1,7 @@
 class CarouselsController < ApplicationController
   before_action :set_carousel, only: [:edit, :update, :destroy]
+  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+
 
   def index
     @carousels = Carousel.order(order: :asc)

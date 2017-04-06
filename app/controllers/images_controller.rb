@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  before_filter :admin_logged?
 
   before_action :set_imageable, only: [:index, :edit,  :create, :new, :update, :destroy]
   before_action :set_image, only: [:edit, :update, :destroy]

@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   resource :about
   resource :contact
   resource :videos
-  get 'videos' => 'videos#index'
 
 
   resources :courses do

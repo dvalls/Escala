@@ -41,11 +41,14 @@ class StudentsController < ApplicationController
 
 
   def update
-    @student.username = @student.email.split('@').first
-
+    # @student.username = @student.email.split('@').first
 
     if @student.update(student_params)
+      @student.username = @student.email.split('@').first
+      if @student.save
+
       redirect_to students_path, notice: t('views.updated_ok')
+      end
     else
       puts "=================================== #{@student.errors.full_messages}=================================="
       render action: 'edit'

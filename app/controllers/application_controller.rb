@@ -27,7 +27,9 @@ class ApplicationController < ActionController::Base
 
   helper_method :admin_logged?
   def admin_logged?
-    session[:admin]
+    unless session[:admin]
+        redirect_to root_path
+      end
   end
 
   helper_method :student_logged?

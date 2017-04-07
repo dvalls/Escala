@@ -15,10 +15,10 @@
       %li= link_to t('nav.about'), about_path
       %li= link_to t('nav.contact'), contact_path
       %li
-        = link_to 'cursos', courses_path
+        = link_to t('nav.courses'), courses_path
       %li
         - case session[:user_id]
           - when nil
-            = link_to 'Login', access_login_path
+            = link_to t('nav.login'), access_login_path
           - else
-            = link_to 'Logout', access_logout_path
+            = link_to t('nav.logout'), access_logout_path

@@ -1,7 +1,7 @@
 class AboutsController < ApplicationController
 
   before_action :set_about, only: [:show, :edit, :update]
-  before_filter :authorize, :except => [:show]
+  before_filter :admin_logged?, :except => [:show]
 
   def show
   end

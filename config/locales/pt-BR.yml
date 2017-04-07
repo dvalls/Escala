@@ -2,25 +2,31 @@ pt-BR:
 
   meta:
     description: |
-      Somos um escritório de projeto com base em Porto Alegre, sul do Brasil.
-      Desenvolvemos projetos em diferentes escalas e usos, com uma linha de abordagem transversal que abrange as áreas de arquitetura, engenharia e software.
+      Escola de atividades e linguagem em arquitetura.
+      Desenvolvemos workshops para o ensino de conceitos e ferramentas ligadas à representação de arquitetura.
     keywords: Arquitetura Porto Alegre, ...
 
   nav:
     courses: cursos
-    about: escritório
+    about: sobre
     feeds: notícias
     contact: contato
     all_projects: todos
+    login: login
+    logout: logout
+
+  form:
+    username: nome de usuário
+    password: senha
 
 
-  phone: +51 3379-7679
-  email: contato@valls.cc
+  phone: +51 9 8138-8758
+  email: contato@escala.cc
   address: |
     Rua Jaime Telles, 62.
     Bairro Petropolis
     Porto Alegre - RS
-    CEP 90220-010
+    CEP 90460-030
 
   copyright: 'todos direitos reservados - '
 

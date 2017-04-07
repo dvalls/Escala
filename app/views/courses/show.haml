@@ -16,13 +16,6 @@
 
   .close-course= link_to 'X', courses_path
 
-%p
-  - case
-    - when @course.students != []
-      - @course.students.each do |student|
-        = student.name + student.last_name
-
-
 
 .row
   %em.col-lg-4

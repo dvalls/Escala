@@ -43,6 +43,7 @@ class StudentsController < ApplicationController
   def update
     @student.username = @student.email.split('@').first
 
+
     if @student.update(student_params)
       redirect_to students_path, notice: t('views.updated_ok')
     else

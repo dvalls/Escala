@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resource :about
   resource :contact
-  resource :videos
+  resources :videos
 
 
   resources :courses do

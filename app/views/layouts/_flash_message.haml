@@ -1,5 +1,17 @@
+
 - flash.each do |name, msg|
   - if msg.is_a?(String)
     %div{class: "alert col-lg-4 col-md-4 col-sm-4 hidden-xs alert-#{name == :notice ? "info" : "danger"} alert-dismissible", role: "alert"}
-      %a.close{"data-dismiss" => "alert"} ×
+      %button.close{"data-dismiss" => 'alert'} ×
       = content_tag :div, msg, :id => "flash_#{name}"
+
+
+
+-#.alert.alert-warning.alert-dismissible.fade.show{:role => "alert"}
+-#  %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+-#    %span{"aria-hidden" => "true"} ×
+-#  %strong Holy guacamole!
+-#  You should check in on some of those fields below.
+
+
+

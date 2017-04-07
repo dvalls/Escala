@@ -110,6 +110,9 @@ ul.feeds {
 //}
 
 .alert {
+  @extend .alert-dismissible;
+  //@extend .fade;
+  //@extend .show;
   position: absolute;
   z-index: 1;
   top: 5px;

@@ -1,4 +1,4 @@
-class Video < ActiveRecord::Base
+class Video < ApplicationRecord
 
   validates :url, :title, :description, :course_id, presence: true
 

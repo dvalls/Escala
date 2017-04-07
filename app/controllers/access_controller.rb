@@ -28,10 +28,10 @@ class AccessController < ApplicationController
       session[:admin] = admin
       flash[:success] = 'Login realizado'
       case session[:admin]
-        when false
-          redirect_to member_path
-        else
+        when true
           redirect_to root_path
+        else
+          redirect_to member_path
       end
     else # Caso não encontre um usuario autorizado
       flash[:warning] = 'Combinação de username/password inválida'

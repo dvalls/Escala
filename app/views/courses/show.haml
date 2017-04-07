@@ -47,9 +47,8 @@
   - if not @course_previous.nil?
     .previous
       = link_to @course_previous do
-        %span.glyphicon.glyphicon-backward{"aria-hidden" => "true"}
-
         = @course_previous.title
+        %span.glyphicon.glyphicon-backward{"aria-hidden" => "true"}
 
   .overview
     = link_to courses_path do
@@ -59,17 +58,17 @@
     .next
       = link_to @course_next do
         = @course_next.title
-          %span.glyphicon.glyphicon-forward{"aria-hidden" => "true"}
+        %span.glyphicon.glyphicon-forward{"aria-hidden" => "true"}
 
 
 = stylesheet_link_tag "course"
 = javascript_include_tag "jquery.lazyload.min", "course"
 
 
--#- if signed_in?
+- if admin_logged?
   %p.clearfix
-= link_to 'EDITAR', edit_course_path(@course), :class => 'btn btn-primary' if admin_logged?
-= link_to 'APAGAR', @course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary' if admin_logged?
+    = link_to('EDITAR', edit_course_path(@course), :class => 'btn btn-primary')
+    = link_to('APAGAR', @course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary')
 
 
 

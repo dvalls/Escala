@@ -43,7 +43,7 @@ class AccessController < ApplicationController
   def logout
     session[:user_id] = nil
     session[:user] = nil
-    session[:admin] = false
+    session[:admin] = nil
     flash[:info] = 'Logged out'
     redirect_to root_path
   end

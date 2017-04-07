@@ -14,8 +14,8 @@
 .row
   .col-lg-3
     %ul
-      %li
-        = link_to 'Arquivos','#'# my_course_archives_path(:course_id => @course.id)
+      -#%li
+        -#= link_to 'Arquivos','#' my_course_archives_path(:course_id => @course.id)
       %li
         = link_to 'Videos',  member_course_videos_path(@course), action: 'index'
 
@@ -24,12 +24,7 @@
       Escolha o conteúdo que deseja visualizar.
 
 
-%br/
-%br/
-%br/
-%br/
 
-= link_to 'meus cursos', member_path, class: 'btn btn-primary'
 
 
 = stylesheet_link_tag "course"

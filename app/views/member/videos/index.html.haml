@@ -3,6 +3,11 @@
 = render 'layouts/member_head'
 
 - content_for :materials do
+  %header
+    %h1
+      = @course.slug
+      %span#course-title= @course.title
+
   .row
     .col-lg-2
       = render 'member/sidebar'

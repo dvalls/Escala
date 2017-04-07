@@ -3,10 +3,10 @@
 %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
 %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
 %title= content_for?(:title) ? yield(:title) : ENV['OFFICE_NAME']
-= csrf_meta_tags
+= yield :head
 = stylesheet_link_tag  'application', media: 'all' #, 'data-turbolinks-track': 'reload'
 = javascript_include_tag 'application'#, 'data-turbolinks-track': 'reload'
-= yield :head
+= csrf_meta_tags
 
 
 

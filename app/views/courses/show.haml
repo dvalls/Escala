@@ -25,7 +25,7 @@
     &#126;&#126;&#126;
 
 / Project Body
-.markdown= markdown @course.body unless @course.body.nil?
+.markdown= markdown(@course.body) unless @course.body.nil?
 
 
 / Social Links
@@ -47,12 +47,13 @@
   - if not @course_previous.nil?
     .previous
       = link_to @course_previous do
-        = @course_previous.title
         %span.glyphicon.glyphicon-backward{"aria-hidden" => "true"}
+        = @course_previous.title
 
   .overview
     = link_to courses_path do
-      %i.fa.fa-th
+      %span.glyphicon.glyphicon-th{"aria-hidden" => "true"}
+
 
   - if not @course_next.nil?
     .next

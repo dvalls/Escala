@@ -1,1 +1,1 @@
-$('.markdown img').lazyload({effect : "fadeIn"});
+$ ('.markdown img').lazyload({effect : "fadeIn"});

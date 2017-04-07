@@ -1,6 +1,6 @@
 class Feed < ActiveRecord::Base
 
-  #before_save :update_image_attributes
+  before_save :update_image_attributes
 
   translates :title, :body
   mount_uploader :image, FeedImageUploader

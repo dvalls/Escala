@@ -29,7 +29,9 @@ en:
     keywords: Architecture, ...
 
   nav:
-    projects: PROJECTS
+    login: LOGIN
+    logout: LOGOUT
+    courses: COURSES
     about: ABOUT
     contact: CONTACT
     all_projects: ALL

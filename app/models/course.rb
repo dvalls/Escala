@@ -5,8 +5,8 @@ class Course < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  # # i18n
-  # translates :title, :description, :body
+  # i18n
+  translates :title, :description, :body
 
   # Cover image
   mount_uploader :cover_image, CoverImageUploader

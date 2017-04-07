@@ -14,12 +14,12 @@
           = link_to carousel.course do
             .carousel-caption
               = carousel.title + carousel.description
+/ End Carousel
 
 = link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'Videos', videos_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'arquivos', archives_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'ALUNOS', students_path, :class => 'btn btn-primary' if admin_logged?
-/ End Carousel
 
 / Feeds
 %ul.feeds.list-unstyled
@@ -35,7 +35,7 @@
 
 
 
--#=link_to t('views.all_news'), feeds_path
+=link_to t('views.all_news'), feeds_path
 
 %br/
 

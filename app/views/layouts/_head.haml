@@ -1,16 +1,27 @@
+%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+%meta{:charset => "utf-8"}
+%meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
 %title= content_for?(:title) ? yield(:title) : ENV['OFFICE_NAME']
-
-/ SEO
-%meta{name:"description", :content => t('meta.description')}
-%meta{name:"keywords", :content => t('meta.keywords')}
-%meta{name:"revisit-after", :content => "15 Days"}
-
+= csrf_meta_tags
+= stylesheet_link_tag  'application', media: 'all' #, 'data-turbolinks-track': 'reload'
+= javascript_include_tag 'application'#, 'data-turbolinks-track': 'reload'
 = yield :head
 
-%meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
-= stylesheet_link_tag "application", media: "all"
-= javascript_include_tag "application"
-%link{href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Ubuntu+Mono", rel: "stylesheet", type: "text/css"}
-%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css", rel: "stylesheet"}
 
-= csrf_meta_tags
+
+-#
+-#/ SEO
+-#%meta{name:"description", :content => t('meta.description')}
+-#%meta{name:"keywords", :content => t('meta.keywords')}
+-#%meta{name:"revisit-after", :content => "15 Days"}
+-#
+-#= yield :head
+-#
+-#%meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}
+-#= stylesheet_link_tag "application", media: "all"
+-#= javascript_include_tag "application"
+-#%link{href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Ubuntu+Mono", rel: "stylesheet", type: "text/css"}
+-#%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css", rel: "stylesheet"}
+-#
+-#= csrf_meta_tags

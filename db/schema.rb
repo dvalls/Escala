@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406210344) do
+ActiveRecord::Schema.define(version: 20170407141742) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -84,6 +84,16 @@ ActiveRecord::Schema.define(version: 20170406210344) do
     t.string   "shortname"
     t.index ["category_id"], name: "index_category_translations_on_category_id"
     t.index ["locale"], name: "index_category_translations_on_locale"
+  end
+
+  create_table "contact_translations", force: :cascade do |t|
+    t.integer  "contact_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "body"
+    t.index ["contact_id"], name: "index_contact_translations_on_contact_id"
+    t.index ["locale"], name: "index_contact_translations_on_locale"
   end
 
   create_table "contacts", force: :cascade do |t|

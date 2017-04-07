@@ -7,7 +7,7 @@
 
   = t('copyright') + Time.now.year.to_s
 
-  %ul.social.hidden-xs
+  %ul.social
     %li{:title => "facebook", "data-toggle" => "tooltip"}
       =link_to ENV['FACEBOOK_LINK'], :target => "_blank"  do
         %i.fa.fa-facebook.fa-lg
@@ -28,4 +28,4 @@
         %i.fa.fa-vimeo-square.fa-lg
 
 :javascript
-  $("[data-toggle='tooltip']").tooltip();
+   $("[data-toggle='tooltip']").tooltip();

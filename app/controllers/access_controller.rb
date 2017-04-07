@@ -29,6 +29,7 @@ class AccessController < ApplicationController
       flash[:success] = 'Login realizado'
       case session[:admin]
         when true
+
           redirect_to root_path
         else
           redirect_to member_path

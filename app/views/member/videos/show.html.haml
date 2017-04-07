@@ -4,14 +4,10 @@
   .col-lg-2
     = render 'member/sidebar'
   .col-lg-10
-    %h5
-      = @video.title
+    %h2= @video.title
+    %p= @video.description
     .embed-responsive.embed-responsive-16by9
       %iframe.embed-responsive-item{:width=>'560', :height=>'315', :src => "https://www.youtube.com/embed/" + @video.url, :allowfullscreen => true}
 
-    %h5
-      = @video.description
-
-= link_to 'meus cursos', member_path, class: 'btn btn-primary'
 
 

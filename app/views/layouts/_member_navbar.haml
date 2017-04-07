@@ -11,17 +11,14 @@
   #menu.collapse.navbar-collapse
     %nav
       %ul.nav.navbar-nav
-
-        %li
-        %li
-        %li
-          - case session[:user_id]
-            - when nil
+        - case session[:user_id]
+          - when nil
+            %li
               = link_to t('nav.login'), access_login_path
-            - else
-              = link_to session[:user].username, member_student_path(session[:user_id])
-              %li
-                = link_to 'home', member_path
-              %li
-                = link_to t('nav.logout'), access_logout_path
+          - else
+            //= link_to session[:user].username, member_student_path(session[:user_id])
+            %li
+              = link_to 'home', member_path
+            %li
+              = link_to t('nav.logout'), access_logout_path
 

@@ -3,14 +3,14 @@
   .form-inputs
     = f.input :name, label: 'Nome', as: :string
     = f.input :last_name, label: 'Sobrenome', as: :string
-    = f.input :username, label: 'Nome de Usuário', as: :string
-    = f.input :gender, collection: ['Masculino','Feminino'], label: 'Gênero', as: :radio_buttons
+    -#= f.input :username, label: 'Nome de Usuário', as: :string
+    -#= f.input :gender, collection: ['Masculino','Feminino'], label: 'Gênero', as: :radio_buttons
     = f.input :email, label: 'E-mail', as: :string
     = f.input :birthday, as: :string, label: 'Aniversário'  ,input_html: {type: :date},
            start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year]
-    = f.input :degree, label: 'Formação' , as: :string
-    = f.input :address, label: 'Endereço', as: :string
-    = f.input :address_number, label: '' , as: :integer
+    -#= f.input :degree, label: 'Formação' , as: :string
+    -#= f.input :address, label: 'Endereço', as: :string
+    -#= f.input :address_number, label: '' , as: :integer
     = f.input :password, label: 'Senha'
     = f.association :courses, as: :check_boxes,label_method: :title
 

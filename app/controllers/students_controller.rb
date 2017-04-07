@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    # @course = Course.find(params[:course][:course_id])
+    @student.username = @student.email.split('@').first
 
     if @student.save
       redirect_to students_path, notice: t('views.course.create')
@@ -63,8 +63,8 @@ class StudentsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def student_params
-    params.require(:student).permit(:name, :last_name, :password, :username, :email, :gender, :degree,
-                                    :address, :address_number, :birthday, :course_ids => [])
+    params.require(:student).permit(:name, :last_name, :password, :username, :email,
+                                     :course_ids => [])
   end
 
   def get_my_courses

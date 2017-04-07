@@ -10,24 +10,7 @@
   = @student.last_name
 
 %p
-  %strong= 'Gender'
-  = @student.gender
-
-%p
-  %strong= 'Aniversário'
-  = (@student.birthday)
-
-%p
   %strong= 'Email'
   = @student.email
-%p
-  %strong= 'Endereço'
-  = @student.address
-  |
-  = @student.address_number
-
-%p
-  %strong= 'Curso/Formação'
-  = @student.degree
 
 = link_to 'Editar', edit_student_path(@student), class: 'btn btn-primary' #if signed_in?

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407141742) do
+ActiveRecord::Schema.define(version: 20170407183117) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -174,12 +174,7 @@ ActiveRecord::Schema.define(version: 20170407141742) do
     t.string "password_digest", limit: 25
     t.string "name"
     t.string "last_name"
-    t.string "gender"
-    t.date   "birthday"
-    t.string "degree"
     t.string "email"
-    t.string "address"
-    t.string "address_number"
   end
 
   create_table "users", force: :cascade do |t|

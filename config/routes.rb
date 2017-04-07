@@ -1,14 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'video/index'
-
-  get 'video/show'
-
-  get 'video/new'
-
-  get 'video/create'
-
-  get 'video/destroy'
 
   root 'home#index'
 
@@ -34,6 +25,7 @@ Rails.application.routes.draw do
   resource :about
   resource :contact
   resource :videos
+  get 'videos' => 'videos#index'
 
 
   resources :courses do

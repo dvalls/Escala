@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'access/attempt_login'
   get 'access/logout'
 
+
   resources :courses
   resources :feeds
   resources :tags

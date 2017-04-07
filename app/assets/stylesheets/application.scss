@@ -62,7 +62,7 @@ nav {
 
       li {
         margin: 0 10px 0 10px;
-        a, a:hover {
+        a, a:hover, a:active {
           padding: 3px 20px 3px 20px;
           color: white;
           background-color: $color-theme;
@@ -125,5 +125,9 @@ ul.feeds {
 }
 
 
+.navbar-toggle {
+  border-color: $color-theme;
+  span {background-color: $color-theme;}
+}
 
 

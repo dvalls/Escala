@@ -12,6 +12,9 @@
       %li
       %li
       %li
+      %li= link_to t('nav.about'), about_path
+      %li= link_to t('nav.contact'), contact_path
+      %li
         = link_to 'cursos', courses_path
       %li
         - case session[:user_id]

@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :material]
-  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+  before_filter :user_admin?, only: [:new, :create, :edit, :update]
 
   # before_filter :authorize, :except => [:index, :show]
 

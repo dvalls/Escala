@@ -1,5 +1,5 @@
 class ArchivesImagesController < ApplicationController
-  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+  before_filter :user_admin?, only: [:new, :create, :edit, :update]
 
 
   def index

@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:edit, :update, :destroy]
-  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+  before_filter :user_admin?, only: [:new, :create, :edit, :update]
 
   # before_filter :authorize
 

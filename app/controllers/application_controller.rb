@@ -27,14 +27,21 @@ class ApplicationController < ActionController::Base
 
   helper_method :admin_logged?
   def admin_logged?
+    session[:admin]
+  end
+
+  helper_method :user_admin?
+  def user_admin?
     unless session[:admin]
-        redirect_to root_path
-      end
+      redirect_to root_path
+    end
   end
 
   helper_method :student_logged?
   def student_logged?
-    session[:user_id]
+    unless session[:user_id]
+      redirect_to login_path
+    end
   end
 
   def get_student

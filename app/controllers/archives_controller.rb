@@ -1,7 +1,7 @@
 class ArchivesController < ApplicationController
   before_action :set_archive, only: [:edit, :update, :show, :destroy]
   before_action :set_subcategories, only: [:new, :create, :edit, :update, :index]
-  before_filter :admin_logged?, only: [:new, :create, :edit, :update]
+  before_filter :user_admin?, only: [:new, :create, :edit, :update]
 
 
   # before_action :remove_file, only: [:destroy]

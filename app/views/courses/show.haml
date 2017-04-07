@@ -47,7 +47,8 @@
   - if not @course_previous.nil?
     .previous
       = link_to @course_previous do
-        %i.fa.fa-chevron-left
+        %span.glyphicon.glyphicon-backward{"aria-hidden" => "true"}
+
         = @course_previous.title
 
   .overview
@@ -58,7 +59,8 @@
     .next
       = link_to @course_next do
         = @course_next.title
-        %i.fa.fa-chevron-right
+          %span.glyphicon.glyphicon-forward{"aria-hidden" => "true"}
+
 
 = stylesheet_link_tag "course"
 = javascript_include_tag "jquery.lazyload.min", "course"

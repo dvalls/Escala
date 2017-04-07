@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_filter :admin_logged?, only: [ :edit, :update]
+  before_filter :user_admin?, only: [ :edit, :update]
 
 
   before_action :set_contact_and_load_images, only: [:show, :edit, :update]

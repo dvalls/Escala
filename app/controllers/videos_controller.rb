@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   # before_filter :authorize
-  before_filter :admin_logged?
+  before_filter :user_admin?
 
   def index
     @videos = Video.all

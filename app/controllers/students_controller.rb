@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
-  before_filter :admin_logged?
+  before_filter :user_admin?
+
 
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 

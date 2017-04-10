@@ -7,7 +7,7 @@ class Archive < ActiveRecord::Base
   belongs_to :category
   belongs_to :course
 
-  has_one :image, :as => :imageable, :dependent => :destroy
+  has_one :images, :as => :imageable, :dependent => :destroy
 
   # has_many :archives_images, :dependent => :destroy
 

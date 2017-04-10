@@ -38,7 +38,7 @@ class ArchivesController < ApplicationController
   end
 
   def edit
-    @images = @archive.image
+    @images = @archive.images
   end
 
   def update

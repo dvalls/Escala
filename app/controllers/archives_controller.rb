@@ -62,11 +62,11 @@ class ArchivesController < ApplicationController
   private
 
   def assets_params
-    params.require(:archive).permit(:name, :category_id,  :description, :course_id)
+    params.require(:archive).permit(:name, :category_id,  :description, :course_id, :url)
   end
 
   def set_subcategories
-    @subcategories = Category.all.includes(:subcategories).where.not('parent_id' => nil)
+    @subcategories = Category.all.where.not('parent_id' => nil) #.where('subcategories_count = ?', 0)
   end
 
   def set_archive

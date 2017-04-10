@@ -12,11 +12,7 @@
               label_method: :name, as: :radio_buttons
 
 
-    -#%hr
-    -#  %ul.list-unstyled
-    -#    = render :partial => 'images/image', :collection => @images, :as => :image
-
-    = link_to 'ADICIONAR Arquivo', new_archive_archives_image_path(@archive), :class => 'btn btn-default'
+    = link_to 'ADICIONAR Arquivo', new_archive_image_path(@archive), :class => 'btn btn-default'
     %br/
 
 

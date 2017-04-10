@@ -1,7 +1,6 @@
 %table.table
   %tr
     %th NOME
-    %th ABREVIATURA
     %th Sub
     %th Parent
     %th
@@ -10,7 +9,6 @@
   - @categories.each do |category|
     %tr
       %td= category.name
-      %td= category.shortname
       %td
         - category.subcategories.each do |sub|
           = sub.name

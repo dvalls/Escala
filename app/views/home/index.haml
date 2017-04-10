@@ -16,10 +16,11 @@
               = carousel.title + carousel.description
 / End Carousel
 
-= link_to 'EDITAR GALERIA', carousels_path, :class => 'btn btn-primary' if admin_logged?
-= link_to 'Videos', videos_path, :class => 'btn btn-primary' if admin_logged?
+= link_to 'editar galeria', carousels_path, :class => 'btn btn-primary' if admin_logged?
+= link_to 'videos', videos_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'arquivos', archives_path, :class => 'btn btn-primary' if admin_logged?
-= link_to 'ALUNOS', students_path, :class => 'btn btn-primary' if admin_logged?
+= link_to 'alunos', students_path, :class => 'btn btn-primary' if admin_logged?
+= link_to 'categorias', categories_path, :class => 'btn btn-primary' if admin_logged?
 
 / Feeds
 %ul.feeds.list-unstyled

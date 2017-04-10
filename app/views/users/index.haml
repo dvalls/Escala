@@ -1,0 +1,11 @@
+%table.table
+  %tr
+    %th Nome
+    %th Admin
+    %th
+
+  - @users.each do |user|
+    %tr
+      %td= user.username
+      %td= user.admin
+      %td= link_to 'APAGAR', user, :method => :delete, :data => { :confirm => t('views.are_you_sure')}

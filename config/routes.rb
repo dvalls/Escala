@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
 
-
   root 'home#index'
 
-
   get 'access/login'
-
   get 'admin' => 'admin/home#index'
-
   get 'login' => 'access/login'
   post 'access/attempt_login'
   get 'access/logout'
-
 
   resources :courses
   resources :feeds
@@ -22,18 +17,22 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :archives
+  resources :videos
 
   resource :about
   resource :contact
-  resources :videos
 
 
   resources :courses do
     resources :images
   end
 
+  resources :videos  do
+    resources :images
+  end
+
   resources :archives do
-    resources :archives_images
+    resources :images
   end
 
   resource :about, :contact do
@@ -43,12 +42,9 @@ Rails.application.routes.draw do
   get 'member', to: 'member#index'
   get '/member_course/:id', to: 'member#show', as: 'member_course'
 
-
-
   namespace :member do
     resources :students
     resources :videos
-
     resources :archives, only: [ :show]
     resources :courses do
       resources :videos

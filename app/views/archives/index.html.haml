@@ -5,7 +5,7 @@
 - content_for :archive_files do
   - case @subcategory
     - when []
-      %p Selecione uma categoria, plz
+      = image_tag 'materiais.jpg'
     - else
       %h3
         %strong
@@ -13,7 +13,7 @@
           = @subcategory.name
       %table.table
         %tr
-          %th NOME
+          %th Nome
           %th Descrição
           %th Thumbnail
           %th
@@ -22,12 +22,12 @@
           %tr
             %td= archive.name
             %td= archive.description
-            %td= archive
+            %td= archive.url
             %td
-              - archive.archives_images.each do |archive_image|
-                = archive_image.title
+              - archive.images.each do |image|
+                = image.title
                 |
-                = archive_image.url
+                = image.url
 
 
             -#%td= material.parent_category
@@ -41,15 +41,22 @@
 .row
   .col-lg-3
     - @categories.each do |category|
-      %p
-        = category.name
-        - category.subcategories.each do |subcategory|
-          %li
-            = link_to subcategory.name, archives_path(:subcategory => subcategory)
+      - case
+        - when category.archives.count > 0
+          = link_to category.name, archives_path(:subcategory => category)
+        - else
+          %p
+            = category.name
+            - category.subcategories.each do |subcategory|
+              %li
+                = link_to subcategory.name, archives_path(:subcategory => subcategory)
+      %br/
       %br/
   .col-lg-9
-    -#= render partial: 'index' , locals: {:subcategory => params[:subcategory]}
-    = yield :archive_files
+    - if content_for?(:archive_files)
+      = yield :archive_files
+    - else
+      = image_tag  'materiais.jpg'
 
 
 = link_to( 'Novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?

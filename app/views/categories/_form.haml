@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :name
-    = f.input :shortname
+    = f.input(:group, :collection => ['archive','video'], as: :radio_buttons)
 
     = f.label 'parent'
     -#- categories = Category.all.map{|x| [x.name] + [x.id]}

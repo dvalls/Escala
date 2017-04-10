@@ -28,6 +28,8 @@ class ArchiveUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  process :resize_to_fill => [150, 150]
+
 
   # Create different versions of your uploaded files:
   version :thumb do

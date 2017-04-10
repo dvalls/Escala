@@ -1,10 +1,11 @@
-%h3 Novo Video
+%h3 Editar Video
+
 
 = simple_form_for(@video,:html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs
-    - puts '============================ FORM NEW ===================================='
+    - puts '============================ FORM EDIT===================================='
 
     = f.input :title, label: 'Titulo'
     = f.input :description, label: 'Descrição'

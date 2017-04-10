@@ -3,6 +3,7 @@
     %th NOME
     %th Sub
     %th Parent
+    %th Tipo
     %th
 
 
@@ -11,9 +12,11 @@
       %td= category.name
       %td
         - category.subcategories.each do |sub|
-          = sub.name
+          |
+          = link_to sub.name, edit_category_path(sub)
 
       %td= category.parent_category
+      %td= category.group
       %td
         = link_to 'EDITAR', edit_category_path(category)
         |

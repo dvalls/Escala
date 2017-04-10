@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     resources :archives, only: [ :show]
     resources :courses do
       resources :videos
+      resources :archives
     end
 
   end

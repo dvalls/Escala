@@ -25,7 +25,8 @@ class CategoriesController < ApplicationController
     # @category.parent = Category.find(params[:id]) unless params[:id].nil?
   end
 
-   def edit
+  def edit
+    @categories = Category.all.map{|x| [x.name] + [x.id]}
   end
 
   def create

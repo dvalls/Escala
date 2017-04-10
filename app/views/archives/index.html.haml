@@ -1,11 +1,9 @@
-%h3 Assets#index
-
-
 
 - content_for :archive_files do
   - case @subcategory
     - when []
       %p Selecione uma categoria, plz
+      = image_tag 'materiais.jpg'
     - else
       %h3
         %strong
@@ -15,7 +13,7 @@
         %tr
           %th Nome
           %th Descrição
-          %th Thumbnail
+          %th Url
           %th
 
         - @subcategory.archives.each do |archive|
@@ -24,10 +22,11 @@
             %td= archive.description
             %td= archive.url
             %td
-              - archive.images.each do |image|
-                = image.title
-                |
-                = image.url
+              = image_tag archive.image_url(:thumb) if archive.image?
+              -#- archive.images.each do |image|
+              -#  = image.title
+              -#  |
+              -#  = image.url
 
 
             -#%td= material.parent_category
@@ -53,38 +52,9 @@
       %br/
       %br/
   .col-lg-9
-    -#- if content_for?(:archive_files)
     = yield :archive_files
-    -#- else
-    -#  = image_tag  'materiais.jpg'
 
 
 = link_to( 'Novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?
 
 
-
--#- @categories.each do |category|
--#  .dropdown
--#    %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
--#      = category.name
--#      %span.caret
--#    %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
--#      - category.subcategories.each do |subcategory|
--#        %li
--#          = link_to subcategory.name, '#'
--#      %li
--#        %a{:href => "#"} Action
--#      %li
--#        %a{:href => "#"} Another action
--#      %li
--#        %a{:href => "#"} Something else here
--#      %li.divider{:role => "separator"}
--#      %li
--#        %a{:href => "#"} Separated link
--#  %li.dropdown
--#    %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
--#      = category.name
--#    %ul.dropdown-menu
--#      - category.subcategories.each do |subcategory|
--#        %li
--#          = link_to subcategory.name, '#'

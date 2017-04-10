@@ -22,7 +22,8 @@
             %td= archive.description
             %td= archive.url
             %td
-              = image_tag archive.image_url(:thumb)
+              - if archive.image != nil
+                = image_tag archive.image.url :thumb
               -#- archive.images.each do |image|
               -#  = image.title
               -#  |

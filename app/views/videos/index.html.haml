@@ -11,7 +11,7 @@
       %td
         = link_to  video.title, video.url
       %td= video.description
-      %td= video.description
+      %td= video.course.title
       %td
         - case video.category
           - when nil
@@ -21,7 +21,7 @@
       %td
         = link_to 'EDITAR - ainda nao pode....michi','#' # edit_video_path(video)
         |
-        = link_to 'APAGAR', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        = link_to 'APAGAR', '#' #video, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 
 

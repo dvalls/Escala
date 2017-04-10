@@ -5,7 +5,7 @@
 - content_for :archive_files do
   - case @subcategory
     - when []
-      = image_tag 'materiais.jpg'
+      %p Selecione uma categoria, plz
     - else
       %h3
         %strong
@@ -53,10 +53,10 @@
       %br/
       %br/
   .col-lg-9
-    - if content_for?(:archive_files)
-      = yield :archive_files
-    - else
-      = image_tag  'materiais.jpg'
+    -#- if content_for?(:archive_files)
+    = yield :archive_files
+    -#- else
+    -#  = image_tag  'materiais.jpg'
 
 
 = link_to( 'Novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?

@@ -1,4 +1,9 @@
-%h3= @student.full_name
+%h3
+  - case @student.class
+    - when Student
+      = @student.full_name
+    - else
+      = @student.username
 
 -#%h4
 -#  %strong= 'Email:'

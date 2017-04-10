@@ -44,8 +44,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_logged
+    session[:user]
+  end
+
   def get_student
-    Student.find(session[:user_id])
+    if session[:admin]
+      User.find(session[:user_id])
+    else
+      Student.find(session[:user_id])
+    end
   end
 
   helper_method :has_course?

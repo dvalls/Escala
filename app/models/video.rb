@@ -6,5 +6,4 @@ class Video < ApplicationRecord
   belongs_to :category
   has_many :images, :as => :imageable, :dependent => :destroy
 
-
 end

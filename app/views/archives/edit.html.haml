@@ -8,9 +8,10 @@
 
     = f.input :name
     = f.input :description
-    = f.input :category_id, label: 'Categoria', :collection => @subcategories, value_method: :id,
+    = f.input :category_id, label: 'Categoria', :collection => Category.all, value_method: :id,
               label_method: :name, as: :radio_buttons
-
+    = f.input :course_id, collection: Course.all, value_method: :id, label_method: :title, as: :radio_buttons
+    = f.input :url, as: :file, :input_html => { :multiple => true }
 
     = link_to 'ADICIONAR Arquivo', new_archive_image_path(@archive), :class => 'btn btn-default'
     %br/

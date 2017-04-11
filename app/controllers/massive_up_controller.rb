@@ -15,13 +15,13 @@ class MassiveUpController < ApplicationController
           puts '============================== WHEN SKP! INICIO++++++++++++++++++++++++++++++++++++'
           puts '============================== WHEN SKP! NOVO ARCHIVE++++++++++++++++++++++++++++++++++++'
           @archive = Archive.new(archives_params)
-          @archive.category_id = params[:category_id]
-          @archive.course_id = params[:course_id]
-          @archive.description = params[:description]
+          @archive.category_id = params[:archive][:category_id]
+          @archive.course_id = params[:archive][:course_id]
+          @archive.description = params[:archive][:description]
           @archive.name = url.original_filename[0..-5]
-          puts "============= PARAMS CREATE ====== category_id  #{params[:category_id]}   ============================  "
-          puts "============= PARAMS CREATE ====== course_id  #{params[:course_id]}   ============================  "
-          puts "============= PARAMS CREATE ====== description  #{params[:description]}   ============================  "
+          puts "============= PARAMS CREATE ====== category_id  #{params[:archive][:category_id]}   ============================  "
+          puts "============= PARAMS CREATE ====== course_id  #{params[:archive][:course_id]}   ============================  "
+          puts "============= PARAMS CREATE ====== description  #{params[:archive][:description]}   ============================  "
           puts "============= PARAMS CREATE ====== url.original_filename[0..-5]  #{url.original_filename[0..-5]}   ============================  "
           puts "============= PARAMS CREATE ====== valid?  #{@archive.valid?}   ============================  "
           @archive.url  = url
@@ -43,13 +43,13 @@ class MassiveUpController < ApplicationController
           else
             puts '============================== WHEN PNG!+ ELSE +++++++++++++++++++++++++++++++++++'
             @archive = Archive.new(archives_params)
-            @archive.category_id = params[:category_id]
-            @archive.course_id = params[:course_id]
-            @archive.description = params[:description]
+            @archive.category_id = params[:archive][:category_id]
+            @archive.course_id = params[:archive][:course_id]
+            @archive.description = params[:archive][:description]
             @archive.name = url.original_filename[0..-5]
-            puts "============= PARAMS CREATE ====== category_id  #{params[:category_id]}   ============================  "
-            puts "============= PARAMS CREATE ====== course_id  #{params[:course_id]}   ============================  "
-            puts "============= PARAMS CREATE ====== description  #{params[:description]}   ============================  "
+            puts "============= PARAMS CREATE ====== category_id  #{params[:archive][:category_id]}   ============================  "
+            puts "============= PARAMS CREATE ====== course_id  #{params[:archive][:course_id]}   ============================  "
+            puts "============= PARAMS CREATE ====== description  #{params[:archive][:description]}   ============================  "
             puts "============= PARAMS CREATE ====== url.original_filename[0..-5]  #{url.original_filename[0..-5]}   ============================  "
             puts "============= PARAMS CREATE ====== EXTENSION  #{extension}   ============================  "
             @archive.url  = url

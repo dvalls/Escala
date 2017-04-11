@@ -18,7 +18,7 @@ class MassiveUpController < ApplicationController
             @archive.save
           else
 
-          @archive = Archive.new(archives_params)
+          @archive = Archive.new()
           @archive.category_id = params[:archive][:category_id]
           @archive.course_id = params[:archive][:course_id]
           @archive.description = params[:archive][:description]
@@ -48,7 +48,8 @@ class MassiveUpController < ApplicationController
             puts "============= PARAMS CREATE ====== archive valid?  #{@archive.valid?}   ============================  "
 
             @archive.save
-            @image = Image.new(params.permit(:url, :imageable_id, :imageable_type, :title, :description))
+
+            @image = Image.new
             @image.imageable_id = @archive.id
             @image.imageable_type = Archive
             @image.url = url

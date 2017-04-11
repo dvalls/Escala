@@ -44,18 +44,19 @@ class MassiveUpController < ApplicationController
             @archive.category_id = params[:archive][:category_id]
             @archive.course_id = params[:archive][:course_id]
             @archive.description = params[:archive][:description]
+            @archive.name = url.original_filename[0..-5]
 
             @archive.save
-              @image = @archive.images.new(image_params)
-              @image.url = url
-              @image.title = url.original_filename[0..-5]
-              @image.description = params[:archive][:description]
-              puts "============= PARAMS CREATE ====== url  #{@image.url}   ============================  "
-              puts "============= PARAMS CREATE ====== title  #{@image.title}   ============================  "
-              puts "============= PARAMS CREATE ====== description  #{@image.description}   ============================  "
-              puts "============= PARAMS CREATE ====== valid?  #{@image.valid?}   ============================  "
-              puts "============= PARAMS CREATE ====== errors?  #{@image.errors.full_messages?}   ============================  "
-              @image.save
+            @image = @archive.images.new(image_params)
+            @image.url = url
+            @image.title = url.original_filename[0..-5]
+            @image.description = params[:archive][:description]
+            puts "============= PARAMS CREATE ====== url  #{@image.url}   ============================  "
+            puts "============= PARAMS CREATE ====== title  #{@image.title}   ============================  "
+            puts "============= PARAMS CREATE ====== description  #{@image.description}   ============================  "
+            puts "============= PARAMS CREATE ====== valid?  #{@image.valid?}   ============================  "
+            puts "============= PARAMS CREATE ====== errors?  #{@image.errors.full_messages?}   ============================  "
+            @image.save
             puts '============================== WHEN PNG!+ FINAL+++++++++++++++++++++++++++++++++++'
           end
       end

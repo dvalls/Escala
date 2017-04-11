@@ -23,9 +23,9 @@ class MassiveUpController < ApplicationController
           end
 
         when 'png'
-          archive = Archive.fin_by_name(url.original_filename[0..-5])
-          if archive
-            @image = archive.images.new(image_params)
+          @archive = Archive.fin_by_name(url.original_filename[0..-5])
+          if @archive
+            @image = @archive.images.new(image_params)
             @image.url = url
             @image.title = url.original_filename[0..-5]
 
@@ -34,8 +34,23 @@ class MassiveUpController < ApplicationController
               redirect_to archives_path, :notice => "deu crepe #{@image.errors.full_messages}"
             end
           else
-            flash[:notice] = " Não há arquivo com o nome #{url.original_filename[0..-5]}"
-            redirect_to archives_path
+
+            @archive = Archive.new(archives_params)
+            @archive.category_id = params[:category_id]
+            @archive.course_id = params[:course_id]
+            @archive.description = params[:description]
+            @archive.name = url.original_filename[0..-5]
+            @archive.url  = url
+
+            if @archive.save
+              @image = @archive.images.new(image_params)
+              @image.url = url
+              @image.title = url.original_filename[0..-5]
+
+              @image.save
+            else
+              redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
+            end
           end
       end
     end
@@ -50,7 +65,7 @@ class MassiveUpController < ApplicationController
   end
 
   def archives_params
-    params.require(:archive).permit(:name, :category_id,  :description, :course_id, :cover_image)
+    params.require(:archive).permit(:name, :category_id,  :description, :course_id, :url)
   end
 
   # def massive_new

@@ -23,7 +23,7 @@ class MassiveUpController < ApplicationController
           puts "============= PARAMS CREATE ====== course_id  #{params[:course_id]}   ============================  "
           puts "============= PARAMS CREATE ====== description  #{params[:description]}   ============================  "
           puts "============= PARAMS CREATE ====== url.original_filename[0..-5]  #{url.original_filename[0..-5]}   ============================  "
-          puts "============= PARAMS CREATE ====== EXTENSION  #{extension}   ============================  "
+          puts "============= PARAMS CREATE ====== valid?  #{@archive.valid?}   ============================  "
           @archive.url  = url
           puts '============================== WHEN SKP! FINAL++++++++++++++++++++++++++++++++++++'
           @archive.save

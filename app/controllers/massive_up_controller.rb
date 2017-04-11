@@ -59,7 +59,7 @@ class MassiveUpController < ApplicationController
             puts "============= PARAMS CREATE ====== title  #{@image.title}   ============================  "
             puts "============= PARAMS CREATE ====== description  #{@image.description}   ============================  "
             puts "============= PARAMS CREATE ====== valid?  #{@image.valid?}   ============================  "
-            puts "============= PARAMS CREATE ====== errors?  #{@image.errors.full_messages?}   ============================  "
+            puts "============= PARAMS CREATE ====== errors?  #{@image.errors.full_messages}   ============================  "
             @image.save
             puts '============================== WHEN PNG!+ FINAL+++++++++++++++++++++++++++++++++++'
           end

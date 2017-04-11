@@ -22,9 +22,8 @@ class MassiveUpController < ApplicationController
           @archive.name = url.original_filename[0..-5]
           @archive.url  = url
           puts '============================== WHEN SKP!++++++++++++++++++++++++++++++++++++'
-          if not @archive.save
+          @archive.save
             # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
-          end
         when '.png'
           @archive = Archive.find_by_name(url.original_filename[0..-5])
           if @archive
@@ -32,11 +31,10 @@ class MassiveUpController < ApplicationController
             @image.url = url
             @image.title = url.original_filename[0..-5]
 
-            if not @image.save
+            @image.save
               # puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
 
               # redirect_to archives_path, :notice => "deu crepe #{@image.errors.full_messages}"
-            end
           else
             @archive = Archive.new(archives_params)
             @archive.category_id = params[:category_id]

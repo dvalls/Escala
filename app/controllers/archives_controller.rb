@@ -31,7 +31,7 @@ class ArchivesController < ApplicationController
   def create
     @archive = Archive.new(assets_params)
     if @archive.save
-      redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso'
+      redirect_to edit_archive_path(@archive), notice: 'Material criado com sucesso'
     else
       render action: 'new'
     end

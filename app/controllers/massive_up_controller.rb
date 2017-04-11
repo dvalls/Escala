@@ -6,7 +6,7 @@ class MassiveUpController < ApplicationController
   def create
     # Loop throw images
     puts '============================ CREATE ===================================='
-    params[:image][:url].each do |url|
+    params[:url].each do |url|
       puts "============= PARAMS CREATE ======   #{url}   ============================  "
       case url.extension
         when 'skp'
@@ -21,7 +21,6 @@ class MassiveUpController < ApplicationController
           else
             redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
           end
-
         when 'png'
           @archive = Archive.fin_by_name(url.original_filename[0..-5])
           if @archive

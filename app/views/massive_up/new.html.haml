@@ -4,7 +4,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :url, as: :file, :input_html => { :multiple => true }
+    -#= f.input :url, as: :file, :input_html => { :multiple => true }
+    = file_field_tag :url, multiple: true
     = f.input :description
     = hidden_field_tag :description, :description
 

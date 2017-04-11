@@ -7,7 +7,7 @@ class MassiveUpController < ApplicationController
     # Loop throw images
     puts '============================ CREATE ===================================='
     puts "============= PARAMS CREATE ======   #{params[:url]}   ============================  "
-    params[:url].each do |url|
+    params[:archive][:url].each do |url|
       puts "============= PARAMS CREATE ======   #{url}   ============================  "
       case url.extension
         when 'skp'
@@ -65,7 +65,7 @@ class MassiveUpController < ApplicationController
   end
 
   def archives_params
-    params.require(:archive).permit(:name, :category_id,  :description, :course_id, :url)
+    params.require(:archive).permit(:name, :category_id, :description, :course_id, :url)
   end
 
   # def massive_new

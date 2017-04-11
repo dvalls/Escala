@@ -4,10 +4,9 @@
   = f.error_notification
 
   .form-inputs
-    = file_field_tag :url, multiple: true
+    = f.input :url, as: :file, :input_html => { :multiple => true }
 
     = f.input :description
-    = hidden_field_tag :description, :description
 
     = f.input :category_id, label: 'Categoria', :collection => Category.all, value_method: :id,
               label_method: :name, as: :radio_buttons

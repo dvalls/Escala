@@ -10,8 +10,8 @@ class MassiveUpController < ApplicationController
     params[:archive][:url].each do |url|
       puts "============= PARAMS CREATE ======   #{url}   ============================  "
       extension = get_extension(url.original_filename)
-      case
-        when extension == '.skp'
+      case extension
+        when '.skp'
           @archive = Archive.new(archives_params)
           @archive.category_id = params[:category_id]
           @archive.course_id = params[:course_id]
@@ -23,7 +23,7 @@ class MassiveUpController < ApplicationController
           else
             redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
           end
-        when extension == '.png'
+        when '.png'
           @archive = Archive.fin_by_name(url.original_filename[0..-5])
           if @archive
             @image = @archive.images.new(image_params)
@@ -70,7 +70,7 @@ class MassiveUpController < ApplicationController
   end
 
   def get_extension(filename)
-    size = length(filename)
+    size = filename.length
     final_size = size - 4
     return  filename[final_size..size]
 

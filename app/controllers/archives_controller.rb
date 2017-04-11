@@ -29,67 +29,13 @@ class ArchivesController < ApplicationController
   end
 
   def create
-    # @archive = Archive.new(assets_params)
-    # # @archive.name = (params[:url]).original_filename[0..-5]
-    # if @archive.save
-    #   redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso'
-    # else
-    #   render action: 'new'
-    # end
-
-
-
-    # Loop throw images
-    puts '============================ CREATE ===================================='
-    params[:image][:url].each do |url|
-      puts "============= PARAMS CREATE ======   #{url}   ============================  "
-      case url.extension
-        when 'skp'
-          @archive = Archive.new(archives_params)
-          @archive.category_id = params[:category_id]
-          @archive.course_id = params[:course_id]
-          @archive.description = params[:description]
-          @archive.name = url.original_filename[0..-5]
-          @archive.url  = url
-
-          if @archive.save
-          else
-            redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
-          end
-
-        when 'png'
-          @archive = Archive.fin_by_name(url.original_filename[0..-5])
-          if @archive
-            @image = @archive.images.new(image_params)
-            @image.url = url
-            @image.title = url.original_filename[0..-5]
-
-            if @image.save
-            else
-              redirect_to archives_path, :notice => "deu crepe #{@image.errors.full_messages}"
-            end
-          else
-
-            @archive = Archive.new(archives_params)
-            @archive.category_id = params[:category_id]
-            @archive.course_id = params[:course_id]
-            @archive.description = params[:description]
-            @archive.name = url.original_filename[0..-5]
-            @archive.url  = url
-
-            if @archive.save
-              @image = @archive.images.new(image_params)
-              @image.url = url
-              @image.title = url.original_filename[0..-5]
-
-              @image.save
-            else
-              redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
-            end
-          end
-      end
+    @archive = Archive.new(assets_params)
+    # @archive.name = (params[:url]).original_filename[0..-5]
+    if @archive.save
+      redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso'
+    else
+      render action: 'new'
     end
-    redirect_to archives_path, notice: t('views.image.create')
   end
 
   def edit

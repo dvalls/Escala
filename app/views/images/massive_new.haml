@@ -1,6 +1,6 @@
 %h2 Massive Create.
 
-= simple_form_for([@imageable, @image], :url => massive_create_archive_image_path, :method => :post,:html => {:multipart => true}) do |f|
+= simple_form_for([@imageable, @image], :url => massive_up_path, :method => :post,:html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs

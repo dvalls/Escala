@@ -35,6 +35,7 @@ class MassiveUpController < ApplicationController
             @image = @archive.images.new(image_params)
             @image.url = url
             @image.title = url.original_filename[0..-5]
+            @image.description = params[:archive][:description]
 
             @image.save
               # puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
@@ -59,19 +60,14 @@ class MassiveUpController < ApplicationController
               @image = @archive.images.new(image_params)
               @image.url = url
               @image.title = url.original_filename[0..-5]
+              @image.description = params[:archive][:description]
 
               @image.save
-            else
-              # puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
-
-              # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
             end
             puts '============================== WHEN PNG!+ FINAL+++++++++++++++++++++++++++++++++++'
-
           end
       end
     end
-
     redirect_to archives_path, notice: t('views.image.create')
   end
 

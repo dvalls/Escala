@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   before_action :set_video, only: [:edit, :update, :destroy]
 
   def index
-    @videos = Video.all
+    @videos = Video.order(title: :asc)
   end
 
   def new

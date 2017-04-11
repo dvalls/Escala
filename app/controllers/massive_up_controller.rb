@@ -6,24 +6,16 @@ class MassiveUpController < ApplicationController
   def create
     # Loop throw images
     puts '============================ CREATE ===================================='
-    puts "============= PARAMS CREATE ======   #{params[:url]}   ============================  "
     params[:archive][:url].each do |url|
       extension = get_extension(url.original_filename)
-      puts "============= PARAMS CREATE ====== EXTENSION  #{extension}   ============================  "
       case extension
         when '.skp'
           puts '============================== WHEN SKP! INICIO++++++++++++++++++++++++++++++++++++'
-          puts '============================== WHEN SKP! NOVO ARCHIVE++++++++++++++++++++++++++++++++++++'
           @archive = Archive.new(archives_params)
           @archive.category_id = params[:archive][:category_id]
           @archive.course_id = params[:archive][:course_id]
           @archive.description = params[:archive][:description]
           @archive.name = url.original_filename[0..-5]
-          puts "============= PARAMS CREATE ====== category_id  #{params[:archive][:category_id]}   ============================  "
-          puts "============= PARAMS CREATE ====== course_id  #{params[:archive][:course_id]}   ============================  "
-          puts "============= PARAMS CREATE ====== description  #{params[:archive][:description]}   ============================  "
-          puts "============= PARAMS CREATE ====== url.original_filename[0..-5]  #{url.original_filename[0..-5]}   ============================  "
-          puts "============= PARAMS CREATE ====== valid?  #{@archive.valid?}   ============================  "
           @archive.url  = url
           puts '============================== WHEN SKP! FINAL++++++++++++++++++++++++++++++++++++'
           @archive.save
@@ -38,9 +30,6 @@ class MassiveUpController < ApplicationController
             @image.description = params[:archive][:description]
 
             @image.save
-              # puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
-
-              # redirect_to archives_path, :notice => "deu crepe #{@image.errors.full_messages}"
           else
             puts '============================== WHEN PNG!+ ELSE +++++++++++++++++++++++++++++++++++'
             @archive = Archive.new(archives_params)
@@ -48,11 +37,6 @@ class MassiveUpController < ApplicationController
             @archive.course_id = params[:archive][:course_id]
             @archive.description = params[:archive][:description]
             @archive.name = url.original_filename[0..-5]
-            puts "============= PARAMS CREATE ====== category_id  #{params[:archive][:category_id]}   ============================  "
-            puts "============= PARAMS CREATE ====== course_id  #{params[:archive][:course_id]}   ============================  "
-            puts "============= PARAMS CREATE ====== description  #{params[:archive][:description]}   ============================  "
-            puts "============= PARAMS CREATE ====== url.original_filename[0..-5]  #{url.original_filename[0..-5]}   ============================  "
-            puts "============= PARAMS CREATE ====== EXTENSION  #{extension}   ============================  "
             @archive.url  = url
 
 
@@ -61,8 +45,14 @@ class MassiveUpController < ApplicationController
               @image.url = url
               @image.title = url.original_filename[0..-5]
               @image.description = params[:archive][:description]
-
+              puts "============= PARAMS CREATE ====== url  #{@image.url}   ============================  "
+              puts "============= PARAMS CREATE ====== title  #{@image.title}   ============================  "
+              puts "============= PARAMS CREATE ====== description  #{@image.description}   ============================  "
+              puts "============= PARAMS CREATE ====== valid?  #{@image.valid?}   ============================  "
+              puts "============= PARAMS CREATE ====== errors?  #{@image.errors.full_messages?}   ============================  "
               @image.save
+            else
+              redirect_to :back
             end
             puts '============================== WHEN PNG!+ FINAL+++++++++++++++++++++++++++++++++++'
           end

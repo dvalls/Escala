@@ -24,7 +24,7 @@ class MassiveUpController < ApplicationController
             redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
           end
         when '.png'
-          @archive = Archive.fin_by_name(url.original_filename[0..-5])
+          @archive = Archive.find_by_name(url.original_filename[0..-5])
           if @archive
             @image = @archive.images.new(image_params)
             @image.url = url

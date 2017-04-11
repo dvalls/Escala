@@ -20,11 +20,8 @@ class MassiveUpController < ApplicationController
           @archive.url  = url
           puts "============= PARAMS CREATE ======   #{url}   ============================  "
 
-          if @archive.save
-          else
-            puts "============= PARAMS CREATE ======   #{@archive.errors.full_messages}   ============================  "
-
-            redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
+          if not @archive.save
+            # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
           end
         when '.png'
           @archive = Archive.find_by_name(url.original_filename[0..-5])
@@ -33,11 +30,10 @@ class MassiveUpController < ApplicationController
             @image.url = url
             @image.title = url.original_filename[0..-5]
 
-            if @image.save
-            else
-              puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
+            if not @image.save
+              # puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
 
-              redirect_to archives_path, :notice => "deu crepe #{@image.errors.full_messages}"
+              # redirect_to archives_path, :notice => "deu crepe #{@image.errors.full_messages}"
             end
           else
             @archive = Archive.new(archives_params)
@@ -46,7 +42,7 @@ class MassiveUpController < ApplicationController
             @archive.description = params[:description]
             @archive.name = url.original_filename[0..-5]
             @archive.url  = url
-            puts "============= PARAMS CREATE ======   #{@archive.errors.full_messages}   ============================  "
+            # puts "============= PARAMS CREATE ======   #{@archive.errors.full_messages}   ============================  "
 
 
             if @archive.save
@@ -56,9 +52,9 @@ class MassiveUpController < ApplicationController
 
               @image.save
             else
-              puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
+              # puts "============= PARAMS CREATE ======   #{@image.errors.full_messages}   ============================  "
 
-              redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
+              # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
             end
           end
       end

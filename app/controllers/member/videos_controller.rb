@@ -6,7 +6,7 @@ class Member::VideosController < Member::MemberAreaController # ApplicationContr
   def index
     @student = get_student
     @course = Course.friendly.find(params[:course_id])
-    @videos = Video.all.where( :course_id => @course.id)
+    @videos = Video.order(title: :asc).order(course_id: :asc).where( :course_id => @course.id)
   end
 
   def show

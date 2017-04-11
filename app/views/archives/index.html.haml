@@ -14,13 +14,15 @@
           %th
           %th Nome
           %th Descrição
+          %th Tipo
           %th
 
         - @subcategory.archives.each do |archive|
           %tr
-            %td= archive.url.url
+            %td= archive.url(:thumb)
             %td= archive.name
             %td= archive.description
+            %td= archive.category.group
             %td
               -#- if archive.images != nil
               -#  = image_tag archive.image.url

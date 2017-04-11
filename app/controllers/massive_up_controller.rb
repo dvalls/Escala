@@ -11,6 +11,13 @@ class MassiveUpController < ApplicationController
       case extension
         when '.skp'
           puts '============================== WHEN SKP! INICIO++++++++++++++++++++++++++++++++++++'
+          @archive = Archive.find_by_name(url.original_filename[0..-5])
+          if @archive
+            @archive.name = url.original_filename[0..-5]
+            @archive.url  = url
+            @archive.save
+          else
+
           @archive = Archive.new(archives_params)
           @archive.category_id = params[:archive][:category_id]
           @archive.course_id = params[:archive][:course_id]
@@ -20,6 +27,7 @@ class MassiveUpController < ApplicationController
           puts '============================== WHEN SKP! FINAL++++++++++++++++++++++++++++++++++++'
           @archive.save
             # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
+          end
         when '.png'
           puts '============================== WHEN PNG!+ INICIO+++++++++++++++++++++++++++++++++++'
           @archive = Archive.find_by_name(url.original_filename[0..-5])
@@ -36,11 +44,8 @@ class MassiveUpController < ApplicationController
             @archive.category_id = params[:archive][:category_id]
             @archive.course_id = params[:archive][:course_id]
             @archive.description = params[:archive][:description]
-            @archive.name = url.original_filename[0..-5]
-            @archive.url  = url
 
-
-            if @archive.save
+            @archive.save
               @image = @archive.images.new(image_params)
               @image.url = url
               @image.title = url.original_filename[0..-5]
@@ -51,9 +56,6 @@ class MassiveUpController < ApplicationController
               puts "============= PARAMS CREATE ====== valid?  #{@image.valid?}   ============================  "
               puts "============= PARAMS CREATE ====== errors?  #{@image.errors.full_messages?}   ============================  "
               @image.save
-            else
-              redirect_to :back
-            end
             puts '============================== WHEN PNG!+ FINAL+++++++++++++++++++++++++++++++++++'
           end
       end

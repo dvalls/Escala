@@ -45,7 +45,7 @@ class MassiveUpController < ApplicationController
             @archive.course_id = params[:archive][:course_id]
             @archive.description = params[:archive][:description]
             @archive.name = url.original_filename[0..-5]
-            puts "============= PARAMS CREATE ====== valid?  #{@archive.valid?}   ============================  "
+            puts "============= PARAMS CREATE ====== archive valid?  #{@archive.valid?}   ============================  "
 
             @archive.save
             @image = @archive.images.new(image_params)

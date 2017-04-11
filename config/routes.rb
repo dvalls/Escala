@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'massive_up/new'
+
+  get 'massive_up/create'
+
   root 'home#index'
 
   get 'access/login'

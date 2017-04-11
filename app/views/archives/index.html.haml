@@ -19,7 +19,7 @@
 
         - @subcategory.archives.each do |archive|
           %tr
-            %td= image_tag archive.cover_image.url
+            %td= archive.url
             %td= archive.name
             %td= archive.description
             %td= archive.category.group
@@ -27,6 +27,7 @@
               -#- if archive.images != nil
               -#  = image_tag archive.image.url
               - archive.images.each do |image|
+                = image.title
                 = image_tag image.url.url(:thumb)
               -#  = image.title
               -#  |
@@ -60,5 +61,6 @@
 
 
 = link_to( 'Novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?
+= link_to 'massivo', massive_up_new_path, class: 'btn btn-primary'
 
 

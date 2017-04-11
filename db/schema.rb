@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411150415) do
+ActiveRecord::Schema.define(version: 20170411153855) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170411150415) do
     t.datetime "updated_at"
     t.string   "description"
     t.integer  "course_id"
-    t.string   "cover_image"
+    t.string   "url"
     t.index ["category_id"], name: "index_archives_on_category_id"
   end
 

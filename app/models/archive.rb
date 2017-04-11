@@ -2,7 +2,7 @@ class Archive < ActiveRecord::Base
 
   validates :name, :description, :category_id , presence: true
 
-  mount_uploader :cover_image , ArchiveUploader
+  mount_uploader :url , ArchiveUploader
 
   belongs_to :category
   belongs_to :course

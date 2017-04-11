@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :massive_up
+  # resources :massive_up
+
+  get 'massive_up/new'
+
+  get 'massive_up/create'
 
   root 'home#index'
 

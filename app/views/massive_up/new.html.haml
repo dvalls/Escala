@@ -1,6 +1,6 @@
 %h1 MassiveUp#new
 %p Find me in app/views/massive_up/new.html.haml
-= simple_form_for( @archive, :url => massive_up_path, :method => :post, :html => {:multipart => true}) do |f|
+= simple_form_for( @archive, :url => 'massive_up/create', :method => :post, :html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs

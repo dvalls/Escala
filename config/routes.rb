@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'massive_up/new'
 
-  get 'massive_up/create'
+  post 'massive_up/create'
 
   root 'home#index'
 

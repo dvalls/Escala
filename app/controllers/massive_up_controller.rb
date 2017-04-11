@@ -6,7 +6,7 @@ class MassiveUpController < ApplicationController
   def create
     # Loop throw images
     puts '============================ CREATE ===================================='
-    params[:archive][:url].each do |url|
+    params[:image][:url].each do |url|
       puts "============= PARAMS CREATE ======   #{url}   ============================  "
       case url.extension
         when 'skp'

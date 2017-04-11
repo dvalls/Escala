@@ -8,8 +8,11 @@ class MassiveUpController < ApplicationController
     puts '============================ CREATE ===================================='
     puts "============= PARAMS CREATE ======   #{params[:url]}   ============================  "
     params[:archive][:url].each do |url|
-      puts "============= PARAMS CREATE ======   #{url}   ============================  "
       extension = get_extension(url.original_filename)
+      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
+      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
+      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
+      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
       case extension
         when '.skp'
           @archive = Archive.new(archives_params)
@@ -18,8 +21,7 @@ class MassiveUpController < ApplicationController
           @archive.description = params[:description]
           @archive.name = url.original_filename[0..-5]
           @archive.url  = url
-          puts "============= PARAMS CREATE ======   #{url}   ============================  "
-
+          puts '============================== WHEN SKP!++++++++++++++++++++++++++++++++++++'
           if not @archive.save
             # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
           end
@@ -56,6 +58,8 @@ class MassiveUpController < ApplicationController
 
               # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
             end
+            puts '============================== WHEN PNG!++++++++++++++++++++++++++++++++++++'
+
           end
       end
     end

@@ -9,22 +9,27 @@ class MassiveUpController < ApplicationController
     puts "============= PARAMS CREATE ======   #{params[:url]}   ============================  "
     params[:archive][:url].each do |url|
       extension = get_extension(url.original_filename)
-      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
-      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
-      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
-      puts "============= PARAMS CREATE ======   #{extension}   ============================  "
+      puts "============= PARAMS CREATE ====== EXTENSION  #{extension}   ============================  "
       case extension
         when '.skp'
+          puts '============================== WHEN SKP! INICIO++++++++++++++++++++++++++++++++++++'
+          puts '============================== WHEN SKP! NOVO ARCHIVE++++++++++++++++++++++++++++++++++++'
           @archive = Archive.new(archives_params)
           @archive.category_id = params[:category_id]
           @archive.course_id = params[:course_id]
           @archive.description = params[:description]
           @archive.name = url.original_filename[0..-5]
+          puts "============= PARAMS CREATE ====== category_id  #{params[:category_id]}   ============================  "
+          puts "============= PARAMS CREATE ====== course_id  #{params[:course_id]}   ============================  "
+          puts "============= PARAMS CREATE ====== description  #{params[:description]}   ============================  "
+          puts "============= PARAMS CREATE ====== url.original_filename[0..-5]  #{url.original_filename[0..-5]}   ============================  "
+          puts "============= PARAMS CREATE ====== EXTENSION  #{extension}   ============================  "
           @archive.url  = url
-          puts '============================== WHEN SKP!++++++++++++++++++++++++++++++++++++'
+          puts '============================== WHEN SKP! FINAL++++++++++++++++++++++++++++++++++++'
           @archive.save
             # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
         when '.png'
+          puts '============================== WHEN PNG!+ INICIO+++++++++++++++++++++++++++++++++++'
           @archive = Archive.find_by_name(url.original_filename[0..-5])
           if @archive
             @image = @archive.images.new(image_params)
@@ -36,13 +41,18 @@ class MassiveUpController < ApplicationController
 
               # redirect_to archives_path, :notice => "deu crepe #{@image.errors.full_messages}"
           else
+            puts '============================== WHEN PNG!+ ELSE +++++++++++++++++++++++++++++++++++'
             @archive = Archive.new(archives_params)
             @archive.category_id = params[:category_id]
             @archive.course_id = params[:course_id]
             @archive.description = params[:description]
             @archive.name = url.original_filename[0..-5]
+            puts "============= PARAMS CREATE ====== category_id  #{params[:category_id]}   ============================  "
+            puts "============= PARAMS CREATE ====== course_id  #{params[:course_id]}   ============================  "
+            puts "============= PARAMS CREATE ====== description  #{params[:description]}   ============================  "
+            puts "============= PARAMS CREATE ====== url.original_filename[0..-5]  #{url.original_filename[0..-5]}   ============================  "
+            puts "============= PARAMS CREATE ====== EXTENSION  #{extension}   ============================  "
             @archive.url  = url
-            # puts "============= PARAMS CREATE ======   #{@archive.errors.full_messages}   ============================  "
 
 
             if @archive.save
@@ -56,7 +66,7 @@ class MassiveUpController < ApplicationController
 
               # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"
             end
-            puts '============================== WHEN PNG!++++++++++++++++++++++++++++++++++++'
+            puts '============================== WHEN PNG!+ FINAL+++++++++++++++++++++++++++++++++++'
 
           end
       end

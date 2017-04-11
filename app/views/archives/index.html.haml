@@ -19,7 +19,7 @@
 
         - @subcategory.archives.each do |archive|
           %tr
-            %td= archive.cover_image.url
+            %td= image_tag archive.cover_image.url
             %td= archive.name
             %td= archive.description
             %td= archive.category.group

@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @categories = Category.all.map{|x| [x.name] + [x.id]}
+    @categories = Category.where(parent_id: nil).map{|x| [x.name] + [x.id]}
   end
 
   def create

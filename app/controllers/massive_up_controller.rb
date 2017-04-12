@@ -12,6 +12,7 @@ class MassiveUpController < ApplicationController
         when '.skp'
           puts '============================== WHEN SKP! INICIO++++++++++++++++++++++++++++++++++++'
           puts "============= PARAMS CREATE ====== url?  #{url}   ============================  "
+          puts "============= PARAMS CREATE ====== url.url?  #{url.url}   ============================  "
           @archive = Archive.find_by_name(url.original_filename[0..-5])
           if @archive
             @archive.url = url

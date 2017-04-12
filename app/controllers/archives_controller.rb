@@ -44,7 +44,6 @@ class ArchivesController < ApplicationController
 
   def update
     puts '============================ UPDATE! ===================================='
-    @archive.url = params[:archive][:url]
     if @archive.update(assets_params)
       redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso.'
     else

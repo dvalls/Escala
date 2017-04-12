@@ -7,8 +7,6 @@ class ArchivesImagesController < ApplicationController
   end
 
   def new
-    puts '============================ NEW ===================================='
-
     @image = ArchivesImage.new
   end
 
@@ -17,16 +15,11 @@ class ArchivesImagesController < ApplicationController
 
   def create
     # Loop throw images
-    puts '============================ CREATE ===================================='
     params[:image][:url].each do |url|
-      puts "============= PARAMS CREATE ======   #{url}   ============================  "
-
       @image = ArchivesImage.new(image_params)
       @image.url = url
       @image.title = url.original_filename[0..-5]
-
       @image.save
-      puts "=========== ERRORS ======   #{@image.errors.full_messages} ================================================="
     end
     redirect_to archives_path, notice: t('views.image.create')
   end

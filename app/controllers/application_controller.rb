@@ -14,17 +14,6 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # def authorize
-  #   authenticate_or_request_with_http_basic do |username, password|
-  #     username == ENV['USER_ID'] && password == ENV['PASSWORD']
-  #   end
-  #
-  # end
-  #
-  # def signed_in?
-  #   not request.authorization.nil?
-  # end
-
   helper_method :admin_logged?
   def admin_logged?
     session[:admin]

@@ -8,25 +8,20 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-
   def show
     @course = Course.friendly.find(params[:id])
-
   end
 
   def content
     @course = Course.friendly.find(params[:id])
   end
 
-
   def new
     @student = Student.new
   end
 
-
   def edit
   end
-
 
   def create
     @student = Student.new(student_params)
@@ -35,15 +30,12 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to students_path, notice: t('views.student.create')
     else
-      puts "=================================== #{@student.errors.full_messages}=================================="
       render action: 'new'
     end
   end
 
 
   def update
-    # @student.username = @student.email.split('@').first
-
     if @student.update(student_params)
       @student.username = @student.email.split('@').first
       if @student.save
@@ -51,7 +43,6 @@ class StudentsController < ApplicationController
       redirect_to students_path, notice: t('views.updated_ok')
       end
     else
-      puts "=================================== #{@student.errors.full_messages}=================================="
       render action: 'edit'
     end
   end

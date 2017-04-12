@@ -3,56 +3,25 @@ class ImagesController < ApplicationController
 
   before_action :set_imageable, only: [:index, :edit,  :create, :new, :update, :destroy]
   before_action :set_image, only: [:edit, :update, :destroy]
-  # before_filter :authorize
 
   def index
     @images = @imageable.images
   end
 
   def new
-    puts '============================ NEW ===================================='
-
     @image = Image.new
   end
 
   def edit
   end
 
-  def massive_new
-
-  end
-
-  def massive_create
-    # Loop throw images
-    puts '============================ CREATE ===================================='
-    params[:image][:url].each do |url|
-      puts "============= PARAMS CREATE ======   #{url}   ============================  "
-      if @imageable.name == url.original_filename[0..-5]
-        @image = @imageable.images.new(image_params)
-        @image.url = url
-        @image.title = url.original_filename[0..-5]
-
-        @image.save
-
-        puts "=========== ERRORS ======   #{@image.errors.full_messages} ================================================="
-      end
-
-    end
-    redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
-  end
-
   def create
     # Loop throw images
-    puts '============================ CREATE ===================================='
     params[:image][:url].each do |url|
-      puts "============= PARAMS CREATE ======   #{url}   ============================  "
-
       @image = @imageable.images.new(image_params)
       @image.url = url
       @image.title = url.original_filename[0..-5]
-
       @image.save
-      puts "=========== ERRORS ======   #{@image.errors.full_messages} ================================================="
     end
     redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
   end
@@ -84,9 +53,7 @@ class ImagesController < ApplicationController
 
   def set_imageable
     params.each do |name, value|
-
       # With ID
-      # puts "============= SET IMEGEABLE ======   #{name}  and #{name} ============================  "
       if name =~ /(.+)_id$/
         if $1 == 'course'
           @imageable =  $1.classify.constantize.friendly.find(value) # Exclusive loading 'cause FriendlyId...

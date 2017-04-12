@@ -24,7 +24,6 @@ class ArchivesController < ApplicationController
   end
 
   def new
-    puts '============================ NEW ===================================='
     @archive = Archive.new()
   end
 
@@ -43,7 +42,6 @@ class ArchivesController < ApplicationController
   end
 
   def update
-    puts '============================ UPDATE! ===================================='
     if @archive.update(assets_params)
       redirect_to archives_path(:subcategory => @archive.category), notice: 'Material criado com sucesso.'
     else
@@ -52,7 +50,6 @@ class ArchivesController < ApplicationController
   end
 
   def destroy
-    puts '============================ DESTROY! ===================================='
     category = @archive.category
     @archive.destroy
     redirect_to archives_path(:subcategory => category), notice: 'Material excluído com sucesso.'
@@ -65,7 +62,7 @@ class ArchivesController < ApplicationController
   end
 
   def set_subcategories
-    @subcategories = Category.all.where.not('parent_id' => nil) #.where('subcategories_count = ?', 0)
+    @subcategories = Category.all.where.not('parent_id' => nil)
   end
 
   def set_archive

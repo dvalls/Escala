@@ -6,7 +6,6 @@
     = f.input(:group, :collection => ['archive','video', 'exercício', 'material de apoio', 'plugin', 'link'], as: :radio_buttons)
 
     = f.label 'parent'
-    -#- categories = Category.all.map{|x| [x.name] + [x.id]}
     = f.select(:parent_id, options_for_select(@categories), { :include_blank => 'None'}, class: 'form-control')
 
   .form-actions

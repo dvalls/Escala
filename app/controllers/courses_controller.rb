@@ -2,22 +2,14 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy, :material]
   before_filter :user_admin?, only: [:new, :create, :edit, :update]
 
-  # before_filter :authorize, :except => [:index, :show]
 
   def index
-    # Show all courses if admin. This u can (un)publish
-    # if signed_in? then
-    #   @courses = Course.order(year: :desc)
-    # else
-    #   @courses = Course.all.where('publish = ?', true).order(year: :desc)
-    # end
     @courses = Course.all
     @categories = Category.all
   end
 
 
   def show
-    # render layout: 'project'
   end
 
 
@@ -45,7 +37,6 @@ class CoursesController < ApplicationController
   def update
     if @course.update(course_params)
       redirect_to @course, notice: t('views.updated_ok')
-      #redirect_to projects_path, notice: t('views.updated_ok')
     else
       render action: 'edit'
     end

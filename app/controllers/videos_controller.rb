@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  # before_filter :authorize
   before_filter :user_admin?
   before_action :set_video, only: [:edit, :update, :destroy]
 

@@ -41,23 +41,21 @@
     %ul
       %h3 Categorias
       - @categories.each do |category|
-        - case
-          - when category.archives.count > 0
-            %li
-              = link_to category.name, archives_path(:subcategory => category)
-              - if category.subcategories.count > 0
-                %ul
-                  - category.subcategories.each do |subcategory|
-                    %li
-                      = link_to subcategory.name, archives_path(:subcategory => subcategory)
-          - else
-            %li
-              = category.name
-              %ul
-                - category.subcategories.each do |subcategory|
-                  %li
-                    = link_to subcategory.name, archives_path(:subcategory => subcategory)
-  .col-lg-9
+        %li
+          = link_to category.name, archives_path(:subcategory => category)
+          - if category.subcategories.count > 0
+            %ul
+              - category.subcategories.each do |subcategory|
+                %li
+                  = link_to subcategory.name, archives_path(:subcategory => subcategory)
+          -#- else
+          -#  %li
+          -#    = category.name
+          -#    %ul
+          -#      - category.subcategories.each do |subcategory|
+          -#        %li
+          -#          = link_to subcategory.name, archives_path(:subcategory => subcategory)
+  .col-xs-9.col-md-3
     = yield :archive_files
 
 

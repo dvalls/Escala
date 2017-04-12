@@ -6,24 +6,22 @@
     = render partial: 'member/students/show'
   .col-lg-9
     %ul#Grid.row
-      - case @student.class
-        - when Student
-          - @student.courses.each do |course|
-            %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
-              = link_to member_course_path(course) do
-                .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
-                .course-name
-                  = '- ' + course.title
-                  = ' (NÃO PUBLICADO)' if not course.publish?
-        - else
-          - Course.all.each do |course|
-            %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
-              -#= link_to member_course_path(course) do
-              = link_to member_course_path(course) do
-                .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
-                .course-name
-                  = '- ' + course.title
-                  = ' (NÃO PUBLICADO)' if not course.publish?
+      - @student.courses.each do |course|
+        %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
+          = link_to member_course_path(course) do
+            .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
+            .course-name
+              = '- ' + course.title
+              = ' (NÃO PUBLICADO)' if not course.publish?
+        -#- else
+        -#  - Course.all.each do |course|
+        -#    %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
+        -#      -#= link_to member_course_path(course) do
+        -#      = link_to member_course_path(course) do
+        -#        .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
+        -#        .course-name
+        -#          = '- ' + course.title
+        -#          = ' (NÃO PUBLICADO)' if not course.publish?
 
 
 = stylesheet_link_tag "course"

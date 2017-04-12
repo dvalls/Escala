@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
     @student.username = @student.email.split('@').first
 
     if @student.save
-      redirect_to students_path, notice: t('views.course.create')
+      redirect_to students_path, notice: t('views.student.create')
     else
       puts "=================================== #{@student.errors.full_messages}=================================="
       render action: 'new'
@@ -59,7 +59,7 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
-    redirect_to students_path, notice: t('views.course.destroy')
+    redirect_to students_path, notice: t('views.student.destroy')
   end
 
   private

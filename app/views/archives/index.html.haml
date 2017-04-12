@@ -15,7 +15,7 @@
       - @subcategory.archives.each do |archive|
         .col-xs-3.col-md-3
           = link_to '#' do
-            = image_tag archive.images.first.url.url(:thumb)
+            = image_tag archive.images.first.url.url(:thumb), class: 'thumbnail'
             = archive.name
           = link_to 'x', archive, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
       -#

@@ -21,12 +21,12 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    @categories = Category.all.map{|x| [x.name] + [x.id]}
+    @categories = Category.where(parent_id: nil).map{|x| [x.name] + [x.id]}
     # @category.parent = Category.find(params[:id]) unless params[:id].nil?
   end
 
   def edit
-    @categories = Category.where(parent_id: nil)
+    @categories = Category.where(parent_id: nil).map{|x| [x.name] + [x.id]}
   end
 
   def create

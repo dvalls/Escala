@@ -9,7 +9,6 @@ class ArchivesController < ApplicationController
 
   def index
     puts '============================ INDEX ===================================='
-    @archives = Archive.all
     @categories = Category.all.includes(:subcategories).where('parent_id' => nil)
 
     case params[:subcategory]
@@ -17,6 +16,7 @@ class ArchivesController < ApplicationController
         @subcategory = []
       else
         @subcategory = Category.find(params[:subcategory])
+        @archives = @subcategory.archives.order(name: :asc)
     end
   end
 

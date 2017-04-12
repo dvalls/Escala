@@ -38,23 +38,29 @@
 
 .row
   .col-lg-3
-    - @categories.each do |category|
-      - case
-        - when category.archives.count > 0
-          = link_to category.name, archives_path(:subcategory => category)
-        - else
-          %li
-            = category.name
-            - category.subcategories.each do |subcategory|
-              %li
-                = link_to subcategory.name, archives_path(:subcategory => subcategory)
-      %br/
-      %br/
+    %ul
+      %h3 Categorias
+      - @categories.each do |category|
+        - case
+          - when category.archives.count > 0
+            %li
+              = link_to category.name, archives_path(:subcategory => category)
+              - if category.subcategories.count > 0
+                %ul
+                  - category.subcategories.each do |subcategory|
+                    %li
+                      = link_to subcategory.name, archives_path(:subcategory => subcategory)
+          - else
+            %li
+              = category.name
+              - category.subcategories.each do |subcategory|
+                %li
+                  = link_to subcategory.name, archives_path(:subcategory => subcategory)
   .col-lg-9
     = yield :archive_files
 
 
-= link_to( 'Novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?
+= link_to( 'novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?
 = link_to 'massivo', massive_up_new_path, class: 'btn btn-primary'
 = link_to 'voltar', root_path, class: 'btn btn-primary'
 

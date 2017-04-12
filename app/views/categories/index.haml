@@ -11,9 +11,10 @@
     %tr
       %td= category.name
       %td
-        - category.subcategories.each do |sub|
-          |
-          = link_to sub.name, edit_category_path(sub)
+        %ul
+          - category.subcategories.each do |sub|
+            %li
+              = link_to sub.name, edit_category_path(sub)
 
       %td= category.parent_category
       %td= category.group

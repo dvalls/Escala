@@ -11,7 +11,7 @@ class MassiveUpController < ApplicationController
       case extension
         when '.skp'
           puts '============================== WHEN SKP! INICIO++++++++++++++++++++++++++++++++++++'
-          puts "============= PARAMS CREATE ====== archive valid?  #{url}   ============================  "
+          puts "============= PARAMS CREATE ====== url?  #{url}   ============================  "
           @archive = Archive.find_by_name(url.original_filename[0..-5])
           if @archive
             @archive.url  = url

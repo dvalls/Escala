@@ -53,11 +53,9 @@ class ArchivesController < ApplicationController
 
   def destroy
     puts '============================ DESTROY! ===================================='
-
-    # @archive.update_attributes(:remove_file => true)
+    category = @archive.category
     @archive.destroy
-
-    redirect_to archives_path, notice: 'Material excluído com sucesso.'
+    redirect_to archives_path(:subcategory => category), notice: 'Material excluído com sucesso.'
   end
 
   private

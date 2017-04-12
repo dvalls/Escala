@@ -12,10 +12,9 @@ class MassiveUpController < ApplicationController
         when '.skp'
           puts '============================== WHEN SKP! INICIO++++++++++++++++++++++++++++++++++++'
           puts "============= PARAMS CREATE ====== url?  #{url}   ============================  "
-          puts "============= PARAMS CREATE ====== url.url?  #{url.url}   ============================  "
           @archive = Archive.find_by_name(url.original_filename[0..-5])
           if @archive
-            @archive.url = url
+            @archive.url = url.path
             @archive.save
           else
           @archive = Archive.new()
@@ -23,7 +22,7 @@ class MassiveUpController < ApplicationController
           @archive.course_id = params[:archive][:course_id]
           @archive.description = params[:archive][:description]
           @archive.name = url.original_filename[0..-5]
-          @archive.url = url
+          @archive.url = url.path
           puts '============================== WHEN SKP! FINAL++++++++++++++++++++++++++++++++++++'
           @archive.save
             # redirect_to archives_path, :notice => "deu crepe #{@archive.errors.full_messages}"

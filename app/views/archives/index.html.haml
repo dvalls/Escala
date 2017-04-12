@@ -7,13 +7,13 @@
         %p Selecione uma categoria, plz
         = image_tag 'materiais.jpg'
     - else
-      .col-xs-9.col-md-9
+      .col-lg-9
         %h3
           %strong
             CATEGORIA:
             = @subcategory.name
       - @subcategory.archives.each do |archive|
-        .col-xs-3.col-md-3
+        .col-xs-6.col-sm-3
           = link_to '#' do
             = image_tag archive.images.first.url.url(:thumb), class: 'thumbnail'
             = archive.name

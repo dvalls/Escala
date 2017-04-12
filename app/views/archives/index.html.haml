@@ -53,9 +53,10 @@
           - else
             %li
               = category.name
-              - category.subcategories.each do |subcategory|
-                %li
-                  = link_to subcategory.name, archives_path(:subcategory => subcategory)
+              %ul
+                - category.subcategories.each do |subcategory|
+                  %li
+                    = link_to subcategory.name, archives_path(:subcategory => subcategory)
   .col-lg-9
     = yield :archive_files
 

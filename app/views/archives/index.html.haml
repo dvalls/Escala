@@ -11,7 +11,7 @@
           = @subcategory.name
       %table.table
         %tr
-          %th
+          %th Url (verificação)
           %th Nome
           %th Descrição
           %th Tipo
@@ -19,22 +19,15 @@
 
         - @subcategory.archives.each do |archive|
           %tr
-            %td= image_tag archive.url
+            %td= archive.url
             %td= archive.name
             %td= archive.description
             %td= archive.category.group
             %td
-              -#- if archive.images != nil
-              -#  = image_tag archive.image.url
               - archive.images.each do |image|
                 = image.title
                 = image_tag image.url.url(:thumb)
-              -#  = image.title
-              -#  |
-              -#  = image.url
 
-
-            -#%td= material.parent_category
             %td
               = link_to 'EDITAR', edit_archive_path(archive)
               |
@@ -49,7 +42,7 @@
         - when category.archives.count > 0
           = link_to category.name, archives_path(:subcategory => category)
         - else
-          %p
+          %li
             = category.name
             - category.subcategories.each do |subcategory|
               %li
@@ -62,5 +55,6 @@
 
 = link_to( 'Novo material', new_archive_path, class: 'btn btn-primary') #if signed_in?
 = link_to 'massivo', massive_up_new_path, class: 'btn btn-primary'
+= link_to 'voltar', root_path, class: 'btn btn-primary'
 
 

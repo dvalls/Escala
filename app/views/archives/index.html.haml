@@ -15,11 +15,12 @@
           %th Nome
           %th Descrição
           %th Tipo
+          %th Thumb
           %th
 
         - @subcategory.archives.each do |archive|
           %tr
-            %td= archive.url
+            %td= archive.url.url
             %td= archive.name
             %td= archive.description
             %td= archive.category.group

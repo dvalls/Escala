@@ -61,7 +61,7 @@ class ArchivesController < ApplicationController
   private
 
   def assets_params
-    params.require(:archive).permit(:name, :category_id,  :description, :course_id, :cover_image)
+    params.require(:archive).permit(:name, :category_id,  :description, :course_id, :url)
   end
 
   def set_subcategories

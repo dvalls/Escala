@@ -1,6 +1,6 @@
 %h1 MassiveUp#new
 %p Find me in app/views/massive_up/new.html.haml
-= simple_form_for( @archive, :url => massive_up_create_path , :method => :post, :html => {:multipart => true}) do |f|
+= simple_form_for( @library_file, :url => massive_up_create_path , :method => :post, :html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs
@@ -12,8 +12,8 @@
               label_method: :name, as: :radio_buttons
     = hidden_field_tag :category_id, params[:category_id]
 
-    = f.input :course_id, collection: Course.all, value_method: :id, label_method: :title, as: :radio_buttons
-    = hidden_field_tag :course_id, params[:course_id]
+    = f.input :page_id, collection: Page.all, value_method: :id, label_method: :name_and_course, as: :radio_buttons
+    = hidden_field_tag :page_id, params[:page_id]
 
   %p
     É possível selecionar uma ou mais imagens.
@@ -21,4 +21,4 @@
   .form-actions
     = f.button :submit, 'SALVAR',  :class => 'btn btn-primary'
 
-= link_to 'voltar', archives_path, class: 'btn btn-primary'
+= link_to 'voltar', archives_path

@@ -1,0 +1,65 @@
+%h3 Grupos
+
+= render partial: 'content_library_groups/index'
+
+%h3 Arquivos
+
+%table.table
+  %tr
+    %th Arquivo
+    %th Descrição
+    %th Categoria
+    %th
+
+  - @library_files.each do |archive|
+    %tr
+      -#- case
+      %td= archive.name
+      %td= archive.description
+      %td= archive.category.name
+      %td
+        = link_to 'EDITAR', edit_library_file_path(archive)
+        |
+        = link_to 'APAGAR', archive, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este @content_video??' }
+
+
+
+
+-#.row
+-#  .col-lg-3
+-#    %ul
+-#      %h3 Categorias
+-#      - @categories.each do |category|
+-#        .dropdown
+-#          %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+-#            = link_to category.name, archives_path(:subcategory => category)
+-#            %span.caret
+-#            - if category.subcategories.count > 0
+-#              %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+-#                - category.subcategories.each do |subcategory|
+-#                  %li= link_to subcategory.name, archives_path(:subcategory => subcategory)
+-#
+-#  = yield :archive_files
+-#
+-#- content_for :archive_files do
+-#  - case @subcategory
+-#    - when []
+-#      .col-lg-9.col-md-9
+-#        %p Selecione uma categoria, plz
+-#        = image_tag 'materiais.jpg'
+-#    - else
+-#      .col-lg-9.col-md-9
+-#        %h3
+-#          %strong
+-#            CATEGORIA:
+-#            = @subcategory.name
+-#      - @subcategory.library_files.each do |@library_file|
+-#        .col-xs-6.col-sm-3.col-md-3
+-#          = link_to '#' do
+-#            = image_tag @library_file.images.first.url.url(:thumb), class: 'thumbnail'
+-#            = @library_file.name
+-#          = link_to 'X', @library_file, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
+
+= link_to 'novo material', new_library_file_path, class: 'btn btn-primary' #if signed_in?
+= link_to 'massivo', massive_up_new_path, class: 'btn btn-primary'
+= link_to 'voltar', root_path

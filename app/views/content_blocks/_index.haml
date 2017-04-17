@@ -1,0 +1,19 @@
+- case @blocks
+  - when []
+    = 'sem blocos'
+  - else
+    %table.table
+      %tr
+        %th Nome
+        %th Página
+        %th Conteúdo
+        %th
+      - @blocks.each do |block|
+        %tr
+          %td= block.contentable.name
+          %td= block.page.name
+          %td= block.contentable_type
+          %td
+            = link_to 'edit', edit_content_block_path(block)
+            |
+            = link_to 'delete', block, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}

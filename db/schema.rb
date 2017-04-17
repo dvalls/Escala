@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411153855) do
+ActiveRecord::Schema.define(version: 20170417140314) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -25,17 +25,6 @@ ActiveRecord::Schema.define(version: 20170411153855) do
   create_table "abouts", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "archives", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "description"
-    t.integer  "course_id"
-    t.string   "url"
-    t.index ["category_id"], name: "index_archives_on_category_id"
   end
 
   create_table "carousel_translations", force: :cascade do |t|
@@ -63,7 +52,6 @@ ActiveRecord::Schema.define(version: 20170411153855) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
-    t.string   "group"
   end
 
   create_table "category_translations", force: :cascade do |t|
@@ -91,6 +79,39 @@ ActiveRecord::Schema.define(version: 20170411153855) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "content_blocks", force: :cascade do |t|
+    t.integer "page_id"
+    t.integer "order"
+    t.integer "contentable_id"
+    t.string  "contentable_type"
+    t.index ["page_id"], name: "index_content_blocks_on_page_id"
+  end
+
+  create_table "content_library_groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "category_id"
+    t.integer "course_id"
+    t.index ["category_id"], name: "index_content_library_groups_on_category_id"
+  end
+
+  create_table "content_video_groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "course_id"
+  end
+
+  create_table "content_video_groups_videos", force: :cascade do |t|
+    t.integer "content_video_id"
+    t.integer "content_video_group_id"
+  end
+
+  create_table "content_videos", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "course_translations", force: :cascade do |t|
@@ -145,6 +166,10 @@ ActiveRecord::Schema.define(version: 20170411153855) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "images", force: :cascade do |t|
     t.integer "imageable_id"
     t.string  "imageable_type"
@@ -155,9 +180,26 @@ ActiveRecord::Schema.define(version: 20170411153855) do
     t.string  "height"
   end
 
+  create_table "library_files", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description"
+    t.string   "url"
+    t.index ["category_id"], name: "index_library_files_on_category_id"
+  end
+
   create_table "members", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string  "name"
+    t.integer "course_id"
+    t.integer "content_block_id"
+    t.index ["course_id"], name: "index_pages_on_course_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -172,16 +214,6 @@ ActiveRecord::Schema.define(version: 20170411153855) do
     t.string  "username"
     t.string  "password_digest"
     t.boolean "admin",           default: false
-  end
-
-  create_table "videos", force: :cascade do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "course_id"
-    t.integer  "category_id"
   end
 
 end

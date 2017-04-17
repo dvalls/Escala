@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
 
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -38,9 +39,10 @@ class ApplicationController < ActionController::Base
   end
 
   def get_student
-    if session[:admin]
-      User.find(session[:user_id])
-    else
+    case session[:admin]
+      when true
+        nil
+      when false
       Student.find(session[:user_id])
     end
   end

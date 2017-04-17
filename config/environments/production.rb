@@ -22,12 +22,12 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.archives.css_compressor = :sass
 
-  # Do not fallback to archives pipeline if a precompiled @archive is missed.
+  # Do not fallback to archives pipeline if a precompiled @@library_file is missed.
   config.assets.compile = true
 
-  # `config.archives.precompile` and `config.archives.version` have moved to config/initializers/archives.rb
+  # `config.library_files.precompile` and `config.library_files.version` have moved to config/initializers/library_files.rb
 
-  # Enable serving of images, stylesheets, and JavaScripts from an @archive server.
+  # Enable serving of images, stylesheets, and JavaScripts from an @@library_file server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Specifies the header that your server uses for sending files.

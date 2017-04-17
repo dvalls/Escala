@@ -1,0 +1,17 @@
+%h3 Nova Página
+
+= render partial: 'form'
+
+=link_to 'voltar', pages_path
+
+
+
+-#= simple_form_for(@page) do |f|
+-#  = f.error_notification
+-#
+-#  .form-inputs
+-#    = f.input :name
+-#    = f.input :course_id, collection: Course.all, value_method: :id, label_method: :title, as: :radio_buttons
+-#
+-#  .form-actions
+-#    = f.button :submit, :class => 'btn btn-primary'

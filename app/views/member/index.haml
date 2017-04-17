@@ -6,7 +6,7 @@
     = render partial: 'member/students/show'
   .col-lg-9
     %ul#Grid.row
-      - @student.courses.each do |course|
+      - @courses.each do |course|
         %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
           = link_to member_course_path(course) do
             .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'

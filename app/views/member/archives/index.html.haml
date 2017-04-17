@@ -13,7 +13,7 @@
         %ul
           - category.subcategories.each do |subcategory|
             %li
-              = link_to subcategory.name, my_course_archives_path(:subcategory => subcategory)
+              = link_to subcategory.name, member_course_archives_path(:subcategory => subcategory)
 
     .col-lg-10
       - case @subcategory
@@ -37,12 +37,12 @@
                 %td= archive.description
                 %td= archive
                 %td
-                  - archive.archives_images.each do |archive_image|
+                  - archive.images.each do |archive_image|
                     = archive_image.title
                     |
                     = archive_image.url
 
 
 
-= link_to 'meus cursos', my_course_index_path, class: 'btn btn-primary'
+= link_to 'meus cursos', member_path, class: 'btn btn-primary'
 

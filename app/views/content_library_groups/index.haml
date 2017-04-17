@@ -1,0 +1,19 @@
+%table.table
+  %tr
+    %th Nome
+    %th Categoria
+    %th
+  - @groups.each do |group|
+    %tr
+      %td= group.name
+      %td= group.category.name
+      %td
+        = link_to 'edit', edit_content_library_group_path(group)
+        |
+        = link_to 'delete', group, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}
+
+
+= link_to 'novo grupo', new_content_library_group_path, class: 'btn btn-primary'
+
+
+= link_to ' voltar', root_path

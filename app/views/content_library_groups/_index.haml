@@ -1,0 +1,18 @@
+%table.table
+  %tr
+    %th Nome
+    %th Categoria
+    %th Curso
+    %th
+  - @library_groups.each do |group|
+    %tr
+      %td= group.name
+      %td= group.category.name
+      %td= group.course.title
+      %td
+        = link_to 'EDITAR', edit_content_library_group_path(group)
+        |
+        = link_to 'APAGAR', group, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}
+
+
+= link_to 'novo grupo', new_content_library_group_path, class: 'btn btn-primary'

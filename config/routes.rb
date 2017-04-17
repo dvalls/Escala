@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
 
-  # resources :massive_up
-
-  get 'massive_up/new'
-
-  post 'massive_up/create'
-
   root 'home#index'
 
-  get 'access/login'
+  get 'massive_up/new'
+  post 'massive_up/create'
+
   get 'admin' => 'admin/home#index'
+  get 'access/login'
   get 'login' => 'access/login'
+
   post 'access/attempt_login'
   get 'access/logout'
 
@@ -22,22 +20,41 @@ Rails.application.routes.draw do
   resources :students
 
   resources :categories
-  resources :archives
-  resources :videos
+  resources :library_files
+  resources :content_blocks
+  resources :content_videos
+  resources :content_video_groups
+  resources :content_library_groups
+  resources :pages
+  resources :pages do
+    resources :content_blocks
+  end
+
+  resources :content_library_groups do
+    resources :content_blocks
+  end
+
+  resources :content_video_groups do
+    resources :content_blocks
+  end
 
   resource :about
   resource :contact
 
+  resources :pages do
+    resources :content_blocks
+  end
 
   resources :courses do
     resources :images
+    resources :pages
   end
 
-  resources :videos  do
+  resources :content_videos  do
     resources :images
   end
 
-  resources :archives do
+  resources :library_files do
     resources :images
   end
 
@@ -50,11 +67,11 @@ Rails.application.routes.draw do
 
   namespace :member do
     resources :students
-    resources :videos
-    resources :archives, only: [ :show]
+    resources :content_videos
+    resources :library_files
     resources :courses do
-      resources :videos
-      resources :archives
+      resources :content_videos
+      resources :library_files
     end
 
   end

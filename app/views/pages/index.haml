@@ -1,0 +1,50 @@
+%h3 PAGES#INDEX
+
+%h3 Pages
+%table.table
+  %tr
+    %th Pagina
+    %th Curso
+    %th Blocos
+    %th
+  - @pages.each do |page|
+    %tr
+      %td= page.name
+      %td= page.course.title
+      %td
+        - page.content_blocks.each do |block|
+          = '-'
+          = block.contentable.name
+          = '/'
+          = block.contentable.class.name
+          %br/
+      %td= link_to 'ADD BLOCO', new_page_content_block_path(page)
+      %td
+        = link_to 'EDITAR', edit_page_path(page)
+        |
+        = link_to 'APAGAR', page, method: :delete, :data => {:confirm => 'Tem certeza?'}
+%h3 Blocos
+%p
+  = render partial: 'content_blocks/index'
+
+%h3 Grupos (video)
+= render partial: 'content_video_groups/index'
+
+%h3 Grupos (arquivos)
+= render partial: 'content_library_groups/index'
+
+= link_to 'nova pagina', new_page_path, class: 'btn btn-primary' if admin_logged?
+= link_to 'voltar', root_path if admin_logged?
+
+
+
+-#.row
+-#  .col-lg-3.col-md-3
+-#    %ul
+-#      - @pages.each do |page|
+-#        %li= link_to page.name, page_content_blocks_path(page)
+-#  .col-lg-9.col-md-9
+-#    %h4 diahdsiahsuidhuiashiudhaishid
+-#    %h4 Say woot?
+
+    -#= render content_blocks: 'content_blocks/index'

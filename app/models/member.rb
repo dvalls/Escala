@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
 
-  has_many :archives
+  has_many :library_files
 
 end

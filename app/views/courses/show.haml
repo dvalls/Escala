@@ -16,6 +16,9 @@
   .close-course= link_to 'X', courses_path
 
 
+- if admin_logged?
+  = link_to('EDITAR', edit_course_path(@course), :class => 'btn btn-primary')
+
 .row
   %em.col-lg-4
     &#126;&#126;&#126;

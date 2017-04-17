@@ -1,0 +1,13 @@
+= simple_form_for(@group,:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, label: 'Nome'
+
+    = f.input :category_id, label: 'Categoria',:collection => @categories, label_method: :name, value_method: :id
+    = f.association :course, :include_blank => false, :label_method => :title
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+
+

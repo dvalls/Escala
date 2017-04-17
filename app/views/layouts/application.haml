@@ -35,6 +35,9 @@
         - else
           = yield
 
+      = link_to 'como aluno', member_path, :class => 'btn btn-primary' if admin_logged?
+      = link_to 'como admin', root_path, :class => 'btn btn-primary' if admin_logged?
+
       / Footer
       = render :partial => 'layouts/footer'
 

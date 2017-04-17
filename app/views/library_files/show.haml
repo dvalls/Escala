@@ -1,0 +1,10 @@
+- content_for :materials do
+  = @library_file.name
+  = @library_file.description
+  = @library_file.thumbnail
+  = @library_file.url
+  = @library_file.get_category_name
+
+  = link_to 'EDITAR', edit_archive_path(@library_file) if signed_in?
+  |
+  = link_to('APAGAR', @library_file, :method => :delete, :data => { :confirm => t('views.are_you_sure')}) if signed_in?

@@ -1,0 +1,9 @@
+= simple_form_for(@group,:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, label: 'Nome'
+    = f.association :course_id, :include_blank => false, :label_method => :title
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'

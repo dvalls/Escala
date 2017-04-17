@@ -65,7 +65,7 @@ ul.social {
 }
 
 // Videos CSS hack responsive
-//.flex-video {
+//.flex-@content_video {
 //  position: relative;
 //  padding-top: 25px;
 //  padding-bottom: 67.5%;
@@ -74,12 +74,12 @@ ul.social {
 //  overflow: hidden;
 //}
 //
-//.flex-video.widescreen { padding-bottom: 57.25%; }
-//.flex-video.vimeo { padding-top: 0; }
+//.flex-@content_video.widescreen { padding-bottom: 57.25%; }
+//.flex-@content_video.vimeo { padding-top: 0; }
 //
-//.flex-video iframe,
-//.flex-video object,
-//.flex-video embed {
+//.flex-@content_video iframe,
+//.flex-@content_video object,
+//.flex-@content_video embed {
 //  position: absolute;
 //  top: 0;
 //  left: 0;

@@ -1,0 +1,25 @@
+= simple_form_for([@contentable, @block],:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :order, label: 'Ordem'
+    -#= f.input :page_id, collection: Page.all, value_method: :id, label_method: :name ,label: 'Página'
+  %br/
+
+  =hidden_field_tag :page_id, params[:page_id]
+
+  = label_tag 'Conteúdo com Videos'
+  = select_tag :video_content, options_from_collection_for_select(@video_contents, :id, :name) , { :include_blank => 'Nenhum'}
+  %br/
+  = label_tag 'Conteúdo com Arquivos da Biblioteca'
+  = select_tag :library_content, options_from_collection_for_select(@library_contents, 'id', 'name'), { :include_blank => 'Nenhum'}
+  %br/
+
+  = label_tag 'Conteúdo com Links'
+  %br/
+
+  = label_tag 'Conteúdo com Plugins'
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+

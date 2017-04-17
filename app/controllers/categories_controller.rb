@@ -6,7 +6,8 @@ class CategoriesController < ApplicationController
 
   def index
     @category = nil
-    @categories = Category.all.where(:parent_id => nil )
+    @categories = Category.all.sorted
+    @groups = ContentLibraryGroup.all
   end
 
   def show
@@ -22,14 +23,18 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new
     @categories = Category.where(parent_id: nil).map{|x| [x.name] + [x.id]}
+    @subcategories = Category.where.not(parent_id: nil).map{|x| [x.name] + [x.id]}
   end
 
   def edit
     @categories = Category.where(parent_id: nil).map{|x| [x.name] + [x.id]}
+    @subcategories = Category.where.not(parent_id: nil).map{|x| [x.name] + [x.id]}
   end
 
   def create
     @category = Category.new(category_params)
+
+    set_parent_id
 
     if @category.save
       redirect_to categories_path, notice: t('views.category.create')
@@ -39,7 +44,9 @@ class CategoriesController < ApplicationController
   end
 
    def update
-    if @category.update(category_params)
+     set_parent_id
+
+     if @category.update(category_params)
       redirect_to categories_path, notice: t('views.category.updated')
     else
       render action: 'edit'
@@ -59,6 +66,18 @@ class CategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def category_params
-      params.require(:category).permit(:name, :group, :parent_id)
+      params.require(:category).permit(:name, :parent_id)
     end
+
+  def set_parent_id
+    if not params[:sub_id] == ''
+      @category.parent_id = (params[:sub_id]).to_i
+    elsif not params[:raiz_id] == ''
+      @category.parent_id = (params[:raiz_id]).to_i
+    else
+      @category.parent_id = nil
+    end
+  end
+
+
 end

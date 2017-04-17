@@ -1,0 +1,15 @@
+= simple_form_for(@content_video,:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title, label: 'Titulo'
+    = f.input :description, label: 'Descrição'
+
+    = f.association :content_video_groups, label: 'Grupo/Categoria', :collection => ContentVideoGroup.all,
+              label_method: :name, as: :check_boxes
+
+    = f.input :url , label: 'Url'
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+

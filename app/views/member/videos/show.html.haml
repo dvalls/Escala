@@ -9,10 +9,11 @@
   .col-lg-2
     = render 'member/sidebar'
   .col-lg-10
-    %h2= @video.title
-    %p= @video.description
+    %h2= @content_video.title
+    %p= @content_video.description
     .embed-responsive.embed-responsive-16by9
-      %iframe.embed-responsive-item{:width=>'560', :height=>'315', :src => "https://www.youtube.com/embed/" + @video.url, :allowfullscreen => true}
+      %iframe.embed-responsive-item{:width=>'560', :height=>'315', :src => "https://www.youtube.com/embed/" + @content_video.url, :allowfullscreen => true}
 
+= hidden_field_tag :course_id, @course.id
 
 

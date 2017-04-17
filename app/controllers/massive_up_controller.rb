@@ -1,23 +1,23 @@
 class MassiveUpController < ApplicationController
   def new
-    @archive = Archive.new
+    @library_file = LibraryFile.new
   end
 
   def create
     # Loop throw images
-    params[:archive][:url].each do |url|
+    params[:library_file][:url].each do |url|
       extension = get_extension(url.original_filename)
       get_set_archive(url)
 
       case extension
         when '.skp'
-          @archive.url = url
-          @archive.save
+          @library_file.url = url
+          @library_file.save
         when '.png'
-          @image = @archive.images.new(image_params)
+          @image = @library_file.images.new(image_params)
           @image.url = url
           @image.title = url.original_filename[0..-5]
-          @image.description = params[:archive][:description]
+          @image.description = params[:library_file][:description]
 
           @image.save
       end
@@ -33,7 +33,7 @@ class MassiveUpController < ApplicationController
   end
 
   def archives_params
-    params.require(:archive).permit(:name, :category_id, :description, :course_id, :url)
+    params.require(:library_file).permit(:name, :category_id, :description, :url)
   end
 
   def get_extension(filename)
@@ -44,14 +44,14 @@ class MassiveUpController < ApplicationController
   end
 
   def get_set_archive(url)
-    @archive = Archive.find_by_name(url.original_filename[0..-5])
-    if not @archive
-      @archive = Archive.new()
-      @archive.category_id = params[:archive][:category_id]
-      @archive.course_id = params[:archive][:course_id]
-      @archive.description = params[:archive][:description]
-      @archive.name = url.original_filename[0..-5]
-      @archive.save
+    @library_file = LibraryFile.find_by_name(url.original_filename[0..-5])
+    if not @library_file
+      @library_file = LibraryFile.new()
+      @library_file.category_id = params[:library_file][:category_id]
+      @library_file.page_id = params[:library_file][:page_id]
+      @library_file.description = params[:library_file][:description]
+      @library_file.name = url.original_filename[0..-5]
+      @library_file.save
     end
   end
 end

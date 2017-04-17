@@ -1,23 +1,19 @@
+%h3 Grupos
+= render partial: 'content_library_groups/index'
+
+
+%h3 Categorias
 %table.table
   %tr
     %th NOME
-    %th Sub
     %th Parent
-    %th Tipo
     %th
 
 
   - @categories.each do |category|
     %tr
       %td= category.name
-      %td
-        %ul
-          - category.subcategories.each do |sub|
-            %li
-              = link_to sub.name, edit_category_path(sub)
-
-      %td= category.parent_category
-      %td= category.group
+      %td= category.parent_name
       %td
         = link_to 'EDITAR', edit_category_path(category)
         |
@@ -26,4 +22,4 @@
 %br
 
 = link_to 'NOVA CATEGORIA', new_category_path, :class => 'btn btn-primary'
-= link_to 'voltar', root_path, class: 'btn btn-primary'
+= link_to 'voltar', root_path

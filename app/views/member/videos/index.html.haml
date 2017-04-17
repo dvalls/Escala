@@ -1,6 +1,7 @@
 
 = render partial: 'layouts/member_navbar'
 = render 'layouts/member_head'
+= hidden_field_tag :course_id, @course.id
 
 - content_for :materials do
   %header
@@ -12,9 +13,9 @@
     .col-lg-2
       = render 'member/sidebar'
     .col-lg-10
-      - case @videos.count
+      - case @content_videos.count
         - when 0
-          %h4 Sem videos
+          %h4 Sem content_videos
         - when 1
           %table.table
             %tr
@@ -23,8 +24,8 @@
               %th
               %th
             %tr
-              %td=@videos.first.title
-              %td=@videos.first.description
+              %td=@content_videos.first.title
+              %td=@content_videos.first.description
         - else
           %table.table
             %tr
@@ -32,10 +33,10 @@
               %th Descrição
               %th
               %th
-            - @videos.each do |video|
+            - @content_videos.each do |video|
               %tr
                 %td
-                  = link_to video.title, member_video_path(video.id)
+                  = link_to video.title, member_video_path(video.id, :course_id => @course.id)
                 %td
                   = video.description
                 %td

@@ -8,11 +8,10 @@
 
 - content_for :content do
   = render partial: 'member/pages/library_options', locals: {:block => @content_block}
-
+  - if content_for?(:library_options)
+    .col-lg-2.col-md-2
+      = yield :library_options
   - @category.library_files.each do |file|
-    - if content_for?(:library_options)
-      .col-lg-2.col-md-2
-        = yield :library_options
     .col-xs-6.col-sm-3.col-md-3
       = link_to '#' do
         = image_tag file.images.first.url.url(:thumb), class: 'thumbnail'

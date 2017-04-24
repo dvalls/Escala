@@ -13,6 +13,6 @@ class CreateTemplates < ActiveRecord::Migration[5.0]
     # add_column :pages, :template_id, :integer
     add_column :pages, :template_type, :string
 
-    drop_table :content_blocks
+    drop_table :templates
   end
 end

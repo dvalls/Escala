@@ -14,7 +14,7 @@
           - when 'ContentVideoGroup'
             .col-md-12.col-lg-12
               %h4=" Conteudo de videos - #{block.contentable.name}"
-              = render partial: 'video_group', locals: {:content_videos => block.contentable.content_videos}
+              = render partial: 'video_group', locals: {:content_videos => block.contentable.content_videos.order(:title)}
           - when 'ContentLibraryGroup'
             = render partial: 'member/pages/library_options', locals: {:block => block}
             .col-lg-2.col-md-2

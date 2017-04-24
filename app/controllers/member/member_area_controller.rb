@@ -27,6 +27,4 @@ class Member::MemberAreaController < ApplicationController
       end
     end
   end
-
-
 end

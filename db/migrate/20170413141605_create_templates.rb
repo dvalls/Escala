@@ -1,6 +1,6 @@
 class CreateTemplates < ActiveRecord::Migration[5.0]
   def up
-    create_table :content_blocks do |t|
+    create_table :templates do |t|
       t.integer :page_id, index: true
     end
 
@@ -13,6 +13,6 @@ class CreateTemplates < ActiveRecord::Migration[5.0]
     # add_column :pages, :template_id, :integer
     add_column :pages, :template_type, :string
 
-    drop_table :templates
+    drop_table :content_blocks
   end
 end

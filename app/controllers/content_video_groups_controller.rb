@@ -22,7 +22,7 @@ class ContentVideoGroupsController < ApplicationController
   end
 
   def update
-  if @group.update(grou_params)
+  if @group.update(group_params)
     redirect_to content_videos_path, notice: 'Grupo atualizado.'
   else
     render :edit

@@ -39,7 +39,7 @@ class ContentLibraryGroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:content_library_group).permit(:name, :category_id, :course_id)
+    params.require(:content_library_group).permit(:name, :course_id, :category_ids => [])
   end
 
   def get_group

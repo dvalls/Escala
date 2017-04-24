@@ -1,0 +1,26 @@
+%h3 Grupos
+
+= render partial: 'content_docs_groups/index'
+
+%h3 Arquivos
+
+%table.table
+  %tr
+    %th Arquivo
+    %th Descrição
+    %th Categoria
+    %th
+
+  - @docs.each do |doc|
+    %tr
+      -#- case
+      %td= doc.name
+      %td= doc.description
+      %td= link_to doc.name, doc
+      %td
+        = link_to 'EDITAR', edit_doc_path(doc)
+        |
+        = link_to 'APAGAR', doc, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este documento??' }
+
+= link_to 'novo doc', new_doc_path, class: 'btn btn-primary'
+%p= link_to 'voltar', root_url

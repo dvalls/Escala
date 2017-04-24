@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 // Bootstrap
+//= require bootstrap-sprockets
 //= require bootstrap
-// require bootstrap-sprockets
 // require bootstrap/transition
 // require bootstrap/carousel
 // require bootstrap/affix

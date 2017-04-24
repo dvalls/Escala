@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417140314) do
+ActiveRecord::Schema.define(version: 20170420183820) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20170417140314) do
     t.integer  "parent_id"
   end
 
+  create_table "categories_content_library_groups", force: :cascade do |t|
+    t.integer "content_library_group_id"
+    t.integer "category_id"
+  end
+
   create_table "category_translations", force: :cascade do |t|
     t.integer  "category_id", null: false
     t.string   "locale",      null: false
@@ -87,6 +92,17 @@ ActiveRecord::Schema.define(version: 20170417140314) do
     t.integer "contentable_id"
     t.string  "contentable_type"
     t.index ["page_id"], name: "index_content_blocks_on_page_id"
+  end
+
+  create_table "content_docs_groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "course_id"
+    t.index ["course_id"], name: "index_content_docs_groups_on_course_id"
+  end
+
+  create_table "content_docs_groups_docs", force: :cascade do |t|
+    t.integer "doc_id"
+    t.integer "content_docs_group_id"
   end
 
   create_table "content_library_groups", force: :cascade do |t|
@@ -144,6 +160,14 @@ ActiveRecord::Schema.define(version: 20170417140314) do
     t.integer "student_id"
     t.index ["course_id"], name: "index_courses_students_on_course_id"
     t.index ["student_id"], name: "index_courses_students_on_student_id"
+  end
+
+  create_table "docs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "feeds", force: :cascade do |t|

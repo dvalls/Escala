@@ -21,10 +21,14 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :library_files
+  resources :docs
+
   resources :content_blocks
   resources :content_videos
   resources :content_video_groups
   resources :content_library_groups
+  resources :content_docs_groups
+
   resources :pages
   resources :pages do
     resources :content_blocks
@@ -68,12 +72,20 @@ Rails.application.routes.draw do
   namespace :member do
     resources :students
     resources :content_videos
-    resources :library_files
+    resources :pages
+
+    get '/member_course/:course_id/page/:page_id/content_library/:category_id', to: 'library_files#show', as: 'course_library'
+
     resources :courses do
       resources :content_videos
-      resources :library_files
+      resources :pages
     end
 
+    resources :content_blocks do
+      resources :content_library_groups do
+        resources :categories
+      end
+    end
   end
 
   namespace :admin do

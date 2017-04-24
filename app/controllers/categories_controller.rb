@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   def index
     @category = nil
     @categories = Category.all.sorted
-    @groups = ContentLibraryGroup.all
+    @library_groups = ContentLibraryGroup.all
   end
 
   def show

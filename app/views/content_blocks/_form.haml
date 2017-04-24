@@ -1,6 +1,15 @@
 = simple_form_for([@contentable, @block],:html => {:multipart => true}) do |f|
   = f.error_notification
 
+  %p
+    Posição de ordem utilizada
+  - @page.content_blocks.each do |block|
+    = block.order
+    = block.contentable.name
+    |
+    = block.contentable_type
+    %br/
+
   .form-inputs
     = f.input :order, label: 'Ordem'
     -#= f.input :page_id, collection: Page.all, value_method: :id, label_method: :name ,label: 'Página'
@@ -14,7 +23,9 @@
   = label_tag 'Conteúdo com Arquivos da Biblioteca'
   = select_tag :library_content, options_from_collection_for_select(@library_contents, 'id', 'name'), { :include_blank => 'Nenhum'}
   %br/
-
+  = label_tag 'Conteúdo de documentos'
+  = select_tag :docs_content, options_from_collection_for_select(@docs_contents, 'id', 'name'), { :include_blank => 'Nenhum'}
+  %br/
   = label_tag 'Conteúdo com Links'
   %br/
 

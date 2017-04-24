@@ -1,0 +1,27 @@
+- case content_videos.count
+  - when 0
+    %h4  . . . . . . . . . .
+  - when 1
+    %table.table
+      %tr
+        %th Video
+        %th Descrição
+        %th
+        %th
+      %tr
+        %td= content_videos.first.title
+        %td= content_videos.first.description
+  - else
+    %table.table
+      %tr
+        %th Video
+        %th Descrição
+        %th
+        %th
+      - content_videos.each do |video|
+        %tr
+          %td
+            = link_to video.title, member_content_video_path(video.id, :course_id => @course.id)
+          %td
+            = video.description
+          %td

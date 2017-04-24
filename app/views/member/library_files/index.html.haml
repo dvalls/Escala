@@ -1,0 +1,42 @@
+- content_for :navbar do
+  = render partial: 'layouts/member_navbar'
+
+-#- content_for :materials do
+-#  .row
+-#    .col-lg-2
+-#      = hidden_field_tag :course_id, params[:course_id]
+-#    .col-lg-10
+-#      - case @subcategory
+-#        - when []
+-#          %p Selecione uma categoria, plz
+-#        - else
+-#          %h3
+-#            %strong
+-#              CATEGORIA:
+-#              = @subcategory.name
+-#          %table.table
+-#            %tr
+-#              %th NOME
+-#              %th Descrição
+-#              %th Thumbnail
+-#              %th
+-#
+-#            - @subcategory.archives.each do |archive|
+-#              %tr
+-#                %td= archive.name
+-#                %td= archive.description
+-#                %td= archive
+-#                %td
+-#                  - archive.images.each do |archive_image|
+-#                    = archive_image.title
+-#                    |
+-#                    = archive_image.url
+
+- content_for :content do
+  - subcategory.library_files.each do |file|
+    .col-xs-6.col-sm-3.col-md-3
+      = link_to '#' do
+        = image_tag file.images.first.url.url(:thumb), class: 'thumbnail'
+        = file.name
+
+

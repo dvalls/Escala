@@ -7,6 +7,7 @@
     %th Curso
     %th Blocos
     %th
+    %th
   - @pages.each do |page|
     %tr
       %td= page.name
@@ -14,6 +15,7 @@
       %td
         - page.content_blocks.each do |block|
           = '-'
+          = block.order
           = block.contentable.name
           = '/'
           = block.contentable.class.name
@@ -23,17 +25,24 @@
         = link_to 'EDITAR', edit_page_path(page)
         |
         = link_to 'APAGAR', page, method: :delete, :data => {:confirm => 'Tem certeza?'}
+
+= link_to 'nova pagina', new_page_path, class: 'btn btn-primary' if admin_logged?
+
 %h3 Blocos
 %p
   = render partial: 'content_blocks/index'
+.row
+  .col-lg-4.col-md-4
+    %h3 Grupos (video)
+    = render partial: 'content_video_groups/index'
+  .col-lg-4.col-md-4
+    %h3 Grupos (library files)
+    = render partial: 'content_library_groups/index'
+  .col-lg-4.col-md-4
+    %h3 Grupos (docs)
+    = render partial:  'content_docs_groups/index'
+  .clearfix.hidden-sm-up
 
-%h3 Grupos (video)
-= render partial: 'content_video_groups/index'
-
-%h3 Grupos (arquivos)
-= render partial: 'content_library_groups/index'
-
-= link_to 'nova pagina', new_page_path, class: 'btn btn-primary' if admin_logged?
 = link_to 'voltar', root_path if admin_logged?
 
 

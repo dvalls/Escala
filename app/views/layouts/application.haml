@@ -3,42 +3,32 @@
   %head
     = render :partial => 'layouts/head'
 
-
     %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :integrity => "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", :rel => "stylesheet"}/
 
   %body
-
-    -#%script{:crossorigin => "anonymous", :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
-
     .container
-
       / Header
       %header
-
         - if content_for?(:navbar)
           = yield :navbar
         - else
           = render partial: 'layouts/default_navbar'
           / Mobile menu
-
-
         = render :partial => 'layouts/flash_message'
-
-
-
       / Main content
       %main
-
         / Main
-        - if content_for?(:materials)
-          = yield :materials
+        -# Para quando for entrar no member#show, nas paginas do curso
+        - if content_for?(:content)
+          .row
+            = render partial: 'layouts/page_options'
+            = yield :content
         - else
           = yield
 
+      %p= '-----------------------------------' if admin_logged?
       = link_to 'como aluno', member_path, :class => 'btn btn-primary' if admin_logged?
       = link_to 'como admin', root_path, :class => 'btn btn-primary' if admin_logged?
 
       / Footer
       = render :partial => 'layouts/footer'
-
-

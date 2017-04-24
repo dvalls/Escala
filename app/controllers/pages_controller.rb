@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @blocks = ContentBlock.all
     @video_groups = ContentVideoGroup.all
     @library_groups = ContentLibraryGroup.all
+    @docs_groups = ContentDocsGroup.all
     @pages = Page.all
   end
 

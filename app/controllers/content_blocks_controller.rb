@@ -14,6 +14,7 @@ class ContentBlocksController < ApplicationController
     @block = ContentBlock.new
     @video_contents = ContentVideoGroup.all.where(:course_id => @page.course_id)
     @library_contents = ContentLibraryGroup.all.where(:course_id => @page.course_id)
+    @docs_contents = ContentDocsGroup.all.where(:course_id => @page.course_id)
   end
 
   def create
@@ -72,10 +73,12 @@ class ContentBlocksController < ApplicationController
 
   def set_content_type_and_id
     case
-      when params[:video_content] != ''
+      when params[:video_content].present?
         @contentable = ContentVideoGroup.find(params[:video_content])
-      when params[:library_content] != ''
+      when params[:library_content].present?
         @contentable = ContentLibraryGroup.find(params[:library_content])
+      when params[:docs_content].present?
+        @contentable = ContentDocsGroup.find(params[:docs_content])
     end
   end
 end

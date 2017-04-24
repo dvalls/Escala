@@ -16,6 +16,7 @@ class Course < ActiveRecord::Base
 
   has_many :content_library_groups, :dependent => :destroy
   has_many :content_video_groups, :dependent => :destroy
+  has_many :content_docs_groups, :dependent => :destroy
   has_many :pages, :dependent => :destroy
 
   has_and_belongs_to_many :students

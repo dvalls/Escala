@@ -1,30 +1,18 @@
+- content_for :navbar do
+  = render partial: 'layouts/member_navbar'
+  = render 'layouts/member_head'
 
-= render partial: 'layouts/member_navbar'
-= render 'layouts/member_head'
+  %header
 
-%header
+    %h1
+      = @course.slug
+      %span#course-title= @course.title
 
-  %h1
-    = @course.slug
-    %span#course-title= @course.title
-
-
-  .close-course= link_to 'X', member_path
-
-.row
-  .col-lg-3
-    %ul
-      %li
-        = link_to 'Arquivos','#' # member_course_archives_path(@course)
-      %li
-        = link_to 'Videos',  member_course_videos_path(@course), action: 'index'
-
-  .col-lg-9.materials
-    %h4
-      Escolha o conteúdo que deseja visualizar.
-    -#= image_tag 'materiais.jpg'
-
-
+- content_for :content do
+  %h3 member#show
+  %p links direcionam para member/pages#show
+-#  SEM CONTEUDO....APRESENTA AS OPÇÕES DE 'MATERIAIS/VIDEOS/ARQUIVOS', AS PAGINAS QUE O CURSO POSSUI
+-#  ESSES LINKS DE PAGINA DEVERAM DIRECIONAR O USUARIO PARA O CONTEUDO DOS BLOCOS DE CADA PAGINA
 
 
 = stylesheet_link_tag "course"

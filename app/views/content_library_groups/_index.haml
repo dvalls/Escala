@@ -7,7 +7,9 @@
   - @library_groups.each do |group|
     %tr
       %td= group.name
-      %td= group.category.name
+      %td
+        - group.categories.each do |cat|
+          = '-' + cat.name
       %td= group.course.title
       %td
         = link_to 'EDITAR', edit_content_library_group_path(group)

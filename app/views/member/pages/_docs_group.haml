@@ -1,0 +1,11 @@
+%table.table
+  %tr
+    %th Doc Nome
+    %th Descrição
+    %th url
+    %th
+  - docs_groups.each do |doc|
+    %tr
+      %td= doc.name
+      %td= doc.description
+      %td= doc.url

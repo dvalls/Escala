@@ -12,8 +12,6 @@
               label_method: :name, as: :radio_buttons
     = hidden_field_tag :category_id, params[:category_id]
 
-    = f.input :page_id, collection: Page.all, value_method: :id, label_method: :name_and_course, as: :radio_buttons
-    = hidden_field_tag :page_id, params[:page_id]
 
   %p
     É possível selecionar uma ou mais imagens.
@@ -21,4 +19,4 @@
   .form-actions
     = f.button :submit, 'SALVAR',  :class => 'btn btn-primary'
 
-= link_to 'voltar', archives_path
+= link_to 'voltar', library_files_path

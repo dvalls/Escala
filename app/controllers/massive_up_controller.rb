@@ -22,7 +22,7 @@ class MassiveUpController < ApplicationController
           @image.save
       end
     end
-    redirect_to archives_path, notice: t('views.image.create')
+    redirect_to library_files_path, notice: t('views.image.create')
   end
 
 
@@ -48,7 +48,6 @@ class MassiveUpController < ApplicationController
     if not @library_file
       @library_file = LibraryFile.new()
       @library_file.category_id = params[:library_file][:category_id]
-      @library_file.page_id = params[:library_file][:page_id]
       @library_file.description = params[:library_file][:description]
       @library_file.name = url.original_filename[0..-5]
       @library_file.save

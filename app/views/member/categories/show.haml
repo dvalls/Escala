@@ -9,14 +9,15 @@
 - content_for :content do
   = render partial: 'member/pages/library_options', locals: {:block => @content_block}
   - if content_for?(:library_options)
-    .row
-      .col-lg-2.col-md-2
-        = yield :library_options
-      - @category.library_files.each do |file|
-        .col-xs-6.col-sm-3.col-md-3
-          = link_to '#' do
-            = image_tag file.images.first.url.url(:thumb), class: 'thumbnail'
-            = file.name
+    .col-lg-2.col-md-2
+      = yield :library_options
+    .col-lg-8.col-md-8
+      .row
+        - @category.library_files.each do |file|
+          .col-4.col-lg-4
+            = link_to '#' do
+              = image_tag 'no_cover_image.gif'#file.images.first.url.url(:thumb), class: 'thumbnail'
+              = file.name
 
   -#- case @subcategories
   -#  - when true

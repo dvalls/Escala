@@ -26,6 +26,7 @@ class ContentBlocksController < ApplicationController
     if @block.save
       redirect_to pages_path, notice: 'Bloco criado.'
     else
+      flash[:notice] = "#{@block.errors.full_messages}"
       render :new
     end
   end
@@ -38,6 +39,7 @@ class ContentBlocksController < ApplicationController
     if @block.update(block_params)
       redirect_to pages_path, notice: 'Bloco atualizado.'
     else
+      flash[:notice] = "#{@block.errors.full_messages}"
       render :edit
     end
   end

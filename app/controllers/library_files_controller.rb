@@ -28,6 +28,7 @@ class LibraryFilesController < ApplicationController
     if @library_file.save
       redirect_to library_files_path(:subcategory => @library_file.category), notice: 'Material criado com sucesso'
     else
+      flash[:notice] = "#{@library_file.errors.full_messages}"
       render action: 'new'
     end
   end
@@ -40,6 +41,7 @@ class LibraryFilesController < ApplicationController
     if @library_file.update(assets_params)
       redirect_to library_files_path(:subcategory => @library_file.category), notice: 'Material criado com sucesso.'
     else
+      flash[:notice] = "#{@library_file.errors.full_messages}"
       render action: 'edit'
     end
   end

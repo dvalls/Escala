@@ -17,6 +17,7 @@ class ContentVideosController < ApplicationController
     if @content_video.save
       redirect_to content_videos_path,  notice: 'Video criado.'
     else
+      flash[:notice] = "#{@content_video.errors.full_messages}"
       render action: 'new'
     end
   end
@@ -28,7 +29,7 @@ class ContentVideosController < ApplicationController
     if @content_video.update(video_params)
       redirect_to content_videos_path,  notice: 'Video atualizado.'
     else
-      flash[:notice] = 'verificar as cagadas'
+      flash[:notice] = "#{@content_video.errors.full_messages}"
       render :edit
     end
   end

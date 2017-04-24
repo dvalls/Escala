@@ -21,6 +21,7 @@ class DocsController < ApplicationController
       if @doc.save
         redirect_to docs_path(), notice: 'Documento criado com sucesso'
       else
+        flash[:notice] = "#{@doc.errors.full_messages}"
         render action: 'new'
       end
     end
@@ -32,6 +33,7 @@ class DocsController < ApplicationController
       if @doc.update(doc_params)
         redirect_to docs_path(), notice: 'Documento criado com sucesso.'
       else
+        flash[:notice] = "#{@doc.errors.full_messages}"
         render action: 'edit'
       end
     end

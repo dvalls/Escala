@@ -16,6 +16,8 @@ class ContentDocsGroupsController < ApplicationController
       if @group.save
         redirect_to docs_path, notice: 'Grupo criado.'
       end
+      flash[:notice] = "#{@group.errors.full_messages}"
+      render :new
     end
 
     def edit
@@ -25,6 +27,7 @@ class ContentDocsGroupsController < ApplicationController
       if @group.update(group_params)
         redirect_to docs_path, notice: 'Grupo atualizado.'
       else
+        flash[:notice] = "#{@group.errors.full_messages}"
         render :edit
       end
     end

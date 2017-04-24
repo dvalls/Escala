@@ -23,6 +23,7 @@ class PagesController < ApplicationController
       ContentBlock.create(:page_id => @page.id)
       redirect_to pages_path, notice: 'Pagina criada com sucesso'
     else
+      flash[:notice] = "#{@page.errors.full_messages}"
       render :new
     end
   end
@@ -34,6 +35,7 @@ class PagesController < ApplicationController
     if @page.update(page_params)
       redirect_to pages_path, notice: 'Pagina atualizada com sucesso'
     else
+      flash[:notice] = "#{@page.errors.full_messages}"
       render :new
     end
   end

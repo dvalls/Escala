@@ -16,17 +16,20 @@ class ContentVideoGroupsController < ApplicationController
     if @group.save
       redirect_to content_videos_path, notice: 'Grupo criado.'
     end
+    flash[:notice] = "#{@group.errors.full_messages}"
+    render :new
   end
 
   def edit
   end
 
   def update
-  if @group.update(group_params)
-    redirect_to content_videos_path, notice: 'Grupo atualizado.'
-  else
-    render :edit
-  end
+    if @group.update(group_params)
+      redirect_to content_videos_path, notice: 'Grupo atualizado.'
+    else
+      flash[:notice] = "#{@group.errors.full_messages}"
+      render :edit
+    end
   end
 
   def destroy

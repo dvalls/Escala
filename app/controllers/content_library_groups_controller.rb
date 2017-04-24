@@ -29,6 +29,7 @@ class ContentLibraryGroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to categories_path, notice: 'Grupo atualizado.'
     else
+      flash[:notice] = "#{@group.errors.full_messages}"
       render :edit
     end
   end

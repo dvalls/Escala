@@ -39,6 +39,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to categories_path, notice: t('views.category.create')
     else
+      flash[:notice] = "#{@category.errors.full_messages}"
       render action: 'new'
     end
   end
@@ -49,6 +50,7 @@ class CategoriesController < ApplicationController
      if @category.update(category_params)
       redirect_to categories_path, notice: t('views.category.updated')
     else
+      flash[:notice] = "#{@category.errors.full_messages}"
       render action: 'edit'
     end
   end

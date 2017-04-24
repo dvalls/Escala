@@ -14,9 +14,9 @@
     .col-lg-8.col-md-8
       .row
         - @category.library_files.each do |file|
-          .col-6.col-lg-6
+          .col-4.col-lg-4
             = link_to '#' do
-              = image_tag 'no_cover_image.gif'#file.images.first.url.url(:thumb), class: 'thumbnail'
+              = image_tag file.images.first.url.url(:thumb), class: 'thumbnail'
               = file.name
 
   -#- case @subcategories

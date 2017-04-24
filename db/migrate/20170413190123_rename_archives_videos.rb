@@ -1,6 +1,6 @@
 class RenameArchivesVideos < ActiveRecord::Migration[5.0]
   def up
-    rename_table :videos, :content_videos
+    # rename_table :videos, :content_videos
     rename_table :archives, :library_files
 
     create_table :content_video_group do |t|
@@ -27,9 +27,6 @@ class RenameArchivesVideos < ActiveRecord::Migration[5.0]
 
     drop_table :content_video_group
 
-    rename_table :content_videos, :videos
     rename_table :library_files, :archives
-
-
   end
 end

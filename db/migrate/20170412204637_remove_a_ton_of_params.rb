@@ -24,6 +24,7 @@ class RemoveATonOfParams < ActiveRecord::Migration[5.0]
 
   def down
     drop_table :pages
+    drop_table :content_videos
 
     remove_column :archives, :page_id
     remove_column :content_videos, :page_id

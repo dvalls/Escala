@@ -15,6 +15,9 @@ class ContentLibraryGroupsController < ApplicationController
     @group = ContentLibraryGroup.new(group_params)
     if @group.save
       redirect_to categories_path, notice: 'Grupo criado.'
+    else
+      flash[:notice] = "#{@group.errors.full_messages}"
+      render :new
     end
   end
 

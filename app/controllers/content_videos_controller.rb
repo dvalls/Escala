@@ -15,7 +15,7 @@ class ContentVideosController < ApplicationController
     @content_video = ContentVideo.new(video_params)
 
     if @content_video.save
-      redirect_to content_videos_path,  notice: t('views.course.create')
+      redirect_to content_videos_path,  notice: 'Video criado.'
     else
       render action: 'new'
     end
@@ -26,7 +26,7 @@ class ContentVideosController < ApplicationController
 
   def update
     if @content_video.update(video_params)
-      redirect_to content_videos_path
+      redirect_to content_videos_path,  notice: 'Video atualizado.'
     else
       flash[:notice] = 'verificar as cagadas'
       render :edit
@@ -35,7 +35,7 @@ class ContentVideosController < ApplicationController
 
   def destroy
     @content_video.destroy
-    redirect_to content_videos_path, warning: 'ContentVideo excluído'
+    redirect_to content_videos_path, warning: 'Video excluído'
   end
 
   private

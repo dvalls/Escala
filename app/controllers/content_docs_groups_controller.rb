@@ -15,9 +15,11 @@ class ContentDocsGroupsController < ApplicationController
       @group = ContentDocsGroup.new(group_params)
       if @group.save
         redirect_to docs_path, notice: 'Grupo criado.'
-      end
+      else
       flash[:notice] = "#{@group.errors.full_messages}"
       render :new
+      end
+
     end
 
     def edit

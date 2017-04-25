@@ -14,7 +14,7 @@ class MassiveUpController < ApplicationController
           @library_file.url = url
           @library_file.save
         when '.png'
-          @image = @library_file.images.new(image_params)
+          get_set_image
           @image.url = url
           @image.title = url.original_filename[0..-5]
           @image.description = params[:library_file][:description]
@@ -53,4 +53,13 @@ class MassiveUpController < ApplicationController
       @library_file.save
     end
   end
+
+  def get_set_image
+    if @library_file.image == nil
+      @image = @library_file.image.new(image_params)
+    else
+      @image = @library_file.image
+    end
+  end
+
 end

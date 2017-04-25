@@ -8,7 +8,7 @@ class LibraryFile < ActiveRecord::Base
   belongs_to :course
   belongs_to :page
 
-  has_many :images, :as => :imageable, :dependent => :destroy
+  has_one :image, :as => :imageable, :dependent => :destroy
 
   def get_category_name
     category = Category.find(category_id)

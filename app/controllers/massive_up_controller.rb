@@ -13,7 +13,7 @@ class MassiveUpController < ApplicationController
         when '.skp'
           @library_file.url = url
           @library_file.save
-        when '.png'
+        when '.png', '.jpg'
           get_set_image
           @image.url = url
           @image.title = url.original_filename[0..-5]

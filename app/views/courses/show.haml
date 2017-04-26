@@ -50,19 +50,19 @@
   - if not @course_previous.nil?
     .previous
       = link_to @course_previous do
-        %span.glyphicon.glyphicon-backward{"aria-hidden" => "true"}
+        %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
         = @course_previous.title
 
   .overview
     = link_to courses_path do
-      %span.glyphicon.glyphicon-th{"aria-hidden" => "true"}
+      %span.glyphicon.glyphicon-option-horizontal{"aria-hidden" => "true"}
 
 
   - if not @course_next.nil?
     .next
       = link_to @course_next do
         = @course_next.title
-        %span.glyphicon.glyphicon-forward{"aria-hidden" => "true"}
+        %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
 
 
 = stylesheet_link_tag "course"
@@ -73,7 +73,3 @@
   %p.clearfix
     = link_to('EDITAR', edit_course_path(@course), :class => 'btn btn-primary')
     = link_to('APAGAR', @course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary')
-
-
-
-

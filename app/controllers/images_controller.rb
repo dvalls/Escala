@@ -20,7 +20,7 @@ class ImagesController < ApplicationController
     params[:image][:url].each do |url|
       case @imageable
         when LibraryFile
-          @image = @imageable.image.new(image_params)
+          @image = Image.new(image_params)
         else
           @image = @imageable.images.new(image_params)
       end

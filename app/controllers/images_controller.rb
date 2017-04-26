@@ -28,7 +28,12 @@ class ImagesController < ApplicationController
       @image.title = url.original_filename[0..-5]
       @image.save
     end
-    redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
+    case @imageable
+    when LibraryFile
+      redirect_to edit_library_file_path(@imageable), notice: 'imagem cadastrada.'
+    else
+      redirect_to edit_polymorphic_path([@image.imageable]), notice: t('views.image.create')
+    end
   end
 
   def destroy

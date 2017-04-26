@@ -55,7 +55,8 @@ class MassiveUpController < ApplicationController
 
   def get_set_image
     if @library_file.image == nil
-      @image = @library_file.image.new(image_params)
+      @image = Image.new(imageable_id: @library_file.id, imageable_type: 'LibraryFile')
+      # @image = @library_file.image.new(image_params)
     else
       @image = @library_file.image
     end

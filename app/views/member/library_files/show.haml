@@ -13,9 +13,7 @@
   -#= render partial: 'member/pages/library_group'
   -#- @page_categories.library_files.each do |file|
   -#  .col-xs-6.col-sm-3.col-md-3
-  -#    = link_to '#' do
+  -#    = link_to file.download_url do
   -#      = image_tag file.images.first.url.url(:thumb), class: 'thumbnail'
   -#      = file.name
   -#    = link_to 'X', file, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
-
-

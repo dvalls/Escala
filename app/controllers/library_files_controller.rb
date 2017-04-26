@@ -26,7 +26,7 @@ class LibraryFilesController < ApplicationController
   def create
     @library_file = LibraryFile.new(assets_params)
     if @library_file.save
-      redirect_to library_files_path(:subcategory => @library_file.category), notice: 'Material criado com sucesso'
+      redirect_to edit_library_file_path(@library_file), notice: 'Material criado com sucesso'
     else
       flash[:notice] = "#{@library_file.errors.full_messages}"
       render action: 'new'

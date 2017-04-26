@@ -24,7 +24,10 @@ class LibraryFilesController < ApplicationController
   end
 
   def create
-    @library_file = LibraryFile.new(assets_params)
+    params[:library_file][:url]
+      @library_file = LibraryFile.new(assets_params)
+      @library_file.url = params[:library_file][:url]
+      @library_file.name = (params[:library_file][:url]).original_filename[0..-5]
     if @library_file.save
       redirect_to edit_library_file_path(@library_file), notice: 'Material criado com sucesso'
     else

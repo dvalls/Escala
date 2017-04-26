@@ -10,13 +10,13 @@ class MemberController < ApplicationController
 
   def index
     @student = get_student
-    render layout: 'application'
+    render :layout => 'application'
   end
 
   def show
     @course = Course.friendly.find(params[:id])
     @pages = @course.pages
-    render layout: 'member'
+    render :layout => 'member'
   end
 
   private

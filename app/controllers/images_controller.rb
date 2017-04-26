@@ -24,6 +24,8 @@ class ImagesController < ApplicationController
         else
           @image = @imageable.images.new(image_params)
       end
+      @image.imageable_id = @imageable.id
+      @image.imageable_type = @imageable.class
       @image.url = url
       @image.title = url.original_filename[0..-5]
       @image.save

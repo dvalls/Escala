@@ -17,7 +17,7 @@ class MemberController < ApplicationController
   def show
     @course = Course.friendly.find(params[:id])
     @pages = @course.pages
-    render :layout => 'member'
+    render :layout => 'layouts/member'
   end
 
   private

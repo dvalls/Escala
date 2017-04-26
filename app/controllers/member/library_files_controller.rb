@@ -7,7 +7,7 @@ class Member::LibraryFileController < Member::MemberAreaController #ApplicationC
 
   before_action :student_logged?
 
-  layout 'member'
+  layout 'app/views/layouts/member'
 
   def show
     get_page_contents

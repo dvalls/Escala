@@ -37,7 +37,7 @@ class LibraryFilesController < ApplicationController
   end
 
   def edit
-    @images = @library_file.images
+    @image = @library_file.image
   end
 
   def update

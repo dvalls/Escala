@@ -18,12 +18,3 @@
             = link_to '#' do
               = file.name
               = image_tag file.image.url.url(:thumb), class: 'thumbnail'
-
-  -#- case @subcategories
-  -#  - when true
-  -#    - @category.library_files.each do |file|
-  -#      .col-xs-6.col-sm-3.col-md-3
-  -#        = link_to '#' do
-  -#          = image_tag file.images.first.url.url(:thumb), class: 'thumbnail'
-  -#          = file.name
-

@@ -40,7 +40,6 @@ class MassiveUpController < ApplicationController
     size = filename.length
     final_size = size - 4
     return  filename[final_size..size]
-
   end
 
   def get_set_archive(url)

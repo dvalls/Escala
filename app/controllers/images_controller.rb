@@ -18,7 +18,12 @@ class ImagesController < ApplicationController
   def create
     # Loop throw images
     params[:image][:url].each do |url|
-      @image = @imageable.images.new(image_params)
+      case @imageable
+        when LibraryFile
+          @image = @imageable.image.new(image_params)
+        else
+          @image = @imageable.images.new(image_params)
+      end
       @image.url = url
       @image.title = url.original_filename[0..-5]
       @image.save

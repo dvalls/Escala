@@ -16,7 +16,7 @@ class MassiveUpController < ApplicationController
         when '.png', '.jpg'
           get_set_image
           @image.url = url
-          @image.title = url.original_filename[0..-5]
+          @image.title = (url.original_filename[0..-5]).downcase
           @image.description = params[:library_file][:description]
 
           @image.save
@@ -43,12 +43,13 @@ class MassiveUpController < ApplicationController
   end
 
   def get_set_archive(url)
-    @library_file = LibraryFile.find_by_name(url.original_filename[0..-5])
+    name = (url.original_filename[0..-5]).downcase
+    @library_file = LibraryFile.find_by_name(name)
     if not @library_file
       @library_file = LibraryFile.new()
       @library_file.category_id = params[:library_file][:category_id]
       @library_file.description = params[:library_file][:description]
-      @library_file.name = url.original_filename[0..-5]
+      @library_file.name = name
       @library_file.save
     end
   end

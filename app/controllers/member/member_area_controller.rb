@@ -1,5 +1,5 @@
 class Member::MemberAreaController < ApplicationController
-  # layout 'views/layouts/application'
+  layout 'member'
   before_action :student_logged?
 
 

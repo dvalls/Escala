@@ -1,16 +1,11 @@
 - content_for :navbar do
   = render partial: 'layouts/member_navbar'
   = render 'layouts/member_head'
-
   %header
-
     %h1
       = @course.slug
       %span#course-title= @course.title
 
-- content_for :content do
-  %h3 Conteúdo
-  %p links direcionam para member/pages#show
 -#  SEM CONTEUDO....APRESENTA AS OPÇÕES DE 'MATERIAIS/VIDEOS/ARQUIVOS', AS PAGINAS QUE O CURSO POSSUI
 -#  ESSES LINKS DE PAGINA DEVERAM DIRECIONAR O USUARIO PARA O CONTEUDO DOS BLOCOS DE CADA PAGINA
 

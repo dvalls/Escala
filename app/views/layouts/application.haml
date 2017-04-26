@@ -19,14 +19,8 @@
       %main
         / Main
         -# Para quando for entrar no member#show, nas paginas do curso
-        - if content_for?(:content)
-          .row
-            = render partial: 'layouts/page_options'
-            = yield :content
-        - else
-          = yield
+        = yield
 
-      %p= '-----------------------------------' if admin_logged?
       = link_to 'como aluno', member_path, :class => 'btn btn-primary' if admin_logged?
       = link_to 'como admin', root_path, :class => 'btn btn-primary' if admin_logged?
 

@@ -3,8 +3,6 @@ class MemberController < ApplicationController
 
   before_filter :student_logged?
 
-  layout 'application'
-
   def home
     @carousels = Carousel.all.order(order: :asc)
   end
@@ -12,15 +10,17 @@ class MemberController < ApplicationController
 
   def index
     @student = get_student
+    render layout: 'application'
   end
 
   def show
     @course = Course.friendly.find(params[:id])
     @pages = @course.pages
+    render layout: 'member'
   end
 
   private
-  
+
   def set_courses
     case session[:admin]
       when true

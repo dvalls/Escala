@@ -2,7 +2,7 @@ class MemberController < ApplicationController
   before_action :set_courses, only: [:index, :show]
 
   before_filter :student_logged?
-  layout 'member'#, :only => [:index]
+  # layout 'member'#, :only => [:index]
   # layout 'member', :only =>[:show]
 
   def home

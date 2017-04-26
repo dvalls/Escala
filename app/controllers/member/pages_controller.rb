@@ -1,6 +1,6 @@
 class Member::PagesController < Member::MemberAreaController #ApplicationController
   before_action :student_logged?
-  layout 'member'
+  # layout 'member'
 
   def show
     @course = Course.friendly.find(params[:course_id])

@@ -1,6 +1,6 @@
 class Member::CategoriesController <  Member::MemberAreaController # ApplicationController
   before_action :student_logged?
-  layout 'member'
+  # layout 'member'
 
 
   def index

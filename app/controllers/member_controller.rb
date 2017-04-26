@@ -2,8 +2,8 @@ class MemberController < ApplicationController
   before_action :set_courses, only: [:index, :show]
 
   before_filter :student_logged?
-  layout 'application', :only => [:index]
-  layout 'member', :only =>[:show]
+  layout 'application'#, :only => [:index]
+  # layout 'member', :only =>[:show]
 
   def home
     @carousels = Carousel.all.order(order: :asc)
@@ -17,7 +17,7 @@ class MemberController < ApplicationController
   def show
     @course = Course.friendly.find(params[:id])
     @pages = @course.pages
-    # render :layout => 'member'
+    render :layout => 'member'
   end
 
   private

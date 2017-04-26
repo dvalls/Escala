@@ -6,7 +6,7 @@ class Member::LibraryFileController < Member::MemberAreaController #ApplicationC
 
   def show
     @library_file = LibraryFile.find(params[:id])
-    redirect_to @library_file.url
+    # redirect_to @library_file.url
     # get_page_contents
   end
 

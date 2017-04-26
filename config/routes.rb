@@ -72,6 +72,7 @@ Rails.application.routes.draw do
   namespace :member do
     resources :students
     resources :content_videos
+    resources :library_files
     resources :pages
 
     get '/member_course/:course_id/page/:page_id/content_library/:category_id', to: 'library_files#show', as: 'course_library'
@@ -148,4 +149,3 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
-

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'massive_up/new'
   post 'massive_up/create'
 
-  get 'massive_up/texture_new', to => 'massive_up#texture_new'
+  get 'massive_up/texture_new', to: 'massive_up#texture_new'
   post 'massive_up/texture_create'
 
   get 'admin' => 'admin/home#index'

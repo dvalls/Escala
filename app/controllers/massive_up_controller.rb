@@ -5,7 +5,7 @@ class MassiveUpController < ApplicationController
 
   def create
     # Loop throw images
-    all_params = (params[:library_file][:url]).order(:desc)
+    all_params = (params[:library_file][:url]).reverse
     # params[:library_file][:url].each do |url|
     all_params.each do |url|
       extension = get_extension(url.original_filename)

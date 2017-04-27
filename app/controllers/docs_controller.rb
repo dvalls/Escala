@@ -18,7 +18,9 @@ class DocsController < ApplicationController
 
     def create
       @doc = Doc.new(doc_params)
-      @doc.url = params[:url]
+      params[:url].each do |url|
+        @doc.url = url
+      end
       if @doc.save
         redirect_to docs_path(), notice: 'Documento criado com sucesso'
       else

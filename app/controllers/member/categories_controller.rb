@@ -2,13 +2,6 @@ class Member::CategoriesController <  Member::MemberAreaController # Application
   before_action :student_logged?
   # layout 'member'
 
-
-  def index
-    @category = nil
-    @categories = Category.all.sorted
-    @library_groups = ContentLibraryGroup.all
-  end
-
   def show
     category = Category.find(params[:id])
     @library_files = category.library_files.order(:name)
@@ -18,5 +11,4 @@ class Member::CategoriesController <  Member::MemberAreaController # Application
     @pages = @course.pages
   end
 
-  private
 end

@@ -16,5 +16,4 @@
         - @library_files.each do |file|
           .col-4.col-lg-4
             = link_to file.url.url do
-              = file.name
               = image_tag file.image.url.url(:thumb), class: 'thumbnail'

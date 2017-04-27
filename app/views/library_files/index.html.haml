@@ -3,7 +3,8 @@
 = render partial: 'content_library_groups/index'
 
 %h3 Arquivos
-
+= link_to 'novo material', new_library_file_path, class: 'btn btn-primary' #if signed_in?
+= link_to 'massivo', massive_up_new_path, class: 'btn btn-primary'
 %table.table
   %tr
     %th Arquivo

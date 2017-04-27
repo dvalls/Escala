@@ -33,7 +33,7 @@ class MassiveUpController < ApplicationController
 
   def texture_create
     params[:library_file][:url].each do |url|
-
+ 
       find_archive(url)
       @library_file.category_id = params[:library_file][:category_id]
       @library_file.description = params[:library_file][:description]

@@ -1,6 +1,6 @@
 class LibraryFile < ActiveRecord::Base
 
-  validates :name, :category_id , presence: true
+  validates :url, :category_id , presence: true
 
   mount_uploader :url , ArchiveUploader
 

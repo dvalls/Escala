@@ -27,6 +27,28 @@ class MassiveUpController < ApplicationController
     redirect_to library_files_path, notice: t('views.image.create')
   end
 
+  def texture_new
+    @library_file = LibraryFile.new
+  end
+
+  def texture_create
+    params[:library_file][:url].each do |url|
+      @library_file = LibraryFile.new()
+      @library_file.category_id = params[:library_file][:category_id]
+      @library_file.description = params[:library_file][:description]
+      @library_file.name = name
+      @library_file.url = url
+      @library_file.save
+
+      @image = Image.new(imageable_id: @library_file.id, imageable_type: 'LibraryFile')
+      @image.url = url
+      @image.title = (url.original_filename[0..-5]).downcase
+      @image.description = params[:library_file][:description]
+      @image.save
+    end
+    redirect_to library_files_path, notice: t('views.image.create')
+  end
+
 
   private
 

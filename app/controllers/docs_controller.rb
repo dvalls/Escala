@@ -18,7 +18,7 @@ class DocsController < ApplicationController
 
     def create
       @doc = Doc.new(doc_params)
-      params[:url].each do |url|
+      params[:doc][:url].each do |url|
         @doc.url = url
       end
       if @doc.save

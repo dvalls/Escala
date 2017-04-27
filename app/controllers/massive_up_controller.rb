@@ -15,7 +15,7 @@ class MassiveUpController < ApplicationController
         when '.skp', '.hdr', 'ies', '.zip'
           @library_file.url = url
           @library_file.save
-        when '.png', '.jpg'
+        when '.png', '.jpg', '.gif'
           get_set_image
           @image.url = url
           @image.title = (url.original_filename[0..-5]).downcase

@@ -5,7 +5,7 @@ class LibraryFilesController < ApplicationController
 
   def index
     @categories = Category.where('parent_id' => nil)
-    @library_files = LibraryFile.all
+    @library_files = LibraryFile.all.order(:category).order(:name)
     @library_groups = ContentLibraryGroup.all
 
     case params[:subcategory]

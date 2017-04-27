@@ -42,7 +42,7 @@ class LibraryFilesController < ApplicationController
 
   def update
     if @library_file.update(assets_params)
-      redirect_to library_files_path(:subcategory => @library_file.category), notice: 'Material criado com sucesso.'
+      redirect_to library_files_path(), notice: 'Material criado com sucesso.'
     else
       flash[:notice] = "#{@library_file.errors.full_messages}"
       render action: 'edit'
@@ -52,7 +52,7 @@ class LibraryFilesController < ApplicationController
   def destroy
     category = @library_file.category
     @library_file.destroy
-    redirect_to library_files_path(:subcategory => category), notice: 'Material excluído com sucesso.'
+    redirect_to library_files_path(), notice: 'Material excluído com sucesso.'
   end
 
   private

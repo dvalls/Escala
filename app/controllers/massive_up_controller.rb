@@ -12,10 +12,10 @@ class MassiveUpController < ApplicationController
       get_set_archive(url)
 
       case extension
-        when '.skp'
+        when '.skp', '.hdr', 'ies', '.zip'
           @library_file.url = url
           @library_file.save
-        when '.png'
+        when '.png', '.jpg'
           get_set_image
           @image.url = url
           @image.title = (url.original_filename[0..-5]).downcase

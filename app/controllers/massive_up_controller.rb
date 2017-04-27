@@ -33,7 +33,8 @@ class MassiveUpController < ApplicationController
 
   def texture_create
     params[:library_file][:url].each do |url|
-      @library_file = LibraryFile.new()
+
+      find_archive
       @library_file.category_id = params[:library_file][:category_id]
       @library_file.description = params[:library_file][:description]
       @library_file.name = (url.original_filename[0..-5]).downcase
@@ -64,6 +65,14 @@ class MassiveUpController < ApplicationController
     size = filename.length
     final_size = size - 4
     return  filename[final_size..size]
+  end
+
+  def find_archive
+    name = (url.original_filename[0..-5]).downcase
+    @library_file = LibraryFile.find_by_name(name)
+    if not @library_file
+      @library_file = LibraryFile.new()
+    end
   end
 
   def get_set_archive(url)

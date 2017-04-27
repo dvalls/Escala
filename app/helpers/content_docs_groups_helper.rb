@@ -1,0 +1,2 @@
+module ContentDocsGroupsHelper
+end

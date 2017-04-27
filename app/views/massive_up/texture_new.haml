@@ -1,0 +1,23 @@
+%h3 MassiveUp# Aruivos de texture_new
+= simple_form_for( @library_file, :url => massive_up_texture_create_path , :method => :post, :html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    %p selecione apenas um formato.
+    = f.input :url, as: :file, :input_html => { :multiple => true }
+
+    = f.input :description 
+
+    = f.input :category_id, label: 'Categoria', :collection => Category.all, value_method: :id,
+              label_method: :name, as: :radio_buttons
+
+    = hidden_field_tag :category_id, params[:category_id]
+
+
+  %p
+    É possível selecionar uma ou mais imagens.
+
+  .form-actions
+    = f.button :submit, 'SALVAR',  :class => 'btn btn-primary'
+
+= link_to 'voltar', library_files_path

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails LAM Site: development" uuid="8465e992-d3b8-4472-a028-134d89a41399">
+      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <auth-required>false</auth-required>
+      <introspection-schemas>*</introspection-schemas>
+    </data-source>
+    <data-source name="d1s8n7m4thph8b@ec2-54-163-236-33.compute-1.amazonaws.com" uuid="aacc2b13-ff9c-4837-84b7-3ea8211ef15f">
+      <database-info product="PostgreSQL" version="9.6.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>yaedluvgcxzbxu</user-name>
+      <introspection-schemas>d1s8n7m4thph8b:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

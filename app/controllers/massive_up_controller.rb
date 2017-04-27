@@ -36,7 +36,7 @@ class MassiveUpController < ApplicationController
       @library_file = LibraryFile.new()
       @library_file.category_id = params[:library_file][:category_id]
       @library_file.description = params[:library_file][:description]
-      @library_file.name = name
+      @library_file.name = (url.original_filename[0..-5]).downcase
       @library_file.url = url
       @library_file.save
 

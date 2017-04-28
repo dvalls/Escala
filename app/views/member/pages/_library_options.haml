@@ -1,8 +1,10 @@
 - content_for :library_options do
   %h5 Categorias:
   - block.contentable.categories.each do |category|
-    - case category.library_files.count
-      - when not 0
+    - case
+      - when category.library_files.count > 0
         %span.glyphicon.glyphicon-menu-right{"aria-hidden" => "true"}
         = link_to category.name, member_content_block_content_library_group_category_path(block, block.contentable, category)
         %br/
+      - else
+        puts " #{category.name} não possui arquivos cadastrados"

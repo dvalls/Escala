@@ -33,7 +33,7 @@ class Member::StudentsController < Member::MemberAreaController #ApplicationCont
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to course_images_path(@course), notice: t('views.course.create')
+      redirect_to course_images_path(@course), notice: t('views.student.create')
     else
       render action: 'new'
     end
@@ -51,7 +51,7 @@ class Member::StudentsController < Member::MemberAreaController #ApplicationCont
 
   def destroy
     @student.destroy
-    redirect_to courses_url, notice: t('views.course.destroy')
+    redirect_to courses_url, notice: t('views.student.destroy')
   end
 
   private

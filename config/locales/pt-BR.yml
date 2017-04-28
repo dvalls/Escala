@@ -34,7 +34,6 @@ pt-BR:
     formats:
           default: ! '%d/%m/%Y'
 
-
   # System messages
   views:
     all_news: + notícias
@@ -42,15 +41,18 @@ pt-BR:
     close: Fechar
     like_us: Curta nossa página
 
-
     updated_ok: Informações atualizadas com sucesso.
     are_you_sure: Você tem certeza?
-
 
     image:
       create: Imagem(ns) criada(s) com sucesso.
       destroy: Imagem excluída com sucesso.
 
+    library_file:
+      create: Arquivo salvo com sucesso.
+      destroy: Arquivo excluído com sucesso.
+      update: Arquivo atualizado com sucesso.
+        
     course:
       create: Curso criado com sucesso.
       destroy: Curso excluído com sucesso.
@@ -59,6 +61,11 @@ pt-BR:
       create: Categoria criada com sucesso.
       destroy: Categoria excluída com sucesso.
       updated: Categoria atualizada com sucesso.
+
+    student:
+      create: Aluno cadastrado com sucesso.
+      destroy: Cadastro de aluno escluído com sucesso.
+      update: Cadastro de aluno atualizado com sucesso.
 
     feed:
       create: Notícia criada com sucesso.

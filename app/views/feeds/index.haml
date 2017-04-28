@@ -8,7 +8,7 @@
       = image_tag feed.image.url(:thumb) unless feed.image.blank?
       %p= markdown(feed.body)
 
-      - if signed_in?
+      - if admin_logged?
         %p
           = link_to 'VER', feed
           |

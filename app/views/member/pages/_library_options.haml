@@ -1,5 +1,4 @@
 - content_for :library_options do
-  %h5 Categorias:
   - block.contentable.categories.each do |category|
     - case
       - when category.library_files.count > 0

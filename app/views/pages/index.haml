@@ -28,18 +28,18 @@
 
 = link_to 'nova pagina', new_page_path, class: 'btn btn-primary' if admin_logged?
 
-%h3 Blocos
+%h3 Blocos de conteudos
 %p
   = render partial: 'content_blocks/index'
 .row
   .col-lg-4.col-md-4
-    %h3 Grupos (video)
+    %h3 Grupos (videos)
     = render partial: 'content_video_groups/index'
   .col-lg-4.col-md-4
-    %h3 Grupos (library files)
+    %h3 Grupos (arquivos de biblioteca)
     = render partial: 'content_library_groups/index'
   .col-lg-4.col-md-4
-    %h3 Grupos (docs)
+    %h3 Grupos (documentos)
     = render partial:  'content_docs_groups/index'
   .clearfix.hidden-sm-up
 

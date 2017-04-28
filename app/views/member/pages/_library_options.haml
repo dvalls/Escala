@@ -1,6 +1,8 @@
 - content_for :library_options do
   %h5 Categorias:
   - block.contentable.categories.each do |category|
-    %span.glyphicon.glyphicon-menu-right{"aria-hidden" => "true"}
-    = link_to category.name, member_content_block_content_library_group_category_path(block, block.contentable, category)
-    %br/
+    - case category.library_files.count
+      - when not 0
+        %span.glyphicon.glyphicon-menu-right{"aria-hidden" => "true"}
+        = link_to category.name, member_content_block_content_library_group_category_path(block, block.contentable, category)
+        %br/

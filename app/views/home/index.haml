@@ -17,10 +17,11 @@
 / End Carousel
 
 = link_to 'editar galeria', carousels_path, :class => 'btn btn-primary' if admin_logged?
+%br/
 = link_to 'videos', content_videos_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'arquivos de biblioteca', library_files_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'documentos', docs_path, :class => 'btn btn-primary' if admin_logged?
-%p ----------------------------
+%br/
 = link_to 'alunos', students_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'categorias', categories_path, :class => 'btn btn-primary' if admin_logged?
 = link_to 'pages', pages_path, class: 'btn btn-primary' if admin_logged?
@@ -46,4 +47,3 @@
 
 = stylesheet_link_tag "home"
 = javascript_include_tag "home"
-

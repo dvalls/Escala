@@ -31,6 +31,7 @@ class MassiveUpController < ApplicationController
     @library_file = LibraryFile.new
   end
 
+  #Casos em que o mesmo arquivo de upload servira para o thumbnail
   def texture_create
     params[:library_file][:url].each do |url|
 

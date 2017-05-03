@@ -8,14 +8,15 @@ class MassiveUpController < ApplicationController
     all_params = (params[:library_file][:url]).reverse
     # params[:library_file][:url].each do |url|
     all_params.each do |url|
-      extension = get_extension(url.original_filename)
+      # extension = get_extension(url.original_filename)
+      extension = url.file.extension.downcase
       get_set_archive(url)
 
       case extension
-        when '.skp', '.hdr', 'ies', '.zip'
+        when 'skp', 'hdr', 'ies', 'zip'
           @library_file.url = url
           @library_file.save
-        when '.png', '.jpg', '.gif'
+        when 'png', 'jpg', 'gif'
           get_set_image
           @image.url = url
           @image.title = (url.original_filename[0..-5]).downcase
@@ -33,7 +34,7 @@ class MassiveUpController < ApplicationController
 
   def texture_create
     params[:library_file][:url].each do |url|
- 
+
       find_archive(url)
       @library_file.category_id = params[:library_file][:category_id]
       @library_file.description = params[:library_file][:description]

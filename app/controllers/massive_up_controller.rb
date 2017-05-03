@@ -65,6 +65,11 @@ class MassiveUpController < ApplicationController
   def get_extension(filename)
     size = filename.length
     final_size = size - 4
+
+    array = filename.split('.')
+
+    puts array  
+
     return  filename[final_size..size]
   end
 

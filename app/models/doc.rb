@@ -3,7 +3,7 @@ class Doc < ApplicationRecord
 
   mount_uploader :url, ArchiveUploader
 
-  has_and_belongs_to_many :content_docs_groups
+  has_and_belongs_to_many :content_docs_groups, :dependent => :destroy
 
 
   def download_url(style_name=:original)

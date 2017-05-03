@@ -3,8 +3,8 @@ class Category < ActiveRecord::Base
 
   validates :name, presence: true
 
-  has_many :library_files
-  has_and_belongs_to_many :content_library_groups
+  has_many :library_files, :dependent => :destroy
+  has_and_belongs_to_many :content_library_groups, :dependent => :destroy
   # has_many :content_videos
 
   has_many :subcategories, :class_name => 'Category', :foreign_key => 'parent_id', :dependent => :destroy

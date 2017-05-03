@@ -7,25 +7,25 @@
 = link_to 'novo material', new_library_file_path, class: 'btn btn-primary' #if signed_in?
 = link_to 'mass arquivos biblioteca', massive_up_new_path, class: 'btn btn-primary'
 = link_to 'mass texturas', massive_up_texture_new_path, class: 'btn btn-primary'
-%table.table
-  %tr
-    %th Arquivo
-    %th Descrição
-    %th Categoria
-    %th
 
-  - @library_files.each do |archive|
-    %tr
-      -#- case
-      %td= archive.name
-      %td= archive.description
-      %td= archive.category.name
-      %td
-        = link_to 'EDITAR', edit_library_file_path(archive)
-        |
-        = link_to 'APAGAR', archive, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este arquivo?' }
+= link_to 'mostrar todos arquivos', library_file_path(LibraryFile.first), class: 'btn btn-primary'
+#%table.table
+#  %tr
+#    %th Arquivo
+#    %th Descrição
+#    %th Categoria
+#    %th
+#
+#  - @library_files.each do |archive|
+#    %tr
+#      -#- case
+#      %td= archive.name
+#      %td= archive.description
+#      %td= archive.category.name
+#      %td
+#        = link_to 'EDITAR', edit_library_file_path(archive)
+#        |
+#        = link_to 'APAGAR', archive, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este arquivo?' }
 
-= link_to 'novo material', new_library_file_path, class: 'btn btn-primary' #if signed_in?
--# = link_to 'massivo', massive_up_new_path, class: 'btn btn-primary'
 = link_to 'categorias', categories_path, class: 'btn btn-primary'
 %p= link_to 'voltar', root_path

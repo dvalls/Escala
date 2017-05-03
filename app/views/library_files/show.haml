@@ -1,10 +1,17 @@
-- content_for :materials do
-  = @library_file.name
-  = @library_file.description
-  = @library_file.thumbnail
-  = @library_file.url
-  = @library_file.get_category_name
+%table.table
+  %tr
+    %th Arquivo
+    %th Descrição
+    %th Categoria
+    %th
 
-  = link_to 'EDITAR', edit_archive_path(@library_file) if signed_in?
-  |
-  = link_to('APAGAR', @library_file, :method => :delete, :data => { :confirm => t('views.are_you_sure')}) if signed_in?
+  - @library_files.each do |archive|
+    %tr
+      -#- case
+      %td= archive.name
+      %td= archive.description
+      %td= archive.category.name
+      %td
+        = link_to 'EDITAR', edit_library_file_path(archive)
+        |
+        = link_to 'APAGAR', archive, :method => :delete, :data => { :confirm => 'Vo

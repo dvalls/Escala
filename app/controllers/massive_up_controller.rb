@@ -12,10 +12,10 @@ class MassiveUpController < ApplicationController
       get_set_archive(url)
 
       case extension
-        when '.skp', '.hdr', 'ies', '.zip'
+        when 'skp', 'hdr', 'ies', 'zip'
           @library_file.url = url
           @library_file.save
-        when '.png', '.jpg', '.gif'
+        when 'png', 'jpg', 'gif'
           get_set_image
           @image.url = url
           @image.title = (url.original_filename[0..-5]).downcase
@@ -68,9 +68,9 @@ class MassiveUpController < ApplicationController
 
     array = filename.split('.')
 
-    puts array  
+    puts array[1]
 
-    return  filename[final_size..size]
+    return  array[1]
   end
 
   def find_archive(url)

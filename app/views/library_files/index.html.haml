@@ -8,7 +8,7 @@
 = link_to 'mass arquivos biblioteca', massive_up_new_path, class: 'btn btn-primary'
 = link_to 'mass texturas', massive_up_texture_new_path, class: 'btn btn-primary'
 %br/
-= link_to 'todos arquivos', library_file_path(1), class: 'btn btn-primary'
+= link_to 'todos arquivos', library_file_path(LibraryFile.first), class: 'btn btn-primary'
 = link_to 'categorias', categories_path, class: 'btn btn-primary'
 
 %p= link_to 'voltar', root_path

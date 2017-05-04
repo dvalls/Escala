@@ -45,7 +45,7 @@ class CategoriesController < ApplicationController
   end
 
    def update
-     # set_parent_id
+     set_parent_id
 
      if @category.update(category_params)
       redirect_to categories_path, notice: t('views.category.updated')
@@ -72,13 +72,13 @@ class CategoriesController < ApplicationController
     end
 
   def set_parent_id
-    if not params[:sub_id] == ''
-      @category.parent_id = (params[:sub_id]).to_i
-    elsif not params[:raiz_id] == ''
-      @category.parent_id = (params[:raiz_id]).to_i
-    else
+    # if not params[:sub_id] == ''
+      # @category.parent_id = (params[:sub_id]).to_i
+    # elsif not params[:raiz_id] == ''
+      # @category.parent_id = (params[:raiz_id]).to_i
+    # else
       @category.parent_id = nil
-    end
+    # end
   end
 
 

@@ -6,21 +6,20 @@
       = @course.slug
       %span#course-title= @course.title
 
-- content_for :content do
-  .col-md-10.col-lg-10
-    .row
-      - @blocks.each do |block|
-        - case block.contentable_type
-          - when 'ContentVideoGroup'
-            .col-md-12.col-lg-12
-              = render partial: 'video_group', locals: {:content_videos => block.contentable.content_videos.order(:title)}
-          - when 'ContentLibraryGroup'
-            = render partial: 'member/pages/library_options', locals: {:block => block}
-            .col-lg-2.col-md-2
-              - if content_for?(:library_options)
-                = yield :library_options
-            .col-md-10.push-md-2.col-lg-10.push-lg-2
-          - when 'ContentDocsGroup'
-            .col-md-12.col-lg-12
-              = render partial: 'docs_group', locals: {:docs_groups => block.contentable.docs}
-              %br/
+.col-md-10.col-lg-10
+  .row
+    - @blocks.each do |block|
+      - case block.contentable_type
+        - when 'ContentVideoGroup'
+          .col-md-12.col-lg-12
+            = render partial: 'video_group', locals: {:content_videos => block.contentable.content_videos.order(:title)}
+        - when 'ContentLibraryGroup'
+          = render partial: 'member/pages/library_options', locals: {:block => block}
+          .col-lg-2.col-md-2
+            - if content_for?(:library_options)
+              = yield :library_options
+          .col-md-10.push-md-2.col-lg-10.push-lg-2
+        - when 'ContentDocsGroup'
+          .col-md-12.col-lg-12
+            = render partial: 'docs_group', locals: {:docs_groups => block.contentable.docs}
+            %br/

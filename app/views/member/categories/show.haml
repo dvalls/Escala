@@ -6,17 +6,17 @@
       = @course.slug
       %span#course-title= @course.title
 
-= render partial: 'member/pages/library_options', locals: {:block => @content_block}
-= render partial: 'member/categories/show'#, locals: {:block => @content_block}
-
 -#= render partial: 'member/pages/library_options', locals: {:block => @content_block}
--#- if content_for?(:library_options)
--#  .col-lg-2.col-md-2
--#    = yield :library_options
--#
--#  .col-lg-8.col-md-8
--#    .row
--#      - @library_files.each do |file|
--#        .col-4.col-lg-4
--#          = link_to file.url.url do
--#            = image_tag file.image.url.url(:thumb), class: 'thumbnail'
+-#= render partial: 'member/categories/show'#, locals: {:block => @content_block}
+
+= render partial: 'member/pages/library_options', locals: {:block => @content_block}
+- if content_for?(:library_options)
+  .col-lg-2.col-md-2
+    = yield :library_options
+
+  .col-lg-8.col-md-8
+    .row
+      - @library_files.each do |file|
+        .col-4.col-lg-4
+          = link_to file.url.url do
+            = image_tag file.image.url.url(:thumb), class: 'thumbnail'

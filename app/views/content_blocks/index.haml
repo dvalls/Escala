@@ -1,9 +1,16 @@
-%h3 AHSIDHIASHDIHASIDHIASHUIDHIHAIDSH
-
-.row
-  .col-lg-3.col-md-3
-    = render template: 'pages/index'
-  -#.col-lg-9.col-md-9
-  -#  = render template: 'templates/body'
-  -#  = render template: 'templates/grid'
-
+-#.row
+-#  - @blocks.each do |block|
+-#    - case block.contentable_type
+-#      - when 'ContentVideoGroup'
+-#        .col-md-12.col-lg-12
+-#          = render partial: 'member/pages/video_group', locals: {:content_videos => block.contentable.content_videos.order(:title)}
+-#      - when 'ContentLibraryGroup'
+-#        = render partial: 'member/pages/library_options', locals: {:block => block}
+-#        .col-lg-2.col-md-2
+-#          - if content_for?(:library_options)
+-#            = yield :library_options
+-#        .col-md-10.push-md-2.col-lg-10.push-lg-2
+-#      - when 'ContentDocsGroup'
+-#        .col-md-12.col-lg-12
+-#          = render partial: 'member/pages/docs_group', locals: {:docs_groups => block.contentable.docs}
+-#          %br/

@@ -70,13 +70,14 @@ Rails.application.routes.draw do
   end
 
   get 'member', to: 'member#index'
-  get '/member_course/:id', to: 'member#show', as: 'member_course'
+  # get '/member_course/:id', to: 'member#show', as: 'member_course'
 
   namespace :member do
     resources :students
     resources :content_videos
     resources :library_files
     resources :pages
+    resources :courses
 
     get '/member_course/:course_id/page/:page_id/content_library/:category_id', to: 'library_files#show', as: 'course_library'
 

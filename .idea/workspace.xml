@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b223ee0b-6d04-4fc0-bdaf-013072d9f162" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb" />
     </list>
     <list id="bb895f1c-9c82-46fd-8f9b-1e862a62bf12" name="ignore" comment="" />
     <ignored path="LAM Site.iws" />
@@ -147,8 +146,8 @@
       <file leaf-file-name="content_library_groups_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="85" lean-forward="false" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
+            <state relative-caret-position="170">
+              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -836,14 +835,7 @@
       <workItem from="1493919412515" duration="1853000" />
       <workItem from="1493921282345" duration="1948000" />
       <workItem from="1493925850589" duration="1940000" />
-      <workItem from="1493927837721" duration="1159000" />
-    </task>
-    <task id="LOCAL-00245" summary="resize thumb">
-      <created>1492013775142</created>
-      <option name="number" value="00245" />
-      <option name="presentableId" value="LOCAL-00245" />
-      <option name="project" value="LOCAL" />
-      <updated>1492013775142</updated>
+      <workItem from="1493927837721" duration="1274000" />
     </task>
     <task id="LOCAL-00246" summary="show course">
       <created>1492468187840</created>
@@ -1181,11 +1173,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493928686243</updated>
     </task>
-    <option name="localTasksCounter" value="294" />
+    <task id="LOCAL-00294" summary="ajuste de ordenamento">
+      <created>1493929008477</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1493929008477</updated>
+    </task>
+    <option name="localTasksCounter" value="295" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="403770000" />
+    <option name="totallyTimeSpent" value="403885000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1198,7 +1197,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22121535" sideWeight="0.75" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3228261" sideWeight="0.48347548" order="6" side_tool="false" content_ui="tabs" />
@@ -1237,7 +1235,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add links para navegação entre categorias - library files" />
     <MESSAGE value="tamanho thumb" />
     <MESSAGE value="correção de erro de digitação" />
     <MESSAGE value="Show de arquivos," />
@@ -1262,7 +1259,8 @@
     <MESSAGE value="desfazendo erros" />
     <MESSAGE value="admin visualizar arquivos de biblioteca" />
     <MESSAGE value="ajustes de redirecionamento" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajustes de redirecionamento" />
+    <MESSAGE value="ajuste de ordenamento" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajuste de ordenamento" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1627,8 +1625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="85" lean-forward="false" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
+        <state relative-caret-position="170">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding />
         </state>
       </provider>

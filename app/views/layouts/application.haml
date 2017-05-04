@@ -19,12 +19,7 @@
       %main
         / Main
         .row
-          - if @pages != nil
-            = render partial: 'layouts/page_options'
-          - if content_for?(:content)
-            = yield :content
-          - else
-            = yield
+          = yield
 
       = link_to 'como aluno', member_path, :class => 'btn btn-primary' if admin_logged?
       = link_to 'como admin', root_path, :class => 'btn btn-primary' if admin_logged?

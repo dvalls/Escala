@@ -1,5 +1,5 @@
 class Member::MemberAreaController < ApplicationController
-  # layout 'member'
+  layout 'member'
   before_action :student_logged?
 
   helper_method :get_page_contents

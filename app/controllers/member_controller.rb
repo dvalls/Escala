@@ -3,7 +3,7 @@ class MemberController < ApplicationController
 
   before_filter :student_logged?
   # layout 'member'#, :only => [:index]
-  # layout 'member', :only =>[:show]
+  layout 'member'
 
   def home
     @carousels = Carousel.all.order(order: :asc)

@@ -11,9 +11,9 @@
       %header
         - if content_for?(:navbar)
           = yield :navbar
-        - else
-          = render partial: 'layouts/default_navbar'
-          / Mobile menu
+        -#- else
+          -#= render partial: 'layouts/default_navbar'
+          -#/ Mobile menu
         = render :partial => 'layouts/flash_message'
       / Main content
       %main

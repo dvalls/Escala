@@ -12,4 +12,4 @@
             |
             = link_to 'editar', edit_library_file_path(file)
           = link_to file.url.url do
-            = image_tag 'no_cover_image.gif'#file.image.url.url(:thumb), class: 'thumbnail'
+            = image_tag file.image.url.url(:thumb), class: 'thumbnail'

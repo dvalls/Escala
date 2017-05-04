@@ -45,7 +45,7 @@ class CategoriesController < ApplicationController
   end
 
    def update
-     set_parent_id
+     # set_parent_id
 
      if @category.update(category_params)
       redirect_to categories_path, notice: t('views.category.updated')

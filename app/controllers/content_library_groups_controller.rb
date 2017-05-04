@@ -6,6 +6,12 @@ class ContentLibraryGroupsController < ApplicationController
     @library_groups = ContentLibraryGroup.all
   end
 
+  def show
+    group = ContentVideoGroup.find(params[:id])
+    @content_block =
+    @library_files = LibraryFile
+  end
+
   def new
     @group = ContentLibraryGroup.new
     @categories = Category.all.where(parent_id: nil)

@@ -7,13 +7,15 @@
         %th Nome
         %th Página
         %th Conteúdo
+        %th Nome do Grupo
         %th
       - @blocks.each do |block|
         %tr
           %td= block.contentable.name
           %td= block.page.name
           %td= block.contentable_type
+          %td= block.contentable.name
           %td
-            = link_to 'edit', edit_content_block_path(block)
+            = link_to 'EDITAR', edit_content_block_path(block)
             |
-            = link_to 'delete', block, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}
+            = link_to 'APAGAR', block, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}

@@ -6,7 +6,7 @@
     %th
   - @library_groups.each do |group|
     %tr
-      %td= group.name
+      %td= link_to group.name, content_library_group_path(group)
       %td
         - group.categories.each do |cat|
           = '-' + cat.name

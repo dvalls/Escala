@@ -10,9 +10,9 @@ class ContentLibraryGroupsController < ApplicationController
     @content_group = ContentLibraryGroup.find(params[:id])
     case params[:category_id]
     when nil
-      @library_files = (@content_group.categories.first).library_files
+      @library_files = (@content_group.categories.first).library_files.order(:name)
     else
-      @library_files = Category.find(params[:category_id]).library_files
+      @library_files = Category.find(params[:category_id]).library_files.order(:name)
     end
 
   end

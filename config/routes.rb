@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   resources :content_library_groups do
     resources :content_blocks
   end
+  get '/content_library_group/:id/category/:category_id', to: 'content_library_groups#show', as: 'content_library_group_category'
 
   resources :content_video_groups do
     resources :content_blocks

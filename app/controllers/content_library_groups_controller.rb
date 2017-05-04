@@ -7,9 +7,14 @@ class ContentLibraryGroupsController < ApplicationController
   end
 
   def show
-    group = ContentVideoGroup.find(params[:id])
-    @content_block =
-    @library_files = LibraryFile
+    @content_group = ContentLibraryGroup.find(params[:id])
+    case params[:category_id]
+    when nil
+      @library_files = (@content_group.categories.first).library_files
+    else
+      @library_files = Category.find(params[:category_id]).library_files
+    end
+
   end
 
   def new

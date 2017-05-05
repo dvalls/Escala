@@ -1,4 +1,15 @@
-= render partial: 'member/pages/library_options', locals: {:block => @content_block}
+-#= render partial: 'member/pages/library_options', locals: {:block => @content_block}
+-#- if content_for?(:library_options)
+-#  .col-lg-2.col-md-2
+-#    = yield :library_options
+-#
+-#  .col-lg-8.col-md-8
+-#    .row
+-#      - @library_files.each do |file|
+-#        .col-4.col-lg-4
+-#          = link_to file.url.url do
+-#            = image_tag file.image.url.url(:thumb), class: 'thumbnail'
+
 - if content_for?(:library_options)
   .col-lg-2.col-md-2
     = yield :library_options
@@ -6,6 +17,9 @@
   .col-lg-8.col-md-8
     .row
       - @library_files.each do |file|
-        .col-4.col-lg-4
-          = link_to file.url.url do
-            = image_tag file.image.url.url(:thumb), class: 'thumbnail'
+        - if admin_logged?
+          = link_to 'x', file, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
+          |
+          = link_to 'editar', edit_library_file_path(file)
+        = link_to file.url.url do
+          = image_tag file.image.url.url(:thumb), class: 'thumbnail'

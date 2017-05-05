@@ -3,11 +3,11 @@ class MemberController < ApplicationController
   layout 'member'
 
   def index
-    @student = Student.find(session[:user_id])
     case session[:admin]
       when true
         @courses = Course.all
       when false
+        @student = Student.find(session[:user_id])
         @courses = @student.courses
     end
   end

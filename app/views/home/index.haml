@@ -8,7 +8,7 @@
   .carousel-inner
     - @carousels.each_with_index do |carousel, index|
       .item{:class => (index == 0 ? 'active' : '')}
-        =image_tag carousel.image_url
+        = image_tag carousel.image_url
 
         - unless carousel.title.empty?
           = link_to carousel.course do
@@ -26,16 +26,16 @@
   = link_to 'categorias', categories_path, :class => 'btn btn-primary'
   = link_to 'páginas', pages_path, class: 'btn btn-primary'
 
-/ Feeds
-%ul.feeds.list-unstyled
-  - @feeds.each do |feed|
-    %li
-      %h5
-        %b= feed.title
-        |
-        =l feed.updated_at.to_date, format: :default
-      = image_tag feed.image.url(:thumb) unless feed.image.blank?
-      %p= feed.body
+/ Feeds - temporariamente ocultado
+-#%ul.feeds.list-unstyled
+-#  - @feeds.each do |feed|
+-#    %li
+-#      %h5
+-#        %b= feed.title
+-#        |
+-#        =l feed.updated_at.to_date, format: :default
+-#      = image_tag feed.image.url(:thumb) unless feed.image.blank?
+-#      %p= feed.body
 / End Feeds
 
 

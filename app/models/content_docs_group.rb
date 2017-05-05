@@ -4,5 +4,7 @@ class ContentDocsGroup < ApplicationRecord
 
   has_and_belongs_to_many :docs
 
+  has_many :content_blocks, as: :contentable, :dependent => :destroy
+
   belongs_to :course
 end

@@ -2,11 +2,16 @@
   %tr
     %th Nome
     %th Curso
+    %th Bloco
     %th
   - @docs_groups.each do |group|
     %tr
       %td= group.name
       %td= group.course.title
+      %td
+        - if group.content_blocks
+          - group.content_blocks.each do |block|
+            = block.page.name
       %td
         = link_to 'editar', edit_content_docs_group_path(group)
         |

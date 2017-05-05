@@ -16,6 +16,15 @@ class MassiveUpController < ApplicationController
 
     all_params = (params[:library_file][:url]).reverse
 
+    puts "#{all_params.count}"
+    puts "#{all_params.count}"
+    puts "#{all_params.count}"
+    puts "#{all_params.count}"
+    puts "#{all_params.count}"
+    puts "#{all_params.count}"
+    puts "#{all_params.count}"
+    puts "#{all_params.count}"
+
     if not all_params.count.even? #Verifica se a quantidade de arquivos é par
       # se não for par, nao realiza a criação
       redirect_to :back
@@ -78,8 +87,8 @@ class MassiveUpController < ApplicationController
     #       @image.save
     #   end
     # end
-    flash[:notice] = "Arquivos não criados: #{error_library_files}"
-    redirect_to library_files_path, notice: t('views.image.create')
+    # flash[:notice] = "Arquivos não criados: #{error_library_files}"
+    redirect_to library_files_path, notice: t('views.image.create') + "Arquivos não criados: #{error_library_files}"
   end
 
   def texture_new

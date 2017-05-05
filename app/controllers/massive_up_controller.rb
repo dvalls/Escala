@@ -3,28 +3,82 @@ class MassiveUpController < ApplicationController
     @library_file = LibraryFile.new
   end
 
+
+
+
+
+
+
   def create
-    # Loop throw images
+    #keys: nome do arquivo, valor[0]: url, valor[1]: imagem, thumb
+    params_dictionary = {}
+    error_library_files = Array.new()
+
     all_params = (params[:library_file][:url]).reverse
-    # params[:library_file][:url].each do |url|
+
+    if not all_params.count.even? #Verifica se a quantidade de arquivos é par
+      # se não for par, nao realiza a criação
+      redirect_to :back
+    end
+
+    # Loop throw images
     all_params.each do |url|
       extension = get_extension(url.original_filename)
-      get_set_library_file(url)
+      name = (url.original_filename[0..-5]).downcase
+
+      #verifica se o dicionario possui chave com esse nome
+      if not params_dictionary.include?(name)
+        params_dictionary[name] = Array.new(2)
+      end
 
       case extension
-        when 'skp', 'hdr', 'ies', 'zip'
-          @library_file.url = url
-          @library_file.save
         when 'png', 'jpg', 'gif'
-          get_set_image
-          @image.url = url
-          @image.title = (url.original_filename[0..-5]).downcase
-          @image.description = params[:library_file][:description]
-
-          @image.save
+          params_dictionary[name][1] = url
+        else
+          params_dictionary[name][0] = url
       end
     end
-    flash[:notice] = "#{@library_file.errors.full_messages}// #{@image.errors.full_messages}"
+
+    params_dictionary.each do |key, value|
+      #key = name
+      #value[0] = url de arquivos para download
+      #value[1] = url de arquivos para thumbnail
+      find_library_file(key)
+
+      @library_file.category_id = params[:library_file][:category_id]
+      @library_file.description = params[:library_file][:description]
+      @library_file.name = key
+      @library_file.url = value[0]
+
+      if @library_file.save #se o arquivo salvar
+        get_or_set_image
+        @image.url = value[1]
+        @image.title = key
+        if not @image.save # se a imagem nao salvar
+
+          error_library_files << @library_file.name
+          @library_file.destroy # para que nao fique nenhum arquivo sem url
+        end
+      end
+    end
+
+    #
+    #   get_set_library_file(name)
+    #
+    #   case extension
+    #     when 'skp', 'hdr', 'ies', 'zip'
+    #       @library_file.url = url
+    #       @library_file.save
+    #     when 'png', 'jpg', 'gif'
+    #       get_set_image
+    #       @image.url = url
+    #       @image.title = (url.original_filename[0..-5]).downcase
+    #       @image.description = params[:library_file][:description]
+    #
+    #       @image.save
+    #   end
+    # end
+    flash[:notice] = "Arquivos não criados: #{error_library_files}"
     redirect_to library_files_path, notice: t('views.image.create')
   end
 
@@ -35,19 +89,21 @@ class MassiveUpController < ApplicationController
   #Casos em que o mesmo arquivo de upload servira para o thumbnail
   def texture_create
     params[:library_file][:url].each do |url|
+      name = (url.original_filename[0..-5]).downcase
 
-      find_archive(url)
+      find_library_file(name)
       @library_file.category_id = params[:library_file][:category_id]
       @library_file.description = params[:library_file][:description]
       @library_file.name = (url.original_filename[0..-5]).downcase
       @library_file.url = url
-      @library_file.save
+      if @library_file.save
+        get_or_set_image
+        @image.url = url
+        @image.title = (url.original_filename[0..-5]).downcase
+        @image.description = params[:library_file][:description]
+        @image.save
+      end
 
-      @image = Image.new(imageable_id: @library_file.id, imageable_type: 'LibraryFile')
-      @image.url = url
-      @image.title = (url.original_filename[0..-5]).downcase
-      @image.description = params[:library_file][:description]
-      @image.save
     end
     flash.now[:notice] = "#{@library_file.errors.full_messages}// #{@image.errors.full_messages}"
 
@@ -72,16 +128,15 @@ class MassiveUpController < ApplicationController
     return  array[1]
   end
 
-  def find_archive(url)
-    name = (url.original_filename[0..-5]).downcase
+  def find_library_file(name)
     @library_file = LibraryFile.find_by_name(name)
     if not @library_file
       @library_file = LibraryFile.new()
     end
   end
 
-  def get_set_library_file(url)
-    name = (url.original_filename[0..-5]).downcase
+  def get_set_library_file(name)
+
     #Procura um arquivo de biblioteca existente a partir do nome do arquivo
     @library_file = LibraryFile.find_by_name(name)
     # Caso não encontre um arquivo de biblioteca existente
@@ -95,7 +150,7 @@ class MassiveUpController < ApplicationController
     end
   end
 
-  def get_set_image
+  def get_or_set_image
     # caso o arquivo de biblioteca não tenha uma image associada
     if @library_file.image == nil
       @image = Image.new(imageable_id: @library_file.id, imageable_type: 'LibraryFile')

@@ -15,8 +15,9 @@
     = yield :library_options
 
   .col-lg-8.col-md-8
-    .row
-      - @library_files.each do |file|
+    -#.row
+    - @library_files.each do |file|
+      .row
         .col-4.col-lg-4
           - if admin_logged?
             = link_to 'x', file, :method => :delete, :data => { :confirm => t('views.are_you_sure')}

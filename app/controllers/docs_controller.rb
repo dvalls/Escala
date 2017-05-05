@@ -53,7 +53,7 @@ class DocsController < ApplicationController
     private
 
     def doc_params
-      params.require(:doc).permit(:name, :description, :url)
+      params.require(:doc).permit(:name, :description, :url, :content_docs_group_ids => [] )
     end
 
 

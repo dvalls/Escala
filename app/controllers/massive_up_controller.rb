@@ -16,79 +16,61 @@ class MassiveUpController < ApplicationController
 
     all_params = (params[:library_file][:url]).reverse
 
-    puts "#{all_params.count}"
-    puts "#{all_params.count}"
-    puts "#{all_params.count}"
-    puts "#{all_params.count}"
-    puts "#{all_params.count}"
-    puts "#{all_params.count}"
-    puts "#{all_params.count}"
-    puts "#{all_params.count}"
-
-    if not all_params.count.even? #Verifica se a quantidade de arquivos é par
+    if not all_params.count%2 == 0 #Verifica se a quantidade de arquivos é par
       # se não for par, nao realiza a criação
       redirect_to :back
-    end
+    else
 
-    # Loop throw images
-    all_params.each do |url|
+
+      # Loop throw images
+      all_params.each do |url|
       extension = get_extension(url.original_filename)
       name = (url.original_filename[0..-5]).downcase
 
       #verifica se o dicionario possui chave com esse nome
-      if not params_dictionary.include?(name)
-        params_dictionary[name] = Array.new(2)
-      end
+        if not params_dictionary.include?(name)
+          params_dictionary[name] = Array.new(2)
+        end
 
-      case extension
-        when 'png', 'jpg', 'gif'
+        case extension
+          when 'png', 'jpg', 'gif'
           params_dictionary[name][1] = url
-        else
+          else
           params_dictionary[name][0] = url
-      end
-    end
-
-    params_dictionary.each do |key, value|
-      #key = name
-      #value[0] = url de arquivos para download
-      #value[1] = url de arquivos para thumbnail
-      find_library_file(key)
-
-      @library_file.category_id = params[:library_file][:category_id]
-      @library_file.description = params[:library_file][:description]
-      @library_file.name = key
-      @library_file.url = value[0]
-
-      if @library_file.save #se o arquivo salvar
-        get_or_set_image
-        @image.url = value[1]
-        @image.title = key
-        if not @image.save # se a imagem nao salvar
-
-          error_library_files << @library_file.name
-          @library_file.destroy # para que nao fique nenhum arquivo sem url
         end
       end
-    end
 
-    #
-    #   get_set_library_file(name)
-    #
-    #   case extension
-    #     when 'skp', 'hdr', 'ies', 'zip'
-    #       @library_file.url = url
-    #       @library_file.save
-    #     when 'png', 'jpg', 'gif'
-    #       get_set_image
-    #       @image.url = url
-    #       @image.title = (url.original_filename[0..-5]).downcase
-    #       @image.description = params[:library_file][:description]
-    #
-    #       @image.save
-    #   end
-    # end
-    # flash[:notice] = "Arquivos não criados: #{error_library_files}"
-    redirect_to library_files_path, notice: t('views.image.create') + "Arquivos não criados: #{error_library_files}"
+      params_dictionary.each do |key, value|
+        # se certifica de que os valores da chave são pares
+        if value.count.even?
+        #key = name
+        #value[0] = url de arquivos para download
+        #value[1] = url de arquivos para thumbnail
+        find_library_file(key)
+
+          @library_file.category_id = params[:library_file][:category_id]
+          @library_file.description = params[:library_file][:description]
+          @library_file.name = key
+          @library_file.url = value[0]
+
+          if @library_file.save #se o arquivo salvar
+            get_or_set_image
+            @image.url = value[1]
+            @image.title = key
+            if not @image.save # se a imagem nao salvar
+
+              error_library_files << @library_file.name
+              @library_file.destroy # para que nao fique nenhum arquivo sem url
+            end
+          end
+        else
+          # se os valores da chave não são pares, loop continua para proxima chave
+          next
+        end
+      end
+
+      redirect_to library_files_path, notice: t('views.image.create') + "Arquivos não criados: #{error_library_files}"
+    end
   end
 
   def texture_new

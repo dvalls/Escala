@@ -8,7 +8,8 @@
   %tr
     %th Arquivo
     %th Descrição
-    %th Categoria
+    %th
+    %th Grupos
     %th
 
   - @docs.each do |doc|
@@ -16,7 +17,10 @@
       -#- case
       %td= doc.name
       %td= doc.description
-      %td= link_to doc.name, doc.url.url
+      %td= link_to 'download', doc.url.url
+      %td
+        -doc.content_docs_groups.each do |group|
+          = '-' + group.name
       %td
         = link_to 'editar', edit_doc_path(doc)
         |

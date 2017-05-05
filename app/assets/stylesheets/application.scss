@@ -41,8 +41,7 @@ $color-theme: black;
 .container {-webkit-font-smoothing: antialiased; }
 
 .table {
-  @extend .table-bordered;
-  @extend  .table-hover
+  @extend  .table-hover;
 }
 
 .no-gutters {

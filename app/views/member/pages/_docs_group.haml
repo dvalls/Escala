@@ -3,11 +3,6 @@
     = puts 'sem docs'
   - else
     %table.table.table-bordered.table-hover
-      %tr
-        %th Nome
-        %th Descrição
-        %th url
-
       - docs.each do |doc|
         %tr
           %td= doc.name

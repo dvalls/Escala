@@ -1,8 +1,4 @@
 %table.table.table-bordered.table-hover
-  %tr
-    %th Video
-    %th Descrição
-
   - block.contentable.content_videos.order(:title).each do |video|
     %tr
       %td= link_to video.title, member_content_video_path(video.id, :block_id => block.id)

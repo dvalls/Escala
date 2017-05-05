@@ -40,6 +40,8 @@ $color-theme: black;
 
 .container {-webkit-font-smoothing: antialiased; }
 
+.table {@extend .table-bordered;}
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0;

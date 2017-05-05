@@ -21,6 +21,6 @@
           .col-md-10.push-md-2.col-lg-10.push-lg-2
         - when 'ContentDocsGroup'
           .col-md-12.col-lg-12
-            = render partial: 'docs_group', locals: {:docs_groups => block.contentable.docs}
+            = render partial: 'docs_group', locals: {:docs => block.contentable.docs}
             %br/
 

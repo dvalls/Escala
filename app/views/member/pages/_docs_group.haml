@@ -1,11 +1,14 @@
-%table.table.table-bordered
-  %tr
-    %th Nome
-    %th Descrição
-    %th url
-    %th
-  - docs_groups.each do |doc|
-    %tr
-      %td= doc.name
-      %td= doc.description
-      %td= link_to 'download', doc.url
+- case docs.count
+  - when 0
+  - else
+    %table.table.table-bordered
+      %tr
+        %th Nome
+        %th Descrição
+        %th url
+
+      - docs.each do |doc|
+        %tr
+          %td= doc.name
+          %td= doc.description
+          %td= link_to 'download', doc.url

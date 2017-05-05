@@ -3,7 +3,7 @@
 / Grid Projects
 %ul#Grid.row
   - @courses.each do |course|
-    %li.mix.col-lg-4.col-md-4.col-sm-6{:class => "", "data-age" => course.year.year}
+    %li.mix.col-lg-6.col-md-6.col-sm-6{:class => "", "data-age" => course.year.year}
       = link_to course do
         .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
         .course-name

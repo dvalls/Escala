@@ -24,6 +24,7 @@ class MassiveUpController < ApplicationController
           @image.save
       end
     end
+    flash[:notice] = "#{@library_file.errors.full_messages}// #{@image.errors.full_messages}"
     redirect_to library_files_path, notice: t('views.image.create')
   end
 
@@ -48,6 +49,8 @@ class MassiveUpController < ApplicationController
       @image.description = params[:library_file][:description]
       @image.save
     end
+    flash.now[:notice] = "#{@library_file.errors.full_messages}// #{@image.errors.full_messages}"
+
     redirect_to library_files_path, notice: t('views.image.create')
   end
 

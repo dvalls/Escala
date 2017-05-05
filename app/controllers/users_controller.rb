@@ -10,8 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, flash: { success:  t('flash.success')}
     else
-      puts "'#{ @user.errors.full_messages}'"
-
+      flash[:notice] = @user.errors.full_messages
       render :new
     end
   end

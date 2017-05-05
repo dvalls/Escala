@@ -30,18 +30,17 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to students_path, notice: t('views.student.create')
     else
+      flash[:notice] = @student.errors.full_messages
+
       render action: 'new'
     end
   end
 
 
   def update
-    if @student.update(student_params)
-      @student.username = @student.email
-      if @student.save
 
+    if @student.update(student_params)
       redirect_to students_path, notice: t('views.updated_ok')
-      end
     else
       render action: 'edit'
     end

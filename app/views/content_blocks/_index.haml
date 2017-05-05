@@ -16,6 +16,6 @@
           %td= block.contentable_type
           %td= block.contentable.name
           %td
-            = link_to 'EDITAR', edit_content_block_path(block)
+            = link_to 'editar', edit_content_block_path(block)
             |
-            = link_to 'APAGAR', block, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}
+            = link_to 'apagar', block, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}

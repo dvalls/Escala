@@ -12,9 +12,9 @@
           %td= group.name
           %td= group.course.title
           %td
-            = link_to 'EDITAR', edit_content_video_group_path(group)
+            = link_to 'editar', edit_content_video_group_path(group)
             |
-            = link_to 'APAGAR', group, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}
+            = link_to 'apagar', group, method: :delete, :data => { :confirm => 'Você tem certeza disso?'}
 
 
 = link_to 'novo grupo', new_content_video_group_path, class: 'btn btn-primary'

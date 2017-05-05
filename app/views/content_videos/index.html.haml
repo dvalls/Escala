@@ -18,9 +18,9 @@
           = '-'
           = group.name
       %td
-        = link_to 'EDITAR', edit_content_video_path(content_video)
+        = link_to 'editar', edit_content_video_path(content_video)
         |
-        = link_to 'APAGAR', content_video, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este @content_video??' }
+        = link_to 'apagar', content_video, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este @content_video??' }
 
 = link_to 'novo video', new_content_video_path, class: 'btn btn-primary'
 

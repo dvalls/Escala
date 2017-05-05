@@ -2,7 +2,6 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:edit, :update, :destroy]
   before_filter :user_admin?, only: [:new, :create, :edit, :update]
 
-  # before_filter :authorize
 
   def index
     @category = nil
@@ -22,18 +21,14 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    @categories = Category.where(parent_id: nil).map{|x| [x.name] + [x.id]}
-    @subcategories = Category.where.not(parent_id: nil).map{|x| [x.name] + [x.id]}
   end
 
   def edit
-    @categories = Category.where(parent_id: nil).map{|x| [x.name] + [x.id]}
-    @subcategories = Category.where.not(parent_id: nil).map{|x| [x.name] + [x.id]}
   end
 
   def create
     @category = Category.new(category_params)
-
+    # parent_id para nil, coluna nao removida pois ainda existe possibilidade de sar subcategorias.
     set_parent_id
 
     if @category.save
@@ -45,6 +40,7 @@ class CategoriesController < ApplicationController
   end
 
    def update
+     # parent_id para nil, coluna nao removida pois ainda existe possibilidade de sar subcategorias.
      set_parent_id
 
      if @category.update(category_params)
@@ -72,14 +68,8 @@ class CategoriesController < ApplicationController
     end
 
   def set_parent_id
-    # if not params[:sub_id] == ''
-      # @category.parent_id = (params[:sub_id]).to_i
-    # elsif not params[:raiz_id] == ''
-      # @category.parent_id = (params[:raiz_id]).to_i
-    # else
+    # parent_id para nil, coluna nao removida pois ainda existe possibilidade de sar subcategorias.
       @category.parent_id = nil
-    # end
   end
-
 
 end

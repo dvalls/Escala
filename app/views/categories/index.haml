@@ -15,12 +15,12 @@
       %td= category.name
       %td= category.parent_name
       %td
-        = link_to 'EDITAR', edit_category_path(category)
+        = link_to 'editar', edit_category_path(category)
         |
-        = link_to 'APAGAR', category, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
+        = link_to 'apagar', category, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
 
 %br
 
 = link_to 'nova categoria', new_category_path, :class => 'btn btn-primary'
-= link_to 'arquivos de biblioteca', library_files_path, class: 'btn btn-primary'
+= link_to 'arquivos', library_files_path, class: 'btn btn-primary'
 %p= link_to 'voltar', root_path

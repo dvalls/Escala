@@ -8,7 +8,7 @@ class ContentVideosController < ApplicationController
   end
 
   def new
-    @content_video = ContentVideo.new()
+    @content_video = ContentVideo.new
   end
 
   def create

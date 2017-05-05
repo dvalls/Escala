@@ -18,12 +18,15 @@ class DocsController < ApplicationController
 
     def create
       @doc = Doc.new(doc_params)
+      #upload de apenas um arquivo
       @doc.url = params[:doc][:url]
+      #para upload de varios arquivos
       # params[:doc][:url].each do |url|
         # @doc.url = url
+        # @doc.save
       # end
       if @doc.save
-        redirect_to docs_path(), notice: 'Documento criado com sucesso'
+        redirect_to docs_path, notice: 'Documento criado com sucesso'
       else
         flash[:notice] = "#{@doc.errors.full_messages}"
         render action: 'new'
@@ -35,7 +38,7 @@ class DocsController < ApplicationController
 
     def update
       if @doc.update(doc_params)
-        redirect_to docs_path(), notice: 'Documento criado com sucesso.'
+        redirect_to docs_path, notice: 'Documento criado com sucesso.'
       else
         flash[:notice] = "#{@doc.errors.full_messages}"
         render action: 'edit'
@@ -44,7 +47,7 @@ class DocsController < ApplicationController
 
     def destroy
       @doc.destroy
-      redirect_to docs_path(), notice: 'Documento excluído com sucesso.'
+      redirect_to docs_path, notice: 'Documento excluído com sucesso.'
     end
 
     private
@@ -58,7 +61,4 @@ class DocsController < ApplicationController
       @doc = Doc.find(params[:id])
     end
 
-    def remove_file
-      @doc.update_attributes(:remove_file => true)
-    end
 end

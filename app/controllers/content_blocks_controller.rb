@@ -74,13 +74,18 @@ class ContentBlocksController < ApplicationController
   end
 
   def set_content_type_and_id
+    # depende do parametro escolhido no form
     case
+      # se for conteudo de video
       when params[:video_content].present?
         @contentable = ContentVideoGroup.find(params[:video_content])
+      # se for conteudo de biblioteca
       when params[:library_content].present?
         @contentable = ContentLibraryGroup.find(params[:library_content])
+      # se for conteudo de documentos/arquivos
       when params[:docs_content].present?
         @contentable = ContentDocsGroup.find(params[:docs_content])
     end
+    # TODO verificar situação em que se seleciona mais de uma opção
   end
 end

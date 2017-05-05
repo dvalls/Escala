@@ -9,7 +9,7 @@ class MassiveUpController < ApplicationController
     # params[:library_file][:url].each do |url|
     all_params.each do |url|
       extension = get_extension(url.original_filename)
-      get_set_archive(url)
+      get_set_library_file(url)
 
       case extension
         when 'skp', 'hdr', 'ies', 'zip'
@@ -63,11 +63,7 @@ class MassiveUpController < ApplicationController
   end
 
   def get_extension(filename)
-    size = filename.length
-    final_size = size - 4
-
     array = filename.split('.')
-
     puts array[1]
 
     return  array[1]
@@ -81,7 +77,7 @@ class MassiveUpController < ApplicationController
     end
   end
 
-  def get_set_archive(url)
+  def get_set_library_file(url)
     name = (url.original_filename[0..-5]).downcase
     #Procura um arquivo de biblioteca existente a partir do nome do arquivo
     @library_file = LibraryFile.find_by_name(name)

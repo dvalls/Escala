@@ -2,7 +2,6 @@ class ContentDocsGroupsController < ApplicationController
     before_action :admin_logged?
     before_action :get_group, only: [:edit, :update, :destroy]
 
-
     def index
       @docs_groups = ContentDocsGroup.all
     end
@@ -19,7 +18,6 @@ class ContentDocsGroupsController < ApplicationController
       flash[:notice] = "#{@group.errors.full_messages}"
       render :new
       end
-
     end
 
     def edit
@@ -36,7 +34,6 @@ class ContentDocsGroupsController < ApplicationController
 
     def destroy
       @group.destroy
-
       redirect_to docs_path, notice: 'Grupo apagado.'
     end
 

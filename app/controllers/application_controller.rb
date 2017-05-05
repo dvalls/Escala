@@ -38,17 +38,4 @@ class ApplicationController < ActionController::Base
     session[:user]
   end
 
-  def get_student
-    case session[:admin]
-      when true
-        nil
-      when false
-      Student.find(session[:user_id])
-    end
-  end
-
-  helper_method :has_course?
-  def has_course?
-    get_student.courses.find_by_title(@course.title)
-  end
 end

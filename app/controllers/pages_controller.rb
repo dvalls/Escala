@@ -3,10 +3,10 @@ class PagesController < ApplicationController
   before_action :get_page, only: [:edit, :update, :destroy, :show]
 
   def index
-    @blocks = ContentBlock.all
-    @video_groups = ContentVideoGroup.all
-    @library_groups = ContentLibraryGroup.all
-    @docs_groups = ContentDocsGroup.all
+    @blocks = ContentBlock.all #view parcial
+    @video_groups = ContentVideoGroup.all#view parcial
+    @library_groups = ContentLibraryGroup.all#view parcial
+    @docs_groups = ContentDocsGroup.all#view parcial
     @pages = Page.all
   end
 

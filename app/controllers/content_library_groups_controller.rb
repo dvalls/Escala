@@ -8,11 +8,13 @@ class ContentLibraryGroupsController < ApplicationController
 
   def show
     @content_group = ContentLibraryGroup.find(params[:id])
+    #Ao entrar no show dos arquivos de biblioteca
     case params[:category_id]
-    when nil
-      @library_files = (@content_group.categories.first).library_files
-    else
-      @library_files = Category.find(params[:category_id]).library_files
+      when nil #no primeiro acesso parametro sera nil e mostrará os arquivos da primeira categoria do grupo
+        @library_files = (@content_group.categories.first).library_files
+
+      else #Ao ir escolhendo categorias na view#show, o parametro altera seu valor para mostrar arqvuiso de outras categorias
+        @library_files = Category.find(params[:category_id]).library_files
     end
 
   end
@@ -47,7 +49,6 @@ class ContentLibraryGroupsController < ApplicationController
 
   def destroy
     @group.destroy
-
     redirect_to categories_path, notice: 'Grupo apagado.'
   end
 

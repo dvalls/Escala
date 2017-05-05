@@ -1,6 +1,5 @@
 class Member::ContentVideosController < Member::MemberAreaController # ApplicationController
   before_action :student_logged?
-  # layout 'member'
 
   def show
     @course = Course.find(params[:course_id])

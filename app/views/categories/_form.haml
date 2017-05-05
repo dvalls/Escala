@@ -6,14 +6,5 @@
   .form-inputs
     = f.input :name
 
-    -#= f.label 'Raiz'
-    -#= f.select(:parent_id, options_for_select(@categories), { :include_blank => 'None'}, class: 'form-control')
-
-
-  -#= label_tag 'Categoria Raiz'
-  -#= select_tag :raiz_id, options_for_select(@categories), { :include_blank => 'None'}
-
-  -#= label_tag 'Subcategoria'
-  -#= select_tag :sub_id, options_for_select(@subcategories), { :include_blank => 'None'}
   .form-actions
     = f.button :submit, 'SALVAR', :class => 'btn btn-primary'

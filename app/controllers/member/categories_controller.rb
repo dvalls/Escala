@@ -1,6 +1,5 @@
 class Member::CategoriesController <  Member::MemberAreaController # ApplicationController
   before_action :student_logged?
-  # layout 'member'
 
   def show
     category = Category.find(params[:id])

@@ -12,7 +12,7 @@
 
         = link_to carousel.course do
           .carousel-caption
-            = carousel.title + carousel.description
+            = carousel.title
 / End Carousel
 - if admin_logged?
   = link_to 'editar galeria', carousels_path, :class => 'btn btn-primary'

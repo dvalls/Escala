@@ -7,13 +7,9 @@
       %span#course-title= @course.title
 
 .col-md-10.col-lg-10
+  -# mostra o video em tela
   = render partial: 'content_videos/show'
-  -#%h2= @content_video.title
-  -#%p= @content_video.description
-  -#.embed-responsive.embed-responsive-16by9
-  -#  %iframe.embed-responsive-item{:width=>'560', :height=>'315', :src => "https://www.youtube.com/embed/" + @content_video.url, :allowfullscreen => true}
-  -#- @video_groups.each do |group|
-  -#  %br/
+  -# listagem dos demais videos do bloco
   = render partial: 'member/pages/video_group' , locals: {:block => @block}
 
 

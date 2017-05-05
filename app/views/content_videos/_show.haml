@@ -1,0 +1,4 @@
+%h2= @content_video.title
+%p= @content_video.description
+.embed-responsive.embed-responsive-16by9
+  %iframe.embed-responsive-item{:width=>'560', :height=>'315', :src => "https://www.youtube.com/embed/" + @content_video.url, :allowfullscreen => true}

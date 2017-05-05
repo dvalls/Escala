@@ -1,4 +1,6 @@
 / Carousel
+- if admin_logged?
+  = link_to 'editar galeria', carousels_path, :class => 'btn btn-primary'
 #carousel.carousel.slide
   %ol.carousel-indicators
     - @carousels.each_with_index do |carousel, index|
@@ -15,8 +17,6 @@
             = carousel.title
 / End Carousel
 - if admin_logged?
-  = link_to 'editar galeria', carousels_path, :class => 'btn btn-primary'
-  %br/
   = link_to 'videos', content_videos_path, :class => 'btn btn-primary'
   = link_to 'arquivos de biblioteca', library_files_path, :class => 'btn btn-primary'
   = link_to 'documentos', docs_path, :class => 'btn btn-primary'

@@ -1,13 +1,9 @@
-%table.table
+%table.table.thead-default
   %tr
     %th Video
     %th Descrição
-    %th
-    %th
-  - content_videos.each do |video|
+
+  - block.contentable.content_videos.order(:title).each do |video|
     %tr
-      %td
-        = link_to video.title, member_content_video_path(video.id, :course_id => @course.id)
-      %td
-        = video.description
-      %td
+      %td= link_to video.title, member_content_video_path(video.id, :block_id => block.id)
+      %td= video.description

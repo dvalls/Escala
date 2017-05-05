@@ -11,7 +11,7 @@
 
   - @content_videos.each do |content_video|
     %tr
-      %td= link_to  content_video.title, content_video.url
+      %td= link_to  content_video.title, content_video
       %td= content_video.description
       %td
         - content_video.content_video_groups.each do |group|

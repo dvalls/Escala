@@ -1,6 +1,6 @@
 class ContentVideosController < ApplicationController
   before_filter :user_admin?
-  before_action :set_video, only: [:edit, :update, :destroy]
+  before_action :set_video, only: [:show, :edit, :update, :destroy]
 
   def index
     @content_videos = ContentVideo.order(title: :asc)
@@ -9,6 +9,9 @@ class ContentVideosController < ApplicationController
 
   def new
     @content_video = ContentVideo.new
+  end
+
+  def show
   end
 
   def create

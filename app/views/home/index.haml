@@ -10,10 +10,9 @@
       .item{:class => (index == 0 ? 'active' : '')}
         = image_tag carousel.image_url
 
-        - unless carousel.title.empty?
-          = link_to carousel.course do
-            .carousel-caption
-              = carousel.title + carousel.description
+        = link_to carousel.course do
+          .carousel-caption
+            = carousel.title + carousel.description
 / End Carousel
 - if admin_logged?
   = link_to 'editar galeria', carousels_path, :class => 'btn btn-primary'

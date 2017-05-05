@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :student_logged?
   def student_logged?
-    unless session[:user_id]
+    unless session[:user_id] or session[:admin]
       redirect_to login_path
     end
   end

@@ -5,6 +5,5 @@ class ContentLibraryGroup < ApplicationRecord
 
   has_many :content_blocks, as: :contentable, :dependent => :destroy
 
-
   belongs_to :course
 end

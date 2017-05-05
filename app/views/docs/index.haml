@@ -18,9 +18,9 @@
       %td= doc.description
       %td= link_to doc.name, doc.url.url
       %td
-        = link_to 'EDITAR', edit_doc_path(doc)
+        = link_to 'editar', edit_doc_path(doc)
         |
-        = link_to 'APAGAR', doc, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este documento??' }
+        = link_to 'apagar', doc, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este documento??' }
 
 = link_to 'novo doc', new_doc_path, class: 'btn btn-primary'
 %p= link_to 'voltar', root_url

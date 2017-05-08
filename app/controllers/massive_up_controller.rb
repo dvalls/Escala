@@ -7,6 +7,7 @@ class MassiveUpController < ApplicationController
     #keys: nome do arquivo, valor[0]: url, valor[1]: imagem, thumb
     params_dictionary = {}
     error_library_files = Array.new()
+    library_files_created = Array.new()
 
     all_params = (params[:library_file][:url])
 
@@ -14,9 +15,6 @@ class MassiveUpController < ApplicationController
     all_params.each do |url|
       extension = get_extension(url.original_filename)
       name = (url.original_filename[0..-5]).downcase
-      puts url
-      puts url
-      puts url
 
     #verifica se o dicionario possui chave com esse nome
       if not params_dictionary.include?(name)
@@ -46,17 +44,15 @@ class MassiveUpController < ApplicationController
 
         if @library_file.save #se o arquivo salvar
           get_or_set_image
-          puts urls[1]
-          puts urls[1]
 
           @image.url = urls[1]
           @image.title = name
           if @image.valid?
             @image.save
+            library_files_created << name
           else# se a imagem nao salvar
             error_library_files << name
 
-            puts @image.errors.full_messages
             puts @image.errors.full_messages
             @library_file.destroy # para que nao fique nenhum arquivo sem url
           end
@@ -64,7 +60,7 @@ class MassiveUpController < ApplicationController
           error_library_files << name
 
           puts @library_file.errors.full_messages
-          puts @library_file.errors.full_messages
+          next
         end
       else
         # se os valores da chave não são pares, loop continua para proxima chave
@@ -72,7 +68,9 @@ class MassiveUpController < ApplicationController
         next
       end
     end
-      redirect_to library_files_path, notice: "Total de arquivos solicitados: #{params_dictionary.count}. Arquivos não criados: #{error_library_files}"
+      redirect_to library_files_path, notice: "Total de arquivos solicitados: #{params_dictionary.count}.\n
+                                     Arquivos não criados: #{error_library_files}.\n
+                                     Arquivos criados: #{library_files_created}"
   end
 
   def texture_new

@@ -2,9 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    - puts '============================ FORM ===================================='
 
-    = f.input :name
+    -#= f.input :name
     = f.input :description
     = f.input :category_id, label: 'Categoria', :collection => subcategories, value_method: :id,
               label_method: :name, as: :radio_buttons

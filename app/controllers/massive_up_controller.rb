@@ -14,7 +14,7 @@ class MassiveUpController < ApplicationController
     # Loop throw images
     all_params.each do |url|
       extension = get_extension(url.original_filename)
-      name = (url.original_filename[0..-5]).downcase
+      name = (url.original_filename[0..-(extension.length + 1)]).downcase
 
     #verifica se o dicionario possui chave com esse nome
       if not params_dictionary.include?(name)
@@ -32,7 +32,7 @@ class MassiveUpController < ApplicationController
     params_dictionary.each do |name, urls|
       # se certifica de que os valores da chave são pares
       if urls.count.even?
-      #name = name
+      #name = nome
       #urls[0] = url de arquivos para download
       #urls[1] = url de arquivos para thumbnail
       @library_file = LibraryFile.find_or_create_by(name: name)

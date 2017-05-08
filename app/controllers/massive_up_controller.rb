@@ -55,7 +55,7 @@ class MassiveUpController < ApplicationController
         next
       end
     end
-      redirect_to library_files_path, notice: t('views.image.create') + "Arquivos não criados: #{error_library_files}"
+      redirect_to library_files_path, notice: "Arquivos criados com sucesso: #{}. Arquivos não criados: #{error_library_files}"
   end
 
   def texture_new

@@ -32,6 +32,7 @@ class ContentBlocksController < ApplicationController
   end
 
   def edit
+    @page = @block.page
   end
 
 

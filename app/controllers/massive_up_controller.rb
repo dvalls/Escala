@@ -46,8 +46,13 @@ class MassiveUpController < ApplicationController
           @image.url = urls[1]
           @image.title = name
           if not @image.save # se a imagem nao salvar
+            puts @image.errors.full_messages
+            puts @image.errors.full_messages
             @library_file.destroy # para que nao fique nenhum arquivo sem url
           end
+        else
+          puts @library_file.errors.full_messages
+          puts @library_file.errors.full_messages
         end
       else
         # se os valores da chave não são pares, loop continua para proxima chave

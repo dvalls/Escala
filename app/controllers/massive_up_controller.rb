@@ -43,14 +43,23 @@ class MassiveUpController < ApplicationController
 
         if @library_file.save #se o arquivo salvar
           get_or_set_image
+          puts urls[1]
+          puts urls[1]
+
           @image.url = urls[1]
           @image.title = name
-          if not @image.save # se a imagem nao salvar
+          if @image.valid?
+            @image.save
+          else# se a imagem nao salvar
+            error_library_files << name
+
             puts @image.errors.full_messages
             puts @image.errors.full_messages
             @library_file.destroy # para que nao fique nenhum arquivo sem url
           end
         else
+          error_library_files << name
+
           puts @library_file.errors.full_messages
           puts @library_file.errors.full_messages
         end

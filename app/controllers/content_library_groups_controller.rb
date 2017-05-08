@@ -11,7 +11,7 @@ class ContentLibraryGroupsController < ApplicationController
     #Ao entrar no show dos arquivos de biblioteca
     case params[:category_id]
       when nil #no primeiro acesso parametro sera nil e mostrará os arquivos da primeira categoria do grupo
-        @library_files = (@content_group.categories.first).library_files
+        @library_files = (@content_group.categories.first).library_files.order(:name)
 
       else #Ao ir escolhendo categorias na view#show, o parametro altera seu valor para mostrar arqvuiso de outras categorias
         @library_files = Category.find(params[:category_id]).library_files

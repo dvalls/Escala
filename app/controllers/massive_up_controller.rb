@@ -68,9 +68,12 @@ class MassiveUpController < ApplicationController
         next
       end
     end
-      redirect_to library_files_path, notice: "Total de arquivos solicitados: #{params_dictionary.count}.\n
-                                     Arquivos não criados: #{error_library_files}.\n
-                                     Arquivos criados: #{library_files_created}"
+      errors = ["Total de arquivos solicitados: #{params_dictionary.count}.",
+                "Arquivos não criados: #{error_library_files}.",
+                "Arquivos criados: #{library_files_created}."]
+      # flash[:error] = errors.join("<br/>").html_safe
+
+      redirect_to library_files_path, notice: errors.join("<br/>").html_safe
   end
 
   def texture_new

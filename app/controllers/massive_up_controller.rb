@@ -14,6 +14,9 @@ class MassiveUpController < ApplicationController
     all_params.each do |url|
       extension = get_extension(url.original_filename)
       name = (url.original_filename[0..-5]).downcase
+      puts url
+      puts url
+      puts url
 
     #verifica se o dicionario possui chave com esse nome
       if not params_dictionary.include?(name)

@@ -2,11 +2,6 @@ class ContentVideoGroupsController < ApplicationController
   before_action :admin_logged?
   before_action :get_group, only: [:edit, :update, :destroy]
 
-
-  def index
-    @video_groups = ContentVideoGroup.all
-  end
-
   def new
     @group = ContentVideoGroup.new
   end

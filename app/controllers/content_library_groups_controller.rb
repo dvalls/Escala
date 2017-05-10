@@ -2,10 +2,6 @@ class ContentLibraryGroupsController < ApplicationController
   before_action :admin_logged?
   before_action :get_group, only: [:edit, :update, :destroy]
 
-  def index
-    @library_groups = ContentLibraryGroup.all
-  end
-
   def show
     @content_group = ContentLibraryGroup.find(params[:id])
     #Ao entrar no show dos arquivos de biblioteca

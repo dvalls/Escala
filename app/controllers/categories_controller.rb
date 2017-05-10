@@ -9,15 +9,6 @@ class CategoriesController < ApplicationController
     @library_groups = ContentLibraryGroup.all
   end
 
-  def show
-    # Find the category belonging to the given id
-    @category = Category.find(params[:id])
-    # Grab all sub-categories
-    @categories = @category.subcategories
-    # We want to reuse the index renderer:
-    render :action => :index
-  end
-
 
   def new
     @category = Category.new

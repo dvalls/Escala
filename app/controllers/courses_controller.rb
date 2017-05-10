@@ -48,10 +48,6 @@ class CoursesController < ApplicationController
     redirect_to courses_url, notice: t('views.course.destroy')
   end
 
-  def material
-
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

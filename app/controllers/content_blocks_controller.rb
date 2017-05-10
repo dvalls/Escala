@@ -4,11 +4,6 @@ class ContentBlocksController < ApplicationController
   before_action :set_page, only: [:new, :create]
   before_action :admin_logged?
 
-  def index
-    @blocks = ContentBlock.all
-    @library_groups = ContentLibraryGroup.all
-    @video_groups = ContentVideoGroup.all
-  end
 
   def new
     @block = ContentBlock.new

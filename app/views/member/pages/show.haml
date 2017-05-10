@@ -1,27 +1,19 @@
-- content_for :navbar do
-  = render partial: 'layouts/member_navbar'
-  = render 'layouts/member_head'
-  %header
-    %h1
-      = @course.slug
-      %span#course-title= @course.title
-
 .col-md-10.col-lg-10
   .row
     - @blocks.each do |block|
       - case block.contentable_type
         - when 'ContentVideoGroup'
           .col-md-12.col-lg-12
-            = render partial: 'video_group', locals: {:block => block}
+            = render partial: 'partials/member_video_group', locals: {:block => block}
 
         - when 'ContentLibraryGroup'
-          = render partial: 'member/pages/library_options', locals: {:block => block}
+          = render partial: 'partials/member_library_options', locals: {:block => block}
           .col-lg-2.col-md-2
             - if content_for?(:library_options)
               = yield :library_options
 
         - when 'ContentDocsGroup'
           .col-md-12.col-lg-12
-            = render partial: 'docs_group', locals: {:docs => block.contentable.docs}
+            = render partial: 'partials/member_docs_group', locals: {:docs => block.contentable.docs}
             %br/
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428134738) do
+ActiveRecord::Schema.define(version: 20170510121904) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -112,6 +112,13 @@ ActiveRecord::Schema.define(version: 20170428134738) do
     t.index ["category_id"], name: "index_content_library_groups_on_category_id"
   end
 
+  create_table "content_links", force: :cascade do |t|
+    t.integer "course_id"
+    t.string  "name"
+    t.string  "link"
+    t.string  "description"
+  end
+
   create_table "content_video_groups", force: :cascade do |t|
     t.string  "name"
     t.integer "course_id"
@@ -208,11 +215,6 @@ ActiveRecord::Schema.define(version: 20170428134738) do
     t.string   "description"
     t.string   "url"
     t.index ["category_id"], name: "index_library_files_on_category_id"
-  end
-
-  create_table "members", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "pages", force: :cascade do |t|

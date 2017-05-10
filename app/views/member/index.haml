@@ -1,9 +1,8 @@
 
-= render partial: 'layouts/member_navbar'
 
 .row
   .col-lg-3
-    = render partial: 'students/show'
+    = render partial: 'partials/student_show'
   .col-lg-9
     %ul#Grid.row
       - @courses.each do |course|

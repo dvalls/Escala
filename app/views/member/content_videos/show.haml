@@ -1,15 +1,7 @@
-- content_for :navbar do
-  = render partial: 'layouts/member_navbar'
-  = render 'layouts/member_head'
-  %header
-    %h1
-      = @course.slug
-      %span#course-title= @course.title
-
 .col-md-10.col-lg-10
   -# mostra o video em tela
-  = render partial: 'content_videos/show'
+  = render partial: 'partials/content_videos_show'
   -# listagem dos demais videos do bloco
-  = render partial: 'member/pages/video_group' , locals: {:block => @block}
+  = render partial: 'partials/member_video_group' , locals: {:block => @block}
 
 

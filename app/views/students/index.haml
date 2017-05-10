@@ -17,15 +17,13 @@
           = '#'
           = course.title
       %td
-        = link_to 'EDITAR', edit_student_path(student)
+        = link_to 'editar', edit_student_path(student)
         |
-        = link_to 'APAGAR', student, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
+        = link_to 'apagar', student, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
 
 
 
 = stylesheet_link_tag "course"
 = javascript_include_tag "jquery.lazyload.min", "course"
-
--# Para Students logados, apenas
 
 = link_to 'voltar', root_path, class: 'btn btn-primary'

@@ -1,0 +1,2 @@
+class ContentLink < ApplicationRecord
+end

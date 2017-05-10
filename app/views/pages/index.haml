@@ -20,11 +20,11 @@
           = '/'
           = block.contentable.class.name
           %br/
-      %td= link_to 'ADD BLOCO', new_page_content_block_path(page)
+      %td= link_to 'add bloco', new_page_content_block_path(page)
       %td
-        = link_to 'EDITAR', edit_page_path(page)
+        = link_to 'editar', edit_page_path(page)
         |
-        = link_to 'APAGAR', page, method: :delete, :data => {:confirm => 'Tem certeza?'}
+        = link_to 'apagar', page, method: :delete, :data => {:confirm => 'Tem certeza?'}
 
 = link_to 'nova pagina', new_page_path, class: 'btn btn-primary' if admin_logged?
 

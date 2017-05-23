@@ -46,7 +46,7 @@ class ArchiveUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg gif png pdf skp zip rar txt ai hdr)
+    %w(jpg jpeg gif png pdf skp zip rar txt ai hdr exr)
   end
 
   # def cache_dir

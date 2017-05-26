@@ -3,6 +3,8 @@ class Member::CoursesController < Member::MemberAreaController # ApplicationCont
 
   def show
     @course = Course.friendly.find(params[:id])
+
+    authorize @course
     @pages = @course.pages
   end
 end

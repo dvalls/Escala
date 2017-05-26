@@ -47,8 +47,9 @@ module ApplicationHelper
   end
 
   def user_is_admin?
-    @user.class = User
+    @user.class == User
   end
+
 
 
 end

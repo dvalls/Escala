@@ -42,6 +42,14 @@ class ApplicationController < ActionController::Base
     session[:user]
   end
 
+  def current_user
+    if session[:admin]
+      User.find(session[:user_id])
+    else
+      Student.find(session[:user_id])
+    end
+  end
+
   def set_current_user
     if session[:user_id] != nil
       @user = current_user
@@ -49,7 +57,16 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized
-  redirect_to access_logout_path, :flash =>  { info:'não autorizado...')}
+    redirect_to access_logout_path, :flash =>  { info:'não autorizado...'}
+  end
+
+  def get_user_courses
+    if admin_logged?
+      Course.all
+    else
+      set_current_user
+      @user.courses
+    end
   end
 
 end

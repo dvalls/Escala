@@ -1,6 +1,7 @@
 class Member::MemberAreaController < ApplicationController
   layout 'member'
   before_action :student_logged?
+  before_action :set_current_user
 
   helper_method :get_page_contents
 

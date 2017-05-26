@@ -1,13 +1,9 @@
 %footer
 
-  .row
-    #description.col-lg-6.col-sm-12
-      %p= image_tag ENV['LOGO_URL_NAME']
-
+  #description.col-lg-6.col-sm-12
+    %p= image_tag ENV['LOGO_URL_NAME']
 
   = t('copyright') + Time.now.year.to_s
-
-
 
   %ul.social
     %li{:title => "facebook", "data-toggle" => "tooltip"}

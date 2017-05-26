@@ -3,13 +3,14 @@
 / Grid Projects
 %ul#Grid.row
   - @courses.each do |course|
-    .col-lg-1.col-md-1
-    %li.mix.col-lg-5.col-md-5.col-sm-6{:class => "", "data-age" => course.year.year}
-      = link_to course do
-        .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
-        .course-name
-          = '- ' + course.title
-          = ' (NÃO PUBLICADO)' if not course.publish?
+    - if course.publish? or admin_logged?
+      .col-lg-1.col-md-1
+      %li.mix.col-lg-5.col-md-5.col-sm-6{:class => "", "data-age" => course.year.year}
+        = link_to course do
+          .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
+          .course-name
+            = '- ' + course.title
+            = ' (NÃO PUBLICADO)' if not course.publish?
 
 
 

@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy, :material]
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_filter :user_admin?, only: [:new, :create, :edit, :update]
 
 
@@ -54,8 +54,8 @@ class CoursesController < ApplicationController
       @course = Course.friendly.find(params[:id])
 
       #where("year <= ? and publish = ? and id != ?", @course.year, true, @course.id)
-      @course_previous = Course.where("id <= ? and id != ?", @course.id,  @course.id).order(id: :desc).first
-      @course_next = Course.where("id > ? and id != ?", @course.id,  @course.id).order(:id).first
+      @course_previous = Course.where("id <= ? and id != ?", @course.id,  @course.id).where(publish: true).order(id: :desc).first
+      @course_next = Course.where("id > ? and id != ?", @course.id,  @course.id).where(publish: true).order(:id).first
     end
 
     # Only allow a trusted parameter "white list" through.

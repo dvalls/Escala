@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b223ee0b-6d04-4fc0-bdaf-013072d9f162" name="Default" comment="">
+    <list default="true" id="1db75e1f-6242-446a-960a-8f7624798ae5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8465e992-d3b8-4472-a028-134d89a41399/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/8465e992-d3b8-4472-a028-134d89a41399/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8465e992-d3b8-4472-a028-134d89a41399/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/8465e992-d3b8-4472-a028-134d89a41399/_metadata_/metadata.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/aacc2b13-ff9c-4837-84b7-3ea8211ef15f/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/aacc2b13-ff9c-4837-84b7-3ea8211ef15f/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/aacc2b13-ff9c-4837-84b7-3ea8211ef15f/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/aacc2b13-ff9c-4837-84b7-3ea8211ef15f/_metadata_/metadata.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LAM Site.iml" afterPath="$PROJECT_DIR$/.idea/LAM Site.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8465e992-d3b8-4472-a028-134d89a41399.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8465e992-d3b8-4472-a028-134d89a41399.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/aacc2b13-ff9c-4837-84b7-3ea8211ef15f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/aacc2b13-ff9c-4837-84b7-3ea8211ef15f.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/library_files/index.html.haml" afterPath="$PROJECT_DIR$/app/views/library_files/index.html.haml" />
     </list>
     <list id="bb895f1c-9c82-46fd-8f9b-1e862a62bf12" name="ignore" comment="" />
     <ignored path="LAM Site.iws" />
@@ -18,11 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Valls-site@Rails_console__LAM_Site.coverage" NAME="Rails console: LAM Site Coverage Results" MODIFIED="1387898281684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LAM Site" />
-    <SUITE FILE_PATH="coverage/Valls_site@Development__Valls.coverage" NAME="Development: Valls Coverage Results" MODIFIED="1493927964070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LAM Site" />
-    <SUITE FILE_PATH="coverage/Valls-site@Development__Valls.coverage" NAME="Development: Valls Coverage Results" MODIFIED="1407846920727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LAM Site" />
-    <SUITE FILE_PATH="coverage/Valls-site@db_migrate__LAM_Site.coverage" NAME="db:migrate: LAM Site Coverage Results" MODIFIED="1390337546525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LAM Site" />
-    <SUITE FILE_PATH="coverage/Valls-site@Development__LAM_Site.coverage" NAME="Development: LAM Site Coverage Results" MODIFIED="1390506579994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LAM Site" />
+    <SUITE FILE_PATH="coverage/Valls_site@Development__Valls.coverage" NAME="Development: Valls Coverage Results" MODIFIED="1494420162371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="LAM Site" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -85,80 +87,65 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="d1s8n7m4thph8b@ec2-54-163-236-33.compute-1.amazonaws.com" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="d1s8n7m4thph8b" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="public" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="pages" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="d1s8n7m4thph8b@ec2-54-163-236-33.compute-1.amazonaws.com" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="d1s8n7m4thph8b" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="public" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="categories" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="LAM Site" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_show.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/member/categories/_show.haml">
+      <file leaf-file-name="show.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/member/pages/show.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/library_files/index.html.haml">
+      <file leaf-file-name="index.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/categories/index.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="15" />
+            <state relative-caret-position="17">
+              <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/content_library_groups/show.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="archive_uploader.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/uploaders/archive_uploader.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_categories_show.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/_categories_show.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content_library_groups_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,57 +179,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20170413170513_remove_page_id_from_videos_archives.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20170412204637_remove_a_ton_of_params.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20170413190123_rename_archives_videos.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20170413141605_create_templates.rb" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/views/member/pages/_video_group.haml" />
-        <option value="$PROJECT_DIR$/db/migrate/20170424165528_remove_unnused_tables.rb" />
-        <option value="$PROJECT_DIR$/app/views/massive_up/new.html.haml" />
-        <option value="$PROJECT_DIR$/app/models/content_library_group.rb" />
-        <option value="$PROJECT_DIR$/app/uploaders/image_uploader.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/docs_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/content_videos_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/content_video_groups_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/content_blocks_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/content_docs_groups_controller.rb" />
-        <option value="$PROJECT_DIR$/app/uploaders/archive_uploader.rb" />
-        <option value="$PROJECT_DIR$/app/models/library_file.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/massive_up_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/categories/index.haml" />
-        <option value="$PROJECT_DIR$/app/views/library_files/edit.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/library_files/new.html.haml" />
-        <option value="dbtable:/155f475d/aacc2b13-ff9c-4837-84b7-3ea8211ef15f/d1s8n7m4thph8b.public.archives_images" />
-        <option value="$PROJECT_DIR$/app/controllers/member_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/member/member_area_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_member_head.haml" />
-        <option value="$PROJECT_DIR$/app/views/member/show.haml" />
-        <option value="$PROJECT_DIR$/app/views/member/pages/show.haml" />
-        <option value="$PROJECT_DIR$/app/views/member/content_videos/show.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/layouts/member.haml" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_member_navbar.haml" />
-        <option value="$PROJECT_DIR$/app/views/member/index.haml" />
-        <option value="$PROJECT_DIR$/app/views/content_blocks/index.haml" />
-        <option value="$PROJECT_DIR$/app/views/member/courses/show.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/member/courses_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/content_blocks/show.haml" />
-        <option value="$PROJECT_DIR$/app/views/categories/_show.haml" />
-        <option value="$PROJECT_DIR$/app/views/content_blocks/_index.haml" />
-        <option value="$PROJECT_DIR$/app/views/member/categories/_library_group.haml" />
-        <option value="$PROJECT_DIR$/app/views/content_library_groups/_index.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/categories_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/member/categories/show.haml" />
-        <option value="$PROJECT_DIR$/app/views/member/pages/_library_options.haml" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/member/categories/_show.haml" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.haml" />
         <option value="$PROJECT_DIR$/app/views/home/index.haml" />
         <option value="$PROJECT_DIR$/app/controllers/library_files_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
+        <option value="$PROJECT_DIR$/app/views/member/pages/_video_group.haml" />
+        <option value="$PROJECT_DIR$/app/views/content_videos/_show.haml" />
+        <option value="$PROJECT_DIR$/app/models/content_docs_group.rb" />
+        <option value="$PROJECT_DIR$/app/views/member/pages/_docs_group.haml" />
+        <option value="$PROJECT_DIR$/app/views/content_docs_groups/_index.haml" />
+        <option value="$PROJECT_DIR$/app/views/content_blocks/_index.haml" />
+        <option value="$PROJECT_DIR$/app/views/library_files/_form_new.haml" />
+        <option value="$PROJECT_DIR$/app/views/library_files/new.html.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/massive_up_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/categories_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/content_blocks/index.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/content_blocks_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/content_docs_groups_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/content_video_groups_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/content_video_groups/_index.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/courses_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/courses/_index.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/docs_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/massive_up/create.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/massive_up/texture_new.haml" />
+        <option value="$PROJECT_DIR$/app/models/content_link.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20170510120848_create_content_links.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20170510121904_remove_table_members.rb" />
+        <option value="$PROJECT_DIR$/app/views/students/index.haml" />
+        <option value="$PROJECT_DIR$/app/views/content_videos/show.haml" />
         <option value="$PROJECT_DIR$/app/views/content_library_groups/show.haml" />
+        <option value="$PROJECT_DIR$/app/views/member/index.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_member_head.haml" />
+        <option value="$PROJECT_DIR$/app/views/member/courses/show.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_member_navbar.haml" />
+        <option value="$PROJECT_DIR$/app/views/member/categories/show.haml" />
+        <option value="$PROJECT_DIR$/app/views/member/content_videos/show.haml" />
+        <option value="$PROJECT_DIR$/app/views/member/pages/show.haml" />
+        <option value="$PROJECT_DIR$/app/views/partials/_member_head.haml" />
+        <option value="$PROJECT_DIR$/app/views/partials/_member_navbar.haml" />
+        <option value="$PROJECT_DIR$/app/views/partials/_flash_message.haml" />
+        <option value="$PROJECT_DIR$/app/views/partials/_head.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/member.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.haml" />
+        <option value="$PROJECT_DIR$/app/views/pages/index.haml" />
+        <option value="$PROJECT_DIR$/app/views/content_videos/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/docs/index.haml" />
         <option value="$PROJECT_DIR$/app/views/library_files/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/categories/index.haml" />
+        <option value="$PROJECT_DIR$/app/views/partials/_categories_show.haml" />
+        <option value="$PROJECT_DIR$/app/uploaders/archive_uploader.rb" />
       </list>
     </option>
   </component>
@@ -287,9 +274,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -308,8 +293,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,20 +315,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Valls-site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEW SITE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -372,7 +341,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="member" />
+              <option name="myItemId" value="partials" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,7 +363,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="library_files" />
+              <option name="myItemId" value="content_library_groups" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -409,6 +378,64 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="categories" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Valls-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEW SITE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uploaders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Valls-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEW SITE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Valls-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEW SITE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -520,6 +547,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -541,18 +570,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dropbox\ESCALA\NEW SITE\app\views\partials" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\views\member\pages" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\views\member\categories" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\views\layouts" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\views\my_course" />
-      <recent name="C:\Dropbox\ESCALA\NEW SITE\app\controllers\my_course" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dropbox\ESCALA\NEW SITE\app\views\partials" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\controllers\member" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\views\content_library_groups" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\assets\stylesheets" />
       <recent name="C:\Dropbox\ESCALA\NEW SITE\app\assets\javascripts" />
-      <recent name="C:\Dropbox\ESCALA\NEW SITE\app\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -796,8 +825,8 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b223ee0b-6d04-4fc0-bdaf-013072d9f162" name="Default" comment="" />
       <changelist id="bb895f1c-9c82-46fd-8f9b-1e862a62bf12" name="ignore" comment="" />
+      <changelist id="1db75e1f-6242-446a-960a-8f7624798ae5" name="Default" comment="" />
       <created>1380226622921</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -851,188 +880,24 @@
       <workItem from="1493921282345" duration="1948000" />
       <workItem from="1493925850589" duration="1940000" />
       <workItem from="1493927837721" duration="844000" />
-    </task>
-    <task id="LOCAL-00244" summary="limpeza controllers">
-      <created>1492013593814</created>
-      <option name="number" value="00244" />
-      <option name="presentableId" value="LOCAL-00244" />
-      <option name="project" value="LOCAL" />
-      <updated>1492013593814</updated>
-    </task>
-    <task id="LOCAL-00245" summary="resize thumb">
-      <created>1492013775142</created>
-      <option name="number" value="00245" />
-      <option name="presentableId" value="LOCAL-00245" />
-      <option name="project" value="LOCAL" />
-      <updated>1492013775142</updated>
-    </task>
-    <task id="LOCAL-00246" summary="show course">
-      <created>1492468187840</created>
-      <option name="number" value="00246" />
-      <option name="presentableId" value="LOCAL-00246" />
-      <option name="project" value="LOCAL" />
-      <updated>1492468187840</updated>
-    </task>
-    <task id="LOCAL-00247" summary="Modificações no Member&#10;Show, index&#10;Pages e seus conteudos">
-      <created>1493045284070</created>
-      <option name="number" value="00247" />
-      <option name="presentableId" value="LOCAL-00247" />
-      <option name="project" value="LOCAL" />
-      <updated>1493045284080</updated>
-    </task>
-    <task id="LOCAL-00248" summary="ajustado migração">
-      <created>1493046195503</created>
-      <option name="number" value="00248" />
-      <option name="presentableId" value="LOCAL-00248" />
-      <option name="project" value="LOCAL" />
-      <updated>1493046195503</updated>
-    </task>
-    <task id="LOCAL-00249" summary="ajustado migrações">
-      <created>1493046429424</created>
-      <option name="number" value="00249" />
-      <option name="presentableId" value="LOCAL-00249" />
-      <option name="project" value="LOCAL" />
-      <updated>1493046429424</updated>
-    </task>
-    <task id="LOCAL-00250" summary="ajustado migrações">
-      <created>1493046721881</created>
-      <option name="number" value="00250" />
-      <option name="presentableId" value="LOCAL-00250" />
-      <option name="project" value="LOCAL" />
-      <updated>1493046721881</updated>
-    </task>
-    <task id="LOCAL-00251" summary="ajustado migrações">
-      <created>1493046922851</created>
-      <option name="number" value="00251" />
-      <option name="presentableId" value="LOCAL-00251" />
-      <option name="project" value="LOCAL" />
-      <updated>1493046922851</updated>
-    </task>
-    <task id="LOCAL-00252" summary="seeds">
-      <created>1493047313508</created>
-      <option name="number" value="00252" />
-      <option name="presentableId" value="LOCAL-00252" />
-      <option name="project" value="LOCAL" />
-      <updated>1493047313508</updated>
-    </task>
-    <task id="LOCAL-00253" summary="seeds">
-      <created>1493052654670</created>
-      <option name="number" value="00253" />
-      <option name="presentableId" value="LOCAL-00253" />
-      <option name="project" value="LOCAL" />
-      <updated>1493052654671</updated>
-    </task>
-    <task id="LOCAL-00254" summary="migração remove tabelas nao utilizadas">
-      <created>1493053251894</created>
-      <option name="number" value="00254" />
-      <option name="presentableId" value="LOCAL-00254" />
-      <option name="project" value="LOCAL" />
-      <updated>1493053251894</updated>
-    </task>
-    <task id="LOCAL-00255" summary="upload massivo">
-      <created>1493053947718</created>
-      <option name="number" value="00255" />
-      <option name="presentableId" value="LOCAL-00255" />
-      <option name="project" value="LOCAL" />
-      <updated>1493053947718</updated>
-    </task>
-    <task id="LOCAL-00256" summary="grupo da biblioteca de arquivos">
-      <created>1493054946399</created>
-      <option name="number" value="00256" />
-      <option name="presentableId" value="LOCAL-00256" />
-      <option name="project" value="LOCAL" />
-      <updated>1493054946399</updated>
-    </task>
-    <task id="LOCAL-00257" summary="model page id removido">
-      <created>1493055302941</created>
-      <option name="number" value="00257" />
-      <option name="presentableId" value="LOCAL-00257" />
-      <option name="project" value="LOCAL" />
-      <updated>1493055302941</updated>
-    </task>
-    <task id="LOCAL-00258" summary="member#categories#show coisas repetidas pelo 'each do'">
-      <created>1493055617588</created>
-      <option name="number" value="00258" />
-      <option name="presentableId" value="LOCAL-00258" />
-      <option name="project" value="LOCAL" />
-      <updated>1493055617588</updated>
-    </task>
-    <task id="LOCAL-00259" summary="add links para navegação entre categorias - library files">
-      <created>1493056160574</created>
-      <option name="number" value="00259" />
-      <option name="presentableId" value="LOCAL-00259" />
-      <option name="project" value="LOCAL" />
-      <updated>1493056160574</updated>
-    </task>
-    <task id="LOCAL-00260" summary="tamanho thumb">
-      <created>1493056258865</created>
-      <option name="number" value="00260" />
-      <option name="presentableId" value="LOCAL-00260" />
-      <option name="project" value="LOCAL" />
-      <updated>1493056258865</updated>
-    </task>
-    <task id="LOCAL-00261" summary="correção de erro de digitação">
-      <created>1493056374533</created>
-      <option name="number" value="00261" />
-      <option name="presentableId" value="LOCAL-00261" />
-      <option name="project" value="LOCAL" />
-      <updated>1493056374533</updated>
-    </task>
-    <task id="LOCAL-00262" summary="correção de erro de digitação">
-      <created>1493059505904</created>
-      <option name="number" value="00262" />
-      <option name="presentableId" value="LOCAL-00262" />
-      <option name="project" value="LOCAL" />
-      <updated>1493059505904</updated>
-    </task>
-    <task id="LOCAL-00263" summary="Show de arquivos,">
-      <created>1493060929169</created>
-      <option name="number" value="00263" />
-      <option name="presentableId" value="LOCAL-00263" />
-      <option name="project" value="LOCAL" />
-      <updated>1493060929169</updated>
-    </task>
-    <task id="LOCAL-00264" summary="Show de arquivos,">
-      <created>1493061428462</created>
-      <option name="number" value="00264" />
-      <option name="presentableId" value="LOCAL-00264" />
-      <option name="project" value="LOCAL" />
-      <updated>1493061428463</updated>
-    </task>
-    <task id="LOCAL-00265" summary="Show de arquivos,">
-      <created>1493061551705</created>
-      <option name="number" value="00265" />
-      <option name="presentableId" value="LOCAL-00265" />
-      <option name="project" value="LOCAL" />
-      <updated>1493061551705</updated>
-    </task>
-    <task id="LOCAL-00266" summary="Show de arquivos,">
-      <created>1493061678600</created>
-      <option name="number" value="00266" />
-      <option name="presentableId" value="LOCAL-00266" />
-      <option name="project" value="LOCAL" />
-      <updated>1493061678600</updated>
-    </task>
-    <task id="LOCAL-00267" summary="validação com descrição, removida">
-      <created>1493062311294</created>
-      <option name="number" value="00267" />
-      <option name="presentableId" value="LOCAL-00267" />
-      <option name="project" value="LOCAL" />
-      <updated>1493062311295</updated>
-    </task>
-    <task id="LOCAL-00268" summary="flash notice's">
-      <created>1493063172709</created>
-      <option name="number" value="00268" />
-      <option name="presentableId" value="LOCAL-00268" />
-      <option name="project" value="LOCAL" />
-      <updated>1493063172710</updated>
-    </task>
-    <task id="LOCAL-00269" summary="ajuste de imagem">
-      <created>1493063400402</created>
-      <option name="number" value="00269" />
-      <option name="presentableId" value="LOCAL-00269" />
-      <option name="project" value="LOCAL" />
-      <updated>1493063400402</updated>
+      <workItem from="1494014262766" duration="673000" />
+      <workItem from="1494015095308" duration="552000" />
+      <workItem from="1494015662990" duration="1156000" />
+      <workItem from="1494249792355" duration="176000" />
+      <workItem from="1494254012320" duration="1822000" />
+      <workItem from="1494256361394" duration="1883000" />
+      <workItem from="1494258510144" duration="158000" />
+      <workItem from="1494259873054" duration="14000" />
+      <workItem from="1494268376757" duration="608000" />
+      <workItem from="1494416630599" duration="201000" />
+      <workItem from="1494416946658" duration="2614000" />
+      <workItem from="1494419577802" duration="1839000" />
+      <workItem from="1494421461980" duration="9000" />
+      <workItem from="1494595727683" duration="1208000" />
+      <workItem from="1495461961300" duration="175000" />
+      <workItem from="1495465954390" duration="309000" />
+      <workItem from="1495475679916" duration="1419000" />
+      <workItem from="1495575056056" duration="347000" />
     </task>
     <task id="LOCAL-00270" summary="ajuste de imagem">
       <created>1493064623727</created>
@@ -1195,11 +1060,193 @@
       <option name="project" value="LOCAL" />
       <updated>1493928335307</updated>
     </task>
-    <option name="localTasksCounter" value="293" />
+    <task id="LOCAL-00293" summary="ajustes scss">
+      <created>1494013943768</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1494013943769</updated>
+    </task>
+    <task id="LOCAL-00294" summary="ajustes">
+      <created>1494014562834</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1494014562834</updated>
+    </task>
+    <task id="LOCAL-00295" summary="ajustes docs">
+      <created>1494014743017</created>
+      <option name="number" value="00295" />
+      <option name="presentableId" value="LOCAL-00295" />
+      <option name="project" value="LOCAL" />
+      <updated>1494014743018</updated>
+    </task>
+    <task id="LOCAL-00296" summary="ajustes docs">
+      <created>1494014886526</created>
+      <option name="number" value="00296" />
+      <option name="presentableId" value="LOCAL-00296" />
+      <option name="project" value="LOCAL" />
+      <updated>1494014886526</updated>
+    </task>
+    <task id="LOCAL-00297" summary="ajustes docs">
+      <created>1494015217598</created>
+      <option name="number" value="00297" />
+      <option name="presentableId" value="LOCAL-00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1494015217598</updated>
+    </task>
+    <task id="LOCAL-00298" summary="ajustes">
+      <created>1494015932056</created>
+      <option name="number" value="00298" />
+      <option name="presentableId" value="LOCAL-00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1494015932057</updated>
+    </task>
+    <task id="LOCAL-00299" summary="ajustes de 'margin'">
+      <created>1494016116043</created>
+      <option name="number" value="00299" />
+      <option name="presentableId" value="LOCAL-00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1494016116043</updated>
+    </task>
+    <task id="LOCAL-00300" summary="docs">
+      <created>1494016593246</created>
+      <option name="number" value="00300" />
+      <option name="presentableId" value="LOCAL-00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1494016593246</updated>
+    </task>
+    <task id="LOCAL-00301" summary="member docs">
+      <created>1494016669736</created>
+      <option name="number" value="00301" />
+      <option name="presentableId" value="LOCAL-00301" />
+      <option name="project" value="LOCAL" />
+      <updated>1494016669736</updated>
+    </task>
+    <task id="LOCAL-00302" summary="docs">
+      <created>1494016748069</created>
+      <option name="number" value="00302" />
+      <option name="presentableId" value="LOCAL-00302" />
+      <option name="project" value="LOCAL" />
+      <updated>1494016748069</updated>
+    </task>
+    <task id="LOCAL-00303" summary="ajuste para edição dos blocos de conteudo">
+      <created>1494254577474</created>
+      <option name="number" value="00303" />
+      <option name="presentableId" value="LOCAL-00303" />
+      <option name="project" value="LOCAL" />
+      <updated>1494254577475</updated>
+    </task>
+    <task id="LOCAL-00304" summary="controle massivo">
+      <created>1494254651114</created>
+      <option name="number" value="00304" />
+      <option name="presentableId" value="LOCAL-00304" />
+      <option name="project" value="LOCAL" />
+      <updated>1494254651114</updated>
+    </task>
+    <task id="LOCAL-00305" summary="editar content blocks removido">
+      <created>1494254966295</created>
+      <option name="number" value="00305" />
+      <option name="presentableId" value="LOCAL-00305" />
+      <option name="project" value="LOCAL" />
+      <updated>1494254966296</updated>
+    </task>
+    <task id="LOCAL-00306" summary="debug 'deselegante' para massivos">
+      <created>1494255175768</created>
+      <option name="number" value="00306" />
+      <option name="presentableId" value="LOCAL-00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1494255175768</updated>
+    </task>
+    <task id="LOCAL-00307" summary="debug 'deselegante' para massivos">
+      <created>1494255580368</created>
+      <option name="number" value="00307" />
+      <option name="presentableId" value="LOCAL-00307" />
+      <option name="project" value="LOCAL" />
+      <updated>1494255580368</updated>
+    </task>
+    <task id="LOCAL-00308" summary="debug 'deselegante' para massivos">
+      <created>1494255786403</created>
+      <option name="number" value="00308" />
+      <option name="presentableId" value="LOCAL-00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1494255786413</updated>
+    </task>
+    <task id="LOCAL-00309" summary="debug 'deselegante' para massivos">
+      <created>1494256717898</created>
+      <option name="number" value="00309" />
+      <option name="presentableId" value="LOCAL-00309" />
+      <option name="project" value="LOCAL" />
+      <updated>1494256717898</updated>
+    </task>
+    <task id="LOCAL-00310" summary="mensagem de erro, ajuste">
+      <created>1494257216190</created>
+      <option name="number" value="00310" />
+      <option name="presentableId" value="LOCAL-00310" />
+      <option name="project" value="LOCAL" />
+      <updated>1494257216190</updated>
+    </task>
+    <task id="LOCAL-00311" summary="ajuste de controle massivo">
+      <created>1494258168923</created>
+      <option name="number" value="00311" />
+      <option name="presentableId" value="LOCAL-00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1494258168923</updated>
+    </task>
+    <task id="LOCAL-00312" summary="links">
+      <created>1494258593630</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1494258593630</updated>
+    </task>
+    <task id="LOCAL-00313" summary="limpeza">
+      <created>1494417853086</created>
+      <option name="number" value="00313" />
+      <option name="presentableId" value="LOCAL-00313" />
+      <option name="project" value="LOCAL" />
+      <updated>1494417853087</updated>
+    </task>
+    <task id="LOCAL-00314" summary="maiusculo para minusculo">
+      <created>1494418432095</created>
+      <option name="number" value="00314" />
+      <option name="presentableId" value="LOCAL-00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1494418432095</updated>
+    </task>
+    <task id="LOCAL-00315" summary="diretorio contendo parciais">
+      <created>1494421211074</created>
+      <option name="number" value="00315" />
+      <option name="presentableId" value="LOCAL-00315" />
+      <option name="project" value="LOCAL" />
+      <updated>1494421211074</updated>
+    </task>
+    <task id="LOCAL-00316" summary="ajuste de parcial de categorias">
+      <created>1495462024149</created>
+      <option name="number" value="00316" />
+      <option name="presentableId" value="LOCAL-00316" />
+      <option name="project" value="LOCAL" />
+      <updated>1495462024150</updated>
+    </task>
+    <task id="LOCAL-00317" summary="extension whitelist">
+      <created>1495466012838</created>
+      <option name="number" value="00317" />
+      <option name="presentableId" value="LOCAL-00317" />
+      <option name="project" value="LOCAL" />
+      <updated>1495466012839</updated>
+    </task>
+    <task id="LOCAL-00318" summary="extension whitelist exr">
+      <created>1495575105055</created>
+      <option name="number" value="00318" />
+      <option name="presentableId" value="LOCAL-00318" />
+      <option name="project" value="LOCAL" />
+      <updated>1495575105055</updated>
+    </task>
+    <option name="localTasksCounter" value="319" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="403455000" />
+    <option name="totallyTimeSpent" value="418852000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1212,18 +1259,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22121535" sideWeight="0.75" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2675906" sideWeight="0.75" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3228261" sideWeight="0.48347548" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22065218" sideWeight="0.5836887" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19829424" sideWeight="0.6923913" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30652174" sideWeight="0.7009595" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32717392" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30652174" sideWeight="0.7009595" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20978262" sideWeight="0.4163113" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2826087" sideWeight="0.45149255" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33369565" sideWeight="0.4163113" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2826087" sideWeight="0.45149255" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62472886" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24565217" sideWeight="0.739339" order="11" side_tool="false" content_ui="tabs" />
@@ -1239,6 +1285,24 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
@@ -1251,32 +1315,32 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add links para navegação entre categorias - library files" />
-    <MESSAGE value="tamanho thumb" />
-    <MESSAGE value="correção de erro de digitação" />
-    <MESSAGE value="Show de arquivos," />
-    <MESSAGE value="validação com descrição, removida" />
-    <MESSAGE value="flash notice's" />
-    <MESSAGE value="ajuste de imagem" />
-    <MESSAGE value="ajuste de redirecionamento" />
-    <MESSAGE value="controller de upload massivo" />
-    <MESSAGE value="correção de images para image" />
-    <MESSAGE value="correção de dislexia" />
-    <MESSAGE value="controle de arquivos de biblioteca" />
-    <MESSAGE value="form incompleto" />
-    <MESSAGE value="controle de upload de um arquivo" />
-    <MESSAGE value="views para arquivos de biblioteca" />
-    <MESSAGE value="modificações de paresentação" />
-    <MESSAGE value="member layout e conteudos" />
-    <MESSAGE value="member layout" />
-    <MESSAGE value="ajuste do namespace member" />
     <MESSAGE value="teste guenzo" />
     <MESSAGE value="parent id para nil" />
     <MESSAGE value="apresentar arquivos de biblioteca" />
     <MESSAGE value="desfazendo erros" />
     <MESSAGE value="admin visualizar arquivos de biblioteca" />
     <MESSAGE value="ajustes de redirecionamento" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajustes de redirecionamento" />
+    <MESSAGE value="ajustes scss" />
+    <MESSAGE value="ajustes docs" />
+    <MESSAGE value="ajustes" />
+    <MESSAGE value="ajustes de 'margin'" />
+    <MESSAGE value="member docs" />
+    <MESSAGE value="docs" />
+    <MESSAGE value="ajuste para edição dos blocos de conteudo" />
+    <MESSAGE value="controle massivo" />
+    <MESSAGE value="editar content blocks removido" />
+    <MESSAGE value="debug 'deselegante' para massivos" />
+    <MESSAGE value="mensagem de erro, ajuste" />
+    <MESSAGE value="ajuste de controle massivo" />
+    <MESSAGE value="links" />
+    <MESSAGE value="limpeza" />
+    <MESSAGE value="maiusculo para minusculo" />
+    <MESSAGE value="diretorio contendo parciais" />
+    <MESSAGE value="ajuste de parcial de categorias" />
+    <MESSAGE value="extension whitelist" />
+    <MESSAGE value="extension whitelist exr" />
+    <option name="LAST_COMMIT_MESSAGE" value="extension whitelist exr" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1300,7 +1364,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="158" />
+      <option name="time" value="159" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="RailsRunConfigurationType">
@@ -1310,101 +1374,324 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/pages/index.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+    <entry file="dbDummy://dbtable:/155f475d/8465e992-d3b8-4472-a028-134d89a41399/main.members">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_flash_message.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/students/index.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/students/_show.haml" />
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_student_show.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_default_navbar.haml">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20170510120848_create_content_links.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/content_link.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/content_videos/_show.haml" />
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_member_video_group.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_head.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_member_library_options.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/member.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_member_docs_group.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/content_videos/show.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_content_videos_show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/categories/_show.haml" />
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_member_head.haml" />
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_member_navbar.haml" />
+    <entry file="file://$PROJECT_DIR$/app/views/member/index.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_member_head.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/member/categories/show.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="67" lean-forward="true" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_member_navbar.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/students/index.haml" />
-    <entry file="file://$PROJECT_DIR$/app/views/member/students/show.haml" />
-    <entry file="file://$PROJECT_DIR$/app/views/member/students/content.haml" />
-    <entry file="file://$PROJECT_DIR$/app/views/member/library_files/show.haml" />
-    <entry file="file://$PROJECT_DIR$/app/views/member/library_files/index.html.haml" />
-    <entry file="file://$PROJECT_DIR$/app/views/member/library_files/_show.haml" />
-    <entry file="file://$PROJECT_DIR$/app/views/member/show.haml" />
-    <entry file="file://$PROJECT_DIR$/app/controllers/member/courses_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_page_options.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/member/courses/show.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/member/content_videos_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/member/content_videos/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_member_head.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/content_blocks/index.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_member_navbar.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_member_page_options.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_flash_message.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_footer.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/project.haml" />
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/admin.haml" />
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/member.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_head.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_default_navbar.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_content_video_groups.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_content_library_groups.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_content_docs_groups.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_content_blocks.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/index.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/content_videos/new.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/content_videos/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/content_videos/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/docs/index.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/library_files/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/development.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="76" lean-forward="true" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/member/pages/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/categories/index.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/content_library_groups/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/uploaders/image_uploader.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/uploaders/feed_image_uploader.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/155f475d/8465e992-d3b8-4472-a028-134d89a41399/main.categories">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_categories_show.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/155f475d/aacc2b13-ff9c-4837-84b7-3ea8211ef15f/d1s8n7m4thph8b.public.images">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,228 +1707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/content_blocks/show.haml">
+    <entry file="file://$PROJECT_DIR$/app/uploaders/archive_uploader.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/categories/_show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/categories/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/content_block.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/content_library_group.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/content_docs_group.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/content_blocks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/content_blocks/_index.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/pages/_video_group.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/categories/_library_group.haml" />
-    <entry file="file://$PROJECT_DIR$/app/views/member/index.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/categories_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/155f475d/aacc2b13-ff9c-4837-84b7-3ea8211ef15f/d1s8n7m4thph8b.public.categories">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/category.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/member/categories_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="42" column="128" lean-forward="false" selection-start-line="42" selection-start-column="128" selection-end-line="42" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/content_library_groups/_index.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="63" lean-forward="false" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/content_video_groups/_index.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/content_library_groups_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/pages/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/library_files/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/pages/_library_options.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/categories/index.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/library_files_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/content_library_groups/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/categories/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/member/categories/_show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/library_files/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="15" />
+        <state relative-caret-position="362">
+          <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
           <folding />
         </state>
       </provider>

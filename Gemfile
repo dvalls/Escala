@@ -20,6 +20,9 @@ gem 'turbolinks_transitions'
 gem 'bootstrap-sass' #, '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+# gem para policies
+gem 'pundit'
+
 gem 'json'
 # Markdown
 gem 'redcarpet'

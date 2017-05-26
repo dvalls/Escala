@@ -133,6 +133,8 @@ GEM
     nokogiri (1.7.1-x64-mingw32)
       mini_portile2 (~> 2.1.0)
     pg (0.20.0-x64-mingw32)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -223,6 +225,7 @@ DEPENDENCIES
   json
   mini_magick
   pg
+  pundit
   rails (~> 5.0.2)
   rails-i18n
   redcarpet

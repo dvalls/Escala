@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
 
+  include Pundit
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -36,6 +40,16 @@ class ApplicationController < ActionController::Base
 
   def get_logged
     session[:user]
+  end
+
+  def set_current_user
+    if session[:user_id] != nil
+      @user = current_user
+    end
+  end
+
+  def user_not_authorized
+  redirect_to access_logout_path, :flash =>  { info:'não autorizado...')}
   end
 
 end

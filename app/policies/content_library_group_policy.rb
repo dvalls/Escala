@@ -1,8 +1,10 @@
-class PagePolicy < ApplicationPolicy
+class ContentLibraryGroupPolicy < ApplicationPolicy
 
   def show?
-    page_in_course?
+    library_group_in_course?
   end
+
+
   class Scope < Scope
     def resolve
       scope

@@ -6,5 +6,9 @@ class Member::ContentVideosController < Member::MemberAreaController # Applicati
     @course = Course.find(@block.contentable.course_id)
     @pages = @course.pages
     @content_video = ContentVideo.find(params[:id])
+
+    authorize @content_video
+    authorize @block
+    authorize @course
   end
 end

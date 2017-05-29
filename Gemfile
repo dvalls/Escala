@@ -50,11 +50,7 @@ gem 'coffee-rails' #, '~> 4.0.0'
 gem 'jquery-rails'
 
 # bcrypt para criptografar senhas de usuarios
-# gem 'bcrypt'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
-# gem 'bcrypt','~> 3.1.11'
-# gem 'bcrypt', platforms: :ruby
-# gem 'bcrypt-ruby'
 
 group :production do
   gem 'pg'

@@ -8,6 +8,10 @@ class Member::CategoriesController <  Member::MemberAreaController # Application
     @content_library_group = ContentLibraryGroup.find(params[:content_library_group_id])
     @course = Course.find(@content_library_group.course_id)
     @pages = @course.pages
+
+    authorize @content_library_group
+    authorize @content_block
+    authorize @course
   end
 
 end

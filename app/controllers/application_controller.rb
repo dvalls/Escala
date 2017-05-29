@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_logged
-    session[:user]
+    @user = session[:user]
   end
 
   def current_user

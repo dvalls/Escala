@@ -1,8 +1,10 @@
-class PagePolicy < ApplicationPolicy
+class ContentVideoPolicy < ApplicationPolicy
 
   def show?
-    page_in_course?
+    video_in_course?
   end
+
+
   class Scope < Scope
     def resolve
       scope

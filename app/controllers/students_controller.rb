@@ -24,8 +24,8 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    @student.username = @student.email
-    @student.password = @student.name.downcase
+    @student.username = @student.email.strip
+    @student.password = @student.name.downcase.strip
 
     if @student.save
       redirect_to students_path, notice: t('views.student.create')

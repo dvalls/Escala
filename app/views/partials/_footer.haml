@@ -1,27 +1,26 @@
 %footer
-
-  #description.col-lg-6.col-sm-12
-    %p= image_tag ENV['LOGO_URL_NAME']
+  .row
+    #description.col-lg-6.col-sm-12
+      %p= image_tag ENV['LOGO_URL_NAME']
 
   = t('copyright') + Time.now.year.to_s
 
-  .row
-    %ul.social
-      %li{:title => "facebook", "data-toggle" => "tooltip"}
-        =link_to 'https://www.facebook.com/escala.cc/', :target => "_blank"  do
-          %i.fa.fa-facebook.fa-lg
-      -#%li{:title => "twitter", "data-toggle" => "tooltip"}
-        -#=link_to ENV['TWITTER_LINK'], :target => "_blank" do
-          %i.fa.fa-twitter.fa-lg
-      -# %li{:title => "google+", "data-toggle" => "tooltip"}
-        -#=link_to ENV['GOOGLE_PLUS_LINK'], :target => "_blank" do
-          -#%i.fa.fa-google-plus.fa-lg
-      -#%li{:title => "instagram", "data-toggle" => "tooltip"}
-        -#=link_to ENV['INSTAGRAM_LINK'], :target => "_blank" do
-          -#%i.fa.fa-instagram.fa-lg
-      -#%li{:title => "pinterest", "data-toggle" => "tooltip"}
-        -#=link_to ENV['PINTEREST_LINK'], :target => "_blank" do
-          -#%i.fa.fa-pinterest.fa-lg
-      -#%li{:title => "vimeo", "data-toggle" => "tooltip"}
-        -#=link_to ENV['VIMEO_LINK'], :target => "_blank" do
-          -#%i.fa.fa-vimeo-square.fa-lg
+  %ul.social
+    %li{:title => "facebook", "data-toggle" => "tooltip"}
+      =link_to 'https://www.facebook.com/escala.cc/', :target => "_blank"  do
+        %i.fa.fa-facebook.fa-lg
+    -#%li{:title => "twitter", "data-toggle" => "tooltip"}
+      -#=link_to ENV['TWITTER_LINK'], :target => "_blank" do
+        %i.fa.fa-twitter.fa-lg
+    -# %li{:title => "google+", "data-toggle" => "tooltip"}
+      -#=link_to ENV['GOOGLE_PLUS_LINK'], :target => "_blank" do
+        -#%i.fa.fa-google-plus.fa-lg
+    -#%li{:title => "instagram", "data-toggle" => "tooltip"}
+      -#=link_to ENV['INSTAGRAM_LINK'], :target => "_blank" do
+        -#%i.fa.fa-instagram.fa-lg
+    -#%li{:title => "pinterest", "data-toggle" => "tooltip"}
+      -#=link_to ENV['PINTEREST_LINK'], :target => "_blank" do
+        -#%i.fa.fa-pinterest.fa-lg
+    -#%li{:title => "vimeo", "data-toggle" => "tooltip"}
+      -#=link_to ENV['VIMEO_LINK'], :target => "_blank" do
+        -#%i.fa.fa-vimeo-square.fa-lg

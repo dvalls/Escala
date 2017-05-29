@@ -12,13 +12,13 @@
       %li= link_to t('nav.about'), about_path
       %li= link_to t('nav.courses'), courses_path
       %li= link_to t('nav.contact'), contact_path
-
       %li
-        - case session[:user_id]
-          - when nil
-            = link_to t('nav.login'), access_login_path
-          - else
-            = link_to t('nav.logout'), access_logout_path
+        - if session[:user_id]
+          = link_to access_logout_path do
+            %i.fa.fa-sign-out{"aria-hidden" => "true"}
+        - else
+          = link_to  access_login_path do
+            %i.fa.fa-user{"aria-hidden" => "true"}
 
 
 

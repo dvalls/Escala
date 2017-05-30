@@ -42,5 +42,14 @@ module ApplicationHelper
     end
   end
 
+  def user_is_student?
+    @user.class == Student
+  end
+
+  def user_is_admin?
+    @user.class == User
+  end
+
+
 
 end

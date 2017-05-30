@@ -1,9 +1,10 @@
-%h3 Login
-= form_tag(access_attempt_login_path, :method => :post) do
-  =label_tag :username
-  = text_field_tag :username, params[:username]
+- content_for :head do
+  = stylesheet_link_tag  'login'
 
-  =label_tag :password
-  = password_field_tag :password
-
-  = submit_tag('Log in')
+= form_tag(access_attempt_login_path, :method => :post, :class => 'form-signin') do
+  %label.sr-only{:for => "username"} Usuário
+  %input#username.form-control{:autofocus => "", :placeholder => "Usuário", :required => "", :name => "username"}/
+  %label.sr-only{:for => "password"} Senha
+  %input#password.form-control{:placeholder => "Senha", :required => "", :type => "password", :name => "password"}/
+  %br/
+  %button.btn.btn-lg.btn-primary.btn-block{:type => "submit"} Entrar

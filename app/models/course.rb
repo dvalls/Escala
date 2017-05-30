@@ -14,8 +14,10 @@ class Course < ActiveRecord::Base
   has_many :images, :as => :imageable, :dependent => :destroy
   has_many :carousels, :dependent => :destroy
 
-  has_many :archives, :dependent => :destroy
-  has_many :videos, :dependent => :destroy
+  has_many :content_library_groups, :dependent => :destroy
+  has_many :content_video_groups, :dependent => :destroy
+  has_many :content_docs_groups, :dependent => :destroy
+  has_many :pages, :dependent => :destroy
 
   has_and_belongs_to_many :students
 

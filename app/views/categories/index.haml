@@ -1,29 +1,26 @@
+%h3 Grupos de Conteúdo
+= render partial: 'partials/content_library_groups'
+
+
+%h3 Categorias
 %table.table
   %tr
     %th NOME
-    %th Sub
     %th Parent
-    %th Tipo
     %th
 
 
   - @categories.each do |category|
     %tr
       %td= category.name
+      %td= category.parent_name
       %td
-        %ul
-          - category.subcategories.each do |sub|
-            %li
-              = link_to sub.name, edit_category_path(sub)
-
-      %td= category.parent_category
-      %td= category.group
-      %td
-        = link_to 'EDITAR', edit_category_path(category)
+        = link_to 'editar', edit_category_path(category)
         |
-        = link_to 'APAGAR', category, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
+        = link_to 'apagar', category, :method => :delete, :data => { :confirm => t('views.are_you_sure')}
 
 %br
 
-= link_to 'NOVA CATEGORIA', new_category_path, :class => 'btn btn-primary'
-= link_to 'voltar', root_path, class: 'btn btn-primary'
+= link_to 'nova categoria', new_category_path, :class => 'btn btn-primary'
+= link_to 'arquivos', library_files_path, class: 'btn btn-primary'
+%p= link_to 'voltar', root_path

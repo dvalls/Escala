@@ -1,12 +1,10 @@
 = simple_form_for(@category) do |f|
   = f.error_notification
 
+
+
   .form-inputs
     = f.input :name
-    = f.input(:group, :collection => ['archive','video', 'exercício', 'material de apoio', 'plugin', 'link'], as: :radio_buttons)
-
-    = f.label 'parent'
-    = f.select(:parent_id, options_for_select(@categories), { :include_blank => 'None'}, class: 'form-control')
 
   .form-actions
     = f.button :submit, 'SALVAR', :class => 'btn btn-primary'

@@ -17,7 +17,7 @@ FriendlyId.defaults do |config|
   config.use :reserved
 
   config.reserved_words = %w(new edit index session login logout users admin
-    stylesheets archives javascripts images)
+    stylesheets library_files javascripts images)
 
   #  ## Friendly Finders
   #

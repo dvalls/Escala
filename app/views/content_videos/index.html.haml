@@ -1,0 +1,28 @@
+%h3 Grupos de contéudos  de videos
+= render partial: 'partials/content_video_groups'
+
+%h3 Videos
+%table.table
+  %thead.inverse
+    %tr
+      %th Video
+      %th Descrição
+      %th Grupo
+      %th
+  %tbody
+    - @content_videos.each do |content_video|
+      %tr
+        %td= link_to  content_video.title, content_video
+        %td= content_video.description
+        %td
+          - content_video.content_video_groups.each do |group|
+            = '-'
+            = group.name
+        %td
+          = link_to 'editar', edit_content_video_path(content_video)
+          |
+          = link_to 'apagar', content_video, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este @content_video??' }
+
+= link_to 'novo video', new_content_video_path, class: 'btn btn-primary'
+
+= link_to 'voltar', root_path

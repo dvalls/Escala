@@ -1,0 +1,13 @@
+= simple_form_for(@doc,:html => {:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :description
+    = f.input :url, as: :file #, :input_html => { :multiple => true }
+
+    = link_to 'Criar Grupo', new_content_docs_group_path(), class: 'btn btn-primary'
+
+    = f.association :content_docs_groups, as: :check_boxes
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'

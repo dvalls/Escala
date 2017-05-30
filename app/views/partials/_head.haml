@@ -1,0 +1,20 @@
+%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+%meta{:charset => "utf-8"}
+%meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+%title= content_for?(:title) ? yield(:title) : ENV['OFFICE_NAME']
+= yield :head
+= stylesheet_link_tag  'application', media: 'all' #, 'data-turbolinks-track': 'reload'
+= javascript_include_tag 'application'#, 'data-turbolinks-track': 'reload'
+%link{href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Ubuntu+Mono", rel: "stylesheet", type: "text/css"}
+%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css", rel: "stylesheet"}
+
+%link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :integrity => "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", :rel => "stylesheet"}/
+
+
+= csrf_meta_tags
+
+-#/ SEO
+%meta{name:"description", :content => t('meta.description')}
+%meta{name:"keywords", :content => t('meta.keywords')}
+%meta{name:"revisit-after", :content => "15 Days"}

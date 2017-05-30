@@ -1,23 +1,14 @@
 class MemberController < ApplicationController
   before_filter :student_logged?
-  # before_action :set_course, only: [:show]
-
-  layout 'application'
-
-  def home
-    @carousels = Carousel.all.order(order: :asc)
-
-  end
-
+  layout 'member'
 
   def index
-    @student = get_student
+    case session[:admin]
+      when true
+        @courses = Course.all
+      when false
+        @student = Student.find(session[:user_id])
+        @courses = @student.courses
+    end
   end
-
-  def show
-    @student = get_student
-
-    @course = Course.friendly.find(params[:id])
-  end
-
 end

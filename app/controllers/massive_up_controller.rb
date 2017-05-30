@@ -1,28 +1,107 @@
 class MassiveUpController < ApplicationController
   def new
-    @archive = Archive.new
+    @library_file = LibraryFile.new
   end
 
   def create
+    #keys: nome do arquivo, valor[0]: url, valor[1]: imagem, thumb
+    params_dictionary = {}
+    error_library_files = Array.new()
+    library_files_created = Array.new()
+
+    all_params = (params[:library_file][:url])
+
     # Loop throw images
-    params[:archive][:url].each do |url|
+    all_params.each do |url|
       extension = get_extension(url.original_filename)
-      get_set_archive(url)
+      name = (url.original_filename[0..-(extension.length + 1)]).downcase
+
+    #verifica se o dicionario possui chave com esse nome
+      if not params_dictionary.include?(name)
+        params_dictionary[name] = Array.new(2)
+      end
 
       case extension
-        when '.skp'
-          @archive.url = url
-          @archive.save
-        when '.png'
-          @image = @archive.images.new(image_params)
-          @image.url = url
-          @image.title = url.original_filename[0..-5]
-          @image.description = params[:archive][:description]
-
-          @image.save
+        when 'png', 'jpg', 'gif'
+        params_dictionary[name][1] = url
+        else
+        params_dictionary[name][0] = url
       end
     end
-    redirect_to archives_path, notice: t('views.image.create')
+
+    params_dictionary.each do |name, urls|
+      # se certifica de que os valores da chave são pares
+      if urls.count.even?
+      #name = nome
+      #urls[0] = url de arquivos para download
+      #urls[1] = url de arquivos para thumbnail
+      @library_file = LibraryFile.find_or_create_by(name: name)
+
+        @library_file.category_id = params[:library_file][:category_id]
+        @library_file.description = params[:library_file][:description]
+        @library_file.name = name
+        @library_file.url = urls[0]
+
+        if @library_file.save #se o arquivo salvar
+          get_or_set_image
+
+          @image.url = urls[1]
+          @image.title = name
+          if @image.valid?
+            @image.save
+            library_files_created << name
+          else# se a imagem nao salvar
+            error_library_files << name
+
+            puts @image.errors.full_messages
+            @library_file.destroy # para que nao fique nenhum arquivo sem url
+          end
+        else
+          error_library_files << name
+
+          puts @library_file.errors.full_messages
+          next
+        end
+      else
+        # se os valores da chave não são pares, loop continua para proxima chave
+        error_library_files << name
+        next
+      end
+    end
+      errors = ["Total de arquivos solicitados: #{params_dictionary.count}.",
+                "Arquivos não criados: #{error_library_files}.",
+                "Arquivos criados: #{library_files_created}."]
+      # flash[:error] = errors.join("<br/>").html_safe
+
+      redirect_to library_files_path, notice: errors.join("<br/>").html_safe
+  end
+
+  def texture_new
+    @library_file = LibraryFile.new
+  end
+
+  #Casos em que o mesmo arquivo de upload servira para o thumbnail
+  def texture_create
+    params[:library_file][:url].each do |url|
+      name = (url.original_filename[0..-5]).downcase
+
+      @library_file = LibraryFile.find_or_create_by(name: name)
+      @library_file.category_id = params[:library_file][:category_id]
+      @library_file.description = params[:library_file][:description]
+      @library_file.name = (url.original_filename[0..-5]).downcase
+      @library_file.url = url
+      if @library_file.save
+        get_or_set_image
+        @image.url = url
+        @image.title = (url.original_filename[0..-5]).downcase
+        @image.description = params[:library_file][:description]
+        @image.save
+      end
+
+    end
+    flash.now[:notice] = "#{@library_file.errors.full_messages}// #{@image.errors.full_messages}"
+
+    redirect_to library_files_path, notice: t('views.image.create')
   end
 
 
@@ -33,25 +112,24 @@ class MassiveUpController < ApplicationController
   end
 
   def archives_params
-    params.require(:archive).permit(:name, :category_id, :description, :course_id, :url)
+    params.require(:library_file).permit(:name, :category_id, :description, :url)
   end
 
   def get_extension(filename)
-    size = filename.length
-    final_size = size - 4
-    return  filename[final_size..size]
+    array = filename.split('.')
+    puts array[1]
 
+    return  array[1]
   end
 
-  def get_set_archive(url)
-    @archive = Archive.find_by_name(url.original_filename[0..-5])
-    if not @archive
-      @archive = Archive.new()
-      @archive.category_id = params[:archive][:category_id]
-      @archive.course_id = params[:archive][:course_id]
-      @archive.description = params[:archive][:description]
-      @archive.name = url.original_filename[0..-5]
-      @archive.save
+
+  def get_or_set_image
+    # caso o arquivo de biblioteca não tenha uma image associada
+    if @library_file.image == nil
+      @image = Image.new(imageable_id: @library_file.id, imageable_type: 'LibraryFile')
+    else # Se tiver, a imagem sera substituida
+      @image = @library_file.image
     end
   end
+
 end

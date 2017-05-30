@@ -1,0 +1,6 @@
+%h3
+  - case session[:admin]
+    - when false
+      = @student.full_name
+    - else
+      = 'admin'

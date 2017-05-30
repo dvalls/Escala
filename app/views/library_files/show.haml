@@ -1,0 +1,20 @@
+%table.table
+  %tr
+    %th Arquivo
+    %th Descrição
+    %th Categoria
+    %th
+
+  - @library_files.each do |archive|
+    %tr
+      -#- case
+      %td= archive.name
+      %td= archive.description
+      %td= archive.category.name
+      %td
+        = link_to 'EDITAR', edit_library_file_path(archive)
+        |
+        = link_to 'APAGAR', archive, :method => :delete, :data => { :confirm => 'Você tem certeza de que quer excluir este arquivo?' }
+
+= link_to 'voltar', library_files_path
+        

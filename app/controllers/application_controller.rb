@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
 
+  include Pundit
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -28,16 +33,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :student_logged?
   def student_logged?
-    unless session[:user_id]
+    unless session[:user_id] or session[:admin]
       redirect_to login_path
     end
   end
 
   def get_logged
-    session[:user]
+    @user = session[:user]
   end
 
-  def get_student
+  def current_user
     if session[:admin]
       User.find(session[:user_id])
     else
@@ -45,8 +50,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :has_course?
-  def has_course?
-    get_student.courses.find_by_title(@course.title)
+  def set_current_user
+    if session[:user_id] != nil
+      @user = current_user
+    end
   end
+
+  def user_not_authorized
+    redirect_to access_logout_path, :flash =>  { info:'não autorizado...'}
+  end
+
+  def get_user_courses
+    if admin_logged?
+      Course.all
+    else
+      set_current_user
+      @user.courses
+    end
+  end
+
 end

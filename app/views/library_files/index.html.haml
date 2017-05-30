@@ -1,0 +1,13 @@
+%h3 Grupos de Arquivos de Biblioteca
+%p Lembrete: grupos de arquivos de biblioteca são compostos por categorias.
+%p Uma categoria pode pertencer a mais de um grupo.
+
+= render partial: 'partials/content_library_groups'
+
+= link_to 'novo(s) material', massive_up_new_path, class: 'btn btn-primary'
+= link_to 'nova(s) textura', massive_up_texture_new_path, class: 'btn btn-primary'
+%br/
+= link_to 'todos arquivos', library_file_path(LibraryFile.first), class: 'btn btn-primary'
+= link_to 'categorias', categories_path, class: 'btn btn-primary'
+
+%p= link_to 'voltar', root_path

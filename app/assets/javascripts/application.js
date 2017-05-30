@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 // Bootstrap
-// require bootstrap
-// require bootstrap-sprockets
+//= require bootstrap-sprockets
+//= require bootstrap
 // require bootstrap/transition
 // require bootstrap/carousel
 // require bootstrap/affix
@@ -26,6 +26,8 @@
 // require_tree .
 
 
-// $(".dropdown-button").dropdown({hover: true});
+$(".dropdown-button").dropdown({hover: true});
+$('.dropdown-toggle').dropdown()
+
 
 

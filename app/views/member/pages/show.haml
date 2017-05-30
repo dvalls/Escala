@@ -1,0 +1,19 @@
+.col-md-10.col-lg-10
+  .row
+    - @blocks.each do |block|
+      - case block.contentable_type
+        - when 'ContentVideoGroup'
+          .col-md-12.col-lg-12
+            = render partial: 'partials/member_video_group', locals: {:block => block}
+
+        - when 'ContentLibraryGroup'
+          = render partial: 'partials/member_library_options', locals: {:block => block}
+          .col-lg-2.col-md-2
+            - if content_for?(:library_options)
+              = yield :library_options
+
+        - when 'ContentDocsGroup'
+          .col-md-12.col-lg-12
+            = render partial: 'partials/member_docs_group', locals: {:docs => block.contentable.docs}
+            %br/
+

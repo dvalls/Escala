@@ -1,0 +1,46 @@
+%h3 Pages
+%p Páginas são compostas por blocos. Blocos de videos, arquivos de biblioteca, ou documentos
+
+%table.table
+  %tr
+    %th Pagina
+    %th Curso
+    %th Blocos
+    %th
+    %th
+  - @pages.each do |page|
+    %tr
+      %td= page.name
+      %td= page.course.title
+      %td
+        - page.content_blocks.each do |block|
+          = '-'
+          = block.order
+          = block.contentable.name
+          = '/'
+          = block.contentable.class.name
+          %br/
+      %td= link_to 'add bloco', new_page_content_block_path(page)
+      %td
+        = link_to 'editar', edit_page_path(page)
+        |
+        = link_to 'apagar', page, method: :delete, :data => {:confirm => 'Tem certeza?'}
+
+= link_to 'nova pagina', new_page_path, class: 'btn btn-primary' if admin_logged?
+
+%h3 Blocos de conteudos
+%p
+  = render partial: 'partials/content_blocks'
+.row
+  .col-lg-4.col-md-4
+    %h3 Grupos de conteúdo (videos)
+    = render partial: 'partials/content_video_groups'
+  .col-lg-4.col-md-4
+    %h3 Grupos de conteúdo  (arquivos de biblioteca)
+    = render partial: 'partials/content_library_groups'
+  .col-lg-4.col-md-4
+    %h3 Grupos de conteúdo  (documentos)
+    = render partial:  'partials/content_docs_groups'
+  .clearfix.hidden-sm-up
+
+= link_to 'voltar', root_path if admin_logged?

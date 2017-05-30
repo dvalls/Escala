@@ -1,41 +1,21 @@
 !!! 5
 %html
   %head
-    = render :partial => 'layouts/head'
-
-
-    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", :integrity => "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", :rel => "stylesheet"}/
-
+    = render :partial => 'partials/head'
   %body
-
-    -#%script{:crossorigin => "anonymous", :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
-
     .container
-
       / Header
       %header
-
         - if content_for?(:navbar)
           = yield :navbar
         - else
-          = render partial: 'layouts/default_navbar'
+          = render partial: 'partials/default_navbar'
           / Mobile menu
-
-
-        = render :partial => 'layouts/flash_message'
-
-
-
+        = render :partial => 'partials/flash_message'
       / Main content
       %main
-
         / Main
-        - if content_for?(:materials)
-          = yield :materials
-        - else
-          = yield
+        = yield
 
       / Footer
-      = render :partial => 'layouts/footer'
-
-
+      = render :partial => 'partials/footer'

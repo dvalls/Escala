@@ -1,4 +1,6 @@
 / Carousel
+- if admin_logged?
+  = link_to 'editar galeria', carousels_path, :class => 'btn btn-primary'
 #carousel.carousel.slide
   %ol.carousel-indicators
     - @carousels.each_with_index do |carousel, index|
@@ -8,39 +10,37 @@
   .carousel-inner
     - @carousels.each_with_index do |carousel, index|
       .item{:class => (index == 0 ? 'active' : '')}
-        =image_tag carousel.image_url
+        = image_tag carousel.image_url
 
-        - unless carousel.title.empty?
-          = link_to carousel.course do
-            .carousel-caption
-              = carousel.title + carousel.description
+        = link_to carousel.course do
+          .carousel-caption
+            = carousel.title
 / End Carousel
+- if admin_logged?
+  = link_to 'videos', content_videos_path, :class => 'btn btn-primary'
+  = link_to 'arquivos de biblioteca', library_files_path, :class => 'btn btn-primary'
+  = link_to 'documentos', docs_path, :class => 'btn btn-primary'
+  %br/
+  = link_to 'alunos', students_path, :class => 'btn btn-primary'
+  = link_to 'categorias', categories_path, :class => 'btn btn-primary'
+  = link_to 'páginas', pages_path, class: 'btn btn-primary'
 
-= link_to 'editar galeria', carousels_path, :class => 'btn btn-primary' if admin_logged?
-= link_to 'videos', videos_path, :class => 'btn btn-primary' if admin_logged?
-= link_to 'arquivos', archives_path, :class => 'btn btn-primary' if admin_logged?
-= link_to 'alunos', students_path, :class => 'btn btn-primary' if admin_logged?
-= link_to 'categorias', categories_path, :class => 'btn btn-primary' if admin_logged?
-
-/ Feeds
-%ul.feeds.list-unstyled
-  - @feeds.each do |feed|
-    %li
-      %h5
-        %b= feed.title
-        |
-        =l feed.updated_at.to_date, format: :default
-      = image_tag feed.image.url(:thumb) unless feed.image.blank?
-      %p= feed.body
+/ Feeds - temporariamente ocultado
+-#%ul.feeds.list-unstyled
+-#  - @feeds.each do |feed|
+-#    %li
+-#      %h5
+-#        %b= feed.title
+-#        |
+-#        =l feed.updated_at.to_date, format: :default
+-#      = image_tag feed.image.url(:thumb) unless feed.image.blank?
+-#      %p= feed.body
 / End Feeds
 
-
-
-=link_to t('views.all_news'), feeds_path
+-#=link_to t('views.all_news'), feeds_path
 
 %br/
 
 
 = stylesheet_link_tag "home"
 = javascript_include_tag "home"
-

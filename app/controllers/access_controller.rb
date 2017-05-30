@@ -34,7 +34,7 @@ class AccessController < ApplicationController
           redirect_to member_path
       end
     else # Caso não encontre um usuario autorizado
-      flash[:warning] = 'Combinação de username/password inválida'
+      flash[:warning] = 'Combinação de usuário/senha inválida.'
       render('login')
     end
   end
@@ -44,7 +44,6 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     session[:user] = nil
     session[:admin] = nil
-    flash[:info] = 'Logged out'
-    redirect_to root_path
+    render('login')
   end
 end

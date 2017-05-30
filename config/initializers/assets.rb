@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-# Version of your archives, change this if you want to expire all your archives.
+# Version of your library_files, change this if you want to expire all your library_files.
 Rails.application.config.assets.version = '1.0'
 
 # Add additional archives to the asset load path

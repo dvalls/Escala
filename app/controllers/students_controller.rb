@@ -1,11 +1,10 @@
 class StudentsController < ApplicationController
   before_filter :user_admin?
 
-
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
-    @students = Student.all
+    @students = Student.all.order(:username)
   end
 
   def show
@@ -25,28 +24,27 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    @student.username = @student.email.split('@').first
+    @student.username = @student.email.strip
+    @student.password = @student.name.downcase.strip
 
     if @student.save
       redirect_to students_path, notice: t('views.student.create')
     else
+      flash[:notice] = @student.errors.full_messages
+
       render action: 'new'
     end
   end
 
 
   def update
-    if @student.update(student_params)
-      @student.username = @student.email.split('@').first
-      if @student.save
 
+    if @student.update(student_params)
       redirect_to students_path, notice: t('views.updated_ok')
-      end
     else
       render action: 'edit'
     end
   end
-
 
   def destroy
     @student.destroy
@@ -63,10 +61,6 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :last_name, :password, :username, :email,
                                      :course_ids => [])
-  end
-
-  def get_my_courses
-    @course = Course.find(params[:id])
   end
 
 end

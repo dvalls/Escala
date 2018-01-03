@@ -1,6 +1,11 @@
 %h3 Blocos de conteudos
 %p
   = render partial: 'partials/content_blocks'
+
+= link_to 'páginas', pages_path, class: 'btn btn-primary'
+
+%br/
+= link_to 'voltar', :back
 .row
   .col-lg-4.col-md-4
     %h3 Grupos de conteúdo (videos)

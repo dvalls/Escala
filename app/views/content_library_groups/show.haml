@@ -1,5 +1,4 @@
 - content_for :library_options do
-  - if @content_group.cat
   - @content_group.categories.each do |category|
     - case
       - when category.library_files.count > 0

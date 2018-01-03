@@ -1,0 +1,14 @@
+%h3 Blocos de conteudos
+%p
+  = render partial: 'partials/content_blocks'
+.row
+  .col-lg-4.col-md-4
+    %h3 Grupos de conteúdo (videos)
+    = render partial: 'partials/content_video_groups'
+  .col-lg-4.col-md-4
+    %h3 Grupos de conteúdo  (arquivos de biblioteca)
+    = render partial: 'partials/content_library_groups'
+  .col-lg-4.col-md-4
+    %h3 Grupos de conteúdo  (documentos)
+    = render partial:  'partials/content_docs_groups'
+  .clearfix.hidden-sm-up

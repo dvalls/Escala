@@ -30,6 +30,13 @@ class ContentBlocksController < ApplicationController
     @page = @block.page
   end
 
+  def index
+    @blocks = ContentBlock.all #view parcial
+    @video_groups = ContentVideoGroup.all#view parcial
+    @library_groups = ContentLibraryGroup.all#view parcial
+    @docs_groups = ContentDocsGroup.all#view parcial
+  end
+
 
   def update
     if @block.update(block_params)
@@ -42,7 +49,7 @@ class ContentBlocksController < ApplicationController
 
   def destroy
     @block.destroy
-    redirect_to pages_path, notice: 'Bloco exlcuido.'
+    redirect_to content_blocks_path, notice: 'Bloco exlcuido.'
   end
 
   private

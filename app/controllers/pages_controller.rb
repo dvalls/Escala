@@ -4,9 +4,9 @@ class PagesController < ApplicationController
 
   def index
     @blocks = ContentBlock.all #view parcial
-    @video_groups = ContentVideoGroup.all#view parcial
-    @library_groups = ContentLibraryGroup.all#view parcial
-    @docs_groups = ContentDocsGroup.all#view parcial
+    # @video_groups = ContentVideoGroup.all#view parcial
+    # @library_groups = ContentLibraryGroup.all#view parcial
+    # @docs_groups = ContentDocsGroup.all#view parcial
     @pages = Page.all
   end
 

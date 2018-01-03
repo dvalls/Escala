@@ -31,7 +31,6 @@ class StudentsController < ApplicationController
       redirect_to students_path, notice: t('views.student.create')
     else
       flash[:notice] = @student.errors.full_messages
-
       render action: 'new'
     end
   end

@@ -10,9 +10,10 @@ class ContentVideoGroupsController < ApplicationController
     @group = ContentVideoGroup.new(group_params)
     if @group.save
       redirect_to content_videos_path, notice: 'Grupo criado.'
-    end
+      else
     flash[:notice] = "#{@group.errors.full_messages}"
     render :new
+    end
   end
 
   def edit

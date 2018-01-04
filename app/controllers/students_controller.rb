@@ -39,6 +39,7 @@ class StudentsController < ApplicationController
   def update
 
     if @student.update(student_params)
+      @student.password = params[:password]
       redirect_to students_path, notice: t('views.updated_ok')
     else
       render action: 'edit'

@@ -1,0 +1,14 @@
+= simple_form_for student do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name, label: 'Nome', as: :string
+    = f.input :last_name, label: 'Sobrenome', as: :string
+    = f.input :email, label: 'E-mail', as: :string
+    = f.input :username, label: 'Username', as: :string
+
+    = f.input :password, label: 'Senha', as: :string
+
+    = f.association :courses, as: :check_boxes, label_method: :title
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'

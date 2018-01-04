@@ -1,0 +1,15 @@
+#notice= notice
+= simple_form_for [:member, @student] do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name, label: 'Nome', as: :string
+    = f.input :last_name, label: 'Sobrenome', as: :string
+    = f.input :email, label: 'E-mail', as: :string
+    = f.input :username, label: 'Login', as: :string
+
+    = f.input :password, label: 'Senha', as: :string
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
+
+=link_to 'voltar', member_path

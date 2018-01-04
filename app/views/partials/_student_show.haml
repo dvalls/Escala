@@ -1,7 +1,9 @@
-%h3
-  - case session[:admin]
-    - when false
+- case session[:admin]
+  - when false
+    %h3
       = @student.full_name
+    = link_to '[Alterar informações]', edit_member_student_path(@student) if policy(@student).edit?
 
-    - else
+  - else
+    %h3
       = 'admin'

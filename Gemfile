@@ -38,8 +38,9 @@ gem 'mini_magick' # , :git => 'git://github.com/minimagick/minimagick.git', :ref
 
 gem 'rails-i18n'
 # gem 'globalize', '~> 4.0.0.alpha.2'
-gem 'globalize', git: 'https://github.com/globalize/globalize'
-gem 'activemodel-serializers-xml'
+gem 'globalize', '~> 5.1.0.beta2'
+# gem 'globalize', git: 'https://github.com/globalize/globalize'
+# gem 'activemodel-serializers-xml'
 #gem 'globalize' #, '~> 5.0.0'
 
 # Friendly URL's

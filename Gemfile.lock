@@ -224,7 +224,7 @@ DEPENDENCIES
   jquery-rails
   json
   mini_magick
-  pg
+  pg (~> 0.18)
   pundit
   rails (~> 5.0.2)
   rails-i18n

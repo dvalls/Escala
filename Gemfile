@@ -53,7 +53,7 @@ gem 'jquery-rails'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.18'
 end
 
 group :development, :test do

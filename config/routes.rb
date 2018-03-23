@@ -71,7 +71,6 @@ Rails.application.routes.draw do
   end
 
   get 'member', to: 'member#index'
-  # get '/member_course/:id', to: 'member#show', as: 'member_course'
 
   namespace :member do
     resources :students

@@ -27,21 +27,7 @@
         |
         = link_to 'apagar', page, method: :delete, :data => {:confirm => 'Tem certeza?'}
 
-= link_to 'nova pagina', new_page_path, class: 'btn btn-primary' if admin_logged?
+= link_to 'Nova página', new_page_path, class: 'btn btn-primary' if admin_logged?
 
-= link_to 'Blocos de conteudos', content_blocks_path, class: 'btn btn-primary' if admin_logged?
--#%p
--#  = render partial: 'partials/content_blocks'
--#.row
--#  .col-lg-4.col-md-4
--#    %h3 Grupos de conteúdo (videos)
--#    = render partial: 'partials/content_video_groups'
--#  .col-lg-4.col-md-4
--#    %h3 Grupos de conteúdo  (arquivos de biblioteca)
--#    = render partial: 'partials/content_library_groups'
--#  .col-lg-4.col-md-4
--#    %h3 Grupos de conteúdo  (documentos)
--#    = render partial:  'partials/content_docs_groups'
--#  .clearfix.hidden-sm-up
+= link_to 'Gerenciar Blocos de conteúdos', content_blocks_path, class: 'btn btn-primary' if admin_logged?
 
-= link_to 'voltar', root_path if admin_logged?

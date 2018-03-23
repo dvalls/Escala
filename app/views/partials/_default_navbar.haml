@@ -11,6 +11,7 @@
     %ul.nav.navbar-nav
       %li= link_to t('nav.about'), about_path
       %li= link_to t('nav.courses'), courses_path
+      %li= link_to t('nav.courses_online'), member_path if admin_logged?
       %li= link_to t('nav.contact'), contact_path
       %li
         - if session[:user_id]

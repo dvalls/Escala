@@ -15,15 +15,14 @@
         = link_to carousel.course do
           .carousel-caption
             = carousel.title
+
 / End Carousel
-- if admin_logged?
-  = link_to 'videos', content_videos_path, :class => 'btn btn-primary'
-  = link_to 'arquivos de biblioteca', library_files_path, :class => 'btn btn-primary'
-  = link_to 'documentos', docs_path, :class => 'btn btn-primary'
-  %br/
-  = link_to 'alunos', students_path, :class => 'btn btn-primary'
-  = link_to 'categorias', categories_path, :class => 'btn btn-primary'
-  = link_to 'páginas', pages_path, class: 'btn btn-primary'
+-#- if admin_logged?
+-#  = link_to 'videos', content_videos_path, :class => 'btn btn-primary'
+-#  = link_to 'arquivos de biblioteca', library_files_path, :class => 'btn btn-primary'
+-#  = link_to 'documentos', docs_path, :class => 'btn btn-primary'
+-#  %br/
+
 
 / Feeds - temporariamente ocultado
 -#%ul.feeds.list-unstyled
@@ -38,8 +37,8 @@
 / End Feeds
 
 -#=link_to t('views.all_news'), feeds_path
-
-%br/
+-#
+-#%br/
 
 = stylesheet_link_tag "home"
 = javascript_include_tag "home"

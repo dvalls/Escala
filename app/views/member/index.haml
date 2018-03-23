@@ -3,6 +3,14 @@
 .row
   .col-lg-3
     = render partial: 'partials/student_show'
+
+    %br/
+    %br/
+    - if admin_logged?
+    = link_to 'alunos', students_path, :class => 'btn btn-primary'
+      //= link_to 'categorias', categories_path, :class => 'btn btn-primary'
+    = link_to 'páginas', pages_path, class: 'btn btn-primary'
+
   .col-lg-9
     %ul#Grid.row
       - @courses.each do |course|
@@ -11,4 +19,5 @@
             .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
             .course-name
               = '- ' + course.title
-              = ' (NÃO PUBLICADO)' if not course.publish?
+
+= stylesheet_link_tag "courses"

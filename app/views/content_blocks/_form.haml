@@ -26,10 +26,7 @@
   = label_tag 'Conteúdo de documentos'
   = select_tag :docs_content, options_from_collection_for_select(@docs_contents, 'id', 'name'), { :include_blank => 'Nenhum'}
   %br/
-  = label_tag 'Conteúdo com Links'
-  %br/
 
-  = label_tag 'Conteúdo com Plugins'
 
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'

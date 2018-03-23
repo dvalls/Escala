@@ -4,10 +4,11 @@ pt-BR:
     description: |
       Escola de atividades e linguagem em arquitetura.
       Desenvolvemos workshops para o ensino de conceitos e ferramentas ligadas à representação de arquitetura.
-    keywords: Arquitetura Porto Alegre, ...
+    keywords: Arquitetura Porto Alegre, Workshops, Illustrator, Photoshop, Indesign, V-ray, Revit, ArchiCAD
 
   nav:
     courses: cursos
+    courses_online: cursos online
     about: sobre
     feeds: notícias
     contact: contato
@@ -20,7 +21,7 @@ pt-BR:
     password: senha
 
 
-  phone: +51 9 8138-8758
+  phone: +51 3030-7351
   email: contato@escala.cc
   address: |
     Rua Jaime Telles, 62.

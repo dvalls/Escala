@@ -13,9 +13,9 @@
         - when nil
           %li= link_to t('nav.login'), access_login_path
         - else
-          %li= link_to 'home', member_path
+          %li= link_to 'home', root_path if admin_logged?
+          %li= link_to 'cursos', member_path
           %li= link_to t('nav.logout'), access_logout_path
-
 
 
 - if @course

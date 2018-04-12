@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resources :pages
   resources :pages do
     resources :content_blocks
+    resources :images
   end
 
   resources :content_library_groups do

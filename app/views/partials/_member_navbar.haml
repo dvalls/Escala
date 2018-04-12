@@ -15,6 +15,7 @@
         - else
           %li= link_to 'home', root_path if admin_logged?
           %li= link_to 'cursos', member_path
+          %li= link_to t('nav.courses_online'), member_path if admin_logged?
           %li= link_to t('nav.logout'), access_logout_path
 
 

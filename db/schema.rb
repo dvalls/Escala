@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510121904) do
+ActiveRecord::Schema.define(version: 20180412175634) do
 
   create_table "about_translations", force: :cascade do |t|
     t.integer  "about_id",   null: false
@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(version: 20170510121904) do
     t.string   "slug"
     t.string   "cover_image"
     t.boolean  "publish"
+    t.boolean  "online",      default: false
     t.index ["slug"], name: "index_courses_on_slug", unique: true
   end
 

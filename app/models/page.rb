@@ -5,6 +5,9 @@ class Page < ApplicationRecord
 
   has_many :content_blocks, :dependent => :destroy
 
+  has_one :image, :as => :imageable, :dependent => :destroy
+
+
 
   def name_and_course
     "#{name} - #{course.title}"

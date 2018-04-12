@@ -16,29 +16,5 @@
           .carousel-caption
             = carousel.title
 
-/ End Carousel
--#- if admin_logged?
--#  = link_to 'videos', content_videos_path, :class => 'btn btn-primary'
--#  = link_to 'arquivos de biblioteca', library_files_path, :class => 'btn btn-primary'
--#  = link_to 'documentos', docs_path, :class => 'btn btn-primary'
--#  %br/
-
-
-/ Feeds - temporariamente ocultado
--#%ul.feeds.list-unstyled
--#  - @feeds.each do |feed|
--#    %li
--#      %h5
--#        %b= feed.title
--#        |
--#        =l feed.updated_at.to_date, format: :default
--#      = image_tag feed.image.url(:thumb) unless feed.image.blank?
--#      %p= feed.body
-/ End Feeds
-
--#=link_to t('views.all_news'), feeds_path
--#
--#%br/
-
 = stylesheet_link_tag "home"
 = javascript_include_tag "home"

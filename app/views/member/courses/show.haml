@@ -8,16 +8,11 @@
       .grid-sizer.grid-item.grid-item
 
         %ul.grid.list-unstyled
-          - n = 0
           - @pages.each do |page|
-            - n += 1
-            - image_link = ["01.jpg","02.jpg","03.jpg","04.jpg"][n]
             %li.grid-item.text-center.col-lg-3.col-md-3.col-sm-4.col-xs-6
-              -if page.content_blocks.count > 0 #prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
-                = link_to member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id) do
-                  = image_tag image_link
-                  -#= image_tag page.image == nil ? "no_cover_image.gif" : page.image.url
-                -#%p= link_to page.name, member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id)
+              - if page.content_blocks.count > 0 #prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
+                = link_to @page.name, member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id)
+                  -#= image_tag image_link
 
 
 

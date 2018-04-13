@@ -12,7 +12,9 @@
               - if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil? #prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
                 -#= link_to page.name, member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id)
                 = link_to member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id) do
-                  = image_tag page.images.last
+                  = image_tag page.images.last == nil ? "no_cover_image.gif" :page.images.last
+
+                  -#puts ( 5 == 5 ? "equal!" : "not equal!" )
 
 
 

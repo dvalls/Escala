@@ -13,11 +13,10 @@ h1 {
   padding: 0 20px 0 20px;
 
   span#course-title {font-weight: 300; letter-spacing: -1px; color: black;}
-
-  span#course-slug { color: black;}
+  span#course-slug { color: black; text-decoration: none;}
 }
 
-
+a:hover {text-decoration: none; color: black !important;}
 
 .close-course {
   float: right;

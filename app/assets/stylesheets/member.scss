@@ -4,7 +4,9 @@
 
 ul#Grid {
   padding: 0;
-  a:hover { text-decoration: none}
+  a:hover { text-decoration: none; color: black}
+  p:hover { text-decoration: none; color: black}
+
 }
 
 li.filter {cursor: pointer;}
@@ -22,8 +24,11 @@ li.filter {cursor: pointer;}
 
 .lighter img:hover {
   -webkit-filter: saturate(1);
+
 }
 
 .page_name {padding: 5px 0 5px 0;
   color: black;
 }
+
+a:hover {text-decoration: none; color: black !important;}

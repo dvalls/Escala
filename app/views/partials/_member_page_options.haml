@@ -1,6 +1,5 @@
 
 -if @course.online # indice diferenciado para cursos online
-  %h4 VIDEOS:
   .col-md-2.col-lg-2
     - @pages.each do |page|
       -if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil? #prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus

@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     # @video_groups = ContentVideoGroup.all#view parcial
     # @library_groups = ContentLibraryGroup.all#view parcial
     # @docs_groups = ContentDocsGroup.all#view parcial
-    @pages = Page.all
+    @pages = Page.all.includes(:course).order("courses.title asc").order("name asc")
   end
 
   def show

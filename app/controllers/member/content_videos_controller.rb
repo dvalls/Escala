@@ -4,7 +4,7 @@ class Member::ContentVideosController < Member::MemberAreaController # Applicati
   def show
     @block = ContentBlock.find(params[:block_id])
     @course = Course.find(@block.contentable.course_id)
-    @pages = @course.pages
+    @pages = @course.pages.order(:name)
     @content_video = ContentVideo.find(params[:id])
 
     authorize @content_video

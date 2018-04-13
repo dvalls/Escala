@@ -5,7 +5,7 @@ class Member::PagesController < Member::MemberAreaController #ApplicationControl
     @course = Course.friendly.find(params[:course_id])
 
     authorize @course
-    @pages = @course.pages
+    @pages = @course.pages.order(:name)
 
     @page = Page.find(params[:id])
 

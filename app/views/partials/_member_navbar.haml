@@ -22,5 +22,6 @@
 - if @course
   %header
     %h1
-      = @course.slug
-      %span#course-title= @course.title
+      = link_to member_course_path(@course) do
+        %span#course-slug= @course.slug
+        %span#course-title= @course.title

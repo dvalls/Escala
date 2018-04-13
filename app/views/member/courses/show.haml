@@ -1,28 +1,24 @@
+- content_for :head do
+  = stylesheet_link_tag "member"
 
 -#  SEM CONTEUDO....APRESENTA AS OPÇÕES DE 'MATERIAIS/VIDEOS/ARQUIVOS', AS PAGINAS QUE O CURSO POSSUI
 -#  ESSES LINKS DE PAGINA DEVERAM DIRECIONAR O USUARIO PARA O CONTEUDO DOS BLOCOS DE CADA PAGINA
 
 -if @course.online
   .col-md-10.col-lg-10
-    .grid
-      .grid-sizer.grid-item.grid-item
-        %ul.grid.list-unstyled
-          - @pages.each do |page|
-            %li.grid-item.text-center.col-lg-3.col-md-3.col-sm-4.col-xs-6
-              - if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil? #prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
-                -#= link_to page.name, member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id)
-                = link_to member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id) do
-                  = image_tag page.images.last == nil ? "no_cover_image.gif" :page.images.last.url.url
+    / Grid Projects
+    %ul#Grid.row
+      - m = 280
+      - n = 202
 
-                  -#puts ( 5 == 5 ? "equal!" : "not equal!" )
+      - @pages.each do |page|
+        %li.mix.col-lg-4.col-md-4.col-sm-6.col-xs-6.text-center
+          -#prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
+          - if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil?
+            = link_to member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id) do
+              .lighter= image_tag(page.images.last == nil ? "logo.gif" :page.images.last.url.url, height: "#{n}", width: "#{m}")
+              .page_name
+                = page.name
 
-
-
-
-
-
-
-
-= javascript_include_tag  "isotope.pkgd.min", "fit-columns", "isotope_config"
-
+= javascript_include_tag "jquery.mixitup.min", "mixitup"
 

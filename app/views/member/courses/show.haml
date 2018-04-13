@@ -9,13 +9,12 @@
     / Grid Projects
     %ul#Grid.row
       - @pages.each do |page|
-        %li.mix.col-lg-4.col-md-4.col-sm-4.col-xs-6.text-center
+        %li.mix.col-lg-4.col-md-4.col-sm-6.col-xs-6.text-center
           -#prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
           - if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil?
             = link_to member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id) do
-              .lighter= image_tag(page.images.last == nil ? "logo.gif" :page.images.last.url.url, height: "200", width: "270")
-              .page_name
-                = page.name
+              .lighter= image_tag(page.images.last == nil ? "logo.gif" :page.images.last.url.url)
+              .page_name= page.name
 
 = javascript_include_tag "jquery.mixitup.min", "mixitup"
 

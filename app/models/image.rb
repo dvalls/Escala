@@ -2,6 +2,7 @@ class Image < ActiveRecord::Base
 
   before_save :update_image_attributes
   validates_presence_of :url
+  validates_uniqueness_of :id
 
   belongs_to :imageable, :polymorphic => true
 

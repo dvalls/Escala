@@ -72,4 +72,4 @@
 - if admin_logged?
   %p.clearfix
     = link_to('editar', edit_course_path(@course), :class => 'btn btn-primary')
-    = link_to('apagar', @course, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-primary')
+    = link_to('apagar', @course, :method => :delete, :data => { :confirm => 'CUIDADO, você irá apagar o curso!!' }, :class => 'btn btn-primary')

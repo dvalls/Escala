@@ -23,5 +23,8 @@
 %h3 Blocos de conteúdos
 = render partial: 'partials/content_blocks'
 
+= link_to 'Páginas', pages_path, class: 'btn btn-primary' if admin_logged?
+
+
 
 

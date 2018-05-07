@@ -17,6 +17,9 @@ gem 'sass-rails' #, '~> 4.0.3'
 gem 'simple_form'
 gem 'turbolinks_transitions'
 
+# #autenticação do VIMEO
+# gem 'vimeo_me2', :git => "https://github.com/bo-oz/vimeo_me2.git"
+
 gem 'bootstrap-sass' #, '~> 3.2.0'
 gem 'autoprefixer-rails'
 

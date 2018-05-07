@@ -28,6 +28,9 @@ class ContentBlocksController < ApplicationController
 
   def edit
     @page = @block.page
+    @video_contents = ContentVideoGroup.all.where(:course_id => @page.course_id)
+    @library_contents = ContentLibraryGroup.all.where(:course_id => @page.course_id)
+    @docs_contents = ContentDocsGroup.all.where(:course_id => @page.course_id)
   end
 
   def index

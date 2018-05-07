@@ -1,3 +1,11 @@
-.col-md-2.col-lg-2
-  - @pages.each do |page|
-    %p= link_to page.name, member_course_page_path(page.course, page)
+
+-if @course.online # indice diferenciado para cursos online
+  .col-md-2.col-lg-2
+    - @pages.each do |page|
+      -if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil? #prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
+        %p= link_to page.name, member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id)
+
+-else
+  .col-md-2.col-lg-2
+    - @pages.each do |page|
+      %p= link_to page.name, member_course_page_path(page.course, page)

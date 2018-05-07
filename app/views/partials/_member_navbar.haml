@@ -15,11 +15,13 @@
         - else
           %li= link_to 'home', root_path if admin_logged?
           %li= link_to 'cursos', member_path
+          %li= link_to t('nav.courses_online'), member_path if admin_logged?
           %li= link_to t('nav.logout'), access_logout_path
 
 
 - if @course
   %header
     %h1
-      = @course.slug
-      %span#course-title= @course.title
+      = link_to member_course_path(@course) do
+        %span#course-slug= @course.slug
+        %span#course-title= @course.title

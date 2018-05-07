@@ -1,5 +1,15 @@
 %h3 Editar Página
+= simple_form_for(@page) do |f|
+  = f.error_notification
 
-= render partial: 'form'
+  .form-inputs
+    = f.input :name
+    = f.input :course_id, collection: Course.all, value_method: :id, label_method: :title, as: :radio_buttons
+    -#APENAS PARA CURSOS ONLINE
+    = link_to 'ADICIONAR IMAGEM (CURSOS ONLINE)', new_page_image_path(@page), :class => 'btn btn-default'
+
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary'
 
 =link_to 'voltar', pages_path

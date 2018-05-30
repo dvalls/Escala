@@ -1,6 +1,7 @@
 .row
   .col-lg-4.col-md-4
     %h4 Grupos de videos
+    = link_to 'Gerenciar Vídeos', content_videos_path, class: 'btn btn-primary' if admin_logged?
     = render partial: 'partials/content_video_groups'
     = link_to 'novo grupo', new_content_video_group_path, :class => 'btn btn-primary'
     = link_to 'novo vídeo', new_content_video_path, :class => 'btn btn-primary'

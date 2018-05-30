@@ -1,3 +1,7 @@
+// Color
+$link-color: black;
+$color-theme: black;
+
 
 // Grid Projects MixItUp
 #Grid .mix{display: none;}
@@ -12,7 +16,7 @@ ul#Grid {
 li.filter {cursor: pointer;}
 
 /*LIGHTER*/
-.lighter {border: 2px dotted lightgray}
+.lighter {border: 1px dotted lightgray}
 .lighter img {
   -webkit-filter: saturate(.3) ;
   -webkit-transition: all 0.3s ease;
@@ -27,7 +31,7 @@ li.filter {cursor: pointer;}
 
 }
 
-a:hover, a:active, a:hover {text-decoration: none; color: black !important;}
+a, a:link, a:hover, a:active, a:hover {text-decoration: none; color: black !important;}
 
 .page_thumb {padding: 5px 0 5px 0;color: lightgray;}
 .page_name {color: black;}

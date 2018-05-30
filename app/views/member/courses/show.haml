@@ -14,7 +14,7 @@
           %li.mix.col-lg-4.col-md-4.col-sm-6.col-xs-6
             = link_to member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id) do
               .lighter= image_tag(page.images.last == nil ? "logo.gif" : page.images.last.url.url)
-              .page_name= page.name
+              .page_thumb= page.name
 
 = javascript_include_tag "jquery.mixitup.min", "mixitup"
 

@@ -27,8 +27,9 @@ li.filter {cursor: pointer;}
 
 }
 
-.page_name {padding: 5px 0 5px 0;
-  color: black;
-}
+a:hover, a:active, a:hover {text-decoration: none; color: black !important;}
 
-a:hover {text-decoration: none; color: black !important;}
+.page_thumb {padding: 5px 0 5px 0;color: lightgray;}
+.page_name {color: black;}
+
+

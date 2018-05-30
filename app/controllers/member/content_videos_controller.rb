@@ -1,4 +1,5 @@
 class Member::ContentVideosController < Member::MemberAreaController # ApplicationController
+  layout 'member'
   before_action :student_logged?
 
   def show

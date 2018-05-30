@@ -5,7 +5,7 @@
 -#  ESSES LINKS DE PAGINA DEVERAM DIRECIONAR O USUARIO PARA O CONTEUDO DOS BLOCOS DE CADA PAGINA
 
 -if @course.online
-  .col-md-10.col-lg-10
+  .col-md-9.col-lg-9
     / Grid Projects
     %ul#Grid.row
       - @pages.each do |page|
@@ -13,7 +13,7 @@
         - if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil?
           %li.mix.col-lg-4.col-md-4.col-sm-6.col-xs-6
             = link_to member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id) do
-              .lighter= image_tag(page.images.last == nil ? "logo.gif" : page.images.last.url.url, height: "205", width: "280")
+              .lighter= image_tag(page.images.last == nil ? "logo.gif" : page.images.last.url.url)
               .page_name= page.name
 
 = javascript_include_tag "jquery.mixitup.min", "mixitup"

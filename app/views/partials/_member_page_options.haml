@@ -1,6 +1,6 @@
 
 -if @course.online # indice diferenciado para cursos online
-  .col-lg-3.hidden-md-down
+  .col-lg-3.hidden-sm
     - @pages.each do |page|
       -if not page.content_blocks.first.nil? and not page.content_blocks.first.contentable.content_videos.first.nil? #prevenir erro quando criarem paginas sem videos, ou sem blocos de conteus
         %p.page_name= link_to page.name, member_content_video_path(:id => page.content_blocks.first.contentable.content_videos.first.id, :block_id => page.content_blocks.first.id)

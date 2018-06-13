@@ -18,6 +18,6 @@
           = link_to member_course_path(course) do
             .lighter= image_tag course.cover_image.url,  :class => 'img-responsive'
             .course-name
-              = '- ' + course.title
+              = course.title
 
 = stylesheet_link_tag "courses"

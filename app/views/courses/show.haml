@@ -73,3 +73,22 @@
   %p.clearfix
     = link_to('editar', edit_course_path(@course), :class => 'btn btn-primary')
     = link_to('apagar', @course, :method => :delete, :data => { :confirm => 'CUIDADO, você irá apagar o curso!!' }, :class => 'btn btn-primary')
+
+
+/
+  Event snippet for Escala conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
+:javascript
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-986190661/VcdXCL75oIQBEMWmoNYD',
+        'transaction_id': '',
+        'event_callback': callback
+    });
+    return false;
+  }
